@@ -261,7 +261,7 @@ and approves the pull request before it is merged.
 
 ## (c) SHORTEN — rows still over 150% width
 
-- [ ] SHORTEN
+- [x] SHORTEN (done in the "Shorten long rows" pull request: 114 of 488 rows over 150% shortened; the rest are listed in `docs/reports/shorten_REPORT.md`)
 
 Rows listed in `docs/long_rows.md` whose **current** `width_pct` in `review/` is
 still above 150 (304 rows; the other rows listed there have already been
