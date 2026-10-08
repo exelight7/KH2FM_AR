@@ -1,0 +1,26 @@
+# per-bar options of the INSTALLED build. atlas = advance table inside fontinfo.bar (sys | evt).
+# lam_alef_ligature: 1 = lam+alef pair encoded as cell 36 (evt atlas); 0 = plain lam,alef (sys/jm/title/gumi: cell 36 is Latin W there).
+# ids in noliga_ids.txt never use the ligature, in any bar.
+bar	atlas	lam_alef_ligature
+sys	sys	0
+tt	evt	1
+di	evt	1
+es	evt	1
+wm	evt	1
+hb	evt	1
+mu	evt	1
+bb	evt	1
+he	evt	1
+dc	evt	1
+ca	evt	1
+al	evt	1
+nm	evt	1
+lk	evt	1
+lm	evt	1
+tr	evt	1
+po	evt	1
+wi	evt	1
+eh	evt	1
+jm	evt	0
+title	evt	0
+gumi	evt	0

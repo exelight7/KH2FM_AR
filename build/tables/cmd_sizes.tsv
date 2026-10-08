@@ -1,0 +1,26 @@
+# message command byte (hex) -> number of parameter bytes. 0E is 1 (as in the installed build). Hard line-boundary commands: 10 14 17; icon command: 09.
+cmd	params
+03	0
+04	1
+06	1
+07	4
+08	3
+09	1
+0A	1
+0B	1
+0C	0
+0D	0
+0E	1
+0F	5
+10	0
+11	4
+12	2
+13	4
+14	2
+15	2
+16	1
+17	2
+18	2
+1A	1
+1B	1
+1C	1
