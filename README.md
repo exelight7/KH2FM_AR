@@ -22,7 +22,7 @@
 1. اختر ملفاً غير مُنجز من `docs/TASKS.md`.
 2. اقرأ `RULES.md`: الأحرف المسموحة، الوسوم مثل `<10>` و`<X 5E>` تبقى كما هي
    وبنفس الترتيب، عدد فواصل الأسطر `⏎` لا يتغير، أسماء المسرد
-   (`docs/glossary.md`) لا تتغير، والتصحيح لا يزيد طوله عن 10%.
+   (`docs/glossary.md`) لا تتغير، والتصحيح لا يزيد طوله عن 10% أو حرفين، أيهما أكبر.
 3. لا تعدّل `review/` أبداً. اكتب تصحيحاتك في ملف
    `corrections/<FILE>.csv` بالأعمدة
    `bar,id,AR_old,AR_new,type,severity,reason`:
@@ -62,7 +62,8 @@ columns `bar,id,EN,AR,width_pct,flags`.
 1. Pick an unchecked file in `docs/TASKS.md`.
 2. Read `RULES.md`: allowed characters, tags such as `<10>` and `<X 5E>` kept
    exactly and in order, the same number of `⏎` line breaks, glossary terms
-   (`docs/glossary.md`) never changed, and a correction at most 10% longer.
+   (`docs/glossary.md`) never changed, and a correction at most 10% (or 2 characters,
+   whichever is larger) longer.
 3. Never edit `review/`. Put your corrections in `corrections/<FILE>.csv` with
    the columns `bar,id,AR_old,AR_new,type,severity,reason`: the current text
    exactly, the corrected text, the type

@@ -63,6 +63,7 @@ class ValidatorTest(unittest.TestCase):
             self.assertIn(ch, r.forbidden)
         self.assertEqual(r.marker, '⏎')
         self.assertEqual(r.max_growth, 10)
+        self.assertEqual(r.min_growth_chars, 2)
 
     def test_glossary_terms(self):
         terms = set(self.glossary.terms)
@@ -82,6 +83,25 @@ class ValidatorTest(unittest.TestCase):
         s = 'نص<13 00 01 40 01><X 5E><C 14 41 00> ⏎ <جمع القطع>'
         self.assertEqual(vc.tags(s), ['<13 00 01 40 01>', '<X 5E>', '<C 14 41 00>'])
         self.assertEqual(vc.visible_len(s), len('نص ⏎ <جمع القطع>'))
+
+    def test_length_limit(self):
+        self.assertEqual(self.rules.growth_limit(4), 2)      # short row: 2 characters
+        self.assertEqual(self.rules.growth_limit(20), 2)
+        self.assertEqual(self.rules.growth_limit(55), 5.5)   # long row: 10%
+
+        def errors(bar, rid, new):
+            row = dict(bar=bar, id=rid, AR_old=self.review[(bar, rid)], AR_new=new,
+                       type='spelling', severity='1', reason='تصحيح')
+            return vc.check_row(row, self.review, self.rules, self.glossary, True)
+
+        # sys 480 'هجوم' (4 characters): +2 allowed, +3 too long
+        self.assertEqual(errors('sys', '480', 'هجوم!!'), [])
+        self.assertIn('too long', ' '.join(errors('sys', '480', 'هجوم!!!')))
+        # hb 13020 (55 characters without tags): +5 allowed, +6 too long
+        old = self.review[('hb', '13020')]
+        self.assertEqual(vc.visible_len(old), 55)
+        self.assertEqual(errors('hb', '13020', old.replace('أنتم!?', 'أنتم!!!!!!?')), [])
+        self.assertIn('too long', ' '.join(errors('hb', '13020', old.replace('أنتم!?', 'أنتم!!!!!!!?'))))
 
     # -- valid samples
     def test_valid_sample_passes(self):

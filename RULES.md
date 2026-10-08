@@ -63,9 +63,11 @@ letters, whole word, with an attached و ف ب ل ك or the article allowed) occ
 
 ## 6. Length
 
-`AR_new` may be at most **10%** longer than `AR_old`, counted in characters with
-tags removed (spaces and `⏎` count). Text that does not fit the screen breaks
-the game box. Shorter is always fine.
+`AR_new` may be longer than `AR_old` by at most **10% of the original length or
+2 characters, whichever is larger**, counted in characters with tags removed
+(spaces and `⏎` count). So a 5-character menu label may grow by 2 characters, a
+40-character line by 4. Text that does not fit the screen breaks the game box.
+Shorter is always fine.
 
 ## 7. Correction file format
 
@@ -113,4 +115,5 @@ allowed_latin: A H I M P S T W
 forbidden: U+061F U+060C U+061B U+0640 U+064B-U+065F U+0670
 line_break_marker: ⏎
 max_growth_percent: 10
+min_growth_chars: 2
 ```

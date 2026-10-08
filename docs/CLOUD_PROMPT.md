@@ -20,7 +20,8 @@ Use EN only to check meaning; if AR changes the meaning, mark type=meaning.
 Never edit review/. Never change a glossary term (list it under "glossary
 conflicts seen" instead). Keep every tag exactly and in the same order, keep the
 same number of ⏎ line breaks, use only the characters allowed by RULES.md, and
-never make a row more than 10% longer.
+never make a row longer than allowed
+(10% of its length or 2 characters, whichever is larger).
 
 Write corrections/<FILE>.csv with the header
   bar,id,AR_old,AR_new,type,severity,reason

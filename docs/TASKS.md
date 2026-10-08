@@ -202,20 +202,32 @@ Resolve the naming conflicts listed in `docs/consistency.md` (section "Top
 findings → Still open", table C and the HUNT-1 table) and the open questions in
 `docs/review_list.md`. This is the only task allowed to change glossary terms.
 
-**Fixed decisions (apply as given):**
+**Rule for limit and attack names (sys is canonical):** when a limit or attack
+chain name differs between `sys` and `jm`, the canonical form is the **sys
+form**, unless the sys form is linguistically wrong. Only then use the corrected
+form (for example Comet Rain: sys 7764 «مطر المذنبين» means "the rain of the
+guilty", so it becomes «مطر المذنبات»). Check every limit description page in jm
+(ids 19156-19309, `jm_part08.csv`) against the sys names, not only the ones
+below.
 
-| term | decision | why | rows known now |
+**Decisions to apply:**
+
+| term | sys (id) | jm (id) | decision |
 |---|---|---|---|
-| Comet Rain | «مطر المذنبات» | «المذنبين» means "the guilty" (plural of مذنب = sinner), not comets | sys 7764 «مطر المذنبين» → «مطر المذنبات»; jm 19157 already correct |
-| Knocksmash | one form for every row | `docs/glossary.md` gives both «دمار الكسر» (line 623) and «الضرب القاضي» (line 1222) | sys 12096, sys 13118 («دمار الكسر»); jm 19163 («الضرب القاضي») |
-| Twin Howl | one form for every row | glossary gives «العواءان» (line 407) and «العواء المزدوج» (line 1222) | sys 1164, sys 13124 («العواءان»); jm 19165 («العواء المزدوج») |
-| Rikku / Riku | every row whose EN says **Rikku** uses «ريكا»; every row whose EN says **Riku** uses «ريكو» | the two names must not collide | Rikku: hb 13020 says «ريكو» → «ريكا»; jm 11594 already «ريكا». Riku: 171 rows, all use «ريكو» now |
+| Comet Rain | «مطر المذنبين» (7764) | «مطر المذنبات» (19157) | «مطر المذنبات» everywhere: the sys form is linguistically wrong («المذنبين» = the guilty) → change sys 7764 |
+| Comet | «مذنب» (7763) | «المذنب» (19157) | sys form; the article alone is not a conflict, keep it where the sentence needs it |
+| Knocksmash | «دمار الكسر» (12096, 13118) | «الضرب القاضي» (19163) | sys form unless it is wrong → change jm 19163 |
+| Duo Raid | «غارة ثنائية» (12097) | «الغارة الثنائية» (19163) | sys form (article as the sentence needs) |
+| Cosmo Boost | «كوزمو بوست» (12098) | «الدفعة الكونية» (19163) | sys form unless it is wrong → change jm 19163 |
+| Twin Howl | «العواءان» (1164, 13124) | «العواء المزدوج» (19165) | sys form unless it is wrong → change jm 19165 |
+| Stalwart Fang | «الناب المتين» (1165) | «الناب الصلب» (19165) | sys form unless it is wrong → change jm 19165 |
+| Outcry | «الصراخ» (1166) | «الصرخة» (19165) | sys form unless it is wrong → change jm 19165 |
+| Last Howl | «آخر عواء» (1167) | «العواء الأخير» (19165) | sys form unless it is wrong → change jm 19165 |
+| Rikku / Riku | — | — | every row whose EN says **Rikku** uses «ريكا»; every row whose EN says **Riku** uses «ريكو». Rikku: hb 13020 says «ريكو» → «ريكا»; jm 11594 already «ريكا». Riku: 171 rows, all use «ريكو» now |
 
-For Knocksmash and Twin Howl, choose the clearer form and also check the rest of
-each limit chain, which differs between sys and jm in the same way:
-Duo Raid / Cosmo Boost (sys «غارة الثنائي / كوزمو بوست», jm «الغارة الثنائية /
-الدفعة الكونية») and Stalwart Fang / Outcry / Last Howl (sys «الناب المتين /
-الصراخ / آخر عواء», jm «الناب الصلب / الصرخة / العواء الأخير»).
+`docs/glossary.md` also lists the jm forms (line 1222: «مطر المذنبات, توهج البط,
+الضرب القاضي, العواء المزدوج») next to the sys forms (lines 407, 570, 623); after
+this task it must list one form per name.
 
 **Other open conflicts to decide** (choose one form, give the reason): Naminé
 (نامين / ناميني), Genie (جيني / الجني), MCP (إم سي بي / برنامج التحكم الرئيسي),
@@ -230,11 +242,18 @@ choice is a matter of taste or space, keep the current majority form.
 1. `corrections/glossary.csv` — one row for **every** affected row in `review/`
    (same columns as any correction file; `type=glossary`). Find the rows by
    searching both EN and AR in all 75 files, not only the examples above.
-2. `docs/glossary_decisions.md` — a table: term, chosen form, why, rows changed
-   (bar and id).
+2. `docs/glossary_decisions.md` — **every** decision, one row each: term, sys
+   form, jm/other form, chosen form, reason (why the sys form was kept, or why it
+   is linguistically wrong), rows changed (bar and id). A decision without a
+   reason is not accepted.
 3. `docs/glossary.md` updated so every term has one approved form.
 
 Pull request title: **Glossary decisions**.
+
+**Review before merge:** glossary corrections change names across the whole
+game, so the pull request is **never merged on a green check alone**. A person
+reads `docs/glossary_decisions.md` and the rows in `corrections/glossary.csv`
+and approves the pull request before it is merged.
 
 ---
 

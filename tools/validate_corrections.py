@@ -10,7 +10,8 @@ and each row must satisfy the rules in RULES.md (see the ``rules`` block there):
     characters outside the allowed set only if they were already in AR_old)
   * the same tags in the same order, the same number of line-break markers
   * glossary terms unchanged (skipped for files named corrections/glossary*.csv)
-  * AR_new at most ``max_growth_percent`` longer than AR_old
+  * AR_new at most max(``max_growth_percent`` of AR_old, ``min_growth_chars``)
+    characters longer than AR_old
   * type / severity / reason are valid
 
 Prints one table of results and exits 1 if any row (or file) has an error.
@@ -52,11 +53,16 @@ def is_arabic_letter(ch):
 
 # ---------------------------------------------------------------- RULES.md
 class Rules:
-    def __init__(self, allowed, forbidden, marker, max_growth):
+    def __init__(self, allowed, forbidden, marker, max_growth, min_growth_chars):
         self.allowed = allowed        # set of non-letter characters allowed besides Arabic letters
         self.forbidden = forbidden    # set of characters never allowed
         self.marker = marker          # visible line-break marker
         self.max_growth = max_growth  # percent
+        self.min_growth_chars = min_growth_chars  # growth always allowed, in characters
+
+    def growth_limit(self, old_len):
+        """How many characters longer than the original a correction may be."""
+        return max(old_len * self.max_growth / 100.0, self.min_growth_chars)
 
 
 def load_rules(path):
@@ -72,7 +78,7 @@ def load_rules(path):
             k, v = line.split(':', 1)
             kv[k.strip()] = v.strip()
     need = ('allowed_punctuation', 'allowed_digits', 'allowed_latin', 'allowed_space',
-            'forbidden', 'line_break_marker', 'max_growth_percent')
+            'forbidden', 'line_break_marker', 'max_growth_percent', 'min_growth_chars')
     missing = [k for k in need if k not in kv]
     if missing:
         raise SystemExit('%s: rules block is missing %s' % (path, ', '.join(missing)))
@@ -94,7 +100,8 @@ def load_rules(path):
         else:
             forbidden |= set(tok)
     forbidden |= DIACRITICS | {TATWEEL}
-    return Rules(allowed, forbidden, kv['line_break_marker'], float(kv['max_growth_percent']))
+    return Rules(allowed, forbidden, kv['line_break_marker'], float(kv['max_growth_percent']),
+                 int(kv['min_growth_chars']))
 
 
 # ---------------------------------------------------------------- glossary
@@ -232,8 +239,9 @@ def check_row(row, review, rules, glossary, check_glossary):
             errors.append('glossary term changed: %s' % ' | '.join(changed))
 
     lo, ln = visible_len(old), visible_len(new)
-    if ln > lo * (1 + rules.max_growth / 100.0):
-        errors.append('too long: %d -> %d chars (+%.0f%%, max +%g%%)' % (lo, ln, (ln - lo) * 100.0 / max(lo, 1), rules.max_growth))
+    if ln - lo > rules.growth_limit(lo):
+        errors.append('too long: %d -> %d chars (+%d, max +%d = max(%g%%, %d chars))'
+                      % (lo, ln, ln - lo, int(rules.growth_limit(lo)), rules.max_growth, rules.min_growth_chars))
 
     t = row['type'].strip()
     if t not in TYPES:
