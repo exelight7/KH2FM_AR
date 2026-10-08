@@ -11,31 +11,32 @@ round. All 13 files pass `python tools/validate_corrections.py`.
 | file | rows reviewed | rows corrected |
 |---|---:|---:|
 | sys_part01 (earlier round) | 250 | 2 |
-| sys_part02 | 250 | 4 |
+| sys_part02 | 250 | 5 |
 | sys_part03 | 250 | 8 |
 | sys_part04 | 250 | 1 |
 | sys_part05 | 250 | 4 |
 | sys_part06 | 250 | 7 |
 | sys_part07 | 250 | 5 |
 | sys_part08 | 250 | 5 |
-| sys_part09 | 250 | 2 |
+| sys_part09 | 250 | 11 |
 | sys_part10 | 250 | 16 |
-| sys_part11 | 250 | 10 |
+| sys_part11 | 250 | 11 |
 | sys_part12 | 250 | 4 |
 | sys_part13 | 45 | 2 |
-| **total** | **3045** | **70** |
+| **total** | **3045** | **81** |
 
-This round alone: 2,795 rows reviewed, 68 rows corrected.
+This round alone: 2,795 rows reviewed, 79 rows corrected (68 first pass + 11
+fixes allowed after `unprotected_terms` was added to RULES.md).
 
 ## Corrections per type and severity (all 13 files)
 
 | type | severity 1 | severity 2 | severity 3 | total |
 |---|---:|---:|---:|---:|
-| grammar | 7 | 16 | 0 | 23 |
+| grammar | 9 | 24 | 0 | 33 |
 | spelling | 1 | 16 | 0 | 17 |
-| meaning | 0 | 16 | 0 | 16 |
+| meaning | 0 | 17 | 0 | 17 |
 | phrasing | 9 | 5 | 0 | 14 |
-| **total** | **17** | **53** | **0** | **70** |
+| **total** | **19** | **62** | **0** | **81** |
 
 ## Top 10 repeated error patterns
 
@@ -43,13 +44,13 @@ This round alone: 2,795 rows reviewed, 68 rows corrected.
 |---|---|---:|---|
 | 1 | «المتحققة» ("verified") used for "obtained/acquired" → «المكتسبة» | 8 | 17797 «الأشكال المتحققة» → «الأشكال المكتسبة» |
 | 2 | Comma lost between two clauses, leaving a double space | 6 | 1601 «بمساعدة صديقين  استخدم» → «بمساعدة صديقين, استخدم» |
-| 3 | Adjective attached to an indefinite noun like an idafa | 4 fixed, 3 blocked | 14909 «خاتم الكوني» → «الخاتم الكوني» |
+| 3 | Adjective attached to an indefinite noun like an idafa | 5 fixed, 2 blocked | 14909 «خاتم الكوني» → «الخاتم الكوني» |
 | 4 | Gender agreement (demonstrative, pronoun, adjective, verb) | 7 | 17740 «تلك القطار» → «ذلك القطار» |
 | 5 | «ليست هذه الطريقة» ("not this method") for "not this way" | 4 | 18033 → «ليس هذا الطريق» |
 | 6 | Letters dropped from a word | 6 | 2619 «تواء الذاكرة» → «التواء الذاكرة»; 16036 «فاياغون» → «فايراغون» |
 | 7 | Verbal noun with alef maqsura: «تلقى» → «تلقي» | 3 | 15367 «بعد تلقى ضرر» → «بعد تلقي ضرر» |
-| 8 | Wrong verb for the meaning | 5 | 15349 «اجمع الفريق كله» (gather) → «جهز الفريق كله» (equip) |
-| 9 | Accusative ending missing (object, numbers above 10, adverbs) | 2 fixed, 8 blocked | 22018 «تحرك يمين ويسار» → «تحرك يمينا ويسارا» |
+| 8 | Wrong word for the meaning | 6 | 15349 «اجمع الفريق كله» (gather) → «جهز الفريق كله» (equip) |
+| 9 | Accusative ending missing (object, numbers above 10, adverbs) | 10 | 22018 «تحرك يمين ويسار» → «تحرك يمينا ويسارا» |
 | 10 | Wrong tense or person | 3 | 19562 «سأل الآخرين» ("he asked") → «سأسأل الآخرين» ("I´ll ask") |
 
 ## Severity-3 corrections
@@ -108,17 +109,11 @@ task or a supervisor decision.
 
 ## Unsure / blocked by the validator
 
-1. **Grammar fixes blocked by common-word glossary terms.** The validator treats
-   «أنواع» (Types), «أغراض» (Items), «الشكل» (Form), «حماية» (Guard), «ضربة» and
-   «الواحة» as glossary terms, so ordinary grammar fixes are counted as glossary
-   changes:
-   - 15985-15991 «15 أنواع … 45 أنواع» should be «15 نوعا … 45 نوعا»;
-   - 15979 «أغراض جديدة» → «أغراضا جديدة»;
-   - 1122 «في شكل الأخير» → «في الشكل الأخير»;
-   - 20083 «يخترق الحارس» ("the guard person") should be «يخترق الحماية»;
-   - 16101 «خريطة واحة» → «خريطة الواحة».
-
-   Either allow these in a follow-up or accept them in the GLOSSARY task.
+1. **Grammar fixes once blocked by common-word glossary terms (now fixed).**
+   «أنواع», «أغراض», «الأغراض», «الشكل», «حماية», «الحماية», «ضربة» and «الواحة» are
+   now `unprotected_terms` in RULES.md, so these fixes are included:
+   15985-15991 «N أنواع» → «N نوعا», 15979 «أغراضا», 1122 «في الشكل الأخير»,
+   20083 «يخترق الحماية … حمايتك», 16101 «خريطة الواحة».
 2. **Length rule.** 14910 and 20624 «يزيد/يرفع … AP هائلا» are awkward, but a
    correct rewrite is longer than allowed.
 3. **Line breaks.** 18468 has one more «⏎» than the English; the rules don't

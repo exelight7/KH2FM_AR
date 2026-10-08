@@ -42,7 +42,7 @@ class ValidatorTest(unittest.TestCase):
     def setUpClass(cls):
         cls.root = make_root()
         cls.rules = vc.load_rules(os.path.join(cls.root, 'RULES.md'))
-        cls.glossary = vc.Glossary(vc.load_glossary_terms(os.path.join(cls.root, 'docs', 'glossary.md')))
+        cls.glossary = vc.load_glossary(os.path.join(cls.root, 'docs', 'glossary.md'), cls.rules)
         cls.review = vc.load_review(os.path.join(cls.root, 'review'))
 
     @classmethod
@@ -71,6 +71,22 @@ class ValidatorTest(unittest.TestCase):
             self.assertIn(t, terms)
         for t in terms:
             self.assertNotIn('معلّق', t)   # pending entries are not approved
+
+    def test_unprotected_terms(self):
+        words = {'أنواع', 'أغراض', 'الأغراض', 'الشكل', 'حماية', 'الحماية', 'ضربة', 'الواحة'}
+        self.assertEqual(self.rules.unprotected, words)
+        raw = vc.load_glossary_terms(os.path.join(self.root, 'docs', 'glossary.md'))
+        self.assertTrue(words <= raw)                       # they are in the glossary file
+        self.assertFalse(words & set(self.glossary.terms))  # but not protected
+        self.assertIn('سورا', self.glossary.terms)          # names stay protected
+        self.assertEqual(self.glossary.changed('احصل على 15 أنواع من المواد.',
+                                               'احصل على 15 نوعا من المواد.'), [])
+        self.assertEqual(self.glossary.changed('اصنع أغراض جديدة!', 'اصنع أغراضا جديدة!'), [])
+        # a full check_row on a real row: «حماية» may now be added
+        old = self.review[('gumi', '21695')]
+        row = dict(bar='gumi', id='21695', AR_old=old, AR_new=old.replace('أحرف محظورة', 'أحرف الحماية'),
+                   type='phrasing', severity='1', reason='تجربة')
+        self.assertEqual(vc.check_row(row, self.review, self.rules, self.glossary, True), [])
 
     def test_glossary_matching(self):
         g = vc.Glossary({'سورا', 'كيبلايد', 'القوة'})
