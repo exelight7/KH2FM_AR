@@ -1,0 +1,251 @@
+﻿bar,id,EN,AR,width_pct,flags
+sys,10329,Quickly regains balance with <09 DB> when ⏎ knocked down.,اضغط <09 DB> عند السقوط ⏎ لتستعيد توازنك بسرعة.,80,
+sys,10330,Peter Pan,بيتر بان,97,
+sys,10331,Lamp Charm,تعويذة المصباح,164,wide
+sys,10332,"With the help of two friends, use ⏎ the Summon Command to call forth ⏎ Genie for a helping hand.",بمساعدة صديقين استخدم أمر ⏎ الاستدعاء لنداء الجني ⏎ للمساعدة.,106,
+sys,10333,Feather Charm,تعويذة الريشة,127,
+sys,10334,"With the help of two friends, use ⏎ the Summon Command to call forth ⏎ Peter Pan for a helping hand.",بمساعدة صديقين استخدم أمر ⏎ الاستدعاء لنداء بيتر بان ⏎ للمساعدة.,106,
+sys,10335,Pinball,بين بول,156,wide
+sys,10337,The Black Pearl,اللؤلؤة السوداء,127,
+sys,10338,The Black Pearl,اللؤلؤة السوداء,127,
+sys,10339,The Black Pearl,اللؤلؤة السوداء,127,
+sys,10340,The Interceptor,المتعقب,60,
+sys,10341,The Interceptor,المتعقب,60,
+sys,10414,Air Twister,الدوار الجوي,148,wide
+sys,10415,Tornado Ride,رحلة الإعصار,127,
+sys,10416,Quick Blade,النصل السريع,141,wide
+sys,10419,Dodge Roll,تدحرج,85,
+sys,10428,Begin Game,ابدأ اللعبة,116,
+sys,10429,Stop Dice,أوقف النرد,149,wide
+sys,10433,Aura Guard,حماية الهالة,137,wide
+sys,10434,Dismiss,الإنهاء,104,
+sys,10435,The Black Pearl: Captain´s Stateroom,اللؤلؤة السوداء: مقصورة القبطان,112,
+sys,10439,Open The Door,افتح الباب,84,
+sys,10441,Root Ravager,خراب الجذور,129,
+sys,10442,Clear Shot,رمية صافية,134,wide
+sys,10443,Big Ben,بيغ بن,106,
+sys,10444,Sora: ⏎ Let´s get to Merlin´s house.,سورا: ⏎ هيا نذهب إلى بيت ميرلين.,108,
+sys,12070,Sora: ⏎ I hope Pooh´s all right...,سورا: ⏎ آمل أن بوه بخير...,95,
+sys,12072,Hop On,اركب,90,
+sys,12073,Shift Shot,رمية الإزاحة,156,wide
+sys,12074,Heal Stomp,دوس الشفاء,131,wide
+sys,12080,Restoration Site,موقع الترميم,107,
+sys,12081,Bailey,الرحيبة,155,wide
+sys,12082,Get Off,انزل,78,
+sys,12083,Staff of Detection,عصا الكشف,68,
+sys,12084,"A powerless staff, its only use is ⏎ to detect movement.",عصا بلا قوة وظيفتها الوحيدة ⏎ كشف الحركة.,103,
+sys,12086,Wind Dance,رقصة الريح,133,wide
+sys,12087,High Climb,التسلق,70,
+sys,12088,Needle Dive,غطسة الإبرة,131,wide
+sys,12090,Help,عون,157,wide
+sys,12092,Pegasus Run,جري بيجاسوس,143,wide
+sys,12093,Juggle Parry,صد التلاعب,103,
+sys,12094,Overhand,العلوية,104,
+sys,12096,Knocksmash,دمار الكسر,122,
+sys,12097,Duo Raid,غارة ثنائية,167,wide
+sys,12098,Cosmo Boost,كوزمو بوست,132,wide
+sys,12131,Combo Plus,كومبو بلس,118,
+sys,12132,Increases maximum combo by 1 when ⏎ on the ground. ⏎ Equip more to enable more combos.,يزيد أقصى كومبو بمقدار 1 ⏎ وأنت على الأرض. ⏎ أضف المزيد لتفعيل كومبو إضافي.,114,
+sys,12133,Air Combo Plus,كومبو بلس جوي,135,wide
+sys,12134,Increases maximum combo by 1 when ⏎ in midair. ⏎ Equip more to enable more combos.,يزيد أقصى كومبو بمقدار 1 ⏎ وأنت في الهواء. ⏎ أضف المزيد لتفعيل كومبو إضافي.,114,
+sys,12135,Sora: ⏎ Our assignment is over ⏎ the mountain trail!,سورا: ⏎ مهمتنا أعلى ممر الجبل!,124,
+sys,12885,Rocket Flare,شعلة الصاروخ,139,wide
+sys,12932,Phil One-Two,لكمات فيل,97,
+sys,12998,Coliseum Gates,بوابات الكولوسيوم,159,wide
+sys,13026,Speedster,الاندفاع,102,
+sys,13027,Quickplay,لعب سريع,141,wide
+sys,13028,Trickster,الحيلة,76,
+sys,13030,Return Fire,رد الهجوم,121,
+sys,13031,Bluff,الخداع,173,wide
+sys,13032,Slasher,القاطع,110,
+sys,13033,Jackknife,السكين,84,
+sys,13034,Final Trap,الفخ الأخير,135,wide
+sys,13036,Lion,أسد,119,
+sys,13037,Weapons,الأسلحة,107,
+sys,13038,Action,الفعل,116,
+sys,13039,Growth,النمو,91,
+sys,13040,Support,الدعم,103,
+sys,13043,Donald Fire,دونالد فاير,130,
+sys,13044,Unleashes a firestorm that attacks ⏎ nearby enemies. <07 F0 F0 00 80>MP Cost: 10<03>,يطلق عاصفة نار تهاجم ⏎ الأعداء القريبين. <03>تكلفة MP: <07 F0 F0 00 80>10,103,
+sys,13045,Donald Blizzard,دونالد بليزارد,119,
+sys,13046,Unleashes a barrage of ice at ⏎ the enemy. <07 F0 F0 00 80>MP Cost: 10<03>,يطلق وابلا من الجليد على ⏎ العدو. <03>تكلفة MP: <07 F0 F0 00 80>10,103,
+sys,13047,Donald Thunder,دونالد ثاندر,107,
+sys,13048,Call down a bombardment of lightning ⏎ bolts on your target! <07 F0 F0 00 80>MP Cost: 10<03>,أمطر هدفك بقصف من ⏎ الصواعق! <03>تكلفة MP: <07 F0 F0 00 80>10,71,
+sys,13049,Donald Cure,دونالد كور,124,
+sys,13050,Cures Party Member´s HP. ⏎ <07 F0 F0 00 80>MP Cost: All<03>,يعالج HP عضو الفريق. ⏎ تكلفة MP: الكل<07 F0 F0 00 80>,103,
+sys,13065,Healing Water,ماء الشفاء,93,
+sys,13066,Restores the Party´s HP. ⏎  <07 F0 F0 00 80>MP Cost: 99<03>,يستعيد HP الفريق. ⏎  <03>تكلفة MP: <07 F0 F0 00 80>99,85,
+sys,13067,Furious Shout,صرخة الغضب,114,
+sys,13068,Knocks down nearby enemies with ⏎ enraged shouts. <07 F0 F0 00 80>MP Cost: 10<03>,يطرح الأعداء القريبين ⏎ بصيحات غاضبة. <03>تكلفة MP: <07 F0 F0 00 80>10,99,
+sys,13086,Cure Potion,جرعة الشفاء,136,wide
+sys,13087,Restores the Party´s HP. ⏎  <07 F0 F0 00 80>MP Cost: 99<03>,يستعيد HP الفريق. ⏎  <03>تكلفة MP: <07 F0 F0 00 80>99,85,
+sys,13092,Healing Herb,عشبة الشفاء,118,
+sys,13093,Restores the Party´s HP using ⏎ the powers of nature. <07 F0 F0 00 80>MP Cost: 99<03>,يستعيد HP الفريق بقوى ⏎ الطبيعة. <03>تكلفة MP: <07 F0 F0 00 80>99,80,
+sys,13102,Slow 3,بطيء 3,131,wide
+sys,13103,(Delete),(حذف),100,
+sys,13109,Trinity Limit,ترينتي ليميت,119,
+sys,13110,A Limit Command that uses teamwork ⏎ to unleash the powerful Trinity attack. ⏎ Consumes all of Sora´s MP.,أمر ليميت يعتمد تعاون الفريق ⏎ لإطلاق هجوم ترينتي القوي. ⏎ يستهلك كل MP لسورا.,97,
+sys,13111,Fantasia,فانتازيا,107,
+sys,13112,A Limit Command that unleashes ⏎ Donald´s powerful Comet spell. ⏎ Consumes all of Sora´s MP.,أمر ليميت يطلق ⏎ سحر دونالد القوي المذنب. ⏎ يستهلك كل MP لسورا.,103,
+sys,13113,Flare Force,قوة الفلاير,124,
+sys,13114,A Limit Command that unleashes ⏎ Donald´s powerful Duck Flare spell. ⏎ Consumes all of Sora´s MP.,أمر ليميت يطلق ⏎ سحر دونالد القوي فلاير البط. ⏎ يستهلك كل MP لسورا.,104,
+sys,13115,Tornado Fusion,اندماج الإعصار,123,
+sys,13116,"A Limit Command that unleashes Goofy´s ⏎ spinning attack, Whirli-Goof. ⏎ Consumes all of Sora´s MP.",أمر ليميت يطلق هجوم غوفي ⏎ الدوران دور غوفي. ⏎ يستهلك كل MP لسورا.,89,
+sys,13117,Teamwork,تعاون,84,
+sys,13118,"A Limit Command that unleashes Goofy ⏎ and Sora´s joint attack, Knocksmash. ⏎ Consumes all of Sora´s MP.",أمر ليميت يطلق هجوم ⏎ غوفي وسورا المشترك دمار الكسر. ⏎ يستهلك كل MP لسورا.,112,
+sys,13119,Trick Fantasy,فانتازيا الحيلة,124,
+sys,13120,"A Limit Command that unleashes Aladdin ⏎ and Sora´s joint attack, Speedster. ⏎ Consumes all of Sora´s MP.",أمر ليميت يطلق هجوم ⏎ علاء الدين وسورا المشترك الاندفاع. ⏎ يستهلك كل MP لسورا.,113,
+sys,13121,Overdrive,أوفردرايف,147,wide
+sys,13122,"A Limit Command that unleashes Auron ⏎ and Sora´s joint attack, Bushido. ⏎ Consumes all of Sora´s MP.",أمر ليميت يطلق هجوم ⏎ آرون وسورا المشترك بوشيدو. ⏎ يستهلك كل MP لسورا.,100,
+sys,13123,Howling Moon,عواء القمر,110,
+sys,13124,"A Limit Command that unleashes Beast ⏎ and Sora´s joint attack, Twin Howl. ⏎ Consumes all of Sora´s MP.",أمر ليميت يطلق هجوم ⏎ الوحش وسورا المشترك العواءان. ⏎ يستهلك كل MP لسورا.,106,
+sys,13125,"Applause, Applause",تصفيق تصفيق,85,repeat_word
+sys,13126,"A Limit Command that unleashes Jack ⏎ and Sora´s joint attack, Dance Call. ⏎ Consumes all of Sora´s MP.",أمر ليميت يطلق هجوم ⏎ جاك وسورا المشترك نداء الرقص. ⏎ يستهلك كل MP لسورا.,109,
+sys,13127,Dragonblaze,لهيب التنين,108,
+sys,13128,"A Limit Command that unleashes Mulan ⏎ and Sora´s joint attack, Red Rocket. ⏎ Consumes all of Sora´s MP.",أمر ليميت يطلق هجوم ⏎ مولان وسورا المشترك الصاروخ الأحمر. ⏎ يستهلك كل MP لسورا.,126,
+sys,13129,Eternal Session,جلسة الأبدية,99,
+sys,13130,"A Limit Command that unleashes Riku ⏎ and Sora´s joint attack, Session. ⏎ Consumes all of Sora´s MP.",أمر ليميت يطلق هجوم ⏎ ريكو وسورا المشترك الجلسة. ⏎ يستهلك كل MP لسورا.,97,
+sys,13131,King´s Pride,فخر الملك,106,
+sys,13132,"A Limit Command that unleashes Simba ⏎ and Sora´s joint attack, Wildcat. ⏎ Consumes all of Sora´s MP.",أمر ليميت يطلق هجوم ⏎ سيمبا وسورا المشترك القط البري. ⏎ يستهلك كل MP لسورا.,106,
+sys,13133,Treasure Isle,كنز الجزيرة,110,
+sys,13134,"A Limit Command that unleashes Jack ⏎ Sparrow and Sora´s joint attack, Bluff. ⏎ Consumes all of Sora´s MP.",أمر ليميت يطلق هجوم ⏎ جاك سبارو وسورا المشترك الخداع. ⏎ يستهلك كل MP لسورا.,110,
+sys,13135,<0B 5A>Complete Compilement,الإكمال الكامل<0B 5A>,83,
+sys,13136,"A Limit Command that unleashes Tron ⏎ and Sora´s joint attack, Setup. ⏎ Consumes all of Sora´s MP.",أمر ليميت يطلق هجوم ⏎ ترون وسورا المشترك الإعداد. ⏎ يستهلك كل MP لسورا.,101,
+sys,13139,Wisdom,الحكمة,120,
+sys,13170,There are no Abilities.,لا توجد قدرات.,86,
+sys,13171,<09 DE>Items,أغراض<09 DE>,145,wide
+sys,13846,Not Used,مهمل,79,
+sys,13847,Config,الضبط,104,
+sys,13848,Log,سجل,161,wide
+sys,13849,<09 DE>Abilities,قدرات<09 DE>,103,
+sys,13850,<09 E2><09 E3>Switch,تبديل<09 E2><09 E3>,108,
+sys,13861,Pulsing Thunder,ثاندر نابض,81,
+sys,13862,Releases electricity to attack ⏎ nearby enemies. <07 F0 F0 00 80>MP Cost: 10<03>,يطلق الكهرباء لمهاجمة ⏎ الأعداء القريبين. <03>تكلفة MP: <07 F0 F0 00 80>10,123,
+sys,13863,<X 53>Equip,<X 53>تجهيز,126,
+sys,13864,Equip this ability.,تجهيز هذه القدرة.,132,wide
+sys,13865,<X 53>Don´t Equip,<X 53>عدم التجهيز,137,wide
+sys,13866,Don´t equip this ability.,إلغاء تجهيز هذه القدرة.,130,
+sys,13868,Minnie: ⏎ That´s not the way to ⏎ the audience chamber.,ميني: ⏎ ذلك ليس الطريق إلى ⏎ قاعة الاستقبال.,109,
+sys,13870,Minnie: ⏎ We´ve got to hurry to ⏎ the audience chamber.,ميني: ⏎ يجب أن نستعجل إلى ⏎ قاعة الاستقبال.,108,
+sys,13875,Brave Shot,رمية شجاعة,139,wide
+sys,13876,Unleashes a powerful finishing combo ⏎ move and knocks a single target off ⏎ its feet.,تطلق ضربة كومبو نهائية قوية ⏎ تسقط الهدف الواحد على الأرض.,103,
+sys,13877,Brave Beat,نبضة شجاعة,131,wide
+sys,13878,Unleashes a powerful finishing combo ⏎ move that successively attacks several ⏎ targets at once.,تطلق ضربة كومبو نهائية قوية ⏎ تهاجم عدة أهداف بالتعاقب.,95,
+sys,13879,Sonic Strike,الضربة الصوتية,150,wide
+sys,13880,Unleashes a powerful finishing combo ⏎ move that pierces through a single ⏎ target.,تطلق ضربة كومبو نهائية قوية ⏎ تخترق الهدف الواحد.,100,
+sys,13881,Sonic End,نهاية صوتية,156,wide
+sys,13882,Unleashes a powerful finishing combo ⏎ move in a rapid midair attack to ⏎ several targets at once.,تطلق ضربة كومبو نهائية قوية ⏎ بهجوم جوي سريع ⏎ على عدة أهداف دفعة واحدة.,103,
+sys,13883,Wisdom Shot,رمية الحكمة,125,
+sys,13884,Changes the command Attack to Shoot.,يغير أمر الهجوم إلى إطلاق.,90,
+sys,13885,Mobile Action,الفعل المتنقل,128,
+sys,13886,Actions will be enabled while moving.,تتاح الأفعال أثناء التحرك.,86,
+sys,13889,Synch Blade,نصل التزامن,125,
+sys,13890,Equips a Keyblade in each hand. ⏎ The ability of the left hand weapon ⏎ becomes available as well.,يجعل تجهيز كيبلايد في كل يد. ⏎ تصبح قدرة سلاح اليد اليسرى ⏎ متاحة كذلك.,105,
+sys,13891,Magic Haste,تسريع السحر,131,wide
+sys,13892,Shortens magic casting time and ⏎ enables rapid magic combos.,يقلل زمن إطلاق السحر ⏎ ويتيح كومبو سحر سريع.,95,
+sys,13893,Magic Spice,بهارات السحر,140,wide
+sys,13894,Powers up the finishing move of ⏎ magic combos.,يعزز الضربة النهائية ⏎ لكومبو السحر.,76,
+sys,13896,Backshuffle,رجوع خلفي,138,wide
+sys,13951,Rockshatter,حطام الصخر,127,
+sys,13952,Stomp Bomb,قنبلة الدوس,125,
+sys,13953,Air Slash,قطع جوي,138,wide
+sys,13965,Shoot,إطلاق,124,
+sys,13966,Leap,قفزة,146,wide
+sys,13967,"Sora: ⏎ C´mon, into the cave!",سورا: ⏎ هيا إلى الكهف!,80,
+sys,13969,Dispel,تفكيك,125,
+sys,13970,Rodeo,روديو,153,wide
+sys,13971,Grand Cross,التقاطع الكبير,138,wide
+sys,14002,Rapid Blow,ضربة سريعة,145,wide
+sys,14004,Sora: ⏎ Let´s return to Hollow Bastion.,سورا: ⏎ لنعد إلى حصن هولو.,80,
+sys,14006,Sora: ⏎ We have to keep going!,سورا: ⏎ يجب أن نواصل!,80,
+sys,14007,The World of Nothing,عالم العدم,69,
+sys,14008,The World of Nothing,عالم العدم,69,
+sys,14009,Capture,أسر,60,
+sys,14010,Secret Ansem Report 1,تقرير أنسيم السري 1,110,
+sys,14011,A secret report written by Ansem. ⏎ It can be viewed in Jiminy´s Journal.,تقرير سري كتبه أنسيم. ⏎ يمكن مشاهدته في يوميات جيميني.,113,
+sys,14012,Secret Ansem Report 2,تقرير أنسيم السري 2,110,
+sys,14013,A secret report written by Ansem. ⏎ It can be viewed in Jiminy´s Journal.,تقرير سري كتبه أنسيم. ⏎ يمكن مشاهدته في يوميات جيميني.,113,
+sys,14014,Secret Ansem Report 3,تقرير أنسيم السري 3,110,
+sys,14015,A secret report written by Ansem. ⏎ It can be viewed in Jiminy´s Journal.,تقرير سري كتبه أنسيم. ⏎ يمكن مشاهدته في يوميات جيميني.,113,
+sys,14016,Secret Ansem Report 4,تقرير أنسيم السري 4,110,
+sys,14017,A secret report written by Ansem. ⏎ It can be viewed in Jiminy´s Journal.,تقرير سري كتبه أنسيم. ⏎ يمكن مشاهدته في يوميات جيميني.,113,
+sys,14018,Secret Ansem Report 5,تقرير أنسيم السري 5,110,
+sys,14019,A secret report written by Ansem. ⏎ It can be viewed in Jiminy´s Journal.,تقرير سري كتبه أنسيم. ⏎ يمكن مشاهدته في يوميات جيميني.,113,
+sys,14020,Secret Ansem Report 6,تقرير أنسيم السري 6,110,
+sys,14021,A secret report written by Ansem. ⏎ It can be viewed in Jiminy´s Journal.,تقرير سري كتبه أنسيم. ⏎ يمكن مشاهدته في يوميات جيميني.,113,
+sys,14022,Secret Ansem Report 7,تقرير أنسيم السري 7,110,
+sys,14023,A secret report written by Ansem. ⏎ It can be viewed in Jiminy´s Journal.,تقرير سري كتبه أنسيم. ⏎ يمكن مشاهدته في يوميات جيميني.,113,
+sys,14024,Secret Ansem Report 8,تقرير أنسيم السري 8,110,
+sys,14025,A secret report written by Ansem. ⏎ It can be viewed in Jiminy´s Journal.,تقرير سري كتبه أنسيم. ⏎ يمكن مشاهدته في يوميات جيميني.,113,
+sys,14026,Secret Ansem Report 9,تقرير أنسيم السري 9,110,
+sys,14027,A secret report written by Ansem. ⏎ It can be viewed in Jiminy´s Journal.,تقرير سري كتبه أنسيم. ⏎ يمكن مشاهدته في يوميات جيميني.,113,
+sys,14028,Secret Ansem Report 10,تقرير أنسيم السري 10,111,
+sys,14029,A secret report written by Ansem. ⏎ It can be viewed in Jiminy´s Journal.,تقرير سري كتبه أنسيم. ⏎ يمكن مشاهدته في يوميات جيميني.,113,
+sys,14030,Secret Ansem Report 11,تقرير أنسيم السري 11,111,
+sys,14031,A secret report written by Ansem. ⏎ It can be viewed in Jiminy´s Journal.,تقرير سري كتبه أنسيم. ⏎ يمكن مشاهدته في يوميات جيميني.,113,
+sys,14032,Secret Ansem Report 12,تقرير أنسيم السري 12,111,
+sys,14033,A secret report written by Ansem. ⏎ It can be viewed in Jiminy´s Journal.,تقرير سري كتبه أنسيم. ⏎ يمكن مشاهدته في يوميات جيميني.,113,
+sys,14034,Secret Ansem Report 13,تقرير أنسيم السري 13,111,
+sys,14035,A secret report written by Ansem. ⏎ It can be viewed in Jiminy´s Journal.,تقرير سري كتبه أنسيم. ⏎ يمكن مشاهدته في يوميات جيميني.,113,
+sys,14088,Musical,الغناء,100,
+sys,14089,Wildcat,قط بري,135,wide
+sys,14090,High Fang,الناب العالي,149,wide
+sys,14091,X-Claw,مخلب إكس,181,wide
+sys,14092,Proud Roar,العواء الفخم,147,wide
+sys,14093,"Equip weapons and armor, ⏎ or use items in stock.",هيئ الأسلحة والدرع ⏎ أو استخدم أغراض التخزين.,128,
+sys,14094,Equip Guide,دليل التجهيز,133,wide
+sys,14095,Equip Abilities.,تجهيز القدرات.,125,
+sys,14096,Switch Party Members.,تبديل أعضاء الفريق.,110,
+sys,14097,Show Status.,عرض الحالة.,113,
+sys,14098,Read Jiminy´s Journal.,اقرأ يوميات جيميني.,112,
+sys,14099,Change Character settings.,تغيير إعدادات الشخصية.,107,
+sys,14100,Option Guide,دليل الخيارات,135,wide
+sys,14101,Change Game settings.,تغيير إعدادات اللعبة.,119,
+sys,14102,See Obtained Items and Abilities.,عرض الأغراض والقدرات المكتسبة.,124,
+sys,14103,Field Camera,كاميرا الميدان,144,wide
+sys,14104,Right Stick,العصا اليمنى,134,wide
+sys,14105,Navigational Map,خريطة الملاحة,110,
+sys,14106,Vibration,الاهتزاز,105,
+sys,14107,Sound,الصوت,137,wide
+sys,14108,Command Menu,قائمة الأوامر,118,
+sys,14109,Game Mode,وضع اللعبة,133,wide
+sys,14110,Auto,آلي,105,
+sys,14111,Manual,يدوي,115,
+sys,14112,The field camera will move ⏎ automatically. The camera will remain ⏎ fixed when <09 E3> is held down.,ستتحرك كاميرا الميدان ⏎ تلقائيا. عند الضغط المستمر ⏎ على <09 E3> تبقى الكاميرا ثابتة.,85,
+sys,14113,The field camera will remain fixed. ⏎ The camera will move automatically ⏎ when <09 E3> is held down.,ستبقى كاميرا الميدان ثابتة. ⏎ عند الضغط المستمر على <09 E3> ⏎ تتحرك الكاميرا تلقائيا.,95,
+sys,14114,Camera,الكاميرا,132,wide
+sys,14115,Command Menu,قائمة الأوامر,118,
+sys,14116,<0B 57>Set the right stick to control the camera. ⏎ The right stick can be used for commands ⏎ while pressing LT.,اجعل العصا اليمنى تتحكم بالكاميرا<0B 57>. ⏎ يمكن استخدام العصا اليمنى للأوامر ⏎ أثناء ضغط الزر الأيسر.,100,
+sys,14117,<0B 57>Set the right stick for commands. ⏎ The right stick can be used to control ⏎ the camera while pressing LT.,اجعل العصا اليمنى للأوامر<0B 57>. ⏎ يمكن استخدام العصا اليمنى للتحكم ⏎ بالكاميرا أثناء ضغط الزر الأيسر.,109,
+sys,14118,ON,مفعل,291,wide
+sys,14119,OFF,معطل,206,wide
+sys,14120,Display navigational map in the top ⏎ right corner.,تعرض خريطة الملاحة في الزاوية ⏎ العلوى اليمنى.,115,
+sys,14121,The navigational map will not be ⏎ displayed.,لا تظهر خريطة الملاحة.,87,
+sys,14122,ON,مفعل,291,wide
+sys,14124,Enable vibration function of gamepad.,تفعيل اهتزاز يد التحكم.,78,
+sys,14125,Disable vibration function of gamepad.,تعطيل اهتزاز يد التحكم.,77,
+sys,14126,Stereo,ستيريو,127,
+sys,14127,Pro Logic II,برو لوجيك II,133,wide
+sys,14128,Mono,مونو,140,wide
+sys,14129,Play with Stereo sound.,العب بصوت ستيريو.,96,
+sys,14130,Play with Dolby Pro Logic II. ⏎ Enjoy surround sound with a system ⏎ that supports Dolby Pro Logic II.,العب بصوت دولبي برو لوجيك II. ⏎ استمتع بالصوت المحيطي مع نظام ⏎ يدعم دولبي برو لوجيك II.,109,
+sys,14131,Play with Mono sound.,العب بصوت مونو.,97,
+sys,14132,Kingdom Hearts <X 55>,كينغدوم هارتس <X 55>,125,
+sys,14133,Kingdom Hearts,كينغدوم هارتس,129,
+sys,14134,Have the look of the command menu ⏎ change with each world visited.,لتغير مظهر قائمة الأوامر ⏎ مع كل عالم تزوره.,87,
+sys,14135,Keep the look of the original command ⏎ menu.,يبقى مظهر قائمة الأوامر ⏎ الأصلية كما هو.,80,
+sys,14136,Beginner Mode,وضع المبتدئ,118,
+sys,14137,Standard Mode,الوضع العادي,120,
+sys,14138,Proud Mode,وضع برايد,121,
+sys,14139,<0B 5F>Easier gameplay for beginners. ⏎ The Game Mode cannot be changed once ⏎ the game has started.,لعب أسهل للمبتدئين<0B 5F>. ⏎ لا يمكن تغيير وضع اللعبة بعد ⏎ بدء اللعبة.,94,
+sys,14140,"<0B 5F>Balanced gameplay. Not too hard, not too ⏎ easy. The Game Mode cannot be changed ⏎ once the game has started.",متوسط الصعوبة<0B 5F>. ⏎ لا يمكن تغيير وضع اللعبة ⏎ بعد بدء اللعبة.,75,
+sys,14141,<0B 5F>Difficult gameplay with stronger enemies. ⏎ The Game Mode cannot be changed once ⏎ the game has started.,لعب صعب مع أعداء أقوى<0B 5F>. ⏎ لا يمكن تغيير وضع اللعبة ⏎ بعد بدء اللعبة.,80,
+sys,14158,Bolt Reversal,انعكاس الصاعقة,140,wide
+sys,14162,OFF,معطل,206,wide
+sys,14205,Faith,فيث,89,
+sys,14206,Report,التقرير,133,wide
+sys,14207,Apply For Work,تقديم طلب عمل,132,wide
+sys,14208,<0B 50>Listen To The Story,استمع إلى القصة<0B 50>,100,
+sys,14211,Over the Horizon,ما وراء الأفق,102,
+sys,14212,Leaps towards a target in ⏎ a rapid attack with <09 DE>.,اضغط <09 DE> لتقفز نحو الهدف ⏎ في هجوم سريع.,109,
+sys,14213,Omega Finale,أوميغا النهائي,138,wide

@@ -1,0 +1,251 @@
+﻿bar,id,EN,AR,width_pct,flags
+sys,17410,<09 0A><07 FF 00 00 80>INFORMATION<03> ⏎  ⏎ Items from previously visited shops will ⏎ become available at shops in large towns.,<0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ ستتوفر أغراض المتاجر التي زرتها سابقا ⏎ في متاجر المدن الكبيرة.,114,
+sys,17445,Capture,الالتقاط,117,
+sys,17481,Roxas: ⏎ Everyone´s waiting at Market Street!,روكساس: ⏎ الجميع ينتظر في شارع السوق!,98,
+sys,17482,Roxas: ⏎ We´ve gotta buy our tickets!,روكساس: ⏎ يجب أن نشتري تذاكرنا!,98,
+sys,17483,Roxas: ⏎ We need to make some munny ⏎ before we can ride...,روكساس: ⏎ نحتاج بعض المال ⏎ قبل أن نستطيع الركوب...,103,
+sys,17484,"Roxas: ⏎ We´re meeting at the station, right?",روكساس: ⏎ نحن نلتقي في المحطة أليس كذلك?,110,
+sys,17485,Roxas: ⏎ She was headed for the haunted mansion.,روكساس: ⏎ كانت متجهة إلى القصر المهجور.,93,
+sys,17486,Roxas: ⏎ Doesn´t look like she´s around here...,روكساس: ⏎ لا يبدو أنها هنا...,55,
+sys,17487,"HP cannot be restored in this Form! ⏎ Return to normal Form when the Form Gauge hits 0, ⏎ or select Revert when there are no enemies in sight!",لا يمكن استعادة الصحة في هذا الشكل! ⏎ عد إلى الشكل الطبيعي عندما يصل عداد الشكل ⏎ إلى 0 أو اختر الرجوع عندما لا يوجد أعداء بعينهم!,120,
+sys,17550,Materials,المواد,88,
+sys,17551,Current synthesis materials in stock.,مواد التركيب الحالية في المخزون.,113,
+sys,17586,Inside Combo,كومبو داخلي,129,
+sys,17708,Save,حفظ,122,
+sys,17721,Journal,اليومية,122,
+sys,17722,Read Roxas´s Journal.,اقرأ يوميات روكساس.,122,
+sys,17723,Facedown,الانبطاح,96,
+sys,17724,Clash,تصادم,153,wide
+sys,17725,Break Through,الاختراق,72,
+sys,17726,Finish,الختام,135,wide
+sys,17728,"Roxas: ⏎ The tournament´s at the sandlot, right?",روكساس: ⏎ البطولة في ساحة اللعب أليس كذلك?,106,
+sys,17730,Roxas: ⏎ I´ve gotta get to the Struggle ⏎ Tournament!,روكساس: ⏎ يجب أن أصل إلى بطولة ⏎ الصراع!,93,
+sys,17732,Roxas: ⏎ I should check out ⏎ the haunted mansion.,روكساس: ⏎ من الأجدى أن أتفقد ⏎ القصر المهجور.,124,
+sys,17734,Roxas: ⏎ That voice said to go to the mansion...,روكساس: ⏎ ذلك الصوت قال التوجه إلى القصر...,110,
+sys,17736,Roxas: ⏎ Why don´t I take a look inside...?,روكساس: ⏎ لماذا لا ألقي نظرة من الداخل...?,118,
+sys,17738,Sora: ⏎ I´ve got stuff to do.,سورا: ⏎ لدي ما يجب فعله.,106,
+sys,17740,Sora: ⏎ I´ve got to get on that train!,سورا: ⏎ يجب أن أركب تلك القطار!,103,
+sys,17742,Sora: ⏎ We´d better not--not with ⏎ Pete there.,سورا: ⏎ من الأفضل ألا نذهب--ليس ⏎ مع بيت هناك.,113,
+sys,17752,Bounce,ارتداد,127,
+sys,17753,LV,مستوى,355,wide
+sys,17754,<0B 5A>Experience,الخبرة<0B 5A>,75,
+sys,17755,Next LV,التالي,83,
+sys,17756,HP,HP,,same_as_en
+sys,17757,MP,MP,,same_as_en
+sys,17758,AP,AP,,same_as_en
+sys,17759,Drive Gauge,عداد الدرايف,146,wide
+sys,17760,Strength,القوة,81,
+sys,17761,Magic,سحر,100,
+sys,17762,Defense,الدفاع,109,
+sys,17763,Fire <0B 50>Resistance,مقاومة<0B 50> فاير<0B 64>,104,
+sys,17764,<0B 5A>Blizzard <0B 50>Resistance,مقاومة<0B 50> بليزارد<0B 5A><0B 64>,100,
+sys,17765,<0B 5A>Thunder <0B 50>Resistance,مقاومة<0B 50> ثاندر<0B 5A><0B 64>,91,
+sys,17766,Dark <0B 50>Resistance,مقاومة<0B 50> الظلام<0B 64>,114,
+sys,17767,Bonus LV,مس المكافأة,166,wide
+sys,17768,Summon LV,مس الاستدعاء,152,wide
+sys,17769,Form LV,مس الشكل,142,wide
+sys,17774,"<0B 5A>The character´s current Level. Values for ⏎ attributes such as Strength, Magic, Defense, ⏎ and AP will increase when leveling up.",المستوى الحالي للشخصية. تزداد القيم<0B 5A> ⏎ مثل القوة والسحر والدفاع ⏎ ومقدار AP عند الارتقاء.,99,
+sys,17775,Total amount of experience earned. ⏎ Experience is earned when enemies ⏎ are defeated.,إجمالي مقدار الخبرة المكتسبة. ⏎ تكتسب الخبرة عند ⏎ القضاء على الأعداء.,107,
+sys,17776,Experience needed to reach the next ⏎ Level.,الخبرة المطلوبة للوصول إلى ⏎ المستوى التالي.,96,
+sys,17777,Current HP and maximum HP.,الصحة الحالية والقصوى.,99,
+sys,17778,Current MP and maximum MP.,مقدار MP الحالي والقصوى.,112,
+sys,17779,A necessity for equipping Abilities. ⏎ Increase maximum AP value by equipping ⏎ certain Accessories.,شرط لتجهيز القدرات. ⏎ ارفع مقدار AP الأقصى بتجهيز ⏎ ملحقات معينة.,90,
+sys,17780,A gauge used for Drives and Summons. ⏎ Obtain orbs to fill the gauge.,عداد يستخدم للاستدعاء والدرايف. ⏎ اجمع الكرات لملء العداد.,110,
+sys,17781,"The character´s current Strength. ⏎ The higher the number, the more ⏎ damage is dealt to enemies.",قوة الشخصية الحالية. ⏎ كلما زاد الرقم زاد الضرر ⏎ المسبب للأعداء.,93,
+sys,17782,"The character´s current Magic Skill. ⏎ The higher the number, the more damage ⏎ is dealt to enemies through Magic.",مهارة السحر الحالية. ⏎ كلما زاد الرقم زاد الضرر ⏎ المسبب للأعداء بالسحر.,77,
+sys,17783,"The character´s current Defense. ⏎ The higher the number, the less ⏎ damage is taken from enemies.",دفاع الشخصية الحالي. ⏎ كلما زاد الرقم قل الضرر ⏎ المتلقى من الأعداء.,93,
+sys,17784,"<0B 5F>Resistance against fire-based attacks. ⏎ The higher the number, the less damage ⏎ is taken from these attacks.",مقاومة هجمات النار<0B 5F>. ⏎ كلما زاد الرقم قل الضرر ⏎ المتلقى من هذه الهجمات.,77,
+sys,17785,"<0B 5F>Resistance against blizzard-based ⏎ attacks. The higher the number, the ⏎ less damage is taken from these attacks.",مقاومة هجمات البرد<0B 5F>. ⏎ كلما زاد الرقم قل الضرر ⏎ المتلقى من هذه الهجمات.,75,
+sys,17786,"<0B 5F>Resistance against thunder-based ⏎ attacks. The higher the number, the ⏎ less damage is taken from these attacks.",مقاومة هجمات الصاعقة<0B 5F>. ⏎ كلما زاد الرقم قل الضرر ⏎ المتلقى من هذه الهجمات.,75,
+sys,17787,"<0B 5F>Resistance against darkness-based ⏎ attacks. The higher the number, the less ⏎ damage is taken from these attacks.",مقاومة هجمات الظلام<0B 5F>. ⏎ كلما زاد الرقم قل الضرر ⏎ المتلقى من هذه الهجمات.,75,
+sys,17788,"<0B 5A>A Level which increases by defeating certain ⏎ enemies. HP and MP increases, and special ⏎ powers are gained by leveling up.",مستوى يزداد بالقضاء على أعداء<0B 5A> ⏎ معينين. تزداد الصحة ومقدار MP ⏎ ومكاسب خاصة مع الارتقاء.,90,
+sys,17789,"Summons Level. The Summon Gauge ⏎ increases, and the summon´s magic skills ⏎ increase by leveling up.",مستوى الاستدعاء. يزداد عداد ⏎ الاستدعاء وتزداد مهارات سحر ⏎ الاستدعاء مع الارتقاء.,92,
+sys,17790,"Valor Form Level. Time spent ⏎ transformed becomes longer, and ⏎ Abilities become stronger by leveling up.",مستوى الشكل الشجاع. يطول زمن ⏎ التحول وتقوى القدرات ⏎ مع الارتقاء.,98,
+sys,17791,"Wisdom Form Level. Time spent ⏎ transformed becomes longer, and ⏎ Abilities become stronger by leveling up.",مستوى الشكل الحكيم. يطول زمن ⏎ التحول وتقوى القدرات ⏎ مع الارتقاء.,98,
+sys,17792,"Master Form Level. Time spent ⏎ transformed becomes longer, and ⏎ Abilities become stronger by leveling up.",مستوى الشكل المتقن. يطول زمن ⏎ التحول وتقوى القدرات ⏎ مع الارتقاء.,98,
+sys,17793,"Final Form Level. Time spent ⏎ transformed becomes longer, and ⏎ Abilities become stronger by leveling up.",مستوى الشكل النهائي. يطول زمن ⏎ التحول وتقوى القدرات ⏎ مع الارتقاء.,99,
+sys,17795,Form Gauge,عداد الشكل,126,
+sys,17796,"For each attack dealt to the enemy ⏎ in Valor Form, 1 point of experience ⏎ is gained.",عن كل هجوم توجهه للعدو ⏎ في الشكل الشجاع تكتسب ⏎ نقطة خبرة واحدة.,94,
+sys,17797,Experience necessary to level up. ⏎ The Level cap depends on the number of ⏎ Forms obtained.,الخبرة المطلوبة للارتقاء. ⏎ حد المستوى يعتمد على عدد ⏎ الأشكال المتحققة.,89,
+sys,17798,"The Form gauge for Valor Form. ⏎ The longer the gauge, the longer ⏎ the time spent transformed.",عداد الشكل الشجاع. ⏎ كلما طال العداد طال ⏎ زمن التحول.,78,
+sys,17799,"For each Heartless defeated in Wisdom ⏎ Form, 1 point of experience is gained.",عن كل بلا قلب تقضي عليه في الشكل ⏎ الحكيم تكتسب نقطة خبرة واحدة.,112,
+sys,17800,Experience necessary to level up. ⏎ The Level cap depends on the number of ⏎ Forms obtained.,الخبرة المطلوبة للارتقاء. ⏎ حد المستوى يعتمد على عدد ⏎ الأشكال المتحققة.,89,
+sys,17801,"The Form gauge for Wisdom Form. ⏎ The longer the gauge, the longer ⏎ the time spent transformed.",عداد الشكل الحكيم. ⏎ كلما طال العداد طال ⏎ زمن التحول.,75,
+sys,17802,"<0B 50>Each small drive orb gives 1 point of experience, ⏎ and one big drive orb gives 3 points of experience ⏎ for each drive prize obtained in Master Form.",كل كرة درايف صغيرة تعطي نقطة خبرة<0B 50> ⏎ وكل كرة درايف كبيرة تعطي 3 نقاط خبرة ⏎ عن كل جائزة درايف في الشكل المتقن.,100,
+sys,17803,Experience necessary to level up. ⏎ The Level cap depends on the number of ⏎ Forms obtained.,الخبرة المطلوبة للارتقاء. ⏎ حد المستوى يعتمد على عدد ⏎ الأشكال المتحققة.,89,
+sys,17804,"The Form gauge for Master Form. ⏎ The longer the gauge, the longer ⏎ the time spent transformed.",عداد الشكل المتقن. ⏎ كلما طال العداد طال ⏎ زمن التحول.,76,
+sys,17805,"For each Nobody defeated in Final Form, ⏎ 1 point of experience is gained.",عن كل لا أحد تقضي عليه في الشكل ⏎ النهائي تكتسب نقطة خبرة واحدة.,107,
+sys,17806,Experience necessary to level up. ⏎ The Level cap depends on the number of ⏎ forms obtained.,الخبرة المطلوبة للارتقاء. ⏎ حد المستوى يعتمد على عدد ⏎ الأشكال المتحققة.,89,
+sys,17807,"The Form gauge for Final Form. ⏎ The longer the gauge, the longer ⏎ the time spent transformed.",عداد الشكل النهائي. ⏎ كلما طال العداد طال ⏎ زمن التحول.,78,
+sys,17808,Summon Gauge,عداد الاستدعاء,137,wide
+sys,17809,Stitch,ستيتش,111,
+sys,17810,Genie,جيني,115,
+sys,17811,Peter Pan,بيتر بان,97,
+sys,17812,Chicken Little,تشيكن ليتل,92,
+sys,17813,"While summoning, 1 experience is gained ⏎ for every 1 point consumed by ⏎ the Summon Gauge.",أثناء الاستدعاء تكتسب 1 خبرة ⏎ عن كل نقطة يستهلكها ⏎ عداد الاستدعاء.,89,
+sys,17814,Experience necessary to level up. ⏎ The Level cap depends on the number of ⏎ Summons obtained.,الخبرة المطلوبة للارتقاء. ⏎ حد المستوى يعتمد على عدد ⏎ الاستدعاءات المتحققة.,89,
+sys,17815,"Your current Summon Gauge. ⏎ The longer the gauge, the longer ⏎ the summon stays active.",عداد الاستدعاء الحالي. ⏎ كلما طال العداد طال بقاء ⏎ الاستدعاء نشطا.,96,
+sys,17816,Stitch will parry most enemy attacks. ⏎ A wise summon to use for defense.,ستيتش يصد معظم هجمات الأعداء. ⏎ استدعاء مفيد للدفاع.,105,
+sys,17817,Genie has many Limit attacks and ⏎ can transform into various Forms.,لدى جيني هجمات ليميت كثيرة ⏎ ويمكنه التحول إلى أشكال مختلفة.,122,
+sys,17818,"<0B 55>Peter Pan will help Sora fight against enemies. ⏎ If Sora falls during battle, Tinker Bell will be ⏎ able to revive him one time.",بيتر بان يساعد سورا ضد الأعداء<0B 55>. ⏎ إذا سقط سورا في المعركة تستطيع ⏎ تيكر بيل إحياءه مرة واحدة.,88,
+sys,17819,Chicken Little can stop enemy ⏎ movements and bring distant enemies in ⏎ close to attack!,تشيكن ليتل يستطيع إيقاف حركة ⏎ الأعداء وجذب الأعداء ⏎ البعيدين إلى القرب!,93,
+sys,17834,Valor LV,مس الشجاعة,170,wide
+sys,17835,Wisdom LV,مس الحكمة,128,
+sys,17836,Master LV,مس الإتقان,132,wide
+sys,17837,Final LV,مس النهائي,165,wide
+sys,17838,<0D>´s Status.,<0D>´s Status.,,same_as_en
+sys,17839,<0D>´s Form Status.,<0D>´s Form Status.,,same_as_en
+sys,17840,Summons Status. A friend will come and ⏎ help Sora when called upon. ⏎ <07 F0 F0 00 80>Drive points consumed: 3<03>,حالة الاستدعاء. سيأتي صديق ⏎ لمساعدة سورا عند استدعائه. ⏎ نقاط الدرايف المستهلكة: <07 F0 F0 00 80>3,90,
+sys,17841,Summon,استدعاء,133,wide
+sys,17847,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,17849,Sora: ⏎ We need the password to ⏎ the DTD!,سورا: ⏎ نحتاج كلمة السر ⏎ لرمز دي تي دي!,84,
+sys,17851,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,17853,<0B 5A>Summon Gauge Powered Up!,عداد الاستدعاء ارتفع<0B 5A>!,104,
+sys,17854,Session,الجلسة,104,
+sys,17855,Last Saber,النصل الأخير,133,wide
+sys,17856,Dark Cannon,مدفع مظلم,123,
+sys,17857,<X 5E> Blades,نصال <X 5E>,96,
+sys,17858,Master Hearts,القلوب المتقنة,124,
+sys,17859,All´s End,نهاية الكل,144,wide
+sys,17862,Call Over,نداء,60,
+sys,17904,Move Left,حرك يسارا,133,wide
+sys,17905,Move Right,تحريك لليمين,149,wide
+sys,17921,Wee Tornado,الإعصار الصغير,141,wide
+sys,17922,<0B 5F>Giant Tornado,الإعصار العملاق<0B 5F>,139,wide
+sys,17925,Twin Counter,الرد التوأمي,121,
+sys,17926,Sonic Dive,غطسة صوتية,153,wide
+sys,17992,AP,AP,,same_as_en
+sys,17993,S<0B 50>trength,القوة<0B 50>,81,
+sys,17994,Magic,سحر,100,
+sys,17995,Defense,الدفاع,109,
+sys,17996,Ability,القدرة,138,wide
+sys,17997,Fire <0B 50>Resistance,مقاومة<0B 50> فاير<0B 64>,104,
+sys,17998,<0B 5A>Blizzard <0B 50>Resistance,مقاومة<0B 50> بليزارد<0B 5A><0B 64>,100,
+sys,17999,<0B 5A>Thunder <0B 50>Resistance,مقاومة<0B 50> ثاندر<0B 5A><0B 64>,91,
+sys,18000,Dark <0B 50>Resistance,مقاومة<0B 50> الظلام<0B 64>,114,
+sys,18001,Fire,فاير,133,wide
+sys,18002,Blizzard,بليزارد,110,
+sys,18003,Thunder,ثاندر,87,
+sys,18004,Dark,دارك,155,wide
+sys,18007,Finishing Blast,الانفجار الختامي,134,wide
+sys,18008,Deals damage to nearby enemies ⏎ at the end of a combo with <09 DE>.,اضغط <09 DE> في نهاية الكومبو ⏎ لتوجه ضررا للأعداء القريبين.,113,
+sys,18009,Combo Upper,كومبو صاعد,126,
+sys,18010,Knocks a target into the air ⏎ during a combo with <09 DE>.,اضغط <09 DE> أثناء الكومبو ⏎ لقذف الهدف في الهواء.,102,
+sys,18011,Aerial Impulse,الاندفاع الجوي,133,wide
+sys,18012,Tackles and attacks a target ⏎ in midair during a combo with <09 DE>.,اضغط <09 DE> أثناء الكومبو ⏎ لترتطم بالهدف في الهواء وتهاجمه.,136,wide
+sys,18013,Retaliating Smash,الضربة الانتقامية,114,
+sys,18014,"When knocked down, quickly regains ⏎ balance and attacks with <09 DE>.",اضغط <09 DE> عند السقوط ⏎ لتستعيد توازنك بسرعة وتهاجم.,108,
+sys,18019,Sora: ⏎ Something´s up at the sandlot!,سورا: ⏎ حدث غريب في ساحة اللعب!,111,
+sys,18021,Sora: ⏎ Something´s up at the sandlot!,سورا: ⏎ حدث غريب في ساحة اللعب!,111,
+sys,18023,Sora: ⏎ Gotta get to the station ⏎ on the double!,سورا: ⏎ يجب أن أسرع إلى المحطة!,130,
+sys,18025,Sora: ⏎ Something´s up at the sandlot!,سورا: ⏎ حدث غريب في ساحة اللعب!,111,
+sys,18027,Sora: ⏎ Gotta get to the station ⏎ on the double!,سورا: ⏎ يجب أن أسرع إلى المحطة!,130,
+sys,18029,Sora: ⏎ Something´s up at the sandlot!,سورا: ⏎ حدث غريب في ساحة اللعب!,111,
+sys,18031,Sora: ⏎ Gotta get to the station ⏎ on the double!,سورا: ⏎ يجب أن أسرع إلى المحطة!,130,
+sys,18033,"Sora: ⏎ Hmm, not this way...",سورا: ⏎ همم ليست هذه الطريقة...,144,wide
+sys,18035,"Sora: ⏎ Hmm, not this way...",سورا: ⏎ همم ليست هذه الطريقة...,144,wide
+sys,18037,"Sora: ⏎ Hmm, not this way...",سورا: ⏎ همم ليست هذه الطريقة...,144,wide
+sys,18039,"Sora: ⏎ Hmm, not this way...",سورا: ⏎ همم ليست هذه الطريقة...,144,wide
+sys,18043,Promise Charm,تعويذة الوعد,124,
+sys,18044,"A charm from Kairi. It represents ⏎ her wish to meet Sora again, ⏎ no matter how far apart they are.",تعويذة من كايري. ترمز ⏎ إلى رغبتها في لقاء سورا مجددا ⏎ بغض النظر عن بعد المسافة.,112,
+sys,18050,Sora: ⏎ Let´s hurry up and find Tron!,سورا: ⏎ هرول لنعثر على ترون بسرعة!,129,
+sys,18052,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,18054,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,18056,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,18058,Sora: ⏎ Tron´s waiting for us!,سورا: ⏎ ترون ينتظرنا!,75,
+sys,18060,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,18062,Sora: ⏎ Let´s get the energy core ⏎ online first.,سورا: ⏎ لنبدأ تفعيل نواة الطاقة أولا.,136,wide
+sys,18064,Sora: ⏎ The terminal´ll get us back ⏎ to Hollow Bastion.,سورا: ⏎ الطرفية ستعيدنا ⏎ إلى هولو باستيون.,85,
+sys,18066,Sora: ⏎ The MCP´s disabled the elevators!,سورا: ⏎ المصاعد معطلة من إم سي بي!,111,
+sys,18068,Eclipse,الكسوف,132,wide
+sys,18069,Magna Storm,عاصفة ماجنا,121,
+sys,18071,Approach,الاقتراب,112,
+sys,18110,Running Tackle,التدخل الجاري,126,
+sys,18111,Unleashes a rapid tackle on a single ⏎ target while attacking during Dash.,يطلق تدخلا سريعا على هدف ⏎ واحد أثناء الهجوم أثناء الاندفاع.,117,
+sys,18112,Dash,اندفاع,185,wide
+sys,18113,Moves rapidly while pressing down <09 DE>.,أثناء الضغط على <09 DE> يتحرك بسرعة.,109,
+sys,18120,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Insufficient free space on system storage. ⏎ At least 69 KB of free space is required ⏎ to save your game.,                                   <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ لا توجد مساحة كافية في تخزين النظام. ⏎ يلزم 69 كيلوبايت على الأقل من المساحة ⏎ لحفظ لعبتك.,97,dblspace
+sys,18122,Loot Launch,إطلاق الغنيائم,144,wide
+sys,18201,Vault,القفز,130,
+sys,18202,Kickspring,نابض الركل,130,
+sys,18398,Harbor,الميناء,118,
+sys,18399,Isla de Muerta: Rock Face,إيسلا دي مويرتا: الواجهة الصخرية,163,wide
+sys,18402,Drive?,درايف?,139,wide
+sys,18465,Final Arcana,أسرار النهاية,132,wide
+sys,18466,"Handling the Keyblade with great skill, ⏎ unleashes a powerful finishing combo ⏎ move to a single target.",بإتقان عظيم في التعامل مع الكيبلايد ⏎ يطلق ضربة كومبو نهائية قوية ⏎ على هدف واحد.,117,
+sys,18467,Final Strike,ضربة نهائية,123,
+sys,18468,"While spinning in midair, deals ⏎ a powerful finishing combo move ⏎ to a single target.",وأنت تدور في الهواء ⏎ توجه ⏎ ضربة كومبو نهائية قوية ⏎ إلى هدف واحد.,94,
+sys,18469,Final Arts,فنون النهاية,157,wide
+sys,18470,Unleashes a powerful finishing combo ⏎ move to get rid of several targets ⏎ at once.,يطلق ضربة كومبو نهائية ⏎ لإزالة عدة أهداف ⏎ دفعة واحدة.,80,
+sys,18471,Crime & Punishment,الجريمة والعقاب,105,
+sys,18472,A Keyblade held in each hand ⏎ unleashes powerful magic spells.,كيبلايد في كل يد يطلق ⏎ تعويذات سحرية قوية.,86,
+sys,18480,Sora: ⏎ Leon will have all the details.,سورا: ⏎ ليون سيعرف كل التفاصيل.,103,
+sys,18565,Sunset Hill Map,خريطة تل الغروب,146,wide
+sys,18566,A map of the area.,خريطة المنطقة.,97,
+sys,18567,Mansion Map,خريطة القصر,130,
+sys,18568,A map of the area.,خريطة المنطقة.,97,
+sys,18569,Tower Map,خريطة البرج,145,wide
+sys,18570,A map of the area.,خريطة المنطقة.,97,
+sys,18571,DH Map,خريطة دي إتش,265,wide
+sys,18572,A map of the area.,خريطة المنطقة.,97,
+sys,18573,Sora: ⏎ We´ve got to get rid of ⏎ these Heartless!,سورا: ⏎ يجب أن نتخلص من ⏎ هؤلاء بلا قلب!,90,
+sys,18575,There are no items.,لا توجد أغراض.,97,
+sys,18585,Dark Aura,هالة مظلمة,138,wide
+sys,18586,Dark Shield,الدرع المظلم,150,wide
+sys,18592,Stunt Dodge,تفادي حركي,135,wide
+sys,18595,Hit,إصابة,231,wide
+sys,18682,Munny Pouch,كيس المال,101,
+sys,18683,"A pouch from the King. ⏎ There´s 5,000 munny inside for ⏎ some reason.","كيس من الملك. ⏎ يوجد بداخله 5,000 من المال ⏎ لأسباب غير معروفة.",115,
+sys,18692,Castle That Never Was Map,خريطة القصر الذي لم يكن,118,
+sys,18693,A map of the area.,خريطة المنطقة.,97,
+sys,18755,Sora: ⏎ We can´t interrupt training!,سورا: ⏎ لا يمكننا مقاطعة التدريب!,111,
+sys,18756,Sora: ⏎ We can´t interrupt training!,سورا: ⏎ لا يمكننا مقاطعة التدريب!,111,
+sys,18757,Sora: ⏎ We can´t interrupt training!,سورا: ⏎ لا يمكننا مقاطعة التدريب!,111,
+sys,18758,Sora: ⏎ We can´t interrupt training!,سورا: ⏎ لا يمكننا مقاطعة التدريب!,111,
+sys,18774,The Old Mansion,القصر القديم,102,
+sys,18808,Sora: ⏎ We´ve got to log in to ⏎ that computer!,سورا: ⏎ يجب أن نسجل الدخول إلى ⏎ ذلك الحاسوب!,144,wide
+sys,18810,Sora: ⏎ We have to go restart ⏎ the terminal!,سورا: ⏎ يجب أن نذهب لإعادة تشغيل ⏎ الطرفية!,148,wide
+sys,18812,Sora: ⏎ The terminal should take us ⏎ to the game grid!,سورا: ⏎ الطرفية ستأخذنا ⏎ إلى شبكة اللعب!,68,
+sys,18855,Sora: ⏎ I can´t ride my skateboard there.,سورا: ⏎ لا أستطيع ركوب لوح التزلج هنا.,114,
+sys,18856,Sora: ⏎ I can´t ride my skateboard there.,سورا: ⏎ لا أستطيع ركوب لوح التزلج هنا.,114,
+sys,18857,Sora: ⏎ I can´t ride my skateboard there.,سورا: ⏎ لا أستطيع ركوب لوح التزلج هنا.,114,
+sys,18858,Sora: ⏎ I can´t ride my skateboard there.,سورا: ⏎ لا أستطيع ركوب لوح التزلج هنا.,114,
+sys,18859,Sora: ⏎ I can´t ride my skateboard there.,سورا: ⏎ لا أستطيع ركوب لوح التزلج هنا.,114,
+sys,18860,Sora: ⏎ I can´t ride my skateboard there.,سورا: ⏎ لا أستطيع ركوب لوح التزلج هنا.,114,
+sys,18861,Sora: ⏎ I can´t ride my skateboard there.,سورا: ⏎ لا أستطيع ركوب لوح التزلج هنا.,114,
+sys,18862,Sora: ⏎ I can´t ride my skateboard there.,سورا: ⏎ لا أستطيع ركوب لوح التزلج هنا.,114,
+sys,18928,Sora: ⏎ Wait for Will´s signal!,سورا: ⏎ انتظر إشارة ويل!,94,
+sys,18950,Flip,قلبة,144,wide
+sys,18953,Slicer,الشفرة,146,wide
+sys,18954,Escablade,سيف الدرع,144,wide
+sys,18955,Sky Scraper,جارف السماء,129,
+sys,18964,Capsule Prize,جائزة الكبسولة,139,wide
+sys,18965,Rare Capsule,كبسولة نادرة,129,
+sys,18966,Limited Capsule,كبسولة محدودة,131,wide
+sys,18967,Prime Capsule,الكبسولة المميزة,150,wide
+sys,18994,Roxas: ⏎ I´m not about to run away!,روكساس: ⏎ لن أتهرب!,44,
+sys,18995,Roxas: ⏎ I´m not about to run away!,روكساس: ⏎ لن أتهرب!,44,
+sys,19005,Roxas: ⏎ Gotta follow him!,روكساس: ⏎ يجب أن نلحق به!,118,
+sys,19007,Sora: ⏎ This isn´t the right train.,سورا: ⏎ هذا ليس القطار الصحيح.,106,
+sys,19011,<0B 5A>Return Medallions,ميداليات العودة<0B 5A>,116,
+sys,19030,Read The Book,اقرأ الكتاب,94,
+sys,19031,Sora: ⏎ We´ve got to get rid of ⏎ these hyenas!,سورا: ⏎ يجب أن نتخلص من ⏎ هؤلاء الضباع!,90,
+sys,19032,Sora: ⏎ We´ve got to get rid of ⏎ these hyenas!,سورا: ⏎ يجب أن نتخلص من ⏎ هؤلاء الضباع!,90,
+sys,19033,Sora: ⏎ We have to capture them!,سورا: ⏎ يجب أن نمسكهم!,78,
+sys,19073,Roll Up,التدوير,134,wide
+sys,19074,Spin Burst,انفجار الدوران,184,wide
+sys,19113,Sora: ⏎ We can´t let Pete get away!,سورا: ⏎ لا يمكننا السماح لبيت بالفرار!,121,
+sys,19114,Sora: ⏎ I´m not about to run away!,سورا: ⏎ لن أتهرب!,44,
+sys,19115,Sora: ⏎ I´m not about to run away!,سورا: ⏎ لن أتهرب!,44,
+sys,19116,Sora: ⏎ I´m not about to run away!,سورا: ⏎ لن أتهرب!,44,
+sys,19209,Proceed,المتابعة,126,
+sys,19310,Riding Shot,ضربة الركوب,148,wide
+sys,19311,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,19314,Roxas: ⏎ Let´s get to Sunset Hill!,روكساس: ⏎ لنذهب إلى تل الغروب!,111,
+sys,19316,Sora: ⏎ I can´t enter yet. Are they ⏎ working on it?,سورا: ⏎ لا أستطيع الدخول بعد. هل ⏎ يقومون بالعمل عليه?,119,
+sys,19318,Sora: ⏎ We have to hurry to the mansion!,سورا: ⏎ يجب أن نهرول إلى القصر!,94,
+sys,19321,Meteor Rain,مطر النيازك,123,
+sys,19341,Unequip armor.,أزل الدروع.,111,
+sys,19342,Unequip accessories.,أزل الملحقات.,87,
+sys,19343,Valor Form Status. ⏎ A Form specializing in physical attacks. ⏎ <07 F0 F0 00 80>Drive points consumed: 3<03>,حالة شكل الشجاعة. ⏎ شكل متخصص في الهجمات الجسدية. ⏎ نقاط الدرايف المستهلكة: <07 F0 F0 00 80>3,105,
+sys,19344,Wisdom Form Status. ⏎ A Form specializing in magic attacks. ⏎ <07 F0 F0 00 80>Drive points consumed: 3<03>,حالة شكل الحكمة. ⏎ شكل متخصص في هجمات السحر. ⏎ نقاط الدرايف المستهلكة: <07 F0 F0 00 80>3,99,

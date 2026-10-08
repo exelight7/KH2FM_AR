@@ -1,0 +1,251 @@
+﻿bar,id,EN,AR,width_pct,flags
+sys,1097,<X 53>None,<X 53>بلا,71,
+sys,1098,There are no items.,لا توجد أغراض.,97,
+sys,1099,Items,أغراض,145,wide
+sys,1100,Equip,تجهيز,136,wide
+sys,1101,Abilities,قدرات,103,
+sys,1102,Party,فريق,120,
+sys,1103,Status,الحالة,108,
+sys,1104,Journal,يوميات,119,
+sys,1105,Customize,تخصيص,78,
+sys,1106,Option,خيارات,139,wide
+sys,1107,Make a Selection.,اختر ما تريد.,97,
+sys,1109,Stock,تخزين,146,wide
+sys,1110,Use,استخدم,284,wide
+sys,1111,Throw away,إلقاء,51,
+sys,1112,Not Used,مهمل,79,
+sys,1113,Select item.,اختر الغرض.,123,
+sys,1114,There are no items.,لا توجد أغراض.,97,
+sys,1115,Weapons,الأسلحة,107,
+sys,1116,Change main weapon.,تغيير السلاح الرئيسي.,121,
+sys,1117,Valor,الشجاعة,187,wide
+sys,1118,Change Sub-Weapon used in Valor Form.,تغيير السلاح الفرعي في شكل الشجاعة.,117,
+sys,1119,Master,الإتقان,126,
+sys,1120,Change Sub-Weapon used in Master Form.,تغيير السلاح الفرعي في شكل الإتقان.,110,
+sys,1121,Final,الأخير,157,wide
+sys,1122,Change Sub-Weapon used in Final Form.,تغيير السلاح الفرعي في شكل الأخير.,112,
+sys,1123,Armor,الدرع,127,
+sys,1124,Change Armor.,تغيير الدرع.,109,
+sys,1125,Accessories,الإكسسوارات,130,
+sys,1126,Change Accessories.,تغيير الإكسسوارات.,115,
+sys,1127,Items,أغراض,145,wide
+sys,1128,Change Items.,تغيير الأغراض.,126,
+sys,1129,Unequip items.,إلغاء التجهيز.,115,
+sys,1130,"<09 0A><07 FF 00 00 80>INFORMATION<03> ⏎  If the <09 0C><07 00 FF 00 80>auto-reload<03> function is turned ⏎  off for this item, all equipped items of  ⏎  the same type will be unequipped also. ⏎  Turn <09 0C><07 00 FF 00 80>auto-reload<03> function Off?","<0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  إذا أوقفت وظيفة <09 0C><03>إعادة تلقائية<07 00 FF 00 80> لهذا الغرض, ⏎  فسيزال تجهيز كل الأغراض ⏎  من النوع نفسه أيضا. ⏎  هل تريد إيقاف وظيفة <09 0C><03>إعادة تلقائية?<07 00 FF 00 80>",131,wide
+sys,1131,Select Party Member.,اختر عضو الفريق.,103,
+sys,1132,Switch Party Member.,تبديل عضو الفريق.,108,
+sys,1133,<07 F0 F0 00 80>Party Members have been switched.<03>,تم تبديل أعضاء الفريق<07 F0 F0 00 80>.,83,
+sys,1134,Party In,الانضمام,121,
+sys,1135,Party Out,المغادرة,116,
+sys,1136,Goofy´s equipment has been put in stock.,تم حفظ تجهيز غوفي في التخزين.,102,
+sys,1137,Sparrow´s equipment has been put in stock.,تم حفظ تجهيز جاك في التخزين.,90,
+sys,1138,Auron´s equipment has been put in stock.,تم حفظ تجهيز آرون في التخزين.,101,
+sys,1139,Auron cannot be switched at this time.,لا يمكن تبديل آرون في الوقت الحالي.,121,
+sys,1140,Mulan cannot be switched at this time.,لا يمكن تبديل مولان في الوقت الحالي.,122,
+sys,1141,Aladdin cannot be switched at this time.※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※Beast cannot be switched at this time.,لا يمكن تبديل علاء الدين في الوقت الحالي.※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※لا يمكن تبديل الوحش في الوقت الحالي.,116,
+sys,1142,Party Members cannot be switched and Summons cannot be ⏎ used until the fight is settled.,لا يمكن تبديل أعضاء الفريق ولا استخدام الاستدعاءات ⏎ حتى ينتهي القتال.,112,
+sys,1144,Jack cannot be switched at this time.,لا يمكن تبديل جاك في الوقت الحالي.,119,
+sys,1145,Simba cannot be switched at this time.,لا يمكن تبديل سيمبا في الوقت الحالي.,117,
+sys,1146,Tron cannot be switched at this time.,لا يمكن تبديل ترون في الوقت الحالي.,123,
+sys,1147,Riku cannot be switched at this time.,لا يمكن تبديل ريكو في الوقت الحالي.,122,
+sys,1148,Ping will be joining the party and cannot be ⏎ switched out for some time.,سينضم بينغ للفريق ولا يمكن إخراجه ⏎ لبعض الوقت.,100,
+sys,1153,MP Charge,شحن MP,88,
+sys,1154,Auto-Reload,إعادة تلقائية,142,wide
+sys,1155,Battle Style,أسلوب القتال,135,wide
+sys,1156,Abilities,القدرات,124,
+sys,1158,<09 1D>Technic Attack,هجوم تقني<09 1D>,100,
+sys,1159,<09 1D>Target Attack,هجوم الهدف<09 1D>,117,
+sys,1160,<09 1D>Huddle Attack,هجوم التجمع<09 1D>,126,
+sys,1161,<09 1D>Party Attack,هجوم الفريق<09 1D>,133,wide
+sys,1162,<09 1D>Sora Attack,هجوم سورا<09 1D>,128,
+sys,1163,<09 1D>Relentless Attack,هجوم متواصل<09 1D>,104,
+sys,1164,Twin Howl,العواءان,113,
+sys,1165,Stalwart Fang,الناب المتين,99,
+sys,1166,Outcry,الصراخ,125,
+sys,1167,Last Howl,آخر عواء,130,
+sys,1168,Bushido,بوشيدو,128,
+sys,1169,Shooting Star,الشهاب,57,
+sys,1170,Banishing Blade,النصل المطرد,104,
+sys,1171,Spiral,اللولب,128,
+sys,1172,Red Rocket,صاروخ أحمر,149,wide
+sys,1173,Flametongue,لسان اللهب,108,
+sys,1174,Heat Lance,رمح الحرارة,150,wide
+sys,1175,Red Meteor,النيزك الأحمر,150,wide
+sys,1176,Whirli-Goof,دور غوفي,126,
+sys,1177,Whirli-Goofra,دور غوفي را,133,wide
+sys,1178,Whirli-Goofga,دور غوفي جا,135,wide
+sys,1179,Ride the Wind,ركوب الريح,110,
+sys,1180,Soar,حلق,112,
+sys,1181,Cyclone,الإعصار,124,
+sys,1182,Guard,حماية,133,wide
+sys,1183,Kickback,الارتداد,126,
+sys,1184,Full Swing,ضربة كاملة,140,wide
+sys,1185,Jump!,اقفز!,114,
+sys,1186,Evade,تفادي,137,wide
+sys,1187,Dog Paddle,سباحة كلبية,133,wide
+sys,1188,Push,ادفع,141,wide
+sys,1189,Push Harder,ادفع أقوى,118,
+sys,1190,Waken,أيقظ,96,
+sys,1191,Release,تحرير,101,
+sys,1192,Reversal,انعكاس,96,
+sys,1193,Bump,صدم,129,
+sys,1194,Meteor Spike,شوكة النيزك,122,
+sys,1195,Slide,انزلق,140,wide
+sys,1196,Vertigo Toss,رمي الدوخة,126,
+sys,1197,Hang On,تمسك,83,
+sys,1198,Let Go,أفلت,82,
+sys,1199,Connect,التوصيل,125,
+sys,1200,Bat Cry,صرخة خفاش,194,wide
+sys,1201,Lance Tug,سحب الرمح,141,wide
+sys,1202,Learn,تعلم,106,
+sys,1203,Jump,القفز,133,wide
+sys,1204,Wake Up!,استيقظ!,96,
+sys,1205,Get Up!,قم!,60,
+sys,1206,Charge,شحن,82,
+sys,1207,Step Vault,خطوة الوثب,146,wide
+sys,1208,Slingshot,المقلاع,100,
+sys,1209,Release,تحرير,101,
+sys,1210,Catch,امسك,118,
+sys,1211,Pendulum Round,جولة البندول,113,
+sys,1212,Release,تحرير,101,
+sys,1213,Light,نور,91,
+sys,1214,Restore,استعادة,126,
+sys,1215,Sprinkle,رش,50,
+sys,1216,Vanquish,اهزم,78,
+sys,1217,Finish,أنهي,100,
+sys,1218,Open The Door,افتح الباب,84,
+sys,1219,Enter The Book,ادخل الكتاب,96,
+sys,1220,Leave The Book,اغادر الكتاب,100,
+sys,1221,Depart,اغادر,110,
+sys,1222,Warp,تحول,147,wide
+sys,1223,Shop,متجر,137,wide
+sys,1224,Approach,اقترب,82,
+sys,1225,Move,تحرك,149,wide
+sys,1226,Ask For Help,اطلب مساعدة,128,
+sys,1227,Approach,اقترب,82,
+sys,1228,Persuade,إقناع,74,
+sys,1229,Report,أبلغ,77,
+sys,1230,<0B 53>Ask About Missions,اسأل عن المهام<0B 53>,106,
+sys,1231,<0B 5A>Examine The Book,افحص الكتاب<0B 5A>,83,
+sys,1232,Approach,اقترب,82,
+sys,1233,Tinker With It,أصلحه,51,
+sys,1234,Approach,اقترب,82,
+sys,1235,Approach,اقترب,82,
+sys,1236,<0B 5A>Enter Tournament,ادخل البطولة<0B 5A>,91,
+sys,1237,<0B 5A>Enter Tournament,ادخل البطولة<0B 5A>,91,
+sys,1238,Stop,قف,85,
+sys,1239,<0B 4B>Go To The Tournament,انطلق إلى البطولة<0B 4B>,95,
+sys,1240,<0B 5A>Enter Tournament,ادخل البطولة<0B 5A>,91,
+sys,1241,Help Her Up,ساعدها,75,
+sys,1242,Train,تدرب,136,wide
+sys,1243,Approach,اقترب,82,
+sys,1244,Punish,عاقب,102,
+sys,1245,Greet,تحية,100,
+sys,1246,Greet,التحية,128,
+sys,1247,Rescue,أنقذ,83,
+sys,1248,<0B 55>Ask For The Bottle,اطلب الزجاجة<0B 55>,86,
+sys,1249,Greet,التحية,128,
+sys,1250,Cheer Up,شجع,63,
+sys,1251,Approach,اقترب,82,
+sys,1252,Question,اسأل,71,
+sys,1253,Interrogate,استجوب,81,
+sys,1254,Depart,اغادر,110,
+sys,1256,Ask For Help,اطلب مساعدة,128,
+sys,1257,Make Toys,اصنع ألعاب,135,wide
+sys,1258,<0B 5A>Access Computer,اتصل بالحاسوب<0B 5A>,107,
+sys,1259,<0B 5A>Access Computer,اتصل بالحاسوب<0B 5A>,107,
+sys,1284,Summon,استدعاء,133,wide
+sys,1285,Party,فريق,120,
+sys,1286,Save,حفظ,122,
+sys,1287,Limit,ليميت,126,
+sys,1288,Fire,فاير,133,wide
+sys,1289,Fira,فايرا,156,wide
+sys,1290,Firaga,فايراغا,146,wide
+sys,1291,Thunder,ثاندر,87,
+sys,1292,Thundara,ثاندرا,86,
+sys,1293,Thundaga,ثاندراجا,119,
+sys,1294,Blizzard,بليزارد,110,
+sys,1295,Blizzara,بليزاردا,121,
+sys,1296,Blizzaga,بليزاردجا,145,wide
+sys,1297,Cure,كور,117,
+sys,1298,Cura,كورا,137,wide
+sys,1299,Curaga,كوراغا,134,wide
+sys,1300,Magnet,ماغنت,110,
+sys,1301,Magnera,ماغنيرا,112,
+sys,1302,Magnega,ماغنيجا,112,
+sys,1303,Reflect,ريفلكت,125,
+sys,1304,Reflera,ريفليرا,121,
+sys,1305,Reflega,ريفليجا,121,
+sys,1308,Stitch,ستيتش,111,
+sys,1309,Genie,الجني,128,
+sys,1311,Sora,سورا,141,wide
+sys,1312,Donald,دونالد,133,wide
+sys,1313,Goofy,غوفي,140,wide
+sys,1314,Mickey,ميكي,102,
+sys,1315,Auron,آرون,137,wide
+sys,1316,Ping,بينغ,119,
+sys,1317,Mulan,مولان,147,wide
+sys,1318,Aladdin,علاء الدين,194,wide
+sys,1319,Jack,جاك,123,
+sys,1320,Beast,الوحش,144,wide
+sys,1321,Jack,جاك,123,
+sys,1322,Simba,سيمبا,110,
+sys,1323,Tron,ترون,161,wide
+sys,1324,Riku,ريكو,161,wide
+sys,1325,Roxas,روكساس,176,wide
+sys,1331,Sora: ⏎ I don´t think Aladdin´s this way.,سورا: ⏎ لا أظن أن علاء الدين في هذا الطريق.,144,wide
+sys,1333,Sora: ⏎ The peddler´s shop isn´t that way...,سورا: ⏎ متجر البائع ليس في ذلك الطريق...,113,
+sys,1335,Sora: ⏎ The peddler´s shop isn´t this way...,سورا: ⏎ متجر البائع ليس في هذا الطريق...,113,
+sys,1337,"Iago: ⏎ Hey, what about me!?",آياغو: ⏎ وماذا عنني!?,73,
+sys,1339,Sora: ⏎ We should talk to the Beast first.,سورا: ⏎ علينا التحدث مع الوحش أولا.,101,
+sys,1341,Sora: ⏎ We should talk to the Beast first.,سورا: ⏎ علينا التحدث مع الوحش أولا.,101,
+sys,1343,Sora: ⏎ We should talk to the Beast first.,سورا: ⏎ علينا التحدث مع الوحش أولا.,101,
+sys,1345,Sora: ⏎ We should talk to the Beast first.,سورا: ⏎ علينا التحدث مع الوحش أولا.,101,
+sys,1347,Sora: ⏎ I don´t think it´s going to open.,سورا: ⏎ لا أظن أنه سيفتح.,66,
+sys,1349,Sora: ⏎ It came from over there!,سورا: ⏎ جاء من هناك!,65,
+sys,1351,Sora: ⏎ They´re headed into town!,سورا: ⏎ متجهون إلى البلدة!,93,
+sys,1353,Sora: ⏎ Let´s go check out the cave.,سورا: ⏎ هيا نفحص الكهف.,67,
+sys,1357,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,1359,Sora: ⏎ Wait for Will´s signal!,سورا: ⏎ انتظروا إشارة ويل!,106,
+sys,1361,Sora: ⏎ It sounded like it came from ⏎ the port.,سورا: ⏎ بدا وكأنه جاء من ⏎ الميناء.,76,
+sys,1363,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,1365,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,1367,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,1369,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,1371,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,1373,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,1375,Minnie: ⏎ That´s not the way to ⏎ the audience chamber.,ميني: ⏎ ذلك ليس الطريق إلى ⏎ قاعة الاستقبال.,109,
+sys,1377,"Sora: ⏎ Gotta get to the audience ⏎ chamber, fast!",سورا: ⏎ يجب أن نصل إلى قاعة ⏎ الاستقبال بسرعة!,105,
+sys,1379,Sora: ⏎ Maybe the Queen should ⏎ come with me.,سورا: ⏎ ربما يجب أن تأتي ⏎ الملكة معي.,92,
+sys,1381,Sora: ⏎ Let´s go into the book ⏎ and see Pooh!,سورا: ⏎ هيا ندخل الكتاب ⏎ ونرى بوه!,86,
+sys,1385,Sora: ⏎ ₓₓₓ,سورا: ⏎ ₓₓₓ,135,wide
+sys,1387,Sora: ⏎ ₓₓₓ,سورا: ⏎ ₓₓₓ,135,wide
+sys,1389,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,1391,Sora: ⏎ Scar must still be around...,سورا: ⏎ لا بد أن سكار ما زال هنا...,118,
+sys,1393,Sora: ⏎ But that´s Rafiki´s private space.,سورا: ⏎ لكن تلك المساحة الخاصة لرفايكي.,122,
+sys,1395,Sora: ⏎ Creepy...let´s stay out of there.,سورا: ⏎ مريب... لا ندخل هناك.,82,
+sys,1397,Sora: ⏎ Everyone´s waiting at Pride Rock!,سورا: ⏎ الجميع ينتظر عند صخرة الكبرياء!,121,
+sys,1399,Sora: ⏎ We can´t go to the savannah.,سورا: ⏎ لا يمكننا الذهاب إلى السافانا.,116,
+sys,1401,Sora: ⏎ We can´t go into the gorge.,سورا: ⏎ لا يمكننا دخول المضيق.,103,
+sys,1403,Sora: ⏎ Simba sure could use some ⏎ cheering up.,سورا: ⏎ سيمبا بحاجة إلى بعض ⏎ التشجيع.,94,
+sys,1405,Sora: ⏎ How about we try that musical first?,سورا: ⏎ ما رأيكم نجرب المشهد الغنائي أولا?,117,
+sys,1407,"Sora: ⏎ C´mon, let´s follow Flounder!",سورا: ⏎ هيا نتبع فلاندر!,65,
+sys,1408,Sora: ⏎ This isn´t the right way.,سورا: ⏎ هذا ليس الطريق الصحيح.,114,
+sys,1410,Ping: ⏎ What about our assignment?,بينغ: ⏎ وماذا عن مهمتنا?,77,
+sys,1412,Mushu: ⏎ Shan-Yu went into that cave!,موشو: ⏎ شان-يو دخل ذلك الكهف!,103,
+sys,1414,"Sora: ⏎ Hmm, looks like we can´t ⏎ go this way.",سورا: ⏎ همم يبدو أننا لا نستطيع ⏎ الذهاب من هنا.,116,
+sys,1416,Sora: ⏎ Let´s go see Dr. Finklestein.,سورا: ⏎ هيا نذهب لرؤية د. فينكلشتاين.,126,
+sys,1418,Sora: ⏎ Zero knows where to go!,سورا: ⏎ زيرو يعرف إلى أين نذهب!,130,
+sys,1420,Sora: ⏎ Oogie´s blocked this way off!,سورا: ⏎ أوغي أغلق هذا الطريق!,102,
+sys,1421,Oogie´s blocked this way off!,أوغي أغلق هذا الطريق!,102,
+sys,1422,Sora: ⏎ Let´s go get those three jokers!,سورا: ⏎ هيا نلحق بتلك الثلاثة المهرجين!,114,
+sys,1424,Sora: ⏎ We can´t just go barging in.,سورا: ⏎ لا يمكننا الدخول فجأة.,100,
+sys,1426,Sora: ⏎ It won´t open. Is he working ⏎ on something?,سورا: ⏎ لن يفتح. هل يعمل على ⏎ شيء ما?,98,
+sys,1428,Sora: ⏎ We can´t get into the lab.,سورا: ⏎ لا يمكننا الدخول إلى المختبر.,138,wide
+sys,1430,Sora: ⏎ I don´t think Pooh is over ⏎ this way.,سورا: ⏎ لا أظن أن بوه من ⏎ هذا الجانب.,86,
+sys,1432,Sora: ⏎ I´d better hear what everyone ⏎ has to say.,سورا: ⏎ الأفضل أن أسمع ما يقوله ⏎ الجميع.,104,
+sys,1433,Sora: ⏎ I need to bring everyone along!,سورا: ⏎ يجب أن أحضر الجميع معي!,105,
+sys,1434,Sora: ⏎ Pete isn´t this way!,سورا: ⏎ بيت ليس في هذا الطريق!,144,wide
+sys,1436,Sora: ⏎ We´ll lose Pete if we ⏎ don´t hurry!,سورا: ⏎ سنفقد بيت إذا لم ⏎ نستعجل!,99,
+sys,1438,<09 0A>Please reinsert the Kingdom Hearts <X 55> game disc.,أعد إدخال قرص لعبة كينغدوم هارتس <X 55>.<09 0A>,102,
+sys,1444,<0A 0E><0B 5A>Examine The Table ⏎ <0B 50>Listen to the story ⏎ <0B 50>Listen To The Story ⏎ <0B 55>ask about Missions ⏎ <0B 5A>Examine The Book ⏎ <0B 5A>Access Computer ⏎ <0B 5A>Examine The Wall ⏎ <0B 5A>Go To The Rescue ⏎ <0B 4B>Go To The Tournament ⏎ <0B 5A>Enter Tournament ⏎ <0B 55>Ask For The Bottle ⏎ <0B 5A>Access Computer ⏎ <0B 5A>Return Medallions ⏎ <10>,<0A 0E><0B 5A>Examine The Table ⏎ <0B 50>Listen to the story ⏎ <0B 50>Listen To The Story ⏎ <0B 55>ask about Missions ⏎ <0B 5A>Examine The Book ⏎ <0B 5A>Access Computer ⏎ <0B 5A>Examine The Wall ⏎ <0B 5A>Go To The Rescue ⏎ <0B 4B>Go To The Tournament ⏎ <0B 5A>Enter Tournament ⏎ <0B 55>Ask For The Bottle ⏎ <0B 5A>Access Computer ⏎ <0B 5A>Return Medallions ⏎ <10>,,same_as_en

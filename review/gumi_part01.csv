@@ -1,0 +1,251 @@
+﻿bar,id,EN,AR,width_pct,flags
+gumi,6219,Treasure List,قائمة الكنوز,119,
+gumi,6220,Material/G,مادة/غ,92,
+gumi,6221,Aero/G,انسياب/غ,149,wide
+gumi,6222,Flat Helm/G,خوذة مسطحة/غ,178,wide
+gumi,6223,Bubble Helm/G,خوذة فقاعية/غ,147,wide
+gumi,6224,Solid Helm/G,خوذة صلبة/غ,141,wide
+gumi,6225,Sphere Helm/G,خوذة كروية/غ,139,wide
+gumi,6226,Bridge/G,جسر/غ,105,
+gumi,6227,Big Bridge/G,جسر كبير/غ,118,
+gumi,6228,Vernier/G,فرنير/غ,100,
+gumi,6229,Booster/G,معزز/غ,105,
+gumi,6230,Thruster/G,دافع/غ,86,
+gumi,6231,Mini-Propeller/G,مروحة صغيرة/غ,137,wide
+gumi,6232,Propeller/G,مروحة/غ,115,
+gumi,6233,<0B 5F>Screw Propeller/G,مروحة لولبية/غ<0B 5F>,119,
+gumi,6234,Sonic Turbo/G,تيربو صوتي/غ,123,
+gumi,6235,Rotor/G,دوار/غ,114,
+gumi,6236,Large Rotor/G,دوار كبير/غ,106,
+gumi,6237,Tempest/G,عاصفة/غ,115,
+gumi,6238,Hurricane/G,إعصار/غ,92,
+gumi,6239,Typhoon/G,تايفون/غ,116,
+gumi,6240,Cyclone/G,سيكلون/غ,142,wide
+gumi,6241,Vortex/G,دوامة/غ,125,
+gumi,6242,Storm/G,زوبعة/غ,133,wide
+gumi,6243,Angel/G,ملاك/غ,121,
+gumi,6244,Darkness/G,ظلام/غ,93,
+gumi,6245,Shield/G,درع/غ,107,
+gumi,6246,Large Shield/G,درع كبير/غ,102,
+gumi,6247,Shell/G,صدفة/غ,148,wide
+gumi,6248,Large Shell/G,صدفة كبيرة/غ,138,wide
+gumi,6249,Fire/G,فاير/غ,121,
+gumi,6250,Fira/G,فيرا/غ,118,
+gumi,6251,Firaga/G,فيراغا/غ,122,
+gumi,6252,Blizzard/G,بليزارد/غ,111,
+gumi,6253,Blizzara/G,بليزارا/غ,103,
+gumi,6254,Blizzaga/G,بليزاغا/غ,108,
+gumi,6255,Gravity/G,غرافيتي/غ,130,
+gumi,6256,Gravira/G,غرافيرا/غ,123,
+gumi,6257,Graviga/G,غرافيغا/غ,128,
+gumi,6258,Thunder/G,ثاندر/غ,93,
+gumi,6259,Thundara/G,ثانداررا/غ,109,
+gumi,6260,Thundaga/G,ثانداغا/غ,101,
+gumi,6261,Comet/G,مذنب/غ,120,
+gumi,6262,Meteor/G,نيزك/غ,101,
+gumi,6263,Ultima/G,ألتيما/غ,111,
+gumi,6264,Drill/G,مثقاب/غ,149,wide
+gumi,6265,Saw/G,منشار/غ,157,wide
+gumi,6266,Orichalcum/G,أوريكالكوم/غ,136,wide
+gumi,6267,Masamune/G,ماساموني/غ,130,
+gumi,6268,Excalibur/G,إكسكاليبر/غ,124,
+gumi,6269,Infinity/G,لانهاية/غ,112,
+gumi,6270,Neon Orb/G,كرة نيون/غ,132,wide
+gumi,6271,Neon Bar/G,عمود نيون/غ,157,wide
+gumi,6272,Wheel/G,عجلة/غ,131,wide
+gumi,6273,Parabola/G,قطع مكافئ/غ,161,wide
+gumi,6274,Antenna/G,هوائي/غ,109,
+gumi,6275,Radar/G,رادار/غ,117,
+gumi,6276,Round Light/G,ضوء مستدير/غ,135,wide
+gumi,6277,Square Light/G,ضوء مربع/غ,108,
+gumi,6278,Crown/G,تاج/غ,92,
+gumi,6279,Shuriken/G,شوريكن/غ,128,
+gumi,6280,Gungnir/G,غونغنير/غ,133,wide
+gumi,6281,Boomerang/G,بوميرانغ/غ,111,
+gumi,6282,Moon Ring/G,حلقة قمر/غ,128,
+gumi,6283,Strike/G,ضربة/غ,117,
+gumi,6284,Bomb/G,قنبلة/غ,125,
+gumi,6287,Drain/G,امتصاص/غ,149,wide
+gumi,6303,Draw,سحب,136,wide
+gumi,6307,Heal Upgrade,ترقية الشفاء,124,
+gumi,6311,Auto-Life,حياة تلقائية,159,wide
+gumi,6314,DUMMY,تجريبي,118,
+gumi,6315,"Material Gummies can be modified ⏎ to meet your design needs. ⏎ Add bevels, curves, or pipes to ⏎ Gummies to increase the Ship´s HP.",يمكن تعديل غامي المادة ⏎ لتناسب احتياجات تصميمك. ⏎ أضف الحواف أو المنحنيات أو الأنابيب ⏎ للغامي لزيادة HP السفينة.,128,
+gumi,6316,Material Gummies can be modified ⏎ to meet your design needs. ⏎ Use Aero Gummies to increase the ⏎ Ship´s mobility.,يمكن تعديل غامي المادة ⏎ لتناسب احتياجات تصميمك. ⏎ استخدم غامي الانسياب لزيادة ⏎ مرونة حركة السفينة.,112,
+gumi,6329,Cockpit Gummies,غامي قمرة القيادة,152,wide
+gumi,6330,Wing Gummies,غامي الأجنحة,127,
+gumi,6331,Engine Gummies,غامي المحركات,129,
+gumi,6332,<0B 5A>Projectile Gummies,غامي القذائف<0B 5A>,89,
+gumi,6333,Slash Gummies,غامي القطع,105,
+gumi,6334,Shield Gummies,غامي الدروع,114,
+gumi,6335,<0B 5C>Optional Gummies,غامي الاختياري<0B 5C>,111,
+gumi,6336,Lock-on Gummies,غامي التثبيت,92,
+gumi,6337,Assign Abilities,تعيين القدرات,117,
+gumi,6339,Gummi Lumps,كتل الغامي,105,
+gumi,6340,Shape,تشكيل,146,wide
+gumi,6341,Copy and Place,نسخ ووضع,99,
+gumi,6342,Edit,تعديل,205,wide
+gumi,6343,Paint,طلاء,112,
+gumi,6344,Undo,تراجع,174,wide
+gumi,6345,Redo,إعادة,173,wide
+gumi,6346,Change Mode,تغيير الوضع,131,wide
+gumi,6349,Save Blueprint,حفظ المخطط,115,
+gumi,6350,Exit,خروج,200,wide
+gumi,6351,Bevelled Gummies,غامي مشطوف,109,
+gumi,6352,Curved Gummies,غامي منحني,101,
+gumi,6353,Aero Gummies,غامي الانسياب,123,
+gumi,6354,Place Gummies,وضع الغامي,112,
+gumi,6355,Add Bevels,إضافة حواف,155,wide
+gumi,6356,Add Curves,إضافة منحنيات,171,wide
+gumi,6357,Add a Point,إضافة نقطة,128,
+gumi,6358,Copy Normal,نسخ عادي,107,
+gumi,6359,Copy Mirrored,نسخ معكوس,115,
+gumi,6365,Change Material Gummies into various ⏎ shapes before placing them.,حول غامي المادة إلى أشكال ⏎ مختلفة قبل وضعه.,101,
+gumi,6366,Add bevels to a Material Gummi to ⏎ increase the Ship´s HP.,أضف حوافا إلى غامي المادة ⏎ لزيادة HP السفينة.,102,
+gumi,6367,Add curves to a Material Gummi to ⏎ greatly increase the Ship´s HP.,أضف منحنيات إلى غامي المادة ⏎ لزيادة HP السفينة كثيرا.,109,
+gumi,6368,Add aerodynamics to a Material Gummi ⏎ to increase the Ship´s mobility.,أضف انسيابية إلى غامي المادة ⏎ لزيادة مرونة حركة السفينة.,96,
+gumi,6369,Place multiple Material Gummies at ⏎ once by lumping them together.,ضع عدة قطع من غامي المادة ⏎ معا بتجميعها في كتلة.,115,
+gumi,6372,Change the shape of Gummies you´ve ⏎ already placed.,غير شكل الغامي الذي ⏎ وضعته مسبقا.,80,
+gumi,6373,Add Bevels to the selected Material ⏎ Gummi.,أضف حوافا إلى غامي المادة ⏎ المحدد.,102,
+gumi,6374,Add Curves to the selected Material ⏎ Gummi.,أضف منحنيات إلى غامي المادة ⏎ المحدد.,109,
+gumi,6375,Taper the selected Material Gummi in ⏎ a chosen direction.,اجعل غامي المادة المحدد مدببا ⏎ في الاتجاه المختار.,114,
+gumi,6376,Clone one or more Gummies you´ve ⏎ placed and place the copy.,انسخ غامي واحدا أو أكثر ⏎ وضعته وضع النسخة.,96,
+gumi,6377,Copy the Gummi pattern as is.,انسخ نمط الغامي كما هو.,106,
+gumi,6378,Flip the Gummi pattern before ⏎ copying it.,اقلب نمط الغامي ⏎ قبل نسخه.,68,
+gumi,6379,Move Gummi blocks you´ve placed or ⏎ remove them from the assembly.,حرك كتل الغامي التي وضعتها ⏎ أو أزلها من التركيب.,107,
+gumi,6380,Apply color to Gummi blocks.,طبق اللون على كتل الغامي.,121,
+gumi,6381,Go back one step and restore the ⏎ assembly to its previous condition.,ارجع خطوة واحدة واستعد ⏎ التركيب إلى حالته السابقة.,109,
+gumi,6382,Undo the last change and restore the ⏎ assembly to its previous condition.,تراجع عن آخر تغيير واستعد ⏎ التركيب إلى حالته السابقة.,106,
+gumi,6383,Switch to an Editor Mode designed for ⏎ placing Deco-Gummies.,انتقل إلى وضع المحرر المخصص ⏎ لوضع غامي الزينة.,102,
+gumi,6384,Customize the Editor to ⏎ your own personal preferences.,خصص المحرر ⏎ حسب تفضيلاتك الشخصية.,100,
+gumi,6386,Stop Gummi Ship assembly and exit ⏎ the Editor.,أوقف تركيب سفينة الغامي ⏎ واخرج من المحرر.,95,
+gumi,6387,They increase the Ship´s overall power.,تزيد القوة الإجمالية للسفينة.,96,
+gumi,6388,Place Deco-Gummies that increase the ⏎ Gummi Ship´s mobility.,ضع غامي الزينة الذي يزيد ⏎ مرونة حركة سفينة الغامي.,96,
+gumi,6389,Place Deco-Gummies that boost the ⏎ Gummi Ship´s speed.,ضع غامي الزينة الذي يعزز ⏎ سرعة سفينة الغامي.,99,
+gumi,6390,Place Deco-Gummies that fire when ⏎ <09 DA> is pressed.,ضع غامي الزينة الذي يطلق النار ⏎ عند الضغط على <09 DA>.,116,
+gumi,6391,Place Deco-Gummies that slash nearby ⏎ targets using <09 DF>.,ضع غامي الزينة الذي يقطع الأهداف ⏎ القريبة باستخدام <09 DF>.,123,
+gumi,6392,Place Deco-Gummies that can block ⏎ enemy fire.,ضع غامي الزينة الذي يستطيع صد ⏎ نيران العدو.,124,
+gumi,6393,Don´t forget to include rare and unique ⏎ Deco-Gummies.,لا تنس تضمين غامي الزينة ⏎ النادر والفريد.,82,
+gumi,6394,Place Deco-Gummies that lock-on and ⏎ fire when <09 DA> is held down.,ضع غامي الزينة الذي يثبت ويطلق ⏎ عند الضغط المستمر على <09 DA>.,115,
+gumi,6395,Allocate Ability Units.,وزع وحدات القدرة.,120,
+gumi,6396,Switch to an Editor Mode designed for ⏎ placing Material Gummies.,انتقل إلى وضع المحرر المخصص ⏎ لوضع غامي المادة.,102,
+gumi,6399,Start,ابدأ,82,
+gumi,6400,Gummi Editor,محرر الغامي,121,
+gumi,6404,Select a Mission Level to fly.,اختر مستوى مهمة للطيران.,125,
+gumi,6415,Gummi Ships,سفن الغامي,121,
+gumi,6416,Teeny Ships,السفن الصغيرة,158,wide
+gumi,6422,World Map,خريطة العالم,166,wide
+gumi,6424,Offense,الهجوم,136,wide
+gumi,6425,Cost,التكلفة,205,wide
+gumi,6426,HP,HP,,same_as_en
+gumi,6427,Speed,السرعة,174,wide
+gumi,6428,Mobility,المرونة,128,
+gumi,8434,Attracts Orbs that are normally out ⏎ of reach.,يجذب الكرات التي عادة تكون ⏎ بعيدة المنال.,104,
+gumi,8438,Increases the recovery effect of HP ⏎ Orbs.,يزيد تأثير استعادة ⏎ كرات HP.,68,
+gumi,8442,Restores HP after the first time ⏎ it drops to 0.,يستعيد HP بعد أول مرة ⏎ ينخفض فيها إلى 0.,97,
+gumi,8450,Blast off and take the Gummi Route!,انطلق واسلك مسار الغامي!,90,
+gumi,8451,Assemble and upgrade Gummi Ships.,ركب وطور سفن الغامي.,88,
+gumi,8466,<0B 54>Build Ships with Gummi blocks you´ve collected.,ابن سفنا بكتل الغامي التي جمعتها<0B 54>.,93,
+gumi,8467,<0B 54>Build Teeny Ships that will defend your Gummi Ship.,ابن سفنا صغيرة تدافع عن سفينة الغامي<0B 54>.,101,
+gumi,8473,Return to the World Map.,العودة إلى خريطة العالم.,130,
+gumi,13976,Formation Change,تغيير التشكيل,98,
+gumi,14075,Continue,متابعة,106,
+gumi,14076,Retry,إعادة,144,wide
+gumi,14077,Rapid Fire,إطلاق سريع,149,wide
+gumi,14078,Semi-Auto,شبه تلقائي,131,wide
+gumi,14079,Full Auto,تلقائي كامل,155,wide
+gumi,14080,Y Axis,المحور ص,194,wide
+gumi,14081,Normal,عادي,106,
+gumi,14082,Reverse,عكسي,110,
+gumi,14083,Camera,الكاميرا,135,wide
+gumi,14084,Normal,عادي,106,
+gumi,14085,Reverse,عكسي,110,
+gumi,14086,Gummi Menu,قائمة الغامي,137,wide
+gumi,14087,World Map,خريطة العالم,166,wide
+gumi,14280,Settings,الإعدادات,151,wide
+gumi,14281,Weapon Gummies,غامي الأسلحة,108,
+gumi,14282,<0B 5A>Movement Gummies,غامي الحركة<0B 5A>,90,
+gumi,14283,<0B 5A>Auxiliary Gummies,غامي المساعد<0B 5A>,102,
+gumi,14289,Continue,متابعة,106,
+gumi,14290,Gummi Menu,قائمة الغامي,137,wide
+gumi,14291,World Map,خريطة العالم,166,wide
+gumi,14648,Save the Gummi Ship you´ve built to a ⏎ Blueprint.,احفظ سفينة الغامي التي بنيتها ⏎ كمخطط.,98,
+gumi,14649,Place Deco-Gummies designed for ⏎ offense.,ضع غامي الزينة المصمم ⏎ للهجوم.,96,
+gumi,14650,Place Deco-Gummies designed for ⏎ movement.,ضع غامي الزينة المصمم ⏎ للحركة.,96,
+gumi,14651,Place Deco-Gummies designed for ⏎ special applications.,ضع غامي الزينة المصمم ⏎ للاستخدامات الخاصة.,96,
+gumi,14681,Cannon Upgrade,ترقية المدفع,115,
+gumi,14682,Laser Upgrade,ترقية الليزر,107,
+gumi,14683,Slash Upgrade,ترقية القطع,113,
+gumi,14684,Medal Converter,محول الميداليات,139,wide
+gumi,14685,Auto-Regen,تجديد تلقائي,149,wide
+gumi,14686,Auto-Counter,رد تلقائي,87,
+gumi,14687,Cost Converter,محول التكلفة,125,
+gumi,14688,Active Formation,تشكيل نشط,79,
+gumi,14689,<0B 5F>Patterned Skins A,أغلفة منقوشة أ<0B 5F>,120,
+gumi,14690,<0B 5F>Patterned Skins B,أغلفة منقوشة ب<0B 5F>,129,
+gumi,14691,Realistic Skins,أغلفة واقعية,126,
+gumi,14692,Decal Skins,أغلفة ملصقات,166,wide
+gumi,14693,Variety Skins A,أغلفة متنوعة أ,131,wide
+gumi,14694,Variety Skins B,أغلفة متنوعة ب,141,wide
+gumi,14695,Neon Skins A,أغلفة نيون أ,131,wide
+gumi,14696,Neon Skins B,أغلفة نيون ب,143,wide
+gumi,14697,Cost Limit Upgrade,ترقية حد التكلفة,117,
+gumi,14699,Teeny System,نظام السفن الصغيرة,194,wide
+gumi,14700,AP Limit Upgrade,ترقية حد AP,93,
+gumi,14701,Mushroom Model,طراز الفطر,88,
+gumi,14702,Highwind α Model,طراز هايويند ألفا,127,
+gumi,14703,PuPu Model,طراز بوبو,115,
+gumi,14704,Tonberry Model,طراز تونبيري,114,
+gumi,14705,Moogle Model,طراز موغل,121,
+gumi,14706,<0B 5F>Mandragora <0B 64>Model,طراز <0B 5F>ماندراغورا<0B 5F><0B 64>,122,
+gumi,14707,Chocobo Model,طراز شوكوبو,127,
+gumi,14708,Cactuar Model,طراز كاكتوار,118,
+gumi,14709,Cait Sith Model,طراز كيت سيث,119,
+gumi,14710,Fenrir Model,طراز فنرير,110,
+gumi,14711,Kingdom Model,طراز المملكة,125,
+gumi,14712,Secret Model,طراز سري,109,
+gumi,15148,<0B 5F>Teeny Limit Upgrade,ترقية حد السفن الصغيرة<0B 5F>,157,wide
+gumi,15181,Increases the damage dealt by cannon ⏎ attacks.,يزيد الضرر الذي تسببه ⏎ هجمات المدفع.,77,
+gumi,15182,Increases the damage dealt by laser ⏎ attacks.,يزيد الضرر الذي تسببه ⏎ هجمات الليزر.,81,
+gumi,15183,Increases the damage dealt by Slash ⏎ Gummi attacks.,يزيد الضرر الذي تسببه ⏎ هجمات غامي القطع.,80,
+gumi,15184,Causes Medal Orbs to appear more ⏎ often than HP Orbs.,يجعل كرات الميداليات تظهر ⏎ أكثر من كرات HP.,104,
+gumi,15185,Restores HP automatically over time.,يستعيد HP تلقائيا مع الوقت.,95,
+gumi,15186,Fires lasers automatically when hit by ⏎ enemy attacks.,يطلق الليزر تلقائيا عند التعرض ⏎ لهجمات العدو.,99,
+gumi,15187,Allows you to leave one Teeny Ship ⏎ behind and add its cost to ⏎ the Gummi Ship.,يسمح لك بترك سفينة صغيرة ⏎ وإضافة تكلفتها إلى ⏎ سفينة الغامي.,105,
+gumi,15188,Allows you to change the formation of ⏎ Teeny Ships with <09 E2> and <09 E3>.,يسمح لك بتغيير تشكيل ⏎ السفن الصغيرة ب <09 E2> و <09 E3>.,74,
+gumi,15189,Allows you to power the Teeny Ship ⏎ into an active formation with <09 DE>.,يسمح لك بدفع السفينة الصغيرة ⏎ إلى تشكيل نشط ب <09 DE>.,111,
+gumi,15196,Material/G ₓ 5,غامي المادة (5),125,
+gumi,15197,Material/G ₓ 10,غامي المادة (10),125,
+gumi,15198,Material/G ₓ 20,غامي المادة (20),124,
+gumi,15420,Power,القوة,124,
+gumi,15421,Fires two rounds straight ahead. ⏎ Rapid fire-enabled.,يطلق قذيفتين مباشرة للأمام. ⏎ الإطلاق السريع ممكن.,114,
+gumi,15422,Fires two heavy rounds straight ⏎ ahead. Rapid fire-enabled.,يطلق قذيفتين ثقيلتين مباشرة ⏎ للأمام. الإطلاق السريع ممكن.,117,
+gumi,15423,Fires two powerful rounds straight ⏎ ahead. Rapid fire-enabled.,يطلق قذيفتين قويتين مباشرة ⏎ للأمام. الإطلاق السريع ممكن.,106,
+gumi,15424,"Fires two, bi-directional rounds. ⏎ Rapid fire-enabled.",يطلق قذيفتين باتجاهين. ⏎ الإطلاق السريع ممكن.,91,
+gumi,15425,"Fires two, tri-directional rounds. ⏎ Rapid fire-enabled.",يطلق قذيفتين بثلاثة اتجاهات. ⏎ الإطلاق السريع ممكن.,110,
+gumi,15426,"Fires two, quad-directional rounds. ⏎ Rapid fire-enabled.",يطلق قذيفتين بأربعة اتجاهات. ⏎ الإطلاق السريع ممكن.,108,
+gumi,15427,Fires a round that scatters when ⏎ it hits a target.,يطلق قذيفة تتناثر عند ⏎ إصابتها هدفا.,88,
+gumi,15428,Fires a round that scatters wide ⏎ when it hits a target.,يطلق قذيفة تتناثر بشكل واسع ⏎ عند إصابتها هدفا.,119,
+gumi,15429,Fires a powerful round that ⏎ scatters wide when it hits a target.,يطلق قذيفة قوية تتناثر ⏎ بشكل واسع عند إصابتها هدفا.,109,
+gumi,15430,Fires laser rounds that seek out ⏎ locked targets. You can lock on ⏎ two enemies at a time.,يطلق قذائف ليزر تطارد الأهداف ⏎ المثبتة. تستطيع تثبيت ⏎ عدوين في آن واحد.,124,
+gumi,15431,Fires laser rounds that seek out ⏎ locked targets. You can lock on ⏎ up to four enemies.,يطلق قذائف ليزر تطارد الأهداف ⏎ المثبتة. تستطيع تثبيت ⏎ حتى أربعة أعداء.,124,
+gumi,15432,Fires laser rounds that seek out ⏎ locked targets. You can lock on ⏎ up to six enemies.,يطلق قذائف ليزر تطارد الأهداف ⏎ المثبتة. تستطيع تثبيت ⏎ حتى ستة أعداء.,124,
+gumi,15433,Auto-locks onto nearby targets ⏎ and fires two laser rounds.,يثبت تلقائيا على الأهداف ⏎ القريبة ويطلق قذيفتي ليزر.,111,
+gumi,15434,Auto-locks onto nearby targets ⏎ and fires four laser rounds.,يثبت تلقائيا على الأهداف ⏎ القريبة ويطلق أربع قذائف ليزر.,127,
+gumi,15435,Fires laser rounds that seek out ⏎ locked targets. You can aim for ⏎ a tougher target and layer-lock ⏎ up to six times.,يطلق قذائف ليزر تطارد الأهداف ⏎ المثبتة. تستطيع استهداف ⏎ عدو أقوى وتثبيت طبقات ⏎ حتى ست مرات.,124,
+gumi,15436,Damages enemies that collide with ⏎ the gummi block.,يضر الأعداء الذين يصطدمون ⏎ بكتلة الغامي.,109,
+gumi,15437,Damages enemies that collide with ⏎ the gummi block.,يضر الأعداء الذين يصطدمون ⏎ بكتلة الغامي.,109,
+gumi,15438,Uses the Slash Gauge to unleash ⏎ a forward attack that cuts through ⏎ enemy defenses. You can add more ⏎ Slash Gummies to set up combos. ⏎ ,يستخدم مقياس القطع لإطلاق ⏎ هجوم أمامي يخترق ⏎ دفاعات العدو. يمكنك إضافة ⏎ غامي قطع لتكوين كومبو. ⏎ ,104,
+gumi,15439,Uses the Slash Gauge to unleash ⏎ a vertical attack that cuts through ⏎ enemy defenses. You can add more ⏎ Slash Gummies to set up combos. ⏎ ,يستخدم مقياس القطع لإطلاق ⏎ هجوم عمودي يخترق ⏎ دفاعات العدو. يمكنك إضافة ⏎ غامي قطع لتكوين كومبو. ⏎ ,105,
+gumi,15440,Uses the Slash Gauge to unleash a ⏎ horizontal attack that cuts through ⏎ enemy defenses. You can add more ⏎ Slash Gummies to set up combos.,يستخدم مقياس القطع لإطلاق ⏎ هجوم أفقي يخترق ⏎ دفاعات العدو. يمكنك إضافة ⏎ غامي قطع لتكوين كومبو.,104,
+gumi,15441,Uses the Slash Gauge to unleash a ⏎ perimeter attack that cuts through ⏎ enemy defenses. You can add more ⏎ Slash Gummies to set up combos.,يستخدم مقياس القطع لإطلاق ⏎ هجوم محيطي يخترق ⏎ دفاعات العدو. يمكنك إضافة ⏎ غامي قطع لتكوين كومبو.,106,
+gumi,15442,"Expends power, but increases the ⏎ Gummi Ship´s speed.","يستهلك القوة, لكنه يزيد ⏎ سرعة سفينة الغامي.",93,
+gumi,15443,"Expends power, but increases the ⏎ Gummi Ship´s speed.","يستهلك القوة, لكنه يزيد ⏎ سرعة سفينة الغامي.",93,
+gumi,15444,"Expends power, but increases the ⏎ Gummi Ship´s speed.","يستهلك القوة, لكنه يزيد ⏎ سرعة سفينة الغامي.",93,
+gumi,15445,"Expends power, but increases the ⏎ Gummi Ship´s speed.","يستهلك القوة, لكنه يزيد ⏎ سرعة سفينة الغامي.",93,
+gumi,15446,"Expends power, but increases the ⏎ Gummi Ship´s speed.","يستهلك القوة, لكنه يزيد ⏎ سرعة سفينة الغامي.",93,
+gumi,15447,"Expends power, but increases the ⏎ Gummi Ship´s speed.","يستهلك القوة, لكنه يزيد ⏎ سرعة سفينة الغامي.",93,
+gumi,15448,"Expends power, but increases the ⏎ Gummi Ship´s speed.","يستهلك القوة, لكنه يزيد ⏎ سرعة سفينة الغامي.",93,
+gumi,15449,"Expends power, but increases the ⏎ Gummi Ship´s speed.","يستهلك القوة, لكنه يزيد ⏎ سرعة سفينة الغامي.",93,
+gumi,15450,Increases the Gummi Ship´s ⏎ mobility.,يزيد مرونة حركة ⏎ سفينة الغامي.,86,
+gumi,15451,Increases the Gummi Ship´s ⏎ mobility.,يزيد مرونة حركة ⏎ سفينة الغامي.,86,

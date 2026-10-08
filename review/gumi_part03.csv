@@ -1,0 +1,151 @@
+﻿bar,id,EN,AR,width_pct,flags
+gumi,19408,<09 DA>: Execute   <09 DF>: Reselect area ⏎ <07 80 80 F0 80><09 E8><03>: Set direction ⏎ <09 DB>: Back,: تنفيذ   <09 DF>: إعادة الاختيار<09 DA> ⏎ <03><09 E8>:<07 80 80 F0 80> ضبط الاتجاه ⏎ <09 DB>: رجوع,116,dblspace
+gumi,19431,<09 DE>: Leave Teeny Ships ⏎       behind,: ترك السفن الصغيرة<09 DE> ⏎       خلفك,135,dblspace;wide
+gumi,19432,<09 DE>: Assemble a new ⏎       Teeny Ship,: تركيب<09 DE> ⏎       سفينة صغيرة,142,dblspace;wide
+gumi,19433,"<09 0B><07 F0 F0 00 80> NOTE<03> ⏎ <X 53>Once a Blueprint is deleted, it cannot ⏎ <X 53>be restored. Are you sure you want ⏎ <X 53>to delete your original Blueprint?","<03> ملاحظة<07 F0 F0 00 80><09 0B> ⏎ <X 53>بعد حذف المخطط, لا يمكن ⏎ <X 53>استعادته. هل أنت متأكد أنك ⏎ <X 53>تريد حذف مخططك الأصلي?",97,
+gumi,19436,Highwind,هايويند,119,
+gumi,19437,Highwind Lv. 1 Blueprint,مخطط هايويند مستوى 1,129,
+gumi,19438,Highwind Lv. 2 Blueprint,مخطط هايويند مستوى 2,129,
+gumi,19439,Highwind Lv. 3 Blueprint,مخطط هايويند مستوى 3,129,
+gumi,19440,Highwind Lv. 4 Blueprint,مخطط هايويند مستوى 4,129,
+gumi,19441,Highwind Lv. 5 Blueprint,مخطط هايويند مستوى 5,129,
+gumi,19442,Highwind Lv. 6 Blueprint,مخطط هايويند مستوى 6,129,
+gumi,19443,Highwind Lv. 7 Blueprint,مخطط هايويند مستوى 7,129,
+gumi,19444,Highwind Lv. 8 Blueprint,مخطط هايويند مستوى 8,129,
+gumi,19445,Highwind Peak Blueprint,مخطط قمة هايويند,110,
+gumi,19446,Falcon Lv. 1 Blueprint,مخطط فالكون مس 1,115,
+gumi,19447,Falcon Lv. 2 Blueprint,مخطط فالكون مس 2,115,
+gumi,19448,Falcon Lv. 3 Blueprint,مخطط فالكون مس 3,115,
+gumi,19449,Falcon Lv. 4 Blueprint,مخطط فالكون مس 4,115,
+gumi,19450,Falcon Lv. 5 Blueprint,مخطط فالكون مس 5,115,
+gumi,19451,Falcon Lv. 6 Blueprint,مخطط فالكون مس 6,115,
+gumi,19452,Falcon Lv. 7 Blueprint,مخطط فالكون مس 7,115,
+gumi,19453,Falcon Lv. 8 Blueprint,مخطط فالكون مس 8,115,
+gumi,19454,Falcon Peak Blueprint,مخطط قمة فالكون,117,
+gumi,19456,Invincible Lv. 1 Blueprint,مخطط إنفنسيبل مستوى 1,127,
+gumi,19457,Invincible Lv. 2 Blueprint,مخطط إنفنسيبل مستوى 2,127,
+gumi,19458,Invincible Lv. 3 Blueprint,مخطط إنفنسيبل مستوى 3,127,
+gumi,19459,Invincible Lv. 4 Blueprint,مخطط إنفنسيبل مستوى 4,127,
+gumi,19460,Invincible Lv. 5 Blueprint,مخطط إنفنسيبل مستوى 5,127,
+gumi,19461,Invincible Lv. 6 Blueprint,مخطط إنفنسيبل مستوى 6,127,
+gumi,19462,Invincible Lv. 7 Blueprint,مخطط إنفنسيبل مستوى 7,127,
+gumi,19463,Invincible Lv. 8 Blueprint,مخطط إنفنسيبل مستوى 8,127,
+gumi,19464,Invincible Peak Blueprint,مخطط قمة إنفنسيبل,108,
+gumi,19489,<0B 5F>The Blueprint indicates this ⏎ Ship is balanced offensively ⏎ and defensively.,يشير المخطط إلى أن هذه<0B 5F> ⏎ السفينة متوازنة هجوميا ⏎ ودفاعيا.,119,
+gumi,19490,<0B 5F>The Blueprint indicates this ⏎ Ship is designed around ⏎ Weapon Gummies.,يشير المخطط إلى أن هذه<0B 5F> ⏎ السفينة مصممة حول ⏎ غامي الأسلحة.,119,
+gumi,19491,<0B 5F>The Blueprint indicates this ⏎ Ship has strong defenses ⏎ and is loaded with HP.,يشير المخطط إلى أن هذه<0B 5F> ⏎ السفينة دفاعاتها قوية ⏎ ومحملة ب HP.,119,
+gumi,19551,"<0B 58>These are finished Gummi ⏎ Ships, so you don´t need to add ⏎ Gummi blocks to use them.","هذه سفن غامي جاهزة<0B 58>, ⏎ فلا حاجة لإضافة ⏎ كتل غامي لاستخدامها.",102,
+gumi,19597,<09 DA>: Confirm ⏎ <07 80 80 F0 80><09 E8><03>: Rotate Gummi ⏎ <07 80 80 F0 80><09 E9><03>: Camera   <09 DB>: Back,: تأكيد<09 DA> ⏎ <03><09 E8>:<07 80 80 F0 80> تدوير الغامي ⏎ <09 E9>:<07 80 80 F0 80> الكاميرا   <09 DB>: رجوع,136,dblspace;wide
+gumi,20365,Fly a Gummi Ship with <07 F0 F0 00 80>50 or more<03> <07 80 80 F0 80>speed<03>!,حلق بسفينة غامي <03>سرعتها<07 F0 F0 00 80> 50<03> أو أكثر!<07 80 80 F0 80>,114,
+gumi,20366,Fly a Gummi Ship with <07 F0 F0 00 80>100 or more<03> ⏎ <07 80 80 F0 80>power<03>!,حلق بسفينة غامي <03>قوتها<07 F0 F0 00 80> ⏎ 100 أو أكثر!<07 80 80 F0 80>,84,
+gumi,20367,Fly a Gummi Ship with <07 F0 F0 00 80>250 or more<03> ⏎ <07 80 80 F0 80>power<03>!,حلق بسفينة غامي <03>قوتها<07 F0 F0 00 80> ⏎ 250 أو أكثر!<07 80 80 F0 80>,83,
+gumi,20368,Fly a Gummi Ship set with <07 F0 F0 00 80>12 or more<03> ⏎ <07 80 80 F0 80>Wing Gummies<03>!,حلق بسفينة غامي فيها 12<03> أو أكثر<07 F0 F0 00 80> من ⏎ غامي الأجنحة!<07 80 80 F0 80>,121,
+gumi,20369,Fly a Gummi Ship with only <07 F0 F0 00 80>Projectile<03> ⏎ <07 F0 F0 00 80>Gummies<03> as <07 80 80 F0 80>Weapon Gummies<03>!,حلق بسفينة غامي ب<03>غامي القذائف<07 F0 F0 00 80> ⏎ فقط<07 F0 F0 00 80> ك<03>غامي أسلحة!<07 80 80 F0 80>,111,
+gumi,20370,Fly a Gummi Ship set with <07 F0 F0 00 80>20 or more<03> ⏎ <07 80 80 F0 80>Projectile Gummies<03>!,حلق بسفينة غامي فيها 20<03> أو أكثر<07 F0 F0 00 80> من ⏎ غامي القذائف!<07 80 80 F0 80>,121,
+gumi,20371,Fly a Gummi Ship set with <07 F0 F0 00 80>6 or more<03> ⏎ <07 80 80 F0 80>Shield Gummies<03>!,حلق بسفينة غامي فيها 6<03> أو أكثر<07 F0 F0 00 80> من ⏎ غامي الدروع!<07 80 80 F0 80>,121,
+gumi,20372,Fly a Gummi Ship set with <07 F0 F0 00 80>2 or more<03> ⏎ <07 80 80 F0 80>Slash Gummies<03>!,حلق بسفينة غامي فيها 2<03> أو أكثر<07 F0 F0 00 80> من ⏎ غامي القطع!<07 80 80 F0 80>,121,
+gumi,20373,Fly a Gummi Ship set with <07 F0 F0 00 80>4 or more<03> ⏎ <07 80 80 F0 80>Slash Gummies<03>!,حلق بسفينة غامي فيها 4<03> أو أكثر<07 F0 F0 00 80> من ⏎ غامي القطع!<07 80 80 F0 80>,121,
+gumi,20374,Fly a Gummi Ship set with <07 F0 F0 00 80>8 or more<03> ⏎ <07 80 80 F0 80>Wheel Gummies<03>!,حلق بسفينة غامي فيها 8<03> أو أكثر<07 F0 F0 00 80> من ⏎ غامي العجلات!<07 80 80 F0 80>,121,
+gumi,20375,Fly a Gummi Ship set with <07 F0 F0 00 80>8 or more<03> ⏎ <07 80 80 F0 80>Abilities<03>!,حلق بسفينة غامي فيها 8<03> أو أكثر<07 F0 F0 00 80> من ⏎ القدرات!<07 80 80 F0 80>,121,
+gumi,20376,Fly a Gummi Ship and Teeny Ship with ⏎ a combination of <07 F0 F0 00 80>80 or more<03> <07 80 80 F0 80>speed<03>!,حلق بسفينة غامي وسفينة صغيرة ⏎ بمجموع <03>سرعة<07 F0 F0 00 80> 80<03> أو أكثر!<07 80 80 F0 80>,111,
+gumi,20377,Fly a <07 F0 F0 00 80>Highwind model<03> from ⏎ the sample blueprints!,حلق ب<03>طراز هايويند<07 F0 F0 00 80> من ⏎ المخططات النموذجية!,116,
+gumi,20378,Fly a Gummi Ship with <07 F0 F0 00 80>50 or less<03> <07 80 80 F0 80>HP<03>!,حلق بسفينة غامي <07 F0 F0 00 80>HP<03> 50<03> أو أقل!<07 80 80 F0 80>,105,
+gumi,20379,Fly a Gummi Ship and Teeny Ship with ⏎ a combination of <07 F0 F0 00 80>20 or less<03> <07 80 80 F0 80>HP<03>!,حلق بسفينة غامي وسفينة صغيرة ⏎ بمجموع <07 F0 F0 00 80>HP<03> 20<03> أو أقل!<07 80 80 F0 80>,111,
+gumi,20380,Fly alongside a Teeny Ship set with ⏎ <07 F0 F0 00 80>4 or more<03> <07 80 80 F0 80>Impact Gummies<03>!,حلق بجانب سفينة صغيرة فيها ⏎ 4 أو أكثر<07 F0 F0 00 80> من <03>غامي الصدم!<07 80 80 F0 80>,107,
+gumi,20381,Fly a <07 F0 F0 00 80>Falcon model<03> from ⏎ the sample blueprints!,حلق ب<03>طراز فالكون<07 F0 F0 00 80> من ⏎ المخططات النموذجية!,123,
+gumi,20382,Fly a Gummi Ship with a <07 80 80 F0 80>cost<03> of <07 F0 F0 00 80>400 ⏎ or less<03>!,<07 F0 F0 00 80>حلق بسفينة غامي <03>تكلفتها<07 80 80 F0 80> <07 F0 F0 00 80>400<03> ⏎ أو أقل<03>!<07 F0 F0 00 80>,100,
+gumi,20383,Fly a Gummi Ship set with ⏎ the <07 F0 F0 00 80>Formation Change<03> <07 80 80 F0 80>Ability<03>!,حلق بسفينة غامي فيها ⏎ قدرة<07 F0 F0 00 80> <03>تغيير التشكيل!<07 80 80 F0 80>,96,
+gumi,20384,Fly an <07 F0 F0 00 80>Invincible model<03> from ⏎ the sample blueprints!,حلق ب<03>طراز إنفنسيبل<07 F0 F0 00 80> من ⏎ المخططات النموذجية!,110,
+gumi,20385,Fly a Gummi Ship with no <07 80 80 F0 80>Weapon<03> ⏎ <07 80 80 F0 80>Gummies<03>!,حلق بسفينة غامي بلا <03>غامي<07 80 80 F0 80> ⏎ أسلحة!<07 80 80 F0 80>,99,
+gumi,20386,Fly a <07 F0 F0 00 80>special model<03> Ship!,حلق بسفينة <03>طراز خاص!<07 F0 F0 00 80>,117,
+gumi,20387,Fly a Gummi Ship with <07 F0 F0 00 80>4 or more<03> ⏎ <07 80 80 F0 80>Lock-on Gummies<03>!,حلق بسفينة غامي فيها 4<03> أو أكثر<07 F0 F0 00 80> من ⏎ غامي التثبيت!<07 80 80 F0 80>,135,wide
+gumi,20388,Fly without any <07 80 80 F0 80>Teeny Ships<03>!,حلق دون أي <03>سفن صغيرة!<07 80 80 F0 80>,121,
+gumi,20389,Fly a Gummi Ship set with <07 F0 F0 00 80>2 or more<03> ⏎ <07 80 80 F0 80>Ultima Gummies<03>!,حلق بسفينة غامي فيها 2<03> أو أكثر<07 F0 F0 00 80> من ⏎ غامي ألتيما!<07 80 80 F0 80>,121,
+gumi,20390,Fly a Gummi Ship with <07 80 80 F0 80>dimensions<03> of ⏎ <07 F0 F0 00 80>3 x 3 x 3 or smaller<03>!,حلق بسفينة غامي <03>أبعادها<07 80 80 F0 80> ⏎ 3 في 3 في 3 أو أصغر!<07 F0 F0 00 80>,89,
+gumi,20391,Fly a Gummi Ship set with a <07 F0 F0 00 80>Drain Gummi<03>!,حلق بسفينة غامي فيها <03>غامي الامتصاص!<07 F0 F0 00 80>,112,
+gumi,20500,EX Mission,مهمة إضافية,162,wide
+gumi,20501,Normal Mission,مهمة عادية,110,
+gumi,20505,You can take on the Lv. 1 EX Mission!,يمكنك خوض المهمة الإضافية مس 1!,118,
+gumi,20506,You can take on the Lv. 2 EX Mission!,يمكنك خوض المهمة الإضافية مس 2!,118,
+gumi,20507,You can take on the Lv. 3 EX Mission!,يمكنك خوض المهمة الإضافية مس 3!,118,
+gumi,20508,Mast/G,صاري/غ,140,wide
+gumi,20509,Flag/G,علم/غ,122,
+gumi,20510,Caterpillar/G,يرقة/غ,74,
+gumi,20511,Figure A/G,شكل أ/غ,102,
+gumi,20512,Figure B/G,شكل ب/غ,115,
+gumi,20513,Figure C/G,شكل ج/غ,115,
+gumi,20514,Figure D/G,شكل د/غ,110,
+gumi,20515,Fires rounds in various directions. ⏎ Rapid-fire enabled.,يطلق قذائف باتجاهات مختلفة. ⏎ الإطلاق السريع ممكن.,110,
+gumi,20516,Spins and reflects shots in ⏎ 2 directions. Rapid-fire enabled.,يدور ويعكس الطلقات في ⏎ اتجاهين. الإطلاق السريع ممكن.,123,
+gumi,20517,Fires at locked-on targets in order. ⏎ Can lock onto up to 6 targets at ⏎ once.,يطلق على الأهداف المثبتة بالترتيب. ⏎ يستطيع تثبيت حتى 6 أهداف ⏎ دفعة واحدة.,122,
+gumi,20518,Creates a large explosion when ⏎ locked on 16 or more targets. Lock ⏎ onto more targets for more ⏎ damage.,يصنع انفجارا كبيرا عند ⏎ تثبيت 16 هدفا أو أكثر. ⏎ ثبت أهدافا أكثر ⏎ لضرر أكبر.,82,
+gumi,20519,Uses the Slash Gauge to nullify ⏎ attacks from all directions. You can ⏎ add more Slash Gummies to set up ⏎ combos.,يستخدم مقياس القطع لإبطال ⏎ الهجمات من كل الاتجاهات. يمكنك ⏎ إضافة غامي قطع لتكوين ⏎ كومبو.,119,
+gumi,20520,Increase the Ship's speed.,يزيد سرعة السفينة.,101,
+gumi,20521,Increase the Ship's power.,يزيد قوة السفينة.,89,
+gumi,20522,Increase the Ship's mobility.,يزيد مرونة حركة السفينة.,122,
+gumi,20523,Increase the Ship's HP.,يزيد HP السفينة.,88,
+gumi,20524,Increase the Ship's HP.,يزيد HP السفينة.,88,
+gumi,20525,Increase the Ship's HP.,يزيد HP السفينة.,88,
+gumi,20526,Increase the Ship's HP.,يزيد HP السفينة.,88,
+gumi,20691,Pipe/G,أنبوب/غ,153,wide
+gumi,20692,Add pipes to a Material Gummi to ⏎ greatly increase the Ship's HP.,أضف أنابيب إلى غامي المادة ⏎ لزيادة HP السفينة كثيرا.,102,
+gumi,20719,Figure/G Set,طقم أشكال/غ,141,wide
+gumi,21638,Falcon Peak,قمة فالكون,140,wide
+gumi,21639,Invincible Peak,قمة إنفنسيبل,120,
+gumi,21640,Highwind Peak,قمة هايويند,123,
+gumi,21641,Falcon Lv. 8,فالكون مس 8,133,wide
+gumi,21642,Invincible Lv. 8,إنفنسيبل مس 8,116,
+gumi,21643,Highwind Lv. 8,هايويند مس 8,119,
+gumi,21644,Falcon Lv. 7,فالكون مس 7,133,wide
+gumi,21645,Invincible Lv. 7,إنفنسيبل مس 7,116,
+gumi,21646,Highwind Lv. 7,هايويند مس 7,118,
+gumi,21647,Falcon Lv. 6,فالكون مس 6,133,wide
+gumi,21648,Invincible Lv. 6,إنفنسيبل مس 6,116,
+gumi,21649,Highwind Lv. 6,هايويند مس 6,119,
+gumi,21650,Falcon Lv. 5,فالكون مس 5,133,wide
+gumi,21651,Invincible Lv. 5,إنفنسيبل مس 5,116,
+gumi,21652,Highwind Lv. 5,هايويند مس 5,119,
+gumi,21653,Falcon Lv. 4,فالكون مس 4,133,wide
+gumi,21654,Invincible Lv. 4,إنفنسيبل مس 4,116,
+gumi,21655,Highwind Lv. 4,هايويند مس 4,118,
+gumi,21656,Falcon Lv. 3,فالكون مس 3,133,wide
+gumi,21657,Invincible Lv. 3,إنفنسيبل مس 3,116,
+gumi,21658,Highwind Lv. 3,هايويند مس 3,119,
+gumi,21659,Falcon Lv. 2,فالكون مس 2,133,wide
+gumi,21660,Invincible Lv. 2,إنفنسيبل مس 2,116,
+gumi,21661,Highwind Lv. 2,هايويند مس 2,118,
+gumi,21662,Falcon Lv. 1,فالكون مس 1,134,wide
+gumi,21663,Invincible Lv. 1,إنفنسيبل مس 1,116,
+gumi,21664,Highwind Lv. 1,هايويند مس 1,119,
+gumi,21665,Highwind,هايويند,119,
+gumi,21666,Mushroom,الفطر,71,
+gumi,21667,Highwind α,هايويند ألفا,135,wide
+gumi,21668,PuPu,بوبو,117,
+gumi,21669,Tonberry,تونبيري,113,
+gumi,21670,Moogle,موغل,127,
+gumi,21671,Mandragora,ماندراغورا,126,
+gumi,21672,Chocobo,شوكوبو,138,wide
+gumi,21673,Cactuar,كاكتوار,122,
+gumi,21674,Cait Sith,كيت سيث,123,
+gumi,21675,Fenrir,فنرير,106,
+gumi,21676,Kingdom,المملكة,133,wide
+gumi,21677,Secret,سري,105,
+gumi,21678,Durandal 2,ديورندال 2,137,wide
+gumi,21679,Durandal 1,ديورندال 1,138,wide
+gumi,21680,Ziedrich,زيدريش,118,
+gumi,21681,Valkyrie 2,فالكيري 2,123,
+gumi,21682,Valkyrie 1,فالكيري 1,124,
+gumi,21683,Main Gauche 2,مان غوش 2,105,
+gumi,21684,Main Gauche 1,مان غوش 1,106,
+gumi,21685,Edincoat 2,إدنكوت 2,114,
+gumi,21686,Edincoat 1,إدنكوت 1,114,
+gumi,21687,Hawkeye 2,هوكاي 2,120,
+gumi,21688,Hawkeye 1,هوكاي 1,121,
+gumi,21689,Organics 2,أورغانيكس 2,144,wide
+gumi,21690,Organics 1,أورغانيكس 1,146,wide
+gumi,21691,Mystile 2,ميستايل 2,134,wide
+gumi,21692,Mystile 1,ميستايل 1,136,wide
+gumi,21693,Wingedge 2,وينغ إيدج 2,146,wide
+gumi,21694,Wingedge 1,وينغ إيدج 1,148,wide
+gumi,21695,<09 0B><07 F0 F0 00 80>NOTE<03> ⏎  ⏎ This contains a restricted character ⏎ combination.,<03>ملاحظة<07 F0 F0 00 80><09 0B> ⏎  ⏎ يحتوي هذا على تركيبة ⏎ أحرف محظورة.,83,
+gumi,21696,<09 0B><07 F0 F0 00 80>NOTE<03> ⏎  ⏎ Names can only contain up to 5 numbers.,<03>ملاحظة<07 F0 F0 00 80><09 0B> ⏎  ⏎ الأسماء حتى 5 أرقام كحد أقصى.,101,
