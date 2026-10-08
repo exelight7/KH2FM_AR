@@ -1,7 +1,7 @@
 # Summary: sys_part03
 
 - Rows reviewed: 250
-- Rows corrected: 8
+- Rows corrected: 4
 
 ## Top repeated error patterns
 
@@ -23,3 +23,7 @@
   same_as_en); they are not shown in normal play.
 - 1595/1589…: element descriptions use feminine verbs («تطلق», «تستعيد») with the
   masculine «عنصر»; acceptable if the subject is the magic, so left as is.
+
+## Moved to the glossary file
+
+- sys 1603, sys 1605, sys 1607, sys 2619: also needed a glossary decision; the row (with this fix included) is now in `corrections/glossary_decisions.csv` (one correction per id).

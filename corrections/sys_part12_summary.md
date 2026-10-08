@@ -1,7 +1,7 @@
 # Summary: sys_part12
 
 - Rows reviewed: 250
-- Rows corrected: 4
+- Rows corrected: 2
 
 ## Top repeated error patterns
 
@@ -24,3 +24,7 @@
 
 - 20624 «يرفع مقدار AP الأقصى هائلا» is awkward (same as 14910), but a correct
   rewrite is longer than the length rule allows.
+
+## Moved to the glossary file
+
+- sys 20398, sys 20400: also needed a glossary decision; the row (with this fix included) is now in `corrections/glossary_decisions.csv` (one correction per id).

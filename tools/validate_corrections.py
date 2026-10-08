@@ -17,7 +17,11 @@ and each row must satisfy the rules in RULES.md (see the ``rules`` block there):
   * an id may be corrected in only one file: a (bar, id) found in a second file
     is an error (combine all changes into one row in one file)
   * corrections/needs_width_check.csv is a report of fixes that were not applied
-    (bar,id,AR_old,AR_new,reason); it is skipped
+    (bar,id,AR_old,AR_new,reason,term); it is skipped
+  * corrections/glossary*.csv may add a last column ``term`` (the glossary term
+    the row belongs to; several are separated by ``;``). A term is applied
+    everywhere or nowhere: it may not appear both in a glossary file and in
+    needs_width_check.csv
 
 Prints one table of results and exits 1 if any row (or file) has an error.
 
@@ -40,6 +44,8 @@ COLUMNS = ['bar', 'id', 'AR_old', 'AR_new', 'type', 'severity', 'reason']
 # Report files list proposed fixes that were NOT applied (for example because they
 # break the length rule). They are read by people, not applied, so they are skipped.
 REPORT_FILES = ('needs_width_check.csv',)
+WIDTH_FILE = 'needs_width_check.csv'
+TERM_COLUMN = 'term'
 TYPES = ('spelling', 'grammar', 'phrasing', 'meaning', 'glossary')
 SEVERITIES = ('1', '2', '3')
 REASON_MAX_WORDS = 8
@@ -282,7 +288,8 @@ def validate_file(path, review, rules, glossary):
     reader = csv.DictReader(io.StringIO(text, newline=''))
     try:
         header = reader.fieldnames or []
-        if header != COLUMNS:
+        allowed = [COLUMNS] + ([COLUMNS + [TERM_COLUMN]] if not check_glossary else [])
+        if header not in allowed:
             return [('header', '', '', ['header must be %s (got %s)' % (','.join(COLUMNS), ','.join(header))])]
         rows = []
         for row in reader:
@@ -319,6 +326,45 @@ def check_cross_file(all_results, root):
                 first[key] = name
             elif first[key] != name:
                 errs.append('id already corrected in %s (combine into one row in one file)' % first[key])
+
+
+def split_terms(cell):
+    return {t.strip() for t in (cell or '').split(';') if t.strip()}
+
+
+def read_terms(path):
+    """{line: set(terms)} from the ``term`` column of a CSV file ({} if it has none)."""
+    out = {}
+    if not os.path.exists(path):
+        return out
+    with open(path, encoding='utf-8-sig', newline='') as fh:
+        reader = csv.DictReader(fh)
+        if TERM_COLUMN not in (reader.fieldnames or []):
+            return out
+        for row in reader:
+            terms = split_terms(row.get(TERM_COLUMN))
+            if terms:
+                out[str(reader.line_num)] = terms
+    return out
+
+
+def check_width_terms(all_results, root):
+    """A glossary term is applied everywhere or nowhere: a term listed in
+    needs_width_check.csv may not also be applied by a glossary*.csv row."""
+    waiting = set()
+    for terms in read_terms(os.path.join(root, 'corrections', WIDTH_FILE)).values():
+        waiting |= terms
+    if not waiting:
+        return
+    for f, results in all_results:
+        if not os.path.basename(f).lower().startswith('glossary'):
+            continue
+        by_line = read_terms(f)
+        for line, bar, rid, errs in results:
+            both = sorted(by_line.get(line, set()) & waiting)
+            if both:
+                errs.append('term also waits in %s: %s (apply it everywhere or nowhere)'
+                            % (WIDTH_FILE, ', '.join(both)))
 
 
 def print_table(all_results, out):
@@ -362,6 +408,7 @@ def main(argv=None):
 
     all_results = [(f, validate_file(f, review, rules, glossary)) for f in files]
     check_cross_file(all_results, args.root)
+    check_width_terms(all_results, args.root)
     n_rows = sum(len(r) for _, r in all_results)
     n_bad = sum(1 for _, r in all_results for x in r if x[3])
     shown = [(f, [x for x in r if x[3]]) for f, r in all_results] if args.errors_only else all_results

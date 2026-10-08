@@ -1,7 +1,7 @@
 # Summary: sys_part13
 
 - Rows reviewed: 45
-- Rows corrected: 2
+- Rows corrected: 1
 
 ## Top repeated error patterns
 
@@ -18,3 +18,7 @@
 - 22028 Piglet «بيركيت» (approved in the glossary).
 - 22043 «عداد الطاقة … القدر» vs 22040/22045 «مقياس القوة» and 22041 «الإناء»
   for the same Power Gauge and pot.
+
+## Moved to the glossary file
+
+- sys 22035: also needed a glossary decision; the row (with this fix included) is now in `corrections/glossary_decisions.csv` (one correction per id).

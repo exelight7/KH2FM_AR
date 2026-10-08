@@ -1,7 +1,7 @@
 # Summary: jm_part02
 
 - Rows reviewed: 250
-- Rows corrected: 4
+- Rows corrected: 3
 
 ## Top repeated error patterns
 
@@ -14,3 +14,7 @@
 ## Not changed (noted)
 
 - 10788: «إلى وادي» مقبولة دون تنوين
+
+## Moved to the glossary file
+
+- jm 10898: also needed a glossary decision; the row (with this fix included) is now in `corrections/glossary_decisions.csv` (one correction per id).

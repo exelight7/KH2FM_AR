@@ -1,7 +1,7 @@
 # Summary: sys_part08
 
 - Rows reviewed: 250
-- Rows corrected: 5
+- Rows corrected: 4
 
 ## Top repeated error patterns
 
@@ -25,3 +25,7 @@
   emblem («شارة البطل», compare 15944 «الشارة القاتلة»).
 - 15570-15578, 15506, 15584: Moogle written «موج» (glossary: «موغل»;
   already in docs/consistency.md).
+
+## Moved to the glossary file
+
+- sys 15584: also needed a glossary decision; the row (with this fix included) is now in `corrections/glossary_decisions.csv` (one correction per id).

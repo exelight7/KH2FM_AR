@@ -1,7 +1,7 @@
 # Summary: hb_part02
 
 - Rows reviewed: 250
-- Rows corrected: 1
+- Rows corrected: 0
 
 ## Top repeated error patterns
 
@@ -12,3 +12,7 @@
 
 - 12597 «أن لا أحدا نشأ»: «لا أحدا» is not a valid inflection of the term «اللا أحد»; a fix needs the term, so it was left (glossary «اللا أحد»).
 - 12559/12561 Nobodies written «اللا أحد» as the glossary says.
+
+## Moved to the glossary file
+
+- hb 12597: also needed a glossary decision; the row (with this fix included) is now in `corrections/glossary_decisions.csv` (one correction per id).

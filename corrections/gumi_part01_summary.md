@@ -1,7 +1,7 @@
 # Summary: gumi_part01
 
 - Rows reviewed: 250
-- Rows corrected: 1
+- Rows corrected: 0
 
 ## Top repeated error patterns
 
@@ -15,3 +15,7 @@
 ## Not changed (noted)
 
 - 6335 and 14283: «غامي الاختياري» and «غامي المساعد» (definite adjective after idafa) used consistently across the bar, left as a label choice.
+
+## Moved to the glossary file
+
+- gumi 6259: also needed a glossary decision; the row (with this fix included) is now in `corrections/glossary_decisions.csv` (one correction per id).

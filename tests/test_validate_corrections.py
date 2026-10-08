@@ -238,6 +238,39 @@ class ValidatorTest(unittest.TestCase):
                 if os.path.exists(f):
                     os.remove(f)
 
+    def test_term_applied_everywhere_or_nowhere(self):
+        corr = os.path.join(self.root, 'corrections')
+        gloss = os.path.join(corr, 'glossary_test.csv')
+        width = os.path.join(corr, 'needs_width_check.csv')
+        other = os.path.join(corr, 'sys_part98.csv')
+        old = self.review[('sys', '480')]
+        with open(gloss, 'w', encoding='utf-8', newline='') as fh:
+            w = csv.writer(fh, lineterminator='\n')
+            w.writerow(vc.COLUMNS + ['term'])
+            w.writerow(['sys', '480', old, old + '!', 'glossary', '1', 'قرار المسرد', 'Attack'])
+        def write_width(term):
+            with open(width, 'w', encoding='utf-8', newline='') as fh:
+                w = csv.writer(fh, lineterminator='\n')
+                w.writerow(['bar', 'id', 'AR_old', 'AR_new', 'reason', 'term'])
+                w.writerow(['sys', '481', 'x', 'xxxxxxxx', 'طويل', term])
+        try:
+            write_width('Other term')                       # different term: fine
+            code, out = run_main(['--root', self.root, gloss])
+            self.assertEqual(code, 0, out)
+            write_width('Attack; Other term')               # same term in both: error
+            code, out = run_main(['--root', self.root, gloss])
+            self.assertEqual(code, 1, out)
+            self.assertIn('term also waits in needs_width_check.csv: Attack', out)
+            # the term column is allowed only in glossary files
+            shutil.copy(gloss, other)
+            code, out = run_main(['--root', self.root, other])
+            self.assertEqual(code, 1)
+            self.assertIn('header must be', out)
+        finally:
+            for f in (gloss, width, other):
+                if os.path.exists(f):
+                    os.remove(f)
+
     def test_header_only_file_passes(self):
         path = os.path.join(self.root, 'corrections', 'es_part99.csv')
         with open(path, 'w', encoding='utf-8', newline='') as fh:

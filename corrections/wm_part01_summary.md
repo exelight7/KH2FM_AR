@@ -17,3 +17,7 @@
 ## Not changed (noted)
 
 - 7683 «أتساءل هل حصن هولو هادئ» is acceptable without «إن».
+
+## Moved to the glossary file
+
+- wm 7711: also needed a glossary decision; the row (with this fix included) is now in `corrections/glossary_decisions.csv` (one correction per id).
