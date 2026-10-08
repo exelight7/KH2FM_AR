@@ -9,25 +9,25 @@ round). All pass `python tools/validate_corrections.py`.
 
 | file | rows reviewed | rows corrected |
 |---|---:|---:|
-| tt_part01 | 250 | 11 |
-| tt_part02 | 250 | 21 |
+| tt_part01 | 250 | 10 |
+| tt_part02 | 250 | 20 |
 | tt_part03 | 250 | 13 |
 | tt_part04 | 250 | 5 |
 | tt_part05 | 250 | 3 |
 | tt_part06 | 250 | 6 |
 | tt_part07 | 250 | 7 |
 | tt_part08 | 92 | 3 |
-| **total** | **1842** | **69** |
+| **total** | **1842** | **67** |
 
 ## Corrections per type and severity
 
 | type | severity 1 | severity 2 | severity 3 | total |
 |---|---:|---:|---:|---:|
-| grammar | 13 | 17 | 0 | 30 |
+| grammar | 12 | 17 | 0 | 29 |
 | meaning | 0 | 13 | 1 | 14 |
 | spelling | 7 | 8 | 0 | 15 |
-| phrasing | 7 | 3 | 0 | 10 |
-| **total** | **27** | **41** | **1** | **69** |
+| phrasing | 7 | 2 | 0 | 9 |
+| **total** | **26** | **40** | **1** | **67** |
 
 ## Top 10 repeated error patterns
 
@@ -91,3 +91,10 @@ pattern 9.
    wrong, not informal.
 4. 13178 «الآن المدينة وأمهاتهم» is a literal rendering of the idiom "the whole
    town and their mothers"; left as is.
+
+## Correction after the worlds round
+
+Two tt rows, 12316 and 13289, were also Naminé rows. An id may have only one active
+correction, so their tt fixes («بما يحل» → «مما يحل» and «نضيق من الوقت» → «الوقت ينفد»)
+were combined with the Naminé change in `corrections/glossary_namine.csv`. The counts
+above are updated: `tt_part01` has 10 rows, `tt_part02` 20, total 67.
