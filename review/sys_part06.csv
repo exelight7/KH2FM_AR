@@ -1,0 +1,251 @@
+﻿bar,id,EN,AR,width_pct,flags
+sys,14214,Deals finishing combo moves in ⏎ the middle of a combo with <09 DE>.,اضغط <09 DE> في منتصف الكومبو ⏎ لتنفيذ حركات إنهاء الكومبو.,113,
+sys,14215,Reflect Dummy,ريفلكت التجريبي,138,wide
+sys,14216,Dummy,تجريبي,136,wide
+sys,14217,Upper Dummy,تجريبي علوي,130,
+sys,14218,Dummy,تجريبي,136,wide
+sys,14221,Investigate,استكشف,78,
+sys,14225,Roxas: ⏎ Looks iffy in there...,روكساس: ⏎ يبدو هناك شيء مشبوه...,140,wide
+sys,14279,Set the jewel!,ثبت الجوهرة!,113,
+sys,14284,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Checking system storage. ⏎ Do not turn off the power.,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ جار فحص تخزين النظام. ⏎ لا تطفئ الجهاز.,99,dblspace
+sys,14285,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Insufficient free space on system storage. ⏎ At least 69 KB of free space is required ⏎ to save your game. Start game anyway?,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ لا توجد مساحة كافية في تخزين النظام. ⏎ يلزم 69 كيلوبايت من المساحة الحرة ⏎ لحفظ اللعبة. البدء على أي حال?,99,dblspace
+sys,14286,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎ No system storage found. ⏎ Game progress cannot be saved. ⏎ Start game anyway?,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎ تخزين النظام غير موجود. ⏎ لا يمكن حفظ تقدم اللعبة. ⏎ البدء على أي حال?,99,dblspace
+sys,14287,"Go, Abu!",يا أبو هيا!,145,wide
+sys,14288,Call Over,نداء,60,
+sys,14298,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Insufficient free space on system storage. ⏎ At least 169 KB of free space is required ⏎ to save your game. Start game anyway?,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ لا توجد مساحة كافية في تخزين النظام. ⏎ يلزم 169 كيلوبايت من المساحة الحرة ⏎ لحفظ اللعبة. البدء على أي حال?,99,dblspace
+sys,14299,Munny,مال,87,
+sys,14424,Save data to storage device.,احفظ البيانات على وسيلة التخزين.,139,wide
+sys,14425,Jump to World Map?,اذهب إلى خريطة العالم?,146,wide
+sys,14426,Save data to system storage.,احفظ البيانات في تخزين النظام.,127,
+sys,14427,Load data from storage device.,اقرأ البيانات من وسيلة التخزين.,121,
+sys,14429,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ No system storage found.,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ تخزين النظام غير موجود.,99,dblspace
+sys,14431,Land,هبط,98,
+sys,14432,Reverse Blade,النصل المقلوب,125,
+sys,14439,Stop,قف,85,
+sys,14440,Wild Dance,رقصة برية,126,
+sys,14442,Standard Mode,الوضع العادي,120,
+sys,14603,Spin,لفة,103,
+sys,14604,ALL,الكل,145,wide
+sys,14612,Dance Call,نداء الرقص,135,wide
+sys,14613,<0B 5A>Synchronization,الالتزامن<0B 5A>,70,
+sys,14614,Downbeat,النبضة,76,
+sys,14615,Finale,النهاية,138,wide
+sys,14619,Examine,افحص,82,
+sys,14622,Setup,إعداد,140,wide
+sys,14623,Cluster Code,رمز التجمع,115,
+sys,14624,Burst Pulse,نبضة الانفجار,135,wide
+sys,14625,Reprogram,برمجة,76,
+sys,14626,Urninator,أورنيناتور,140,wide
+sys,14629,Duck Flare,فلاير البط,114,
+sys,14630,Megaduck Flare,ميجا فلاير البط,121,
+sys,14631,Halloween Town Map,خريطة بلدة الهالوين,128,
+sys,14632,A map of the area.,خريطة المنطقة.,97,
+sys,14633,Naval Map,خريطة بحرية,167,wide
+sys,14634,A map of the area.,خريطة المنطقة.,97,
+sys,14635,Pride Rock Map,خريطة صخرة الكبرياء,178,wide
+sys,14636,A map of the area.,خريطة المنطقة.,97,
+sys,14637,Marketplace Map,خريطة السوق,102,
+sys,14638,A map of the area.,خريطة المنطقة.,97,
+sys,14639,Pit Cell Area Map,خريطة منطقة الحفرة,147,wide
+sys,14640,A map of the area.,خريطة المنطقة.,97,
+sys,14641,Twilight Town Map,خريطة بلدة الشفق,122,
+sys,14642,A map of the area.,خريطة المنطقة.,97,
+sys,14643,Dark City Map,خريطة مدينة الظلام,178,wide
+sys,14644,A map of the area.,خريطة المنطقة.,97,
+sys,14652,The Savannah,السافانا,62,
+sys,14657,Use an item.,استخدم الغرض.,149,wide
+sys,14658,Throw away one item.,ارم أحد الأغراض.,101,
+sys,14659,Use on who?,على من?,87,
+sys,14660,All,كل,139,wide
+sys,14661,Use item on everyone.,على الجميع.,67,
+sys,14670,The item will be used on <0D>.,سيستخدم الغرض على <0D>.,102,
+sys,14671,<09 0A><07 FF 00 00 80>INFORMATION<03> ⏎  ⏎ Throw <0D><0D> away?,<0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ هل تريد رمي <0D><0D>?,137,wide
+sys,14721,Master Strike,ضربة الإتقان,115,
+sys,14722,Unleashes a powerful finishing combo ⏎ move that successively attacks ⏎ a single target.,تطلق ضربة كومبو نهائية قوية ⏎ تهاجم الهدف الواحد بالتعاقب.,100,
+sys,14723,Disaster,الكارثة,108,
+sys,14724,Unleashes a powerful finishing combo ⏎ move that draws in several enemies ⏎ and successively deals damage.,تطلق ضربة كومبو نهائية قوية ⏎ تجمع عدة أعداء ⏎ وتصيبهم بالتعاقب.,100,
+sys,14725,Endless Magic,سحر لا نهائي,115,
+sys,14726,Unleashes magic combos endlessly.,تطلق كومبو سحر بلا نهاية.,95,
+sys,14729,Master Magic,إتقان السحر,113,
+sys,14730,Powers up magic.,يزيد قوة السحر.,119,
+sys,14731,Slapshot,لكمة,71,
+sys,14732,Rapidly attacks a nearby target ⏎ without getting flung back.,يهاجم الهدف القريب بسرعة ⏎ دون ارتداد.,106,
+sys,14733,Dodge Slash,قطع التفادي,131,wide
+sys,14734,Unleashes an attack that deals damage ⏎ to nearby enemies.,يصيب الأعداء القريبين بضرر مباشر.,109,
+sys,14735,Slide Dash,الانزلاق,89,
+sys,14736,Instantly closes in on and attacks ⏎ a far target.,يقترب فجأة من الهدف البعيد ⏎ ويهاجمه.,103,
+sys,14737,Guard Break,كسر الحماية,123,
+sys,14738,Unleashes a powerful finishing combo ⏎ move that pierces through a target´s ⏎ guard.,تطلق ضربة كومبو نهائية قوية ⏎ تخترق حماية الهدف.,99,
+sys,14739,Explosion,انفجار,84,
+sys,14740,Unleashes a finishing combo move ⏎ that knocks down several enemies. ⏎ Damage dealt is relative to magic skill.,تطلق ضربة كومبو نهائية ⏎ تسقط عدة أعداء. ⏎ الضرر يعتمد على مهارة السحر.,97,
+sys,14741,Finishing Leap,القفزة النهائية,129,
+sys,14742,Unleashes a powerful guard-piercing ⏎ attack at the end of a combo with <09 DE>.,اضغط <09 DE> في نهاية الكومبو ⏎ لتطلق هجوما قويا يخترق الحماية.,111,
+sys,14743,Counterguard,حماية الرد,105,
+sys,14744,Counterattacks nearby enemies with ⏎ Attack while performing Guard.,يرد على الأعداء القريبين بالهجوم ⏎ أثناء أداء الحماية.,118,
+sys,14745,Aerial Sweep,اجتياح جوي,115,
+sys,14746,Unleashes a powerful leaping attack ⏎ on targets in midair.,يهاجم الأهداف في الهواء ⏎ بهجوم قفز قوي.,87,
+sys,14747,Aerial Spiral,اللولب الجوي,129,
+sys,14748,Closes in on far targets in midair and ⏎ unleashes spinning attacks.,يقترب من الأهداف البعيدة في الهواء ⏎ ويطلق هجمات دوارة.,117,
+sys,14749,Horizontal Slash,القطع الأفقي,98,
+sys,14750,Unleashes a powerful attack that hits ⏎ a target from left to right ⏎ during a midair combo with <09 DE>.,اضغط <09 DE> أثناء كومبو جوي ⏎ لتطلق هجوما قويا يصيب الهدف ⏎ من اليسار إلى اليمين.,96,
+sys,14751,Aerial Finish,الختام الجوي,132,wide
+sys,14752,Unleashes a powerful finishing combo ⏎ move to a single target in midair.,تطلق ضربة كومبو نهائية قوية ⏎ على هدف واحد في الهواء.,100,
+sys,14753,Retaliating Slash,القطع الانتقامي,112,
+sys,14754,"When knocked down, quickly regains ⏎ balance and counterattacks with <09 DE>.",اضغط <09 DE> عند السقوط ⏎ لتستعيد توازنك وترد الهجوم.,104,
+sys,14770,Forward March!,امشوا للأمام!,106,
+sys,14771,Company Halt!,قفوا!,47,
+sys,14772,Settle Down!,اهدأوا!,71,
+sys,14809,Drive Recovery,استرداد الدرايف,136,wide
+sys,14810,Restores up to three full Drive Gauges. ⏎ Usable only from the Main Menu.,يستعيد حتى 3 عدادات درايف كاملة. ⏎ يستخدم فقط من القائمة الرئيسية.,109,
+sys,14811,High Drive Recovery,استرداد الدرايف الأقصى,147,wide
+sys,14812,Restores all Drive Gauges. ⏎ Usable only from the Main Menu.,يستعيد كل عدادات الدرايف. ⏎ يستخدم فقط من القائمة الرئيسية.,126,
+sys,14813,Power Boost,تعزيز القوة,123,
+sys,14814,Increases Strength by 1. ⏎ Usable only from the Main Menu.,يزيد القوة بمقدار 1. ⏎ يستخدم فقط من القائمة الرئيسية.,126,
+sys,14815,Magic Boost,تعزيز السحر,130,
+sys,14816,Increases Magic by 1. ⏎ Usable only from the Main Menu.,يزيد السحر بمقدار 1. ⏎ يستخدم فقط من القائمة الرئيسية.,126,
+sys,14817,Defense Boost,تعزيز الدفاع,118,
+sys,14818,Increases Defense by 1. ⏎ Usable only from the Main Menu.,يزيد الدفاع بمقدار 1. ⏎ يستخدم فقط من القائمة الرئيسية.,126,
+sys,14819,AP Boost,تعزيز AP,122,
+sys,14820,Raises maximum AP by 1. ⏎ Usable only from the Main Menu.,يزيد أقصى AP بمقدار 1. ⏎ يستخدم فقط من القائمة الرئيسية.,126,
+sys,14821,loop demo,تكرار,71,
+sys,14823,Dark Shard,شظية مظلمة,133,wide
+sys,14824,A gem fragment filled with darkness. ⏎ A very common ingredient of ⏎ item synthesis.,شظية مملوءة بالظلام. ⏎ مكون شائع جدا في تركيب الأغراض.,118,
+sys,14825,Dark Stone,حجر مظلم,118,
+sys,14826,A stone filled with darkness. ⏎ A common ingredient of item synthesis.,حجر مملوء بالظلام. ⏎ مكون شائع في تركيب الأغراض.,97,
+sys,14827,Dark Gem,جوهرة مظلمة,191,wide
+sys,14828,A gem abundant with darkness. ⏎ A rare ingredient of item synthesis.,جوهرة مملوءة بالظلام. ⏎ مكون نادر في تركيب الأغراض.,103,
+sys,14829,Dark Crystal,بلورة مظلمة,126,
+sys,14830,A mysterious crystal abundant with ⏎ darkness. A very rare ingredient of ⏎ item synthesis.,بلورة غامضة مشبعة بالظلام. ⏎ مكون نادر جدا في تركيب الأغراض.,121,
+sys,14831,Cannon Bomb,قنبلة المدفع,128,
+sys,14841,Defeat 50 forms within 40 seconds!,اهزم 50 شكلا خلال 40 ثانية!,96,
+sys,14842,Defeat 10 forms within 15 seconds!,اهزم 10 أشكال خلال 15 ثانية!,103,
+sys,14843,Defeat 100 forms within 80 seconds!,اهزم 100 شكل خلال 80 ثانية!,97,
+sys,14844,LV,مستوى,355,wide
+sys,14845,HP,HP,,same_as_en
+sys,14846,MP,MP,,same_as_en
+sys,14847,Strength,القوة,81,
+sys,14848,Magic,سحر,100,
+sys,14849,Defense,الدفاع,109,
+sys,14850,AP,AP,,same_as_en
+sys,14851,Drive,درايف,149,wide
+sys,14853,Wildebeest Valley,وادي الغزلان,101,
+sys,14863,Ability Ring,خاتم القدرة,139,wide
+sys,14864,Slightly increases maximum AP.,يزيد أقصى AP قليلا.,76,
+sys,14865,Engineer´s Ring,خاتم المهندس,114,
+sys,14866,Increases maximum AP.,يزيد أقصى AP.,76,
+sys,14867,Technician´s Ring,خاتم الفني,81,
+sys,14868,Greatly increases maximum AP.,يزيد أقصى AP كثيرا.,80,
+sys,14869,Expert´s Ring,خاتم الخبير,107,
+sys,14870,Exceedingly increases maximum AP.,يزيد أقصى AP كثيرا جدا.,87,
+sys,14871,Sardonyx Ring,خاتم ساردونيكس,148,wide
+sys,14872,Increases strength and slightly ⏎ increases maximum AP.,يزيد القوة ويزيد أقصى AP قليلا.,129,
+sys,14873,Tourmaline Ring,خاتم التورمالين,126,
+sys,14874,Increases strength and increases ⏎ maximum AP.,يزيد القوة ويزيد أقصى AP.,103,
+sys,14875,Aquamarine Ring,خاتم أكوامارين,124,
+sys,14876,Increases strength and greatly ⏎ increases maximum AP.,يزيد القوة ويزيد أقصى AP كثيرا.,133,wide
+sys,14877,Garnet Ring,خاتم جارنت,125,
+sys,14878,Increases strength and extremely ⏎ increases maximum AP.,يزيد القوة ويزيد أقصى AP جدا.,119,
+sys,14879,Diamond Ring,خاتم الماس,107,
+sys,14880,Increases strength and drastically ⏎ increases maximum AP.,يزيد القوة ويزيد أقصى AP جذريا.,125,
+sys,14881,Silver Ring,خاتم الفضة,128,
+sys,14882,Increases magic and slightly increases ⏎ maximum AP.,يزيد السحر ويزيد أقصى AP قليلا.,104,
+sys,14883,Gold Ring,خاتم ذهب,136,wide
+sys,14884,Increases magic and increases ⏎ maximum AP.,يزيد السحر ويزيد أقصى AP.,113,
+sys,14885,Platinum Ring,خاتم البلاتين,115,
+sys,14886,Increases magic and greatly increases ⏎ maximum AP.,يزيد السحر ويزيد أقصى AP كثيرا.,108,
+sys,14887,Mythril Ring,خاتم ميثرايل,137,wide
+sys,14888,Increases magic and <0B 5A>extremely<0B 64> increases ⏎ maximum AP.,<0B 64>يزيد السحر ويزيد <03>بشدة<0B 5A> ⏎ أقصى AP.,72,
+sys,14889,Orichalcum Ring,خاتم أوريكالكوم,144,wide
+sys,14890,Increases magic and drastically ⏎ increases maximum AP.,يزيد السحر ويزيد أقصى AP جذريا.,136,wide
+sys,14891,Master´s Ring,خاتم المعلم,115,
+sys,14892,Extraordinarily increases maximum AP.,يزيد أقصى AP استثنائيا.,71,
+sys,14893,Moon Amulet,تميمة القمر,122,
+sys,14894,Highly increases strength and magic ⏎ and also greatly increases maximum AP.,يزيد القوة والسحر بدرجة عالية ⏎ ويزيد أقصى AP كثيرا.,99,
+sys,14895,Star Charm,تعويذة النجم,150,wide
+sys,14896,Highly increases strength and magic ⏎ and drastically increases maximum AP.,يزيد القوة والسحر بدرجة عالية ⏎ ويزيد أقصى AP جذريا.,104,
+sys,14897,Skill Ring,خاتم مهارة,160,wide
+sys,14898,Extremely increases maximum AP.,يزيد أقصى AP جدا.,70,
+sys,14899,Skillful Ring,خاتم الحاذق,129,
+sys,14900,Drastically increases maximum AP.,يزيد أقصى AP جذريا.,76,
+sys,14901,Soldier Earring,قرط الجندي,100,
+sys,14902,Highly increases maximum AP and ⏎ strength.,يزيد أقصى AP والقوة ⏎ بدرجة عالية.,81,
+sys,14903,Fencer Earring,قرط المبارز,103,
+sys,14904,Highly increases maximum AP and ⏎ strength and also increases magic.,يزيد أقصى AP بدرجة عالية ⏎ والقوة ويزيد السحر.,95,
+sys,14905,Mage Earring,قرط الساحر,110,
+sys,14906,Highly increases maximum AP and magic.,بدرجة عالية. ⏎ يزيد أقصى AP والسحر,66,
+sys,14907,Slayer Earring,قرط القاتل,94,
+sys,14908,Highly increases maximum AP and magic ⏎ and also increases strength.,يزيد أقصى AP والسحر ⏎ بدرجة عالية ويزيد القوة.,84,
+sys,14909,Cosmic Ring,خاتم الكوني,133,wide
+sys,14910,Tremendously increases maximum AP.,يزيد أقصى AP هائلا.,65,
+sys,14911,Medal,ميدالية,167,wide
+sys,14912,Increases strength.,يزيد القوة.,74,
+sys,14913,Cosmic Arts,فنون كونية,124,
+sys,14914,Highly increases strength and magic and ⏎ extraordinarily increases maximum AP.,يزيد القوة والسحر بدرجة عالية ⏎ ويزيد أقصى AP استثنائيا.,99,
+sys,14915,Shadow Archive,أرشيف الظل,91,
+sys,14916,Drastically increases magic and maximum ⏎ AP.,يزيد السحر وأقصى AP جذريا.,88,
+sys,14917,Shadow Archive+,أرشيف الظل+,92,
+sys,14918,"Drastically increases magic and maximum ⏎ AP, and restores MP when damage is ⏎ taken. Equip more to increase the effect.",يزيد السحر وأقصى AP جذريا ⏎ ويستعيد MP عند تلقى الضرر. ⏎ اجعل عدة منها لزيادة الأثر.,84,
+sys,14919,Lucky Ring,خاتم الحظ,121,
+sys,14920,"Brings luck to the wearer, increasing ⏎ the drop rate of items.",يمنح الحظ لحامله ويزيد ⏎ معدل سقوط الأغراض.,79,
+sys,14921,Full Bloom,الازهار,84,
+sys,14922,Drastically increases strength and ⏎ maximum AP.,يزيد القوة وأقصى AP جذريا.,105,
+sys,14923,Draw Ring,خاتم الجذب,148,wide
+sys,14924,Draws in nearby orbs.,يجذب الكرات القريبة.,118,
+sys,14925,Full Bloom+,الازهار+,86,
+sys,14926,<0B 5F>Drastically increases strength and ⏎ maximum AP. Increases MP restoration ⏎ speed by <07 F0 F0 00 80>25%<03> after MP is fully consumed.,يزيد القوة وأقصى AP جذريا<0B 5F>. ⏎ يزيد سرعة استعادة MP بمقدار ⏎ <07 F0 F0 00 80><0B 5F>25% بعد استهلاك MP بالكامل<03>.,89,
+sys,14927,Elven Bandanna,باندانا الإلف,93,
+sys,14928,Slightly increases defense.,يزيد الدفاع قليلا.,82,
+sys,14929,Divine Bandanna,باندانا الإلهية,101,
+sys,14930,Increases defense.,يزيد الدفاع.,85,
+sys,14931,Power Band,سوار القوة,125,
+sys,14932,Extremely increases defense.,يزيد الدفاع جدا.,74,
+sys,14933,Buster Band,سوار الكاسر,124,
+sys,14934,Has extremely high defense.,له دفاع مرتفع جدا.,91,
+sys,14935,Protect Belt,حزام الحماية,137,wide
+sys,14936,Greatly increases defense.,يزيد الدفاع كثيرا.,86,
+sys,14937,Gaia Belt,حزام غايا,142,wide
+sys,14938,Greatly increases defense as well as ⏎ thunder and dark resistance.,يزيد الدفاع كثيرا ⏎ وكذلك مقاومة الصاعقة والظلام.,109,
+sys,14939,Cosmic Belt,حزام الكوني,142,wide
+sys,14940,Has the greatest defense.,له أعلى دفاع.,68,
+sys,14941,Shock Charm,تعويذة صدمة,146,wide
+sys,14942,Extremely increases thunder resistance ⏎ and defense.,يزيد مقاومة الصاعقة والدفاع جدا.,113,
+sys,14943,Shock Charm+,تعويذة صدمة+,140,wide
+sys,14944,"Extremely increases thunder resistance ⏎ and defense, and also increases damage ⏎ done by thunder-based attacks by <07 F0 F0 00 80>20%<03>.","يزيد مقاومة ثاندر والدفاع كثيرا, ⏎ ويزيد أيضا ضرر هجمات ⏎ ثاندر بمقدار <07 F0 F0 00 80>20%<03>.",108,
+sys,14945,Grand Ribbon,الشريط العظيم,134,wide
+sys,14946,Highly increases all resistances and ⏎ extremely increases defense.,يزيد كل المقاومات بدرجة عالية ⏎ ويزيد الدفاع جدا.,113,
+sys,14951,Fire Bangle,عصبة النار,113,
+sys,14952,Increases fire resistance and ⏎ slightly increases defense.,يزيد مقاومة النار ⏎ ويزيد الدفاع قليلا.,80,
+sys,14953,Fira Bangle,عصبة فايرا,120,
+sys,14954,Increases fire resistance and ⏎ increases defense.,يزيد مقاومة النار ⏎ ويزيد الدفاع.,76,
+sys,14955,Firaga Bangle,عصبة فاياغا,109,
+sys,14956,Increases fire resistance and ⏎ greatly increases defense.,يزيد مقاومة النار ⏎ ويزيد الدفاع كثيرا.,84,
+sys,14957,Firagun Bangle,عصبة فاياغون,125,
+sys,14958,Highly increases fire resistance and ⏎ greatly increases defense.,يزيد مقاومة النار بدرجة عالية ⏎ ويزيد الدفاع كثيرا.,108,
+sys,14961,Blizzard Armlet,ساعد البرد,88,
+sys,14962,Increases blizzard resistance and ⏎ slightly increases defense.,يزيد مقاومة البرد ⏎ ويزيد الدفاع قليلا.,71,
+sys,14963,Blizzara Armlet,ساعد بليزارا,99,
+sys,14964,Increases blizzard resistance and ⏎ increases defense.,يزيد مقاومة البرد ⏎ ويزيد الدفاع.,70,
+sys,14965,Blizzaga Armlet,ساعد بليزاغا,101,
+sys,14966,Increases blizzard resistance and ⏎ greatly increases defense.,يزيد مقاومة البرد ⏎ ويزيد الدفاع كثيرا.,74,
+sys,14967,Blizzagun Armlet,ساعد بليزاغون,115,
+sys,14968,Highly increases blizzard resistance ⏎ and greatly increases defense.,يزيد مقاومة البرد بدرجة عالية ⏎ ويزيد الدفاع كثيرا.,111,
+sys,14971,Thunder Trinket,خرزة الصاعقة,112,
+sys,14972,Increases thunder resistance and ⏎ slightly increases defense.,يزيد مقاومة الصاعقة ⏎ ويزيد الدفاع قليلا.,81,
+sys,14973,Thundara Trinket,خرزة ثوندارا,105,
+sys,14974,Increases thunder resistance and ⏎ increases defense.,يزيد مقاومة الصاعقة ⏎ ويزيد الدفاع.,81,
+sys,14975,Thundaga Trinket,خرزة ثونداغا,106,
+sys,14976,Increases thunder resistance and ⏎ greatly increases defense.,يزيد مقاومة الصاعقة ⏎ ويزيد الدفاع كثيرا.,81,
+sys,14977,Thundagun Trinket,خرزة ثونداغون,119,
+sys,14978,Highly increases thunder resistance ⏎ and greatly increases defense.,يزيد مقاومة الصاعقة بدرجة عالية ⏎ ويزيد الدفاع كثيرا.,122,
+sys,14981,Shadow Anklet,خلخال الظل,100,
+sys,14982,Increases dark resistance and ⏎ slightly increases defense.,يزيد مقاومة الظلام ⏎ ويزيد الدفاع قليلا.,82,
+sys,14983,Dark Anklet,خلخال الظلام,143,wide
+sys,14984,Increases dark resistance and ⏎ increases defense.,يزيد مقاومة الظلام ⏎ ويزيد الدفاع.,82,
+sys,14985,Midnight Anklet,خلخال منتصف الليل,151,wide
+sys,14986,Increases dark resistance and ⏎ greatly increases defense.,يزيد مقاومة الظلام ⏎ ويزيد الدفاع كثيرا.,83,
+sys,14987,Chaos Anklet,خلخال الفوضى,145,wide
+sys,14988,Highly increases dark resistance and ⏎ greatly increases defense.,يزيد مقاومة الظلام بدرجة عالية ⏎ ويزيد الدفاع كثيرا.,113,
+sys,14991,Abas Chain,سلسلة أباس,120,
+sys,14992,"Increases fire, blizzard, and thunder ⏎ resistance and slightly increases ⏎ defense.",يزيد مقاومة النار والبرد والصاعقة ⏎ ويزيد الدفاع قليلا.,117,
+sys,14993,Aegis Chain,سلسلة إيغيس,131,wide
+sys,14994,"Increases fire, blizzard, and thunder ⏎ resistance and increases defense.",يزيد مقاومة النار والبرد والصاعقة ⏎ ويزيد الدفاع.,117,

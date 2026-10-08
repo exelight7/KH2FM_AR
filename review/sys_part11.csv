@@ -1,0 +1,251 @@
+﻿bar,id,EN,AR,width_pct,flags
+sys,19345,Master Form Status. A Form that  ⏎ handles both the Keyblade and magic. ⏎ <07 F0 F0 00 80>Drive points consumed: 4<03>,حالة شكل الإتقان. شكل يتعامل ⏎ مع الكيبلايد والسحر معا. ⏎ نقاط الدرايف المستهلكة: <07 F0 F0 00 80>4,100,
+sys,19346,Final Form Status. A Form that  ⏎ unleashes the Keyblade´s true power. ⏎ <07 F0 F0 00 80>Drive points consumed: 5<03>,حالة الشكل الأخير. شكل يطلق ⏎ القوة الحقيقية للكيبلايد. ⏎ نقاط الدرايف المستهلكة: <07 F0 F0 00 80>5,94,
+sys,19352,<X 52>Points,<X 52>Points,,same_as_en
+sys,19353,Time:<X 52>,Time:<X 52>,,same_as_en
+sys,19354,Round<X 52>,Round<X 52>,,same_as_en
+sys,19361,Attack,هجوم,123,
+sys,19362,Dark Aura,هالة مظلمة,138,wide
+sys,19363,Rescue,الإنقاذ,117,
+sys,19370,Reflect,الانعكاس,141,wide
+sys,19371,Reflect,الانعكاس,141,wide
+sys,19375,Megalaser,ليزر عملاق,144,wide
+sys,19376,Sora: ⏎ There´s no turning back now...,سورا: ⏎ لا عودة بعد الآن...,80,
+sys,19381,Touch It,المسه,81,
+sys,19388,Sora: ⏎ ₓₓₓ,Sora: ⏎ ₓₓₓ,,same_as_en
+sys,19406,There´s a rare Heartless!,هناك بلا قلب نادر!,84,
+sys,19416,PAGE ,صفحة ,137,wide
+sys,19417,What is Auto-Reload?,ما هو الإعادة التلقائية?,135,wide
+sys,19418,What is MP Charge?,ما هو شحن MP?,92,
+sys,19419,What are Abilities?,ما هي القدرات?,101,
+sys,19420,What are Sub-Weapons?,ما هي الأسلحة الفرعية?,121,
+sys,19421,<09 E6><0B 14> <0B 64>Help,عون<0B 14><0B 64><09 E6>,123,
+sys,19428,Firagun,فيراغون,158,wide
+sys,19429,Blizzagun,بليزاغون,128,
+sys,19435,Sora: ⏎ There´s no turning back now...,سورا: ⏎ لا عودة بعد الآن...,80,
+sys,19466,High Score,أعلى نقاط,120,
+sys,19467,Record,الإنجاز,120,
+sys,19470,Hades Cup Trophy,كأس هاديس,74,
+sys,19471,Trophy presented to the champion of ⏎ the Hades Paradox Cup. It is proof ⏎ of having won many severe battles.,جائزة تقدم لبطل ⏎ كأس هاديس المتناقض. إنها دليل ⏎ على الفوز بمعركات شديدة.,98,
+sys,19480,Game LV,مس اللعبة,143,wide
+sys,19481,<0B 5F>Completion of Jiminy´s Journal,إتمام يوميات جيميني<0B 5F>,86,
+sys,19482,Completion of Gummi Routes,إتمام مسارات غامي,88,
+sys,19483,Healed Party Members,علاج أعضاء الفريق,106,
+sys,19484,Saved by Mickey,النجاة بميكي,95,
+sys,19485,Most Used Form,الشكل المتكرر,107,
+sys,19486,Used Antiform,استخدام الشكل المضاد,192,wide
+sys,19487,Most Used Summon,الاستدعاء المتكرر,119,
+sys,19488,<07 F0 F0 00 80> <03>Time(s), <07 F0 F0 00 80>مرات<07 F0 F0 00 80><03>,91,
+sys,19492,BATTLE REPORT,تقرير المعركة,120,
+sys,19541,"<0B 5A>""The Struggle"" Trophy",جائزة الصراع<0B 5A>,76,
+sys,19542,Trophy from the Struggle Tournament. ⏎ It is decorated with four crystals.,جائزة من بطولة الصراع. ⏎ إنها مزينة بأربعة كريستالات.,89,
+sys,19552,Block,صد,80,
+sys,19561,The departing member has surrendered their equipment.,استسلم العضو المغادر لتجهيزاته.,70,
+sys,19562,Sora: ⏎ I´ll ask the others if we´re ⏎ ready to leave.,سورا: ⏎ سأل الآخرين إن كنا ⏎ جاهزين للمغادرة.,89,
+sys,19565,Block,الحجب,147,wide
+sys,19573,Sora: ⏎ I´m still on the clock!,سورا: ⏎ ما زلت في العمل!,100,
+sys,19574,Sora: ⏎ I´m still on the clock!,سورا: ⏎ ما زلت في العمل!,100,
+sys,19575,Sora: ⏎ I´m still on the clock!,سورا: ⏎ ما زلت في العمل!,100,
+sys,19576,Sora: ⏎ I´m still on the clock!,سورا: ⏎ ما زلت في العمل!,100,
+sys,19577,Sora: ⏎ I´m still on the clock!,سورا: ⏎ ما زلت في العمل!,100,
+sys,19578,Sora: ⏎ I´m still on the clock!,سورا: ⏎ ما زلت في العمل!,100,
+sys,19581,<0D>Free Development 2,التطوير الحر <0D>2,90,
+sys,19582,"<09 0A><07 FF 00 00 80>INFORMATION<03> ⏎  ⏎ Learned to synthesize more new ⏎ items through <07 FF FF 00 80>Free Development<03>, ⏎ gained from completing the collection.","<0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ تعلمت تركيب المزيد من الأغراض ⏎ الجديدة عبر <03>التطوير الحر,<07 FF FF 00 80> ⏎ التي حصلت عليها بإكمال المجموعة.",113,
+sys,19600,<X 52>Swings,<X 52>Swings,,same_as_en
+sys,19615,<0B 50>Ping will be joining the party. Party Members cannot be switched and ⏎ summons cannot be used for some time.,بينغ سينضم إلى الفريق. لا يمكن تبديل أعضاء الفريق ولا<0B 50> ⏎ استخدام الاستدعاءات لبعض الوقت.,97,
+sys,19620,Sora: ⏎ But what about the powder ⏎ kegs?,سورا: ⏎ لكن ماذا عن براميل ⏎ البارود?,89,
+sys,19820,COM (1),كوم (1),130,
+sys,19821,COM (2),كوم (2),130,
+sys,19822,COM (3),كوم (3),130,
+sys,19823,COM (4),كوم (4),129,
+sys,19824,COM (5),كوم (5),130,
+sys,19825,COM (6),كوم (6),130,
+sys,19826,COM (7),كوم (7),130,
+sys,19827,COM (8),كوم (8),130,
+sys,19828,COM (9),كوم (9),130,
+sys,19829,COM (10),كوم (10),129,
+sys,19830,COM (11),كوم (11),130,
+sys,19834,COM (12),كوم (12),129,
+sys,19835,COM (13),كوم (13),129,
+sys,19836,COM (14),كوم (14),129,
+sys,19857,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ No controller detected.,                                   <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ لم يتم اكتشاف وحدة تحكم.,97,dblspace
+sys,19862,LV,مستوى,355,wide
+sys,19988,Cavern of Remembrance: Depths,كهف الذكرى: الأعماق,84,
+sys,19989,Cavern of Remembrance: Mining Area,كهف الذكرى: منطقة التعدين,95,
+sys,19990,Cavern of Remembrance: Engine Chamber,كهف الذكرى: حجرة المحرك,86,
+sys,19991,Cavern of Remembrance: Mineshaft,كهف الذكرى: المناجم,77,
+sys,19992,Transport to Remembrance,الممر نحو الذكرى,86,
+sys,19993,Garden of Assemblage,حديقة التجمع,81,
+sys,19994,Underground Facility,المنشأة تحت الأرضية,120,
+sys,19995,Memory's Contortion,تشوه الذاكرة,84,
+sys,19996,The World of Nothing,عالم اللاشيء,75,
+sys,19997,Hall of Empty Melodies,قاعة الألحان الخالية,107,
+sys,19998,Bridgeₓₓₓₓₓₓₓ,Bridgeₓₓₓₓₓₓₓ,,same_as_en
+sys,19999,The Old Mansion,القصر القديم,102,
+sys,20000,Station of Remembrance,محطة الذكرى,71,
+sys,20001,Destiny Island,جزيرة القدر,115,
+sys,20002,Addled Impasse,المأزق المضطرب,132,wide
+sys,20003,Mansion: Basement Hall,القصر: قاعة القبو,94,
+sys,20004,Havoc's Divide,فجوة الدمار,117,
+sys,20005,Station of Oblivion,محطة النسيان,86,
+sys,20006,Station of Awakening,محطة الاستيقاظ,88,
+sys,20007,Gathering Place,مكان التجمع,103,
+sys,20008,Combo Master,خبير الكومبو,118,
+sys,20009,Unleash a combo whether or not ⏎ your hits land.,أطلق كومبو سواء أصابت ⏎ ضرباتك أو لا.,92,
+sys,20010,Drive Converter,محول الدرايف,116,
+sys,20011,Increases the drop rate of drive orbs ⏎ in place of munny. ⏎ Equip more to increase the effect.,يزيد معدل سقوط كرات الدرايف ⏎ بدلا من المال. ⏎ أضف المزيد لزيادة التأثير.,106,
+sys,20012,Light & Darkness,النور والظلام,97,
+sys,20013,Has a special secret effect.,له تأثير سري خاص.,83,
+sys,20014,Damage Control,ضبط الضرر,84,
+sys,20015,Halves damage taken at critical moments. ⏎ Equip two to accelerate the effect.,ينقص نصف الضرر المتلقى في اللحظات الحرجة. ⏎ أضف قطعتين لتسريع التأثير.,131,wide
+sys,20016,Critical Mode,الوضع الحرج,123,
+sys,20017,A true test of skill for the adept. ⏎ The Game Mode cannot be changed ⏎ once the game has started.,اختبار حقيقي لمهارة المتمكن. ⏎ لا يمكن تغيير وضع اللعبة ⏎ بعد بدء اللعب.,105,
+sys,20018,Critical Mode,الوضع الحرج,123,
+sys,20019,Critical Mode,الوضع الحرج,123,
+sys,20020,A true test of skill for the adept. Begin ⏎ with certain abilities and other perks. ⏎ <07 F0 F0 00 80>(There is a great chance of unlocking ⏎ the secret ending.),اختبار حقيقي لمهارة المتمكن. تبدأ ⏎ بقدرات معينة ومزايا أخرى. ⏎ هناك فرصة كبيرة لفتح<07 F0 F0 00 80> ⏎ النهاية السرية.,104,
+sys,20021,Two Become One,اثنان يصبحان واحدا,152,wide
+sys,20022,A weapon of great strength and magic ⏎ that has a special effect.,سلاح قوة وسحر عظيمان ⏎ له تأثير خاص.,78,
+sys,20023,Winner's Proof,دليل الفائز,92,
+sys,20024,A weapon of extraordinary magic ⏎ and great strength. ⏎ Disables the gaining of experience.,سلاح سحر استثنائي ⏎ وقوة عظيمة. ⏎ يمنع كسب الخبرة.,63,
+sys,20025,Centurion,السينتوريون,160,wide
+sys,20026,A staff with extraordinary strength ⏎ and great magic.,عصا بقوة استثنائية ⏎ وسحر عظيم.,62,
+sys,20027,Centurion+,السينتوريون+,151,wide
+sys,20028,A staff with extraordinary strength ⏎ and great magic. Halves damage ⏎ taken in critical situations.,عصا بقوة استثنائية ⏎ وسحر عظيم. ينقص نصف الضرر ⏎ المتلقى في المواقف الحرجة.,98,
+sys,20029,Plain Mushroom,فطر عادي,84,
+sys,20030,A staff that doesn't look like much of ⏎ a weapon.,عصا لا تشبه كثيرا ⏎ سلاحا.,54,
+sys,20031,Plain Mushroom+,فطر عادي+,86,
+sys,20032,A staff with some magic power.,عصا بقوة سحرية ما.,77,
+sys,20033,<0B 5A>Precious Mushroom,فطر ثمين<0B 5A>,62,
+sys,20034,A staff with great magic. ⏎ Increases MP restoration speed ⏎ by <07 F0 F0 00 80>25%<03> after MP is fully consumed.,عصا بسحر عظيم. ⏎ تزيد سرعة استعادة MP بمقدار ⏎ <07 F0 F0 00 80>25% بعد استهلاك MP بالكامل.,104,
+sys,20035,<0B 4B>Precious Mushroom+,فطر ثمين<0B 4B>+,65,
+sys,20036,A staff with tremendous magic. ⏎ Increases MP restoration speed ⏎ by <07 F0 F0 00 80>50%<03> after MP is fully consumed.,عصا بسحر هائل. ⏎ تزيد سرعة استعادة MP بمقدار ⏎ <07 F0 F0 00 80>50% بعد استهلاك MP بالكامل.,104,
+sys,20037,<0B 5A>Premium Mushroom,فطر مميز<0B 5A>,64,
+sys,20038,A staff with the most powerful magic. ⏎ Increases MP restoration speed ⏎ by <07 F0 F0 00 80>75%<03> after MP is fully consumed.,عصا بأقوى سحر. ⏎ تزيد سرعة استعادة MP بمقدار ⏎ <07 F0 F0 00 80>75% بعد استهلاك MP بالكامل.,96,
+sys,20039,Frozen Pride,الفخر المتجمد,138,wide
+sys,20040,A shield with the greatest defense.,درع بأقصى دفاع.,61,
+sys,20041,Frozen Pride+,الفخر المتجمد+,134,wide
+sys,20042,A shield with the greatest defense. ⏎ Increases MP restoration speed ⏎ by <07 F0 F0 00 80>75%<03> after MP is fully consumed.,درع بأعظم دفاع. ⏎ يزيد سرعة استعادة MP بمقدار ⏎ <07 F0 F0 00 80>75% بعد استهلاك MP بالكامل.,104,
+sys,20043,<0B 5F>Joyous Mushroom,فطر مبهج<0B 5F>,71,
+sys,20044,A flimsy shield.,درع ضعيف.,90,
+sys,20045,<0B 5A>Joyous Mushroom+,فطر مبهج<0B 5A>+,73,
+sys,20046,A shield with a little strength.,درع بقوة قليلة.,65,
+sys,20047,<0B 5A>Majestic Mushroom,فطر مهيب<0B 5A>,64,
+sys,20048,A shield with great strength. ⏎ Absorbs <07 F0 F0 00 80>10%<03> of damage taken.,درع بقوة عظيمة. ⏎ يمتص <07 F0 F0 00 80>10%<03> من الضرر المتلقى.,113,
+sys,20049,<0B 4B>Majestic Mushroom+,فطر مهيب<0B 4B>+,67,
+sys,20050,A shield with tremendous strength. ⏎ Absorbs <07 F0 F0 00 80>20%<03> of damage taken.,درع بقوة هائلة. ⏎ يمتص <07 F0 F0 00 80>20%<03> من الضرر المتلقى.,98,
+sys,20051,<0B 5A>Ultimate Mushroom,فطر نهائي<0B 5A>,66,
+sys,20052,A shield with the greatest strength. ⏎ Absorbs <07 F0 F0 00 80>40%<03> of damage taken.,درع بأعظم قوة. ⏎ يمتص <07 F0 F0 00 80>40%<03> من الضرر المتلقى.,94,
+sys,20053,"Ready, Go!",استعد!,75,
+sys,20054,Restore Count,عدد الاستعادة,128,
+sys,20055,Aerial Strike,الضربة الجوية,134,wide
+sys,20082,Flash Step,خطوة البرق,142,wide
+sys,20083,Unleashes a guard-piercing attack on ⏎ a slightly distant target while keeping up ⏎ your own guard.,يطلق هجوما يخترق الحارس على ⏎ هدف بعيد قليلا مع الحفاظ على ⏎ حارسك.,91,
+sys,20084,Aerial Dive,غطسة جوية,134,wide
+sys,20085,Unleashes a powerful aerial attack ⏎ on distant targets.,يطلق هجوما جويا قويا ⏎ على أهداف بعيدة.,80,
+sys,20086,Magnet Burst,انفجار المغناطيس,154,wide
+sys,20087,Draws enemies in to unleash a finishing ⏎ combo move. Damage dealt ⏎ is relative to magic skill.,يجذب الأعداء لإطلاق ضربة ⏎ كومبو ختامية. الضرر المسبب ⏎ يعتمد على مهارة السحر.,86,
+sys,20088,Vicinity Break,كسر الحصار,99,
+sys,20089,Unleashes a powerful attack ⏎ when surrounded.,يطلق هجوما قويا ⏎ عندما تكون محاصرا.,92,
+sys,20090,Pull,اسحب,176,wide
+sys,20091,Battle Report,تقرير المعركة,136,wide
+sys,20094,The End,النهاية,100,
+sys,20095,Limit Form,فورم ليميت,138,wide
+sys,20096,Limit,ليميت,126,
+sys,20097,Limit Form,شكل الليميت,132,wide
+sys,20098,Access Limit Form alone with the help ⏎ of friends faraway.,ادخل شكل الليميت بمفرده ⏎ بمساعدة أصدقاء بعيدين.,83,
+sys,20099,Dodge Roll LV 1,التدحرج 1,79,
+sys,20100,Dodge enemy attacks by using <09 E8> ⏎ and pressing <09 DE>. ⏎ More efficient at higher Levels.,اضغط <09 DE> مع استخدام <09 E8> ⏎ لتفادي هجمات العدو. ⏎ يزداد الأثر في المستويات الأعلى.,126,
+sys,20101,Dodge Roll LV 2,التدحرج 2,79,
+sys,20102,Dodge enemy attacks by using <09 E8> ⏎ and pressing <09 DE>. ⏎ More efficient at higher Levels.,اضغط <09 DE> مع استخدام <09 E8> ⏎ لتفادي هجمات العدو. ⏎ يزداد الأثر في المستويات الأعلى.,126,
+sys,20103,Dodge Roll LV 3,التدحرج 3,79,
+sys,20104,Dodge enemy attacks by using <09 E8> ⏎ and pressing <09 DE>. ⏎ More efficient at higher Levels.,اضغط <09 DE> مع استخدام <09 E8> ⏎ لتفادي هجمات العدو. ⏎ يزداد الأثر في المستويات الأعلى.,126,
+sys,20105,Dodge Roll MAX,التدحرج الأقصى,128,
+sys,20106,Dodge enemy attacks by using <09 E8> ⏎ and pressing <09 DE>. ⏎ More efficient at higher Levels.,اضغط <09 DE> مع استخدام <09 E8> ⏎ لتفادي هجمات العدو. ⏎ يزداد الأثر في المستويات الأعلى.,126,
+sys,20107,Auto Limit,ليميت تلقائي,144,wide
+sys,20108,"Automatically sets the Reaction ⏎ Command to Limit in a pinch, if ⏎ Limit Form is usable.",يضبط أمر التفاعل ⏎ ليميت تلقائيا عند الخطر إذا ⏎ كان شكل الليميت متاحا.,102,
+sys,20109,Sonic Rave,سونيك ريف,130,
+sys,20110,A Limit Command that unleashes an attack ⏎ on an enemy as you pass by. Press <09 DF> at ⏎ the right tempo for a combo. <07 F0 F0 00 80>MP Cost:<0B 64> 60<03>,أمر ليميت يطلق هجوما على عدو ⏎ أثناء مرورك. اضغط <09 DF> بالإيقاع ⏎ الصحيح لكومبو. <03>تكلفة <03><07 F0 F0 00 80>MP: <07 F0 F0 00 80><0B 64>60,94,
+sys,20111,Last Arcanum,لاست أركانوم,126,
+sys,20112,A Limit Command that unleashes ⏎ a powerful combo attack. Press <09 DF> for ⏎ a consecutive combo. <07 F0 F0 00 80>MP Cost:<0B 64> 75<03>,أمر ليميت يطلق ⏎ هجوم كومبو قويا. اضغط <09 DF> لكومبو ⏎ متتال. <03>تكلفة <03><07 F0 F0 00 80>MP: <07 F0 F0 00 80><0B 64>75,114,
+sys,20113,Strike Raid,سترايك ريد,129,
+sys,20114,A Limit Command that allows you to throw ⏎ the Keyblade at the target. ⏎ Press <09 DF> for a combo. <07 F0 F0 00 80>MP Cost:<0B 64> 65<03>,أمر ليميت يتيح لك رمي ⏎ الكيبلايد على الهدف. ⏎ اضغط <09 DF> لكومبو. <03>تكلفة <03><07 F0 F0 00 80>MP: <07 F0 F0 00 80><0B 64>65,79,
+sys,20115,Infinity,إنفينيتي,124,
+sys,20116,A Limit Command that can be unleashed by ⏎ pressing <09 DF> after an aerial combo. ⏎ <07 F0 F0 00 80>MP Cost:<0B 64> 80<03>,أمر ليميت يمكن إطلاقه بالضغط على ⏎ <09 DF> بعد كومبو جوي. ⏎ تكلفة <03><07 F0 F0 00 80>MP: <07 F0 F0 00 80><0B 64>80,100,
+sys,20117,Zantetsuken,زانتيتسوكن,111,
+sys,20118,Unleashes a finishing combo move on ⏎ a single target. This powerful attack can ⏎ instantly eliminate weaker enemies.,يطلق ضربة كومبو ختامية على ⏎ هدف واحد. هذا الهجوم القوي يستطيع ⏎ التخلص من الأعداء الأضعف فورا.,114,
+sys,20119,Ripple Drive,ريبل درايف,120,
+sys,20120,Unleashes a finishing combo move ⏎ when surrounded. Damage dealt ⏎ is relative to magic skill.,يطلق ضربة كومبو ختامية ⏎ عندما تكون محاصرا. الضرر المسبب ⏎ يعتمد على مهارة السحر.,128,
+sys,20121,Hurricane Period,فترة الإعصار,95,
+sys,20122,Unleashes a powerful finishing combo ⏎ move consisting of an aerial barrage.,يطلق ضربة كومبو ختامية قوية ⏎ تتكون من وابل جوي.,101,
+sys,20123,Limit LV,مس ليميت,133,wide
+sys,20124,"For each limit command finishing move ⏎ unleashed in Limit Form, 1 point of ⏎ experience is gained.",عن كل حركة إنهاء لأمر ليميت ⏎ في شكل الليميت تكتسب ⏎ نقطة خبرة واحدة.,96,
+sys,20125,Experience necessary to level up. ⏎ The Level cap depends on the number of ⏎ Forms obtained.,الخبرة المطلوبة للارتقاء. ⏎ حد المستوى يعتمد على عدد ⏎ الأشكال المتحققة.,89,
+sys,20126,"The Form gauge for Limit Form. ⏎ The longer the gauge, the longer ⏎ the time spent transformed.",عداد شكل الليميت. ⏎ كلما طال العداد طال ⏎ زمن التحول.,78,
+sys,20127,Limit,ليميت,126,
+sys,20128,Limit Form Status. ⏎ A form specializing in Limit attacks. ⏎ <07 F0 F0 00 80>Cost: 4<03>,حالة شكل ليميت. ⏎ شكل متخصص في هجمات ليميت. ⏎ التكلفة: <07 F0 F0 00 80>4,99,
+sys,20129,"Limit Form Level. Time spent ⏎ transformed becomes longer, and ⏎ Abilities become stronger by leveling up.",مستوى شكل الليميت. يطول زمن ⏎ التحول وتقوى القدرات ⏎ مع الارتقاء.,95,
+sys,20159,<09 DA>: Save   <09 DB>: End Game,: حفظ   <09 DB>: إنهاء اللعبة<09 DA>,127,dblspace
+sys,20168,Reversal,الانقلاب,106,
+sys,20169,Quick Slide,انزلاق سريع,143,wide
+sys,20170,<09 0A><07 FF 00 00 80>INFORMATION<03> ⏎  ⏎ Save game data. Loading this save data ⏎ will place you before the last battle.,<0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ حفظ بيانات اللعبة. سيضعك تحميل هذه ⏎ البيانات قبل المعركة الأخيرة.,114,
+sys,20171,<09 0B><07 FF 00 00 80>QUESTION<03> ⏎  ⏎ Would you like to return to the title screen ⏎ without saving completed game data?,<03>سؤال<07 FF 00 00 80><09 0B> ⏎  ⏎ هل تريد العودة إلى شاشة العنوان ⏎ دون حفظ بيانات اللعبة المكتملة?,96,
+sys,20190,Merge,الدمج,132,wide
+sys,20191,<0B 55>Remembrance Shard,شظية الذكرى<0B 55>,84,
+sys,20192,A gem shard filled with remembrance. ⏎ A very common ingredient of item ⏎ synthesis.,شظية جوهرة ممتلئة بالذكرى. ⏎ عنصر شائع جدا في تركيب ⏎ الأغراض.,96,
+sys,20193,<0B 55>Remembrance Stone,حجر الذكرى<0B 55>,82,
+sys,20194,A stone filled with remembrance. ⏎ A common ingredient of item synthesis.,حجر ممتلئ بالذكرى. ⏎ عنصر شائع في تركيب الأغراض.,94,
+sys,20195,<0B 5A>Remembrance Gem,جوهرة الذكرى<0B 5A>,109,
+sys,20196,A gem abundant with remembrance. ⏎ A rare ingredient of item synthesis.,جوهرة غنية بالذكرى. ⏎ عنصر نادر في تركيب الأغراض.,100,
+sys,20197,<0B 50>Remembrance Crystal,بلورة الذكرى<0B 50>,84,
+sys,20198,A mysterious crystal abundant with ⏎ remembrance. A very rare ingredient ⏎ of item synthesis.,بلورة غامضة غنية ⏎ بالذكرى. عنصر نادر جدا ⏎ في تركيب الأغراض.,81,
+sys,20199,Tranquility Shard,شظية الطمأنينة,99,
+sys,20200,A gem shard filled with tranquility. ⏎ A very common ingredient of item ⏎ synthesis.,شظية جوهرة ممتلئة بالسكينة. ⏎ عنصر شائع جدا في تركيب ⏎ الأغراض.,99,
+sys,20201,Tranquility Stone,حجر الطمأنينة,97,
+sys,20202,A stone filled with tranquility. ⏎ A common ingredient of item synthesis.,حجر ممتلئ بالسكينة. ⏎ عنصر شائع في تركيب الأغراض.,94,
+sys,20203,Tranquility Gem,جوهرة الطمأنينة,130,
+sys,20204,A gem abundant with tranquility. ⏎ A rare ingredient of item synthesis.,جوهرة غنية بالسكينة. ⏎ عنصر نادر في تركيب الأغراض.,100,
+sys,20205,Tranquility Crystal,بلورة الطمأنينة,98,
+sys,20206,A mysterious crystal abundant with ⏎ tranquility. A very rare ingredient of ⏎ item synthesis.,بلورة غامضة غنية ⏎ بالسكينة. عنصر نادر جدا ⏎ في تركيب الأغراض.,77,
+sys,20207,Lost Illusion,وهم ضائع,102,
+sys,20208,A magical ore. ⏎ An ingredient of item synthesis.,خام سحري. ⏎ عنصر في تركيب الأغراض.,94,
+sys,20209,Manifest Illusion,إظهار الوهم,93,
+sys,20210,A possibly magical ore. ⏎ An ingredient of item synthesis.,خام قد يكون سحريا. ⏎ عنصر في تركيب الأغراض.,94,
+sys,20211,Dark Remembrance Map,خريطة ذكرى الظلام,109,
+sys,20212,A map of the area.,خريطة المنطقة.,97,
+sys,20214,Infinity,اللانهاية,129,
+sys,20215,Shoot,إطلاق,124,
+sys,20216,Impact,الصدم,120,
+sys,20217,Giga Impact,صدم عملاق,129,
+sys,20220,Turn On,تشغيل,92,
+sys,20221,Access,دخول,125,
+sys,20222,Sonic Rave,حفلة صوتية,140,wide
+sys,20223,Rave,حفلة,137,wide
+sys,20224,Finish,الختام,135,wide
+sys,20225,Last Arcanum,أسرار النهاية,119,
+sys,20226,Bash,الكبس,141,wide
+sys,20227,The End,النهاية,100,
+sys,20228,Strike Raid,ضربة غازية,133,wide
+sys,20229,Raid,غارة,157,wide
+sys,20230,Judgment,الحكم,79,
+sys,20235,Limit,ليميت,126,
+sys,20236,Mega Impact,الصدم الكبير,127,
+sys,20237,Return to Menu,العودة للقائمة,121,
+sys,20240,Activate,تفعيل,89,
+sys,20241,Japaneseₓ,اليابانية,86,
+sys,20242,Englishₓ,الإنجليزية,141,wide
+sys,20243,Select a chapter.,اختر فصلا.,71,
+sys,20244,Select a movie.,اختر فيلما.,85,
+sys,20270,Play all,شغل الكل,157,wide
+sys,20325,Zantetsu Counter,رد زانتيتسو,82,
+sys,20326,Unleashes Zantetsuken by selecting ⏎ Attack while guarding.,يطلق زانتيتسوكين باختيار ⏎ الهجوم أثناء الحراسة.,84,
+sys,20327,Reflect Combo,كومبو الانعكاس,135,wide
+sys,20328,Blocks enemy attacks with Guard ⏎ by pressing <09 DE> during a combo.,يصد هجمات العدو بالحماية ⏎ بالضغط على <09 DE> أثناء الكومبو.,102,
+sys,20329,HP Gain,زيادة HP,142,wide
+sys,20330,Restores Sora's HP when ⏎ a Limit Command lands.,يستعيد صحة سورا عندما ⏎ ينجح أمر ليميت.,121,
+sys,20338,Depths of Remembrance Map,خريطة أعماق الذكرى,97,
+sys,20339,A map of the area.,خريطة المنطقة.,97,
+sys,20342,Garden of Assemblage Map,خريطة حديقة التجمع,101,
+sys,20343,A map of the area.,خريطة المنطقة.,97,
+sys,20364,<0B 5F>Awakening Puzzle Piece,قطعة أحجية الاستيقاظ<0B 5F>,115,
+sys,20392,<0B 5F>Awakening Puzzle Piece,قطعة أحجية الاستيقاظ<0B 5F>,115,
+sys,20393,Heart Puzzle Piece,قطعة أحجية القلب,118,

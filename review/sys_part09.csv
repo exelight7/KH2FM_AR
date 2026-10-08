@@ -1,0 +1,251 @@
+﻿bar,id,EN,AR,width_pct,flags
+sys,15975,Use up to two extra Materials!,استخدم حتى مادتين إضافيتين!,116,
+sys,15976,Rank <09 36> recipe Materials cut by half!,مواد وصفة الرتبة <09 36> تقل إلى النصف!,121,
+sys,15977,Rank <09 35> recipe Materials cut by half!,مواد وصفة الرتبة <09 35> تقل إلى النصف!,121,
+sys,15978,Rank <09 34> recipe Materials cut by half!,مواد وصفة الرتبة <09 34> مخفضة للنصف!,117,
+sys,15979,Make new items in Free Development!,اصنع أغراض جديدة في التطوير الحر!,123,
+sys,15980,Rank <09 33> recipe Materials cut by half!,مواد وصفة الرتبة <09 33> مخفضة للنصف!,117,
+sys,15982,Get 1 type of Material.,احصل على نوع مادة واحد.,146,wide
+sys,15983,Get 5 types of Materials.,احصل على 5 أنواع من المواد.,145,wide
+sys,15984,Get 10 types of Materials.,احصل على 10 أنواع من المواد.,144,wide
+sys,15985,Get 15 types of Materials.,احصل على 15 أنواع من المواد.,144,wide
+sys,15986,Get 20 types of Materials.,احصل على 20 أنواع من المواد.,144,wide
+sys,15987,Get 25 types of Materials.,احصل على 25 أنواع من المواد.,144,wide
+sys,15988,Get 30 types of Materials.,احصل على 30 أنواع من المواد.,144,wide
+sys,15989,Get 35 types of Materials.,احصل على 35 أنواع من المواد.,144,wide
+sys,15990,Get 40 types of Materials.,احصل على 40 أنواع من المواد.,144,wide
+sys,15991,Get 45 types of Materials.,احصل على 45 أنواع من المواد.,144,wide
+sys,15992,Get all Materials.,اجمع كل المواد.,120,
+sys,15993,Obtain <0B 5A>total amount of 50 or more.,اجمع <03>ما مجموعه 50 أو أكثر<0B 5A>.,104,
+sys,15994,Obtain <0B 5A>total amount of 100 or more.,اجمع <03>ما مجموعه 100 أو أكثر<0B 5A>.,104,
+sys,15995,Obtain <0B 5A>total amount of 250 or more.,اجمع <03>ما مجموعه 250 أو أكثر<0B 5A>.,104,
+sys,15996,Obtain <0B 5A>total amount of 500 or more.,اجمع <03>ما مجموعه 500 أو أكثر<0B 5A>.,104,
+sys,15997,"Obtain <0B 5A>total amount of 1,000 or more.","اجمع <03>ما مجموعه 1,000 أو أكثر<0B 5A>.",104,
+sys,15998,Obtain all <09 2C>dense Materials.,اجمع كل المواد <09 2C>الكثيفة.,114,
+sys,15999,Obtain all <09 2D>twilight Materials.,اجمع كل المواد <09 2D>الشفقية.,107,
+sys,16000,Obtain all <09 2E>mythril Materials.,اجمع كل مواد <09 2E>ميثرايل.,104,
+sys,16001,Obtain all <09 2F>bright Materials.,اجمع كل المواد <09 2F>المشرقة.,117,
+sys,16002,Obtain all <09 30>energy Materials.,اجمع كل مواد <09 30>الطاقة.,99,
+sys,16003,Obtain all <09 31>serenity Materials.,اجمع كل مواد <09 31>السكينة.,97,
+sys,16004,Obtain all rank <09 36> Materials.,اجمع كل مواد الرتبة <09 36> بالكامل.,143,wide
+sys,16005,Obtain all rank <09 35> Materials.,اجمع كل مواد الرتبة <09 35> بالكامل.,143,wide
+sys,16006,Obtain all rank <09 34> Materials.,اجمع كل مواد الرتبة <09 34> بالكامل.,143,wide
+sys,16007,Obtain all rank <09 33> Materials.,اجمع كل مواد الرتبة <09 33> بالكامل.,143,wide
+sys,16008,Obtain 30 or more <09 26>Dark Shards.,اجمع 30 أو أكثر من <09 26>شظايا مظلمة.,131,wide
+sys,16009,Obtain 30 or more <09 27>Blazing Shards.,اجمع 30 أو أكثر من <09 27>شظايا مشتعلة.,124,
+sys,16010,Obtain 30 or more <09 28>Frost Shards.,اجمع 30 أو أكثر من <09 28>شظايا جليدية.,130,
+sys,16011,Obtain 30 or more <09 29>Lightning Shards.,اجمع 30 أو أكثر من <09 29>شظايا صاعقة.,116,
+sys,16012,Obtain 30 or more <09 2A>Power Shards.,اجمع 30 أو أكثر من <09 2A>شظايا جبارة.,123,
+sys,16013,Obtain 30 or more <09 2B>Lucid Shards.,اجمع 30 أو أكثر من <09 2B>شظايا لامعة.,126,
+sys,16014,Obtain 30 or more <09 2C>Dense Shards.,اجمع 30 أو أكثر من <09 2C>شظايا كثيفة.,124,
+sys,16015,Obtain 30 or more <09 2D>Twilight Shards.,اجمع 30 أو أكثر من <09 2D>شظايا شفقية.,118,
+sys,16016,Obtain 25 or more <09 26>Dark Stones.,اجمع 25 أو أكثر من <09 26>أحجار مظلمة.,136,wide
+sys,16017,Obtain 25 or more <09 27>Blazing Stones.,اجمع 25 أو أكثر من <09 27>أحجار مشتعلة.,128,
+sys,16018,Obtain 25 or more <09 28>Frost Stones.,اجمع 25 أو أكثر من <09 28>أحجار جليدية.,134,wide
+sys,16019,Obtain 25 or more <09 29>Lightning Stones.,اجمع 25 أو أكثر من <09 29>أحجار صاعقة.,120,
+sys,16020,Obtain 25 or more <09 2A>Power Stones.,اجمع 25 أو أكثر من <09 2A>أحجار جبارة.,128,
+sys,16021,Obtain 25 or more <09 2B>Lucid Stones.,اجمع 25 أو أكثر من <09 2B>أحجار لامعة.,131,wide
+sys,16022,Obtain 25 or more <09 2C>Dense Stones.,اجمع 25 أو أكثر من <09 2C>أحجار كثيفة.,128,
+sys,16023,Obtain 25 or more <09 2D>Twilight Stones.,اجمع 25 أو أكثر من <09 2D>أحجار شفقية.,122,
+sys,16024,Obtain 20 or more <09 26>Dark Gems.,اجمع 20 أو أكثر من <09 26>جواهر مظلمة.,145,wide
+sys,16025,Obtain 20 or more <09 27>Blazing Gems.,اجمع 20 أو أكثر من <09 27>جواهر مشتعلة.,136,wide
+sys,16026,Obtain 20 or more <09 28>Frost Gems.,اجمع 20 أو أكثر من <09 28>جواهر جليدية.,143,wide
+sys,16027,Obtain 20 or more <09 29>Lightning Gems.,اجمع 20 أو أكثر من <09 29>جواهر صاعقة.,127,
+sys,16028,Obtain 20 or more <09 2A>Power Gems.,اجمع 20 أو أكثر من <09 2A>جواهر جبارة.,136,wide
+sys,16029,Obtain 20 or more <09 2B>Lucid Gems.,اجمع 20 أو أكثر من <09 2B>جواهر لامعة.,140,wide
+sys,16030,Obtain 20 or more <09 2C>Dense Gems.,اجمع 20 أو أكثر من <09 2C>جواهر كثيفة.,137,wide
+sys,16031,Obtain 20 or more <09 2D>Twilight Gems.,اجمع 20 أو أكثر من <09 2D>جواهر شفقية.,129,
+sys,16035,Corridors,الممرات,106,
+sys,16036,Firagun,فاياغون,148,wide
+sys,16037,Blizzagun,بليزاغون,128,
+sys,16046,The Interceptor Map,خريطة المتعقب,91,
+sys,16047,A map of the area.,خريطة المنطقة.,97,
+sys,16048,The Black Pearl Map,خريطة اللؤلؤة السوداء,143,wide
+sys,16049,A map of the area.,خريطة المنطقة.,97,
+sys,16050,Isla de Muerta Map,خريطة إيسلا دي مويرتا,151,wide
+sys,16051,A map of the area.,خريطة المنطقة.,97,
+sys,16052,Ship Graveyard Map,خريطة مقبرة السفن,125,
+sys,16053,A map of the area.,خريطة المنطقة.,97,
+sys,16054,Moogle LV,مس موج,108,
+sys,16055,Status,الحالة,108,
+sys,16075,<09 DE>Creations,المصنوعات<09 DE>,140,wide
+sys,16076,<09 DE>Free Development,التطوير الحر<09 DE>,88,
+sys,16077,<09 DE>Recipes,الوصفات<09 DE>,142,wide
+sys,16080,<09 0A><07 FF 00 00 80>INFORMATION<03> ⏎  ⏎ Obtained <07 FF FF 00 80><0D><0D><03> ⏎ for completing the collection.,<0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ حصلت على <07 FF FF 00 80><0D><0D><03> ⏎ لإكمال المجموعة.,76,
+sys,16081,<09 0A><07 FF 00 00 80>INFORMATION<03> ⏎  ⏎ Moogle<07 FF FF 00 80> leveled up!<03> ⏎ <0D>,<0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ موج<03> ارتفع مستواه<07 FF FF 00 80>! ⏎ <0D>,135,wide
+sys,16095,Jump on,اقفز,69,
+sys,16096,Jump,قفز,98,
+sys,16097,Christmas Town Map,خريطة بلدة عيد الميلاد,144,wide
+sys,16098,A map of the area.,خريطة المنطقة.,97,
+sys,16099,Curly Hill Map,خريطة تل ملتوي,150,wide
+sys,16100,A map of the area.,خريطة المنطقة.,97,
+sys,16101,Oasis Map,خريطة واحة,160,wide
+sys,16102,A map of the area.,خريطة المنطقة.,97,
+sys,16103,Savannah Map,خريطة السافانا,129,
+sys,16104,A map of the area.,خريطة المنطقة.,97,
+sys,16105,Castle Perimeter Map,خريطة محيط القلعة,112,
+sys,16106,A map of the area.,خريطة المنطقة.,97,
+sys,16107,The Great Maw Map,خريطة الفجوة العظيمة,144,wide
+sys,16108,A map of the area.,خريطة المنطقة.,97,
+sys,16109,I/O Tower Map,خريطة البرج,102,
+sys,16110,A map of the area.,خريطة المنطقة.,97,
+sys,16111,Central Computer Core Map,خريطة نواة الحاسوب المركزية,139,wide
+sys,16112,A map of the area.,خريطة المنطقة.,97,
+sys,16113,Solar Sailer Simulation Map,خريطة محاكاة المركبة الشمسية,138,wide
+sys,16114,A map of the area.,خريطة المنطقة.,97,
+sys,16116,<09 0A><07 FF 00 00 80>INFORMATION<03> ⏎  ⏎ <07 FF FF 00 80><09 31>Serenity<03> Materials ⏎ are needed to synthesize this item. ⏎ Check <07 FF FF 00 80><09 31>Serenity<03> Materials to continue.,<0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ تحتاج مواد <03><09 31>السكينة<07 FF FF 00 80> ⏎ لتركيب هذا الغرض. ⏎ افحص مواد <03><09 31>السكينة<07 FF FF 00 80> للمتابعة.,91,
+sys,16117,<09 0A><07 FF 00 00 80>INFORMATION<03> ⏎  ⏎ Not enough Materials. Synthesis can be ⏎ performed by checking <07 FF FF 00 80><09 30>Energy<03> Materials. ⏎ Please check <07 FF FF 00 80><09 30>Energy<03> Materials to ⏎ continue.,<0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ المواد غير كافية. يمكن التركيب ⏎ بفحص مواد <03><09 30>الطاقة.<07 FF FF 00 80> ⏎ يرجى فحص مواد <03><09 30>الطاقة<07 FF FF 00 80> ⏎ للمتابعة.,96,
+sys,16118,Synthesized item!,تم تركيب الغرض!,119,
+sys,16133,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,16134,<09 0A><07 FF 00 00 80>INFORMATION<03> ⏎  ⏎ Stock is full. Cannot synthesize.,<0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ المخزن ممتلئ. لا يمكن التركيب.,119,
+sys,16152,Sora: ⏎ We´ve got to go after Auron!,سورا: ⏎ يجب أن نلحق بأورون!,93,
+sys,16154,Synthesize,التركيب,83,
+sys,16155,Quit,اخرج,167,wide
+sys,16156,Synthesize item.,تركيب غرض.,92,
+sys,16157,Cancel synthesis.,إلغاء التركيب.,98,
+sys,16158,Increase Moogle's Level.,ارفع مستوى موغل.,104,
+sys,16159,Lessens necessary amount of  ⏎ Materials by half.,ينقص نصف المقدار المطلوب ⏎ من المواد.,109,
+sys,16160,Synthesize item of a higher  ⏎ rank.,تركيب أغراض من رتبة أعلى.,121,
+sys,16161,In stock,متوفر,96,
+sys,16479,<07 FF FF 00 80>Can use <09 2F>Brightness & <09 30>Energy Materials!<03> ⏎ Use when synthesizing items!,<03>يمكن استخدام مواد <09 2F>الإشراق و<09 30>الطاقة<07 FF FF 00 80>! ⏎ استخدمها عند تركيب الأغراض!,116,
+sys,16480,<07 FF FF 00 80>Can use <09 31>Serenity Materials!<03> ⏎ Use in old creations found in Creations!,<03>يمكن استخدام مواد <09 31>السكينة<07 FF FF 00 80>! ⏎ استخدمها في المبتكرات القديمة في قسم المبتكرات!,157,wide
+sys,16481,<07 FF FF 00 80>Can use up to two extra Materials!<03>,يمكن استخدام مادتين إضافيتين<07 FF FF 00 80>!,108,
+sys,16482,<07 FF FF 00 80>Rank <09 36> recipe Materials cut by half!<03> ⏎ Items in Creations can be synthesized using ⏎ only half the Materials!,<03>مواد وصفة الرتبة <09 36> مخفضة للنصف<07 FF FF 00 80>! ⏎ يمكن تركيب أغراض المبتكرات ⏎ بنصف المواد فقط!,93,
+sys,16483,<07 FF FF 00 80>Rank <09 35> recipe Materials cut by half!<03> ⏎ Items in Creations can be synthesized using ⏎ only half the Materials!,<03>مواد وصفة الرتبة <09 35> مخفضة للنصف<07 FF FF 00 80>! ⏎ يمكن تركيب أغراض المبتكرات ⏎ بنصف المواد فقط!,93,
+sys,16484,<07 FF FF 00 80>Rank <09 34> recipe Materials cut by half!<03> ⏎ Items in Creations can be synthesized using ⏎ only half the Materials!,<03>مواد وصفة الرتبة <09 34> مخفضة للنصف<07 FF FF 00 80>! ⏎ يمكن تركيب أغراض المبتكرات ⏎ بنصف المواد فقط!,93,
+sys,16485,<07 FF FF 00 80>Make new items in Free Development!<03>,اصنع أغراضا جديدة بالتطوير الحر<07 FF FF 00 80>!,114,
+sys,16486,<07 FF FF 00 80>Rank <09 33> recipe Materials cut by half!<03> ⏎ Items in Creations can be synthesized using ⏎ only half the Materials!,<03>مواد وصفة الرتبة <09 33> مخفضة للنصف<07 FF FF 00 80>! ⏎ يمكن تركيب أغراض المبتكرات ⏎ بنصف المواد فقط!,93,
+sys,16510,Heelflip,قلبة كعب,153,wide
+sys,16511,Pop-Jump,قفزة مفاجئة,174,wide
+sys,16512,360° Spin,دوران 360,148,wide
+sys,16513,Method Grab,حيلة الإمساك,127,
+sys,16514,Air Walk,مشي جوي,153,wide
+sys,16515,Handstand,على اليدين,140,wide
+sys,16574,Sora: ⏎ Let´s head up and see ⏎ what´s going on.,سورا: ⏎ لنصعد ونرى ⏎ ماذا يحدث.,68,
+sys,16668,Sora: ⏎ We´ve got to get that data back!,سورا: ⏎ يجب أن نستعيد تلك البيانات!,100,
+sys,16701,Sora: ⏎ It doesn´t look like we can ⏎ go this way!,سورا: ⏎ لا يبدو بوسعنا السير ⏎ من هذا الطريق!,91,
+sys,16703,Sora: ⏎ There´s a lot of fallen rocks. ⏎ It´s probably too dangerous.,سورا: ⏎ هناك كثير من الصخور الساقطة. ⏎ قد يكون الأمر خطيرا.,125,
+sys,16705,Sora: ⏎ There's a lot of fallen rocks. ⏎ It's probably too dangerous.,سورا: ⏎ هناك كثير من الصخور الساقطة. ⏎ قد يكون الأمر خطيرا.,125,
+sys,16751,Roxas: ⏎ Gotta get to the armor shop!,روكساس: ⏎ يجب أن أصل إلى محل الدروع!,128,
+sys,16752,Roxas: ⏎ Better head for the accessory shop.,روكساس: ⏎ من الأفضل التوجه إلى محل الملحقات.,124,
+sys,16753,Roxas: ⏎ Let me talk to the owner first.,روكساس: ⏎ دعني أتحدث إلى المالك أولا.,111,
+sys,16754,Roxas: ⏎ Gotta get to the candy store!,روكساس: ⏎ يجب أن أصل إلى محل الحلويات!,129,
+sys,16755,Roxas: ⏎ I should try to find that cat.,روكساس: ⏎ يجب أن أبحث عن تلك القطة.,114,
+sys,16756,Roxas: ⏎ But which weapon should I choose?,روكساس: ⏎ لكن أي سلاح أختار?,68,
+sys,16757,Roxas: ⏎ I´m not about to run away!,روكساس: ⏎ لن أهرب!,40,
+sys,16758,Roxas: ⏎ I´m not about to run away!,روكساس: ⏎ لن أهرب!,40,
+sys,16759,Roxas: ⏎ I...think I should stand in that light.,روكساس: ⏎ أ...أظن أنه يجب أن أقف في ذلك الضوء.,129,
+sys,16760,Roxas: ⏎ Wonder what's in that chest.,روكساس: ⏎ أتساءل عما في ذلك الصندوق.,126,
+sys,16761,Roxas: ⏎ I´m not about to run away!,روكساس: ⏎ لن أهرب!,40,
+sys,16762,Roxas: ⏎ I´m not about to run away!,روكساس: ⏎ لن أهرب!,40,
+sys,16763,Roxas: ⏎ I´m not about to run away!,روكساس: ⏎ لن أهرب!,40,
+sys,16774,Roxas: ⏎ I´m still on the clock!,روكساس: ⏎ ما زلت في العمل!,100,
+sys,16775,Roxas: ⏎ I´m still on the clock!,روكساس: ⏎ ما زلت في العمل!,100,
+sys,16776,Roxas: ⏎ I´m still on the clock!,روكساس: ⏎ ما زلت في العمل!,100,
+sys,16777,Roxas: ⏎ I´m still on the clock!,روكساس: ⏎ ما زلت في العمل!,100,
+sys,16778,Roxas: ⏎ I´m still on the clock!,روكساس: ⏎ ما زلت في العمل!,100,
+sys,16779,Roxas: ⏎ I´m still on the clock!,روكساس: ⏎ ما زلت في العمل!,100,
+sys,16780,Roxas: ⏎ I´ve got to get to the bottom of this!,روكساس: ⏎ يجب أن أعرف حقيقة هذا!,82,
+sys,16781,Roxas: ⏎ I´ve got to get to the bottom of this!,روكساس: ⏎ يجب أن أعرف حقيقة هذا!,82,
+sys,16782,Roxas: ⏎ I´ve got to get to the bottom of this!,روكساس: ⏎ يجب أن أعرف حقيقة هذا!,82,
+sys,16783,Roxas: ⏎ I´ve got to get to the bottom of this!,روكساس: ⏎ يجب أن أعرف حقيقة هذا!,82,
+sys,16787,<09 0A><07 FF 00 00 80>INFORMATION<03> ⏎  ⏎ <07 FF FF 00 80><0D><0D><03> can now be purchased at ⏎ shops for completing the collection.,<0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ يمكن الآن شراء <07 FF FF 00 80><0D><0D><03> ⏎ من المتاجر لإكمال المجموعة.,103,
+sys,16788,There are no rewards.,لا توجد مكافآت.,90,
+sys,16826,"<09 0A><07 FF 00 00 80>INFORMATION<03> ⏎  ⏎ Learned to synthesize new items ⏎ through <07 FF FF 00 80>Free Development<03>, gained ⏎ from completing the collection.","<0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ تعلمت تركيب أغراض جديدة ⏎ عبر <03>التطوير الحر,<07 FF FF 00 80> الذي حصلت ⏎ عليه بإكمال المجموعة.",107,
+sys,16827,Sora: ⏎ Let´s ask Will when ⏎ she´ll be sailing.,سورا: ⏎ لنسأل ويل متى ⏎ ستبحر.,94,
+sys,16829,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,16831,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,16833,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,16835,<0D>Free Development,التطوير الحر<0D>,88,
+sys,16836,<0D>Sell at Shop,بيع في المتجر<0D>,143,wide
+sys,16862,Ohana!,أوهانا!,126,
+sys,16863,Window of Time Map,خريطة نافذة الزمن,119,
+sys,16864,A map of the area.,خريطة المنطقة.,97,
+sys,16940,The Underdrome,الحلبة السفلي,100,
+sys,16941,Grind,الهرس,140,wide
+sys,16942,"<09 0A><07 FF 00 00 80>INFORMATION<03> ⏎  ⏎  This accessory cannot be changed with ⏎  current abilities equipped. To equip, ⏎  first unequip abilities from the Ability menu.","<0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎  لا يمكن تغيير هذا الإكسسوار ⏎  مع القدرات المجهزة حاليا. للتجهيز, ⏎  ألغ تجهيز القدرات أولا من قائمة القدرات.",116,
+sys,16943,Counter,الرد,69,
+sys,16951,EXP,خبرة,176,wide
+sys,17033,Shoot,إطلاق,124,
+sys,17034,Ukulele,يوكيليلي,152,wide
+sys,17047,Blast,انفجار,152,wide
+sys,17048,Berserk,الهياج,91,
+sys,17051,FPS Mode,منظور 1,108,
+sys,17052,Balls,كرات,135,wide
+sys,17053,Firecracker,الشماريخ,97,
+sys,17054,End,نهاية,181,wide
+sys,17061,Sora: ⏎ Maybe we should check out ⏎ the monument.,سورا: ⏎ من الأفضل أن نتفقد ⏎ النصب التذكاري.,92,
+sys,17078,"""Valor"" Genie",جيني الشجاعة,129,
+sys,17079,"""Wisdom"" Genie",جيني الحكمة,104,
+sys,17080,"""Master"" Genie",جيني الإتقان,107,
+sys,17081,"""Final"" Genie",جيني النهائي,124,
+sys,17088,Sora: ⏎ The ship should be at Port Royal.,سورا: ⏎ يجب أن تكون السفينة ⏎ في ميناء الملك.,78,
+sys,17089,Sora: ⏎ The ship should be at Isla de Muerta.,سورا: ⏎ يجب أن تكون السفينة في إيسلا دي مويرتا.,139,wide
+sys,17090,Sora: ⏎ The ship should be at the ship graveyard.,سورا: ⏎ يجب أن تكون السفينة في مقبرة السفن.,114,
+sys,17091,Sora: ⏎ The ship should be at Isla de Muerta.,سورا: ⏎ يجب أن تكون السفينة في إيسلا دي مويرتا.,139,wide
+sys,17103,Berserk,الهياج,91,
+sys,17141,<0B 62>Camera Up/Down,كاميرا أعلى وأسفل<0B 62>,145,wide
+sys,17142,<0B 62>Camera Left/Right,الكاميرا يمين ويسار<0B 62>,130,
+sys,17143,Summon Effects,تأثيرات الاستدعاء,137,wide
+sys,17144,Original,الأصلية,107,
+sys,17145,Reverse,معكوسة,135,wide
+sys,17146,"Move <09 E9> down to look down, and up ⏎ to look up.","حرك <09 E9> للأسفل للنظر للأسفل, وللأعلى ⏎ للنظر للأعلى.",128,
+sys,17147,"Move <09 E9> down to look up, and up ⏎ to look down.","حرك <09 E9> للأسفل للنظر للأعلى, وللأعلى ⏎ للنظر للأسفل.",138,wide
+sys,17148,Original,الأصلية,107,
+sys,17149,Reverse,معكوسة,135,wide
+sys,17150,"Move <09 E9> left to look left, and right ⏎ to look right.","حرك <09 E9> لليسار للنظر لليسار, ولليمين ⏎ للنظر لليمين.",118,
+sys,17151,"Move <09 E9> left to look right, and right ⏎ to look left.","حرك <09 E9> لليسار للنظر لليمين, ولليمين ⏎ للنظر لليسار.",116,
+sys,17152,Full,كاملة,194,wide
+sys,17153,None,بلا,59,
+sys,17154,Auto,آلي,105,
+sys,17155,Show full Summon effects.,إظهار تأثيرات الاستدعاء كاملة.,142,wide
+sys,17156,Do not show Summon effects.,عدم إظهار تأثيرات الاستدعاء.,126,
+sys,17157,Show partial Summon effects.,إظهار تأثيرات الاستدعاء جزئيا.,126,
+sys,17165,Sonic,الرنين,143,wide
+sys,17166,Rave,حفلة,137,wide
+sys,17167,Strike,الضرب,124,
+sys,17168,Judgment,الحكم,79,
+sys,17169,Arcana,الأسرار,133,wide
+sys,17170,Bash,الكبس,141,wide
+sys,17171,Infinity,اللانهاية,129,
+sys,17172,Impact,الصدم,120,
+sys,17194,Valor,الشجاعة,187,wide
+sys,17195,Wisdom,الحكمة,120,
+sys,17196,Master,الإتقان,126,
+sys,17197,Final,النهائي,181,wide
+sys,17198,NEW GAME,لعبة جديدة,148,wide
+sys,17199,Begin with these settings?,البدء بهذه الإعدادات?,103,
+sys,17200,Select Game Mode.,اختر وضع اللعبة.,116,
+sys,17201,Beginner Mode,وضع المبتدئ,118,
+sys,17202,Standard Mode,الوضع العادي,120,
+sys,17203,Proud Mode,وضع برايد,121,
+sys,17204,An easier mode for beginners. ⏎ <07 F0 F0 00 80>(Only the normal ending can be viewed ⏎ in this mode.),وضع أسهل للمبتدئين. ⏎ يمكن مشاهدة النهاية العادية فقط<07 F0 F0 00 80> ⏎ في هذا الوضع.,107,
+sys,17205,A balanced mode that's not too hard ⏎ but not too easy. Best for those ⏎ challenging this game for the first time. ⏎ <07 F0 F0 00 80>(All endings can be viewed in this mode.),وضع متوازن ليس شديد الصعوبة ⏎ ولا شديد السهولة. مناسب لمن ⏎ يخوض هذه اللعبة للمرة الأولى. ⏎ كل النهايات متاحة في هذا الوضع<07 F0 F0 00 80>.,100,
+sys,17206,A difficult mode with stronger enemies. ⏎ Best for those seeking a challenge. ⏎ <07 F0 F0 00 80>(There is a good chance of unlocking ⏎ the secret ending.),وضع صعب مع أعداء أقوى. ⏎ مناسب لمن يبحث عن التحدي. ⏎ هناك فرصة جيدة لفتح<07 F0 F0 00 80> ⏎ النهاية السرية.,87,
+sys,17207,Select vibration function.,اختر وظيفة الاهتزاز.,100,
+sys,17208,ON,مفعل,291,wide
+sys,17209,OFF,معطل,206,wide
+sys,17210,Enable vibration function of gamepad.,تفعيل اهتزاز يد التحكم.,78,
+sys,17211,Disable vibration function of gamepad.,تعطيل اهتزاز يد التحكم.,77,
+sys,17212,Select sound type.,اختر نوع الصوت.,113,
+sys,17213,Stereo,ستيريو,127,
+sys,17214,Pro Logic II,برو لوجيك II,133,wide
+sys,17215,Monaural,مونو,76,
+sys,17216,Play with Stereo Sound.,العب بصوت ستيريو.,96,
+sys,17217,Play with Dolby Pro Logic II. ⏎ Enjoy surround sound with a system ⏎ that supports Dolby Pro Logic II.,العب بصوت دولبي برو لوجيك II. ⏎ استمتع بالصوت المحيطي مع نظام ⏎ يدعم دولبي برو لوجيك II.,109,
+sys,17238,Play with Mono Sound.,العب بصوت مونو.,96,
+sys,17239,Auto Assault,الهجوم الآلي,131,wide
+sys,17240,The Keyblade automatically unleashes ⏎ attacks in various situations.,يطلق الكيبلايد تلقائيا ⏎ هجمات في وضعيات مختلفة.,91,
+sys,17280,Game Mode,وضع اللعبة,133,wide
+sys,17281,Vibration,الاهتزاز,105,
+sys,17282,Sound,الصوت,137,wide
+sys,17283,Yes,نعم,147,wide
+sys,17284,No,لا,76,
+sys,17343,Pick It Up,التقطه,73,
+sys,17351,Take It,خذه,78,
+sys,17394,Form Gauge Powered Up!,عداد الشكل ارتفع!,95,
+sys,17395,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,17397,Sora: ⏎ We should get out of here.,سورا: ⏎ من الأفضل أن نرحل من هنا.,125,
+sys,17399,Sora: ⏎ There aren´t any hyenas ⏎ over here.,سورا: ⏎ لا يوجد ضباع ⏎ هنا.,68,
+sys,17401,Sora: ⏎ What else did we have to do...?,سورا: ⏎ ماذا بقي علينا فعله...?,85,
+sys,17409,<09 0A><07 FF 00 00 80>INFORMATION<03> ⏎  ⏎ Items from previously visited shops will ⏎ become available at shops in large towns.,<0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ ستتوفر أغراض المتاجر التي زرتها سابقا ⏎ في متاجر المدن الكبيرة.,114,

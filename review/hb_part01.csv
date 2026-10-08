@@ -1,0 +1,251 @@
+﻿bar,id,EN,AR,width_pct,flags
+hb,2935,<06 02><13 90 01 78 00><08 03 00 05>We did it!,فعلناها<06 02><13 90 01 78 00><08 03 00 05>!,106,
+hb,2936,<13 96 00 3C 00><08 01 01 06>Where have ⏎ you been?,أين<13 96 00 3C 00><08 01 01 06> ⏎ كنتم?,65,
+hb,2937,"<13 A4 00 3C 00><08 01 01 05>Well, uh...","حسنا, آه<13 A4 00 3C 00><08 01 01 05>...",133,wide
+hb,2938,"<13 B9 00 3C 00><08 01 01 05>There´s a...world ⏎ inside this computer,<10>where these, um... ⏎ programs live, and...","هناك... عالم<13 B9 00 3C 00><08 01 01 05> ⏎ داخل هذا الحاسوب,<10>حيث تعيش هذه, أم... ⏎ البرامج, و...",135,wide
+hb,2939,<13 91 00 50 00><08 01 01 07>So in other words...<10>Ansem´s research data ⏎ is off-limits unless we ⏎ know the password.,إذن بمعنى آخر<13 91 00 50 00><08 01 01 07>...<10>بيانات أبحاث أنسيم ⏎ ممنوعة ما لم نعرف ⏎ كلمة السر.,120,
+hb,2940,<13 87 00 73 00><08 01 01 06>I think that´s right.,أظن ذلك صحيحا<13 87 00 73 00><08 01 01 06>.,104,
+hb,2941,<13 A6 00 43 00><08 01 01 06>But you´ve already ⏎ defeated Ansem...,لكنكم هزمتم أنسيم<13 A6 00 43 00><08 01 01 06> ⏎ بالفعل...,140,wide
+hb,2942,"<13 6D 01 A1 00><08 01 00 05>Gawrsh, maybe ⏎ we´ll never ⏎ find the password.","يا إلهي, ربما<13 6D 01 A1 00><08 01 00 05> ⏎ لن نجد ⏎ كلمة السر أبدا.",104,
+hb,2943,<13 C8 00 32 00><08 01 01 06>That means...,هذا يعني<13 C8 00 32 00><08 01 01 06>...,106,
+hb,2944,<13 82 00 46 00><08 01 01 07>...this is all a ⏎ wild goose chase.,...أن كل هذا<13 82 00 46 00><08 01 01 07> ⏎ مطاردة وهمية.,128,
+hb,2947,<13 54 01 B4 00><08 01 00 05>She just won´t give up...,لن تستسلم أبدا<13 54 01 B4 00><08 01 00 05>...,85,
+hb,2948,<06 02><13 72 01 C8 00><08 03 00 05>And neither will we!,ونحن أيضا<06 02><13 72 01 C8 00><08 03 00 05>!,68,
+hb,2949,"<13 C9 00 89 00><08 01 01 05>C´mon, we´ve gotta look ⏎ for that password!","هيا, علينا البحث<13 C9 00 89 00><08 01 01 05> ⏎ عن كلمة السر تلك!",101,
+hb,2950,<13 4A 01 50 00><08 01 00 05>Right. We made a ⏎ promise to Tron.,صحيح. قطعنا<13 4A 01 50 00><08 01 00 05> ⏎ وعدا لترون.,99,
+hb,2952,What´s this doodle?,ما هذه الخربشة?,116,
+hb,2953,Hollow...<14 5F 00><10><14 3C 00>Main...<14 4B 00><10><14 3C 00><10>Security...Tron...<14 C8 00><10><14 37 00><10>Door to...,حصن...<14 5F 00><10><14 3C 00>رئيسي...<14 4B 00><10><14 3C 00><10>أمن... ترون...<14 C8 00><10><14 37 00><10>باب إلى...,102,
+hb,2954,Looks like a diagram or somethin´.,يبدو كمخطط أو شيء ما.,94,
+hb,2955,Door...to...darkness?,باب... إلى... الظلام?,115,
+hb,2956,Oh!,أوه!,171,wide
+hb,2957,D--<14 2D 00><10><14 23 00><10>T--<14 2D 00><10><14 23 00><10>D!,ب--<14 2D 00><10><14 23 00><10>إ--<14 2D 00><10><14 23 00><10>ظ!,120,
+hb,2958,DTD!,بإظ!,94,
+hb,2959,What´s up?,ما الأمر?,101,
+hb,2960,Look at this! This must ⏎ be the dataspace!<14 DC 00><10><14 14 00><10>The DTD. See? The Door To Darkness!,انظروا إلى هذا! لا بد أن ⏎ هذا فضاء البيانات!<14 DC 00><10><14 14 00><10>باب إلى الظلام. أرأيتم? باب الظلام!,112,
+hb,2961,What do you know.<14 4B 00><10><14 14 00>But...that still leaves the password.,يا للعجب.<14 4B 00><10><14 14 00>لكن... ما زالت كلمة السر ناقصة.,110,
+hb,2962,"Say, fellas, did somebody mention ⏎ the Door to Darkness?","قولوا يا شباب, هل ذكر أحدكم ⏎ باب الظلام?",119,
+hb,2963,Your Majesty!,جلالتك!,62,
+hb,2964,Long time no see!,لم نرك منذ زمن!,128,
+hb,2965,Shh!<14 23 00><10><14 50 00><10>The Organization might be listening!,شش!<14 23 00><10><14 50 00><10>قد تكون المنظمة تستمع!,95,
+hb,2966,You mentioned the Door to Darkness?,ذكرتم باب الظلام?,64,
+hb,2967,"Uh, yes, sir!<14 64 00><10><14 14 00><10>Ya see, we´re lookin´ for the secret password.","آه, نعم يا سيدي!<14 64 00><10><14 14 00><10>ترى, نحن نبحث عن كلمة السر السرية.",105,
+hb,2968,Password?,كلمة السر?,140,wide
+hb,2969,"Oh, I guess you mean like a code.","آه, أظنك تقصد شيئا كالرمز.",107,
+hb,2970,"Well, the Door To Darkness can only ⏎ be opened by the seven princesses.<14 04 01><10><14 14 00><10>There´s Snow White, Jasmine, and Belle...","حسنا, باب الظلام لا يمكن فتحه إلا ⏎ بواسطة الأميرات السبع.<14 04 01><10><14 14 00><10>هناك بياض الثلج وياسمين وبيل...",105,
+hb,2971,Of course...,بالطبع...,84,
+hb,2972,What´re you tryin´ to do?,ماذا تحاولون أن تفعلوا?,130,
+hb,2973,"With that password, we can get ⏎ access to Ansem´s research data.","بتلك الكلمة, نستطيع الوصول ⏎ إلى بيانات أبحاث أنسيم.",111,
+hb,2974,So that means you might be able ⏎ to find out where he is!,هذا يعني أنكم قد تستطيعون ⏎ معرفة مكانه!,119,
+hb,2975,"Stop jokin´ around, Your Majesty.<14 64 00><10><14 0F 00><10>We already defeated Ansem. ⏎ You know that.",كفاك مزاحا يا جلالتك.<14 64 00><10><14 0F 00><10>لقد هزمنا أنسيم بالفعل. ⏎ أنت تعرف ذلك.,92,
+hb,2976,Looks like I´ve got a ⏎ lot of explainin´ to do.,يبدو أن علي شرحا ⏎ كثيرا لأقدمه.,108,
+hb,2977,"We´re listening, Your Majesty!",نحن نستمع يا جلالتك!,88,
+hb,2978,"Okay...but first, I´ve got a question...","حسنا... لكن أولا, لدي سؤال...",99,
+hb,2979,"Hey, isn´t Tron waiting for you guys?","هيه, ألا ينتظركم ترون?",83,
+hb,2980,"Don´t worry, I´m not goin´ anywhere.<14 78 00><10><14 28 00><10>If those Heartless attack, I´ll stand ⏎ and fight with everybody here.","لا تقلقوا, لن أذهب إلى أي مكان.<14 78 00><10><14 28 00><10>إن هاجم بلا قلب, سأقف ⏎ وأقاتل مع الجميع هنا.",115,
+hb,2981,"Yeah...we will, too.",نعم... وسنفعل أيضا.,136,wide
+hb,2982,Then let´s talk more later.,إذن لنتحدث أكثر لاحقا.,115,
+hb,2983,That´s a promise!,هذا وعد!,74,
+hb,2984,I´ll see ya when you get back.,أراكم عندما تعودون.,101,
+hb,2986,Pit Cell,زنزانة الحفرة,232,wide
+hb,2987,I/O Tower,برج الإدخال,136,wide
+hb,2988,<0B 5A>Central Computer Core,قلب الحاسوب المركزي<0B 5A>,129,
+hb,2989,Pit Cell Guide #0,دليل زنزانة الحفرة 0,151,wide
+hb,2990,Pit Cell Guide #1,دليل زنزانة الحفرة 1,152,wide
+hb,2991,Pit Cell Guide #2,دليل زنزانة الحفرة 2,151,wide
+hb,2992,Tower Guide #0,دليل البرج 0,98,
+hb,2993,Tower Guide #1,دليل البرج 1,98,
+hb,2994,Tower Guide #2,دليل البرج 2,98,
+hb,2995,Central Computer Core Guide #0,دليل قلب الحاسوب المركزي 0,117,
+hb,2996,Central Computer Core Guide #1,دليل قلب الحاسوب المركزي 1,117,
+hb,2997,Central Computer Core Guide #2,دليل قلب الحاسوب المركزي 2,117,
+hb,2998,Yes,نعم,158,wide
+hb,2999,No,لا,96,
+hb,3000,Select Destination,اختر الوجهة,92,
+hb,3001,Transport here?,الانتقال إلى هنا?,130,
+hb,7525,There´s no way through here.,لا طريق من هنا.,73,
+hb,8067,Defeat the Nobodies!,اهزم اللا أحد!,93,
+hb,8068,Defeat all of the Nobodies! ⏎ Using reaction commands with <09 DF> ⏎ will make the battle easier!,اهزم كل اللا أحد! ⏎ استخدام أوامر التفاعل بزر <09 DF> ⏎ يسهل المعركة!,118,
+hb,8069,Defeat all the Nobodies while protecting the gates!,اهزم كل اللا أحد مع حماية البوابات!,96,
+hb,8070,Fight together with Leon and defeat ⏎ the Nobodies while protecting the gates!  ⏎ The battle is over if the gauge is empty!,قاتل مع ليون واهزم اللا أحد ⏎ مع حماية البوابات! ⏎ تنتهي المعركة إذا فرغ المقياس!,101,
+hb,8071,Defeat all of the enemies!,اهزم كل الأعداء!,89,
+hb,8072,Defeat all of the enemies! ⏎ Using reaction commands with <09 DF> ⏎ will make the battle easier!,اهزم كل الأعداء! ⏎ استخدام أوامر التفاعل بزر <09 DF> ⏎ يسهل المعركة!,118,
+hb,8073,Defeat all of the enemies!,اهزم كل الأعداء!,89,
+hb,8074,Defeat all of the enemies!,اهزم كل الأعداء!,89,
+hb,8075,Defeat all of the Heartless!,اهزم كل بلا قلب!,81,
+hb,8076,Fight alongside friends to defeat the ⏎ Heartless!,قاتل بجانب الأصدقاء لهزيمة ⏎ بلا قلب!,96,
+hb,8077,Trapped! Defeat all of the Heartless to escape!,محاصر! اهزم كل بلا قلب للهرب!,88,
+hb,8079,Trapped! Defeat all of the Heartless to escape!,محاصر! اهزم كل بلا قلب للهرب!,88,
+hb,8081,Trapped! Defeat all of the Heartless to escape!,محاصر! اهزم كل بلا قلب للهرب!,88,
+hb,8083,Defeat all of the enemies!,اهزم كل الأعداء!,89,
+hb,8084,Defeat all of the enemies! ⏎ Using reaction commands with <09 DF> ⏎ will make the battle easier!,اهزم كل الأعداء! ⏎ استخدام أوامر التفاعل بزر <09 DF> ⏎ يسهل المعركة!,118,
+hb,8085,Defeat the Heartless!,اهزم بلا قلب!,83,
+hb,8086,Use the town´s defenses to defeat the Heartless!,استخدم دفاعات البلدة لهزيمة بلا قلب!,105,
+hb,8087,Defeat the Heartless!,اهزم بلا قلب!,83,
+hb,8088,Fight alongside friends to defeat the ⏎ Heartless!,قاتل بجانب الأصدقاء لهزيمة ⏎ بلا قلب!,96,
+hb,8148,Wait a sec...I thought everything was ⏎ supposed to be under control here!,انتظروا لحظة... ظننت أن كل شيء ⏎ يفترض أنه تحت السيطرة هنا!,116,
+hb,8149,"Hey, look!",انظروا!,94,
+hb,8150,Must be Organization <X 5E> again. ⏎ We better go see Leon.,لا بد أنها منظمة <X 5E> مجددا. ⏎ الأفضل أن نذهب لرؤية ليون.,120,
+hb,8151,<13 90 01 18 01><08 01 00 01>Come on in!,تفضلوا<13 90 01 18 01><08 01 00 01>!,81,
+hb,8152,<13 A0 00 6E 00><08 01 01 05>Wait just a second...<10>What happened ⏎ to this place?,انتظروا لحظة<13 A0 00 6E 00><08 01 01 05>...<10>ماذا حدث ⏎ لهذا المكان?,93,
+hb,8153,<13 79 01 E1 00><08 01 00 04>Didn´t that Heartless ⏎ look like the ones ⏎ from Tron´s world?,ألم يكن ذلك بلا قلب<13 79 01 E1 00><08 01 00 04> ⏎ يشبه الذين ⏎ في عالم ترون?,115,
+hb,8154,"<13 91 00 3C 00><08 01 01 06>C´mon, just ⏎ get inside!","هيا, فقط<13 91 00 3C 00><08 01 01 06> ⏎ ادخلوا!",96,
+hb,8155,"<13 54 01 5A 00><08 01 01 06>Hurry up, Cid!",أسرع يا سيد<13 54 01 5A 00><08 01 01 06>!,120,
+hb,8156,<06 02><13 C8 00 50 00><08 03 01 06>Give me a second!,أمهلني لحظة<06 02><13 C8 00 50 00><08 03 01 06>!,100,
+hb,8157,<13 96 00 41 00><08 01 00 05>Confound it! Hurry!,تبا! أسرعوا<13 96 00 41 00><08 01 00 05>!,79,
+hb,8158,"<06 02><13 36 01 50 00><08 03 00 05>Why, you...!",أنت أيها<06 02><13 36 01 50 00><08 03 00 05>...!,107,
+hb,8159,<13 A5 00 9B 00><08 01 01 06>What´s going on?,ما الذي يجري<13 A5 00 9B 00><08 01 01 06>?,115,
+hb,8160,<13 A0 00 37 00><08 01 01 06>Talk about yer ⏎ good timin´!,يا لتوقيتكم<13 A0 00 37 00><08 01 01 06> ⏎ الرائع!,97,
+hb,8161,<13 2C 01 37 00><08 01 01 06>The MCP is wreaking havoc ⏎ inside the computer.,برنامج التحكم الرئيسي يعيث<13 2C 01 37 00><08 01 01 06> ⏎ فسادا في الحاسوب.,130,
+hb,8162,<13 87 00 09 01><08 01 00 06>Not again!,ليس مجددا<13 87 00 09 01><08 01 00 06>!,142,wide
+hb,8163,"<13 D2 00 37 00><08 01 01 06>Accordin´ to ⏎ Leon, anyway...","بحسب<13 D2 00 37 00><08 01 01 06> ⏎ ليون, على الأقل...",150,wide
+hb,8164,He went on over to Ansem´s study to find ⏎ out what all the ruckus was about.,ذهب إلى مكتب أنسيم ليعرف ⏎ ما سبب كل هذه الضجة.,86,
+hb,8165,Turns out the MCP is using ⏎ the data in that computer<14 B4 00><10>to crank out Heartless.,تبين أن برنامج التحكم الرئيسي يستخدم ⏎ البيانات الموجودة في ذلك الحاسوب<14 B4 00><10>ليصنع بلا قلب.,180,wide
+hb,8166,"The MCP´s been messin´ around with ⏎ the town´s control system, too.",برنامج التحكم الرئيسي يعبث ⏎ بنظام التحكم في البلدة أيضا.,102,
+hb,8168,"That MCP sure doesn´t know ⏎ when to quit, does it?","ذلك البرنامج لا يعرف ⏎ متى يتوقف, أليس كذلك?",102,
+hb,8169,<13 80 00 43 00><08 01 01 06>That´s a computer ⏎ program for ya.,هذا هو البرنامج<13 80 00 43 00><08 01 01 06> ⏎ الحاسوبي.,117,
+hb,8170,<13 FA 00 91 00><08 01 00 05>How´s Tron doing?,كيف حال ترون<13 FA 00 91 00><08 01 00 05>?,114,
+hb,8171,<13 2C 01 55 00><08 01 01 06>We can´t reach him.<10>We figure he must have been ⏎ forced onto the game grid.,لا نستطيع الوصول إليه<13 2C 01 55 00><08 01 01 06>.<10>نظن أنه أجبر ⏎ على دخول شبكة اللعبة.,115,
+hb,8172,"<13 09 01 41 00><08 01 00 05>And it don´t sound ⏎ like a particularly ⏎ fun game, either.",ولا يبدو أنها<13 09 01 41 00><08 01 00 05> ⏎ لعبة ممتعة ⏎ تحديدا أيضا.,89,
+hb,8175,"<13 AF 00 37 00><08 01 01 06>Thanks, kid.<10>We´re puttin´ together an ⏎ MCP Eradication program.<10>I got a hunch it´s ⏎ almost finished, too.",شكرا يا فتى<13 AF 00 37 00><08 01 01 06>.<10>نجمع برنامج ⏎ القضاء على برنامج التحكم الرئيسي.<10>لدي حدس أنه ⏎ أوشك على الانتهاء أيضا.,163,wide
+hb,8176,"<13 F0 00 50 00><08 01 00 05>Well, I hope your hunch ⏎ is right for once!",آمل أن يصح حدسك<13 F0 00 50 00><08 01 00 05> ⏎ مرة واحدة!,111,
+hb,8177,"<13 04 01 41 00><08 01 01 06>Listen, we´re gonna need ⏎ Tron´s help when that ⏎ Eradicator´s completed...","اسمعوا, سنحتاج مساعدة<13 04 01 41 00><08 01 01 06> ⏎ ترون عندما يكتمل ⏎ ذلك المبيد...",135,wide
+hb,8178,<13 FA 00 8C 00><08 01 00 05>Don´t sweat it.<10>We´ll make sure ⏎ to tell Tron!,لا تقلق<13 FA 00 8C 00><08 01 00 05>.<10>سنحرص ⏎ على إخبار ترون!,144,wide
+hb,8179,"<13 50 01 3A 00><08 01 00 04>Remember, boys--we´re ⏎ counting on you.",تذكروا يا شباب--نحن<13 50 01 3A 00><08 01 00 04> ⏎ نعتمد عليكم.,118,
+hb,8180,<13 F5 00 AF 00><08 01 00 05>Roger!,حاضر<13 F5 00 AF 00><08 01 00 05>!,127,
+hb,8181,"<13 C6 00 39 00><08 01 00 05>Gawrsh, it´s only us!","يا إلهي, إنه نحن فقط<13 C6 00 39 00><08 01 00 05>!",126,
+hb,8182,<13 AA 00 50 00><08 01 00 06>You can´t talk to Tron if ⏎ this room gets taken over.,لا يمكنك التحدث مع ترون إذا<13 AA 00 50 00><08 01 00 06> ⏎ استولوا على هذه الغرفة.,148,wide
+hb,8183,<13 FA 00 3C 00><08 01 01 06>Did you check ⏎ in with Cid?,هل تواصلت<13 FA 00 3C 00><08 01 01 06> ⏎ مع سيد?,114,
+hb,8184,<13 C8 00 6E 00><08 01 00 05>Uh-huh.,آه-هه<13 C8 00 6E 00><08 01 00 05>.,128,
+hb,8185,<13 40 01 2D 00><08 01 01 06>And the Eradicator?,والمبيد<13 40 01 2D 00><08 01 01 06>?,54,
+hb,8186,<13 96 00 82 00><08 01 00 05>It´s almost done.,أوشك على الانتهاء<13 96 00 82 00><08 01 00 05>.,143,wide
+hb,8187,<13 C8 00 64 00><08 01 00 05>Great!,رائع<13 C8 00 64 00><08 01 00 05>!,97,
+hb,8188,"<13 D2 00 50 00><08 01 00 05>Say, Leon, why don´t ⏎ you go work with Cid?<10>I have this place ⏎ under control.","قل يا ليون, لماذا لا<13 D2 00 50 00><08 01 00 05> ⏎ تذهب للعمل مع سيد?<10>أنا أسيطر ⏎ على هذا المكان.",135,wide
+hb,8189,<13 CF 00 43 00><08 01 01 07>Are you sure? ⏎ All by yourself...?,هل أنت متأكد<13 CF 00 43 00><08 01 01 07>? ⏎ وحدك تماما...?,112,
+hb,8190,"<13 F0 00 3C 00><08 01 01 07>...Er, sorry. ⏎ It´s all yours.","...آه, آسف<13 F0 00 3C 00><08 01 01 07>. ⏎ إنه لك.",104,
+hb,8191,<13 FA 00 3C 00><08 01 00 05>How´s Tron?,كيف حال ترون<13 FA 00 3C 00><08 01 00 05>?,169,wide
+hb,8192,<13 F0 00 46 00><08 01 01 07>We still can´t get ⏎ in touch with him.<10>Maybe you guys should ⏎ give it a shot.,ما زلنا لا نستطيع<13 F0 00 46 00><08 01 01 07> ⏎ التواصل معه.<10>ربما عليكم ⏎ تجربة ذلك.,97,
+hb,8193,"<13 0E 01 3C 00><08 01 00 05>No, we´ll go talk ⏎ to him in person.","لا, سنذهب للتحدث<13 0E 01 3C 00><08 01 00 05> ⏎ إليه شخصيا.",141,wide
+hb,8194,"<13 A0 00 40 01><08 01 01 02>Then I have a ⏎ favor to ask.<10>When you find Tron, ⏎ could you tell him to ⏎ come to the I/O tower?<10>That´s where we´ll ⏎ upload the MCP ⏎ Eradication program.","إذن لدي<13 A0 00 40 01><08 01 01 02> ⏎ طلب.<10>عندما تجدون ترون, ⏎ أخبروه أن ⏎ يأتي إلى برج الإدخال.<10>هناك سنرفع ⏎ برنامج القضاء على ⏎ برنامج التحكم الرئيسي.",116,
+hb,8195,<13 8C 00 5A 00><08 01 00 05>The I/O tower. ⏎ Got it!,برج الإدخال<13 8C 00 5A 00><08 01 00 05>. ⏎ فهمت!,101,
+hb,8196,<13 E4 00 3F 00><08 01 01 07>Thanks. ⏎ And watch your backs.,شكرا<13 E4 00 3F 00><08 01 01 07>. ⏎ وانتبهوا لظهوركم.,108,
+hb,8198,"We´ll be there soon, Tron.",سنصل قريبا يا ترون.,100,
+hb,8199,Finished?,انتهيت?,97,
+hb,8200,"Would be, if it weren´t for the old loon´s magic.","كنت سأنتهي, لولا سحر الأحمق العجوز.",102,
+hb,8201,OLD loon you say!?,أحمق عجوز تقول!?,139,wide
+hb,8202,I´m tryin´ to work here!,أحاول العمل هنا!,100,
+hb,8203,"Oh ho-ho-ho, ⏎ I´ll show you who´s old!","أوه هو-هو-هو, ⏎ سأريك من العجوز!",101,
+hb,8204,Done!,انتهى!,138,wide
+hb,8205,"There you go, Leon.<14 64 00><10><14 14 00><10>One homemade program. ⏎ A loony wizard special.",تفضل يا ليون.<14 64 00><10><14 14 00><10>برنامج واحد منزلي الصنع. ⏎ خاص من ساحر مجنون.,139,wide
+hb,8206,This had better work.,من الأفضل أن ينجح.,118,
+hb,8207,I´m off.,سأذهب.,128,
+hb,8208,Be on your guard!,كن حذرا!,68,
+hb,8209,Warning.<14 4B 00><10><14 0F 00>User control is terminated indefinitely.,تحذير.<14 4B 00><10><14 0F 00>انتهى تحكم المستخدم دون موعد.,119,
+hb,8210,No good!,لا فائدة!,133,wide
+hb,8211,"Leon, let me try.","ليون, دعني أجرب.",142,wide
+hb,8212,This is your final warning.<14 3C 00><10><14 0F 00><10>Stop at once.,هذا تحذيرك الأخير.<14 3C 00><10><14 0F 00><10>توقف فورا.,95,
+hb,8213,Bon appetit!,بالهناء!,69,
+hb,8214,Don´t talk with your mouth full.,لا تتحدث وفمك ممتلئ.,94,
+hb,8215,What...what are you loading?,ماذا... ماذا تحمل?,83,
+hb,8216,Things are settling down in town!<14 62 00><10><14 27 00><10>The only Heartless left anywhere ⏎ are the local variety.<14 8A 00><10><14 30 00><10>And it looks like there are fewer than before.,الأمور تهدأ في البلدة!<14 62 00><10><14 27 00><10>كل بلا قلب المتبقين في أي مكان ⏎ هم من النوع المحلي.<14 8A 00><10><14 30 00><10>ويبدو أنهم أقل من قبل.,91,
+hb,8217,Now if we can just get those ⏎ three back in one piece...,الآن لو استطعنا فقط إعادة أولئك ⏎ الثلاثة سالمين...,148,wide
+hb,8218,You´re here!,أنتم هنا!,92,
+hb,8219,Welcome back!,أهلا بكم!,86,
+hb,8220,How´s the town?,كيف حال البلدة?,132,wide
+hb,8221,A-okay!,تمام!,101,
+hb,8222,"Not a single trace of the MCP, either. ⏎ Everything´s back to normal. We made it.",لا أثر لبرنامج التحكم الرئيسي أيضا. ⏎ كل شيء عاد إلى طبيعته. نجحنا.,105,
+hb,8223,"Hey, why the long face?<14 78 00><10><14 19 00><10>What happened?","هيه, لماذا الوجه الطويل?<14 78 00><10><14 19 00><10>ماذا حدث?",143,wide
+hb,8224,Tron just disappeared.,ترون اختفى للتو.,100,
+hb,8225,And he promised we´d see him again...,ووعد أننا سنراه مجددا...,89,
+hb,8226,What´s happening!?,ما الذي يحدث!?,110,
+hb,8227,"Greetings, friends.<14 39 00><10>System is up, and ready for User input.",تحياتي أيها الأصدقاء.<14 39 00><10>النظام يعمل وجاهز لمدخلات المستخدم.,136,wide
+hb,8228,Tron!,ترون!,146,wide
+hb,8229,Stay in touch.,ابقوا على اتصال.,149,wide
+hb,8230,Yeah!,نعم!,115,
+hb,8231,"Oh boy, oh boy!","يا سلام, يا سلام!",138,wide
+hb,8232,"Hey, stop that! It tickles!","هيه, توقف! إنه يدغدغ!",120,
+hb,8233,Tron is ticklish?,ترون يتدغدغ?,121,
+hb,8234,How ´bout this!,وماذا عن هذا!,127,
+hb,8235,Please stop that!,أرجوكم كفوا!,109,
+hb,8236,I think Tron´s been hanging ⏎ around those guys too much.,أظن أن ترون قضى وقتا طويلا ⏎ مع أولئك الرجال.,138,wide
+hb,8237,"W-wait, wait just a moment.<14 B1 00><10>I want to show you something I dug ⏎ up from the system archives.<14 B4 00><10>You can see the town back ⏎ when it was first built.","ا-انتظروا, انتظروا لحظة.<14 B1 00><10>أريد أن أريكم شيئا استخرجته ⏎ من أرشيف النظام.<14 B4 00><10>تستطيعون رؤية البلدة ⏎ عندما بنيت أول مرة.",109,
+hb,8238,That´s right...<14 5A 00><10><14 19 00><10>I remember now.,هذا صحيح...<14 5A 00><10><14 19 00><10>أتذكر الآن.,99,
+hb,8239,Just like the old days...,كما في الأيام الخوالي...,123,
+hb,8240,Hmm...<14 3C 00><10><14 2A 00><10>I´d be fascinated to ascertain as to<14 86 00><10>when the town got such ⏎ a dreadful name as Hollow Bastion!,همم...<14 3C 00><10><14 2A 00><10>سأكون مفتونا بمعرفة<14 86 00><10>متى حصلت البلدة على اسم ⏎ مروع كحصن هولو!,97,
+hb,8241,"You know, this town had another name once.","تعرفون, هذه البلدة كان لها اسم آخر ذات مرة.",145,wide
+hb,8243,Radiant Garden.<14 6E 00><10><14 2D 00><10>,الحديقة المضيئة.<14 6E 00><10><14 2D 00><10>,136,wide
+hb,8244,And where is everyone else?,وأين الجميع الآخرون?,109,
+hb,8245,Beats me. They musta had some ⏎ other matters to deal with.,لا أدري. لا بد أن لديهم ⏎ أمورا أخرى يتعاملون معها.,119,
+hb,8246,"""Matters""?","""أمورا""?",98,
+hb,8247,You mean they have more important ⏎ affairs to attend to than my return?,تقصد أن لديهم شؤونا أهم ⏎ من عودتي?,95,
+hb,8248,"Well, see, there´s this Organization <X 5E> ⏎ that keeps gettin´ in the way--","حسنا, ترى, هناك منظمة <X 5E> هذه ⏎ تظل تعترض الطريق--",111,
+hb,8249,Let those fools play their little game!,دعوا الحمقى يلعبون لعبتهم الصغيرة!,132,wide
+hb,8250,"But what about that runt with the Keyblade? ⏎ He´s been a real pain, too.",لكن ماذا عن ذلك الصغير حامل الكيبلايد? ⏎ كان مصدر إزعاج حقيقي أيضا.,114,
+hb,8251,"Oh, has he?","أوه, حقا?",109,
+hb,8252,Very well then. I suppose you´d best tell ⏎ me what´s happened during my absence.,حسنا إذن. أظنك الأفضل أن تخبرني ⏎ بما حدث أثناء غيابي.,109,
+hb,8253,Anybody home?,من هنا?,72,
+hb,8254,Merlin!,ميرلين!,133,wide
+hb,8255,The castle´s in danger!,القلعة في خطر!,92,
+hb,8256,What is all that racket?,ما كل هذه الضجة?,102,
+hb,8257,"Ho-ho! I thought--oh, it´s you!","هو-هو! ظننت-آه, إنه أنتم!",112,
+hb,8258,It looks like you´ve learned a bit ⏎ since the last time I saw you.,يبدو أنكم تعلمتم قليلا ⏎ منذ آخر مرة رأيتكم فيها.,107,
+hb,8259,Really!?,حقا!?,91,
+hb,8260,Wait a minute! Let´s talk about the problem!<14 C0 00><10>It´s Maleficent! She´s back!,انتظر لحظة! لنتحدث عن المشكلة!<14 C0 00><10>إنها مالفيسنت! لقد عادت!,96,
+hb,8261,Where? Inside the castle!?,أين? داخل القلعة!?,96,
+hb,8262,"Yep! And Heartless, too.",نعم! وبلا قلب أيضا.,97,
+hb,8263,"Oh, dear...",يا عزيزي...,128,
+hb,8264,I wonder what´s up.,أتساءل ما الأمر.,105,
+hb,8265,Uh-oh!,آه-أوه!,161,wide
+hb,8266,C´mon!,هيا!,77,
+hb,8267,"Well, now...took your time, did you?","حسنا, حسنا... أخذتم وقتكم, أليس كذلك?",140,wide
+hb,8268,"Oh, was it you who summoned us, Merlin?","أوه, هل أنت من استدعانا يا ميرلين?",111,
+hb,8269,"Yes, yes...<14 64 00><10><14 1E 00><10>But it seems I used too much power in ⏎ doing so, and those infernal Heartless...","نعم, نعم...<14 64 00><10><14 1E 00><10>لكن يبدو أنني استخدمت قوة كبيرة في ⏎ ذلك, وأولئك بلا قلب اللعينون...",124,
+hb,8270,So what´s up?,إذن ما الأمر?,124,
+hb,8271,"Well, I happened to stumble across ⏎ this in the Zero District.","حسنا, صادف أنني عثرت ⏎ على هذا في المنطقة صفر.",100,
+hb,8272,Pooh´s storybook!,كتاب قصص بوه!,109,
+hb,8273,"That´s right.<14 42 00><10>I know you´re a good friend of Winnie the ⏎ Pooh, Sora--that´s why I summoned you.",هذا صحيح.<14 42 00><10>أعلم أنك صديق مقرب لويني ⏎ بوه يا سورا--لذلك استدعيتك.,88,
+hb,8274,"And when I did, I was attacked ⏎ by the Heartless.<14 B4 00><10>Of course, I fought back with ⏎ some rather powerful magic,<14 D8 00><10>but then I began to fear the book ⏎ would be damaged, so I...<14 E8 00><10><14 45 00>Now, just a moment. Leon and the ⏎ others need to hear this too.<14 C2 00><10>I-I´d better go find them. Be back in a jiffy.","وعندما فعلت, هاجمني ⏎ بلا قلب.<14 B4 00><10>بالطبع, قاتلت ⏎ بسحر قوي نوعا ما,<14 D8 00><10>لكن بعدها بدأت أخشى أن يتضرر ⏎ الكتاب, ف...<14 E8 00><10><14 45 00>الآن, لحظة. ليون ⏎ والآخرون يحتاجون إلى سماع هذا أيضا.<14 C2 00><10>ا-الأفضل أن أذهب لإيجادهم. سأعود في لمح البصر.",144,wide
+hb,8275,I wonder how Pooh's doing.,أتساءل كيف حال بوه.,105,
+hb,8276,Wanna find out?,أتود المعرفة?,119,
+hb,8277,Yeah!,نعم!,115,
+hb,8278,Sora...,سورا...,130,
+hb,8279,"Cover for me, okay?","غطي علي, حسنا?",108,
+hb,8280,Sora! Hurry up!,سورا! أسرع!,105,
+hb,8281,Donald?,دونالد?,125,
+hb,8282,"Did ya bring the book, Sora?",هل أحضرت الكتاب يا سورا?,122,
+hb,8283,Hey!,هيه!,155,wide
+hb,8284,Give that back!,أعد ذلك!,75,
+hb,8285,Think it´s okay?,هل تظن أنه بخير?,148,wide
+hb,8286,"Gawrsh, maybe ya better go back ⏎ and make sure Pooh´s all right.","يا إلهي, ربما الأفضل أن تعود ⏎ وتتأكد أن بوه بخير.",113,
+hb,8287,But what about Merlin?,لكن ماذا عن ميرلين?,113,
+hb,8288,"Well, I guess we could explain...","حسنا, أظننا نستطيع أن نشرح...",121,
+hb,8289,Great!,رائع!,97,
+hb,8290,"<13 AA 00 46 00><08 01 01 05>Couldn´t be bothered to wait ⏎ up for an old wizard, eh?","لم تستطع أن تتحمل الانتظار<13 AA 00 46 00><08 01 01 05> ⏎ لساحر عجوز, ها?",131,wide
+hb,8291,<13 96 00 50 00><08 01 01 06>Sorry about that...,آسف على ذلك<13 96 00 50 00><08 01 01 06>...,103,
+hb,8292,<13 2C 01 64 00><08 01 00 05>How are things in there?,كيف الأمور هناك<13 2C 01 64 00><08 01 00 05>?,92,
+hb,8293,"<13 18 01 78 00><08 01 01 06>Well...<10>Pooh seems to have ⏎ forgotten all about me.<10>And not just me--all ⏎ his other friends, too.",حسنا<13 18 01 78 00><08 01 01 06>...<10>يبدو أن بوه نسيني ⏎ تماما.<10>وليس أنا فقط--بل كل ⏎ أصدقائه الآخرين أيضا.,119,
+hb,8294,<13 FA 00 50 00><08 01 00 05>I was afraid ⏎ of that...,كنت أخشى<13 FA 00 50 00><08 01 00 05> ⏎ ذلك...,106,
+hb,8295,<13 C8 00 64 00><08 01 00 04>I suspect it has something ⏎ to do with those pages the ⏎ Heartless stole.<10>You´ll have to collect the ⏎ torn pages and repair the ⏎ book to put things right.,أظن أن الأمر له علاقة<13 C8 00 64 00><08 01 00 04> ⏎ بتلك الصفحات التي سرقها ⏎ بلا قلب.<10>عليك جمع الصفحات ⏎ الممزقة وإصلاح ⏎ الكتاب لتصحيح الأمور.,116,
+hb,8296,"<13 B4 00 3C 00><08 01 01 05>This book is one of the world´s ⏎ most cherished elements.<10>I´d been meaning to ⏎ tell Leon I´d found it,<10>but perhaps we should keep ⏎ it between us for now.","هذا الكتاب من أعز عناصر<13 B4 00 3C 00><08 01 01 05> ⏎ العالم.<10>كنت أنوي إخبار ⏎ ليون أنني وجدته,<10>لكن ربما علينا إبقاءه ⏎ بيننا الآن.",106,
+hb,8297,<06 02><13 A0 00 2C 01><08 03 01 02>We will!,سنفعل<06 02><13 A0 00 2C 01><08 03 01 02>!,129,
+hb,8298,<06 02><13 72 01 64 00><08 03 00 05>We will!,سنفعل<06 02><13 72 01 64 00><08 03 00 05>!,129,
+hb,8299,<06 02><13 6E 00 3C 00><08 03 01 06>We will!,سنفعل<06 02><13 6E 00 3C 00><08 03 01 06>!,129,
+hb,8300,"<13 94 00 5F 00><08 01 01 06>Good, good...","جيد, جيد<13 94 00 5F 00><08 01 01 06>...",111,
+hb,8998,"The computer room´s through here.<10>Computers are delicate. It´s okay to ⏎ touch them, but don´t goof around.","غرفة الحاسوب من هنا.<10>الحواسيب حساسة. لا بأس بلمسها, ⏎ لكن لا تعبث.",117,
+hb,8999,"If she keeps that up, she´ll destroy the ⏎ study before we find the password.<10>Sorry, Sora, but keep an eye on ⏎ that girl.","إن واصلت هكذا, ستدمر ⏎ المكتب قبل أن نجد كلمة السر.<10>آسف يا سورا, لكن راقب ⏎ تلك الفتاة.",102,
+hb,9000,Leave this to us. You just concentrate on ⏎ the data.<10>Use that password and work with Tron to ⏎ free that DTD data.,اترك هذا لنا. ركز فقط على ⏎ البيانات.<10>استخدم كلمة السر هذه واعمل مع ترون ⏎ لتحرير بيانات باب الظلام.,133,wide
+hb,9001,"Help <04 0A>Tron <03>until the ⏎ program´s done.<10>Don´t worry, ⏎ I´ll handle things here.","ساعد <03>ترون <04 0A>حتى ⏎ يكتمل البرنامج.<10>لا تقلق, ⏎ سأتولى الأمور هنا.",106,
+hb,9002,Finding Ansem´s research data will have ⏎ to come first.<10>I´ll explain everything later. ⏎ Please be careful.,إيجاد بيانات أبحاث أنسيم ⏎ يجب أن يأتي أولا.<10>سأشرح كل شيء لاحقا. ⏎ أرجو أن تكون حذرا.,76,
+hb,9003,"<04 0A>The computer´s up ahead.<03><10>The way gets a bit tricky inside. ⏎ If you get lost, just walk along the wall.","<03>الحاسوب في الأمام<04 0A>.<10>الطريق يصبح صعبا قليلا في الداخل. ⏎ إن ضللت, امش بمحاذاة الجدار.",108,
+hb,9004,"Have you seen someone with a big sword? ⏎ No, he doesn´t have a scar on his face.<10>He has strangely colored eyes, ⏎ and tries to take everything upon himself.","هل رأيت شخصا بسيف كبير? ⏎ لا, ليس لديه ندبة على وجهه.<10>له عينان بلون غريب, ⏎ ويحاول تحمل كل شيء بنفسه.",96,
+hb,9005,Leon and the others are in the borough. ⏎ They went to Merlin´s house.,ليون والآخرون في الحي. ⏎ ذهبوا إلى بيت ميرلين.,82,
+hb,9006,"That sea salt ice cream's good, isn't it? ⏎ But now's no time to be eating ice cream!<10>Go help Leon and the others. ⏎ Don't expect a reward, though.","آيس كريم ملح البحر هذا لذيذ, أليس كذلك? ⏎ لكن ليس هذا وقت أكل الآيس كريم!<10>اذهب وساعد ليون والآخرين. ⏎ لا تتوقع مكافأة, مع ذلك.",129,
+hb,9007,"Tell me if you come across a man with long, ⏎ silver hair and a long blade.<10>His name is Sephiroth. ⏎ He is my darkest enemy.",أخبرني إن صادفت رجلا بشعر فضي ⏎ طويل وسيف طويل.<10>اسمه سيفيروث. ⏎ إنه ألد أعدائي.,98,
+hb,9008,"Hm... It seems your clothes are designed to ⏎ gather energy when you use up your magic.<10>In that case, don´t hold back, since your ⏎ magic will recover with time.","همم... يبدو أن ملابسك مصممة ⏎ لتجمع الطاقة عندما تستنفد سحرك.<10>في تلك الحالة, لا تتردد, فسحرك ⏎ سيتعافى مع الوقت.",107,
+hb,9009,"That MCP thingy set the town´s ⏎ defense devices to attack us.<10>We can´t fight back, so if you get close to ⏎ them you´ll just have to dodge their attacks.","ذلك برنامج التحكم الرئيسي ضبط أجهزة ⏎ دفاع البلدة لتهاجمنا.<10>لا نستطيع الرد, فإن اقتربت منها ⏎ عليك تفادي هجماتها فقط.",110,
+hb,9010,"It´ll take awhile, but so long as we keep ⏎ at it, this world will return to normal.<10>You´re free to go your own way now. ⏎ Be careful, Sora.","سيستغرق الأمر وقتا, لكن ما دمنا ⏎ نستمر, سيعود هذا العالم إلى طبيعته.<10>أنت حر في سلوك طريقك الآن. ⏎ كن حذرا يا سورا.",124,
+hb,9011,"Have you seen the town´s defense ⏎ devices? They´re called Claymores.<10>They´re not as powerful as you, ⏎ but depending on how you use them,<10>they can really help.","هل رأيت أجهزة دفاع البلدة? ⏎ تسمى كليمور.<10>ليست بقوتك, ⏎ لكن حسب طريقة استخدامها,<10>يمكنها أن تساعد حقا.",109,
+hb,9012,You can get to the computer room from ⏎ the <04 0A>postern<03>. Watch your backs.,يمكنك الوصول إلى غرفة الحاسوب من ⏎ البوابة الخلفية.<04 0A> انتبهوا لظهوركم.,123,
+hb,9013,"Sorry, but I need a little more time to ⏎ complete the MCP Eradication program.<10>In the meantime, go help Tron from the ⏎ <04 0A>computer room<03>.","آسف, لكنني أحتاج وقتا أكثر لإكمال ⏎ برنامج القضاء على برنامج التحكم الرئيسي.<10>في هذه الأثناء, اذهب وساعد ترون من ⏎ غرفة الحاسوب.<04 0A>",131,wide
+hb,9014,"Leon went to the bailey. Don´t make him ⏎ wait too long, okay?","ليون ذهب إلى الرحيبة. لا تجعله ⏎ ينتظر طويلا, حسنا?",106,
+hb,9015,"If you go to the right from here and climb ⏎ the stairs, you´ll arrive at the bailey.<10>There are Heartless roaming about, so ⏎ prepare yourselves at the marketplace.","إن ذهبت يمينا من هنا وصعدت ⏎ الدرج, ستصل إلى الرحيبة.<10>هناك بلا قلب يتجولون, لذا ⏎ تجهزوا في السوق.",94,
+hb,9016,"Like I said before, this town is equipped with ⏎ defense devices.<10>They can be helpful. Fighting alongside them ⏎ should make it easier for you.","كما قلت من قبل, هذه البلدة مجهزة ⏎ بأجهزة دفاع.<10>قد تكون مفيدة. القتال بجانبها ⏎ يجب أن يسهل الأمر عليكم.",106,

@@ -1,0 +1,46 @@
+﻿bar,id,EN,AR,width_pct,flags
+sys,22017,⤷ A <07 FF EC 19 80>new Gauge<03> has appeared! ⏎     <07 FF EC 19 80>Press <09 DA> rapidly<03> to defeat Ursula!,⤷ ظهر <03>مقياس جديد!<07 FF EC 19 80> ⏎     <03>اضغط <09 DA> بسرعة<07 FF EC 19 80> لهزيمة أورسولا!,114,dblspace
+sys,22018,<09 F4><09 F5> ⏎ Move left/right,<09 F4><09 F5> ⏎ تحرك يمين ويسار,140,wide
+sys,22019,<07 FF EC 19 80>Turn left<03> with <09 E0>/<09 E2> ⏎ <07 FF EC 19 80>Turn right<03> with <09 E1>/<09 E3> ⏎ Turn when LEFT/RIGHT ⏎ appears on screen.,<03>انعطف يسارا<07 FF EC 19 80> عبر <09 E0> أو <09 E2><07 FF EC 19 80><03> ⏎ <03>انعطف يمينا<07 FF EC 19 80> عبر <09 E1> أو <09 E3> ⏎ انعطف عندما يظهر يسار أو يمين ⏎ على الشاشة.,173,wide
+sys,22020,<09 DA> <07 FF EC 19 80>Attack<03>, <03>هجوم<07 FF EC 19 80><09 DA>,119,
+sys,22021,<09 DE> <07 FF EC 19 80>Charge<03>, <03>شحن<07 FF EC 19 80><09 DE>,85,
+sys,22022,<09 DB> <07 FF EC 19 80>Guard<03>, <03>حماية<07 FF EC 19 80><09 DB>,128,
+sys,22023,"<09 E2> <07 FF EC 19 80>Lock Commands<03> ⏎ While pressed, use <09 E9>  ⏎ to control commands. ⏎  ⏎ <09 E8> ⏎ Move Front/Back/Left/Right"," <03>تثبيت الأوامر<07 FF EC 19 80><09 E2> ⏎ أثناء الضغط, استخدم <09 E9>  ⏎ للتحكم بالأوامر. ⏎  ⏎ <09 E8> ⏎ تحرك أماما أو خلفا أو يسارا أو يمينا",164,wide
+sys,22024,"<09 E3> <07 FF EC 19 80>Lock Camera<03> ⏎ While pressed, use <09 E9>  ⏎ to control the camera. ⏎  ⏎ <09 F6><09 F7> ⏎ Move Up/Down"," <03>تثبيت الكاميرا<07 FF EC 19 80><09 E3> ⏎ أثناء الضغط, استخدم <09 E9>  ⏎ للتحكم بالكاميرا. ⏎  ⏎ <09 F6><09 F7> ⏎ تحرك للأعلى أو للأسفل",124,
+sys,22025,⤷ Use <09 DA> to attack enemies from a distance!,⤷ استخدم <09 DA> لمهاجمة الأعداء من بعيد!,107,
+sys,22026,"If Pooh falls off, ⏎ <07 FF EC 19 80>press <09 DF> to grab him again<03>. ⏎ Keep an eye on the clock!","إن سقط بوه, ⏎ <03>اضغط <09 DF> لتمسكه من جديد.<07 FF EC 19 80> ⏎ راقب الساعة!",116,
+sys,22027,⤷ Press <09 DA> to hit incoming objects!,⤷ اضغط <09 DA> لضرب الأشياء القادمة!,110,
+sys,22028,⤷ Press <09 DF> to save <07 FF EC 19 80>Piglet!<03>,⤷ اضغط <09 DF> لإنقاذ <03>بيركيت<07 FF EC 19 80>!,109,
+sys,22029,"Press <09 DF> after hitting an obstacle ⏎ to rescue Pooh, or Pooh will ⏎ <07 FF EC 19 80>continue to lose health<03>.","اضغط <09 DF> بعد الاصطدام بعقبة ⏎ لإنقاذ بوه, وإلا سيستمر ⏎ بوه في فقدان الصحة.<07 FF EC 19 80>",102,
+sys,22030,⤷ <07 FF EC 19 80>Press and hold <09 DE> to move left and right quickly.<03>,⤷ <03>اضغط مطولا على <09 DE> للتحرك يمينا ويسارا بسرعة<07 FF EC 19 80>.,116,
+sys,22031,⤷ The game is over when Pooh has <07 FF EC 19 80>run out of HP<03>.,⤷ تنتهي اللعبة عندما <03>ينفد HP بوه.<07 FF EC 19 80>,81,
+sys,22032,⤷ Gopher will help Sora with an obstacle <07 FF EC 19 80>one time<03>!,⤷ سيساعد غوفر سورا في عقبة <03>مرة واحدة!<07 FF EC 19 80>,106,
+sys,22033,Press <09 DF> after hitting an obstacle ⏎ or Pooh will continue to lose health. ⏎ <07 FF EC 19 80>Pooh must be with Sora to collect Orbs<03>.,اضغط <09 DF> بعد الاصطدام بعقبة ⏎ وإلا سيستمر بوه في فقدان الصحة. ⏎ يجب أن يكون بوه مع سورا لجمع الكرات.<07 FF EC 19 80>,128,
+sys,22034,⤷ <07 FF EC 19 80>Press and hold <09 DE> to move left and right quickly.<03>,⤷ <03>اضغط مطولا على <09 DE> للتحرك يمينا ويسارا بسرعة<07 FF EC 19 80>.,116,
+sys,22035,⤷ Gopher will help Sora with an obstacle one time!,يساعد جوفر سورا مع عقبة مرة واحدة!,98,
+sys,22036,<0A 0E>⤷ Time your jump on the trampoline by pressing <09 DF>  ⏎     at the right time for a <07 FF EC 19 80>special jump<03>!,⤷ وقت قفزتك على الترامبولين بالضغط على <09 DF> <0A 0E> ⏎     في الوقت الصحيح لتحصل على <03><0A 0E>قفزة خاصة<03>!<07 FF EC 19 80><0A 0E>,107,dblspace
+sys,22037,<0A 0E>⤷ Time your bounce on the balloon by pressing <09 DF> ⏎     at the right time for a <07 FF EC 19 80>special bounce<03>!,⤷ وقت ارتدادك على البالون بالضغط على <09 DF><0A 0E> ⏎     في الوقت الصحيح لتحصل على <03><0A 0E>ارتداد خاص<03>!<07 FF EC 19 80><0A 0E>,114,dblspace
+sys,22038,⤷ <07 FF EC 19 80>Bounce<03> from balloon to balloon by pressing <09 DF>   ⏎     at the right time. <07 FF EC 19 80>Pop as many balloons as possible<03>!,⤷ <03>ارتد<07 FF EC 19 80> من بالون إلى بالون بالضغط على <09 DF>   ⏎     في الوقت الصحيح. <03>فجر أكبر عدد ممكن من البالونات!<07 FF EC 19 80>,121,dblspace
+sys,22039,"⤷ Whenever Sora falls from a balloon to the ⏎     trampoline, the player loses one of their tries. ⏎     The game is over when <07 FF EC 19 80>zero tries are left<03>.","⤷ كلما سقط سورا من بالون إلى ⏎     الترامبولين, يخسر اللاعب إحدى محاولاته. ⏎     تنتهي اللعبة عندما <03>تنفد المحاولات.<07 FF EC 19 80>",104,dblspace
+sys,22040,⤷ Press <09 DF> to stop the <07 FF EC 19 80>Power Gauge<03> ⏎     and begin swinging!,⤷ اضغط <09 DF> لإيقاف <03>مقياس القوة<07 FF EC 19 80> ⏎     وابدأ التأرجح!,98,dblspace
+sys,22041,⤷ Press <09 DF> while swinging to choose ⏎     the direction to <07 FF EC 19 80>send the pot flying<03>!,⤷ اضغط <09 DF> أثناء التأرجح لاختيار ⏎     اتجاه <03>إطلاق الإناء في الهواء!<07 FF EC 19 80>,96,dblspace
+sys,22042,⤷ Press <09 DF> in mid-swing to <07 FF EC 19 80>throw in that direction<03>.,⤷ اضغط <09 DF> في منتصف التأرجح <03>للرمي في ذلك الاتجاه.<07 FF EC 19 80>,122,
+sys,22043,⤷ Fill the Power Gauge to throw the pot as far as possible!,املأ عداد الطاقة لترمي القدر بأبعد مدى!,83,
+sys,22044,Press <09 E7> to quit during the song.,اضغط <09 E7> للخروج أثناء الأغنية.,107,
+sys,22045,⤷ Press <09 DF> to stop the <07 FF EC 19 80>Power Gauge<03> and begin swinging!,⤷ اضغط <09 DF> لإيقاف <03>مقياس القوة<07 FF EC 19 80> وابدأ التأرجح!,96,
+sys,22046,<09 DF> toggles MP Charge on/off., يشغل ويعطل شحن MP.<09 DF>,99,
+sys,22047,Use <09 DF> to change Abilities.,استخدم <09 DF> لتغيير القدرات.,122,
+sys,22048,<09 DF>  toggles Auto-Reload on/off.,  يشغل ويعطل الإعادة التلقائية.<09 DF>,129,dblspace
+sys,22049,Use <09 E8> to turn the Gummi Ship  ⏎ and press <09 DA> to <07 FF EC 19 80>fire<03>!,استخدم <09 E8> لتوجيه سفينة الغامي  ⏎ واضغط <09 DA> <03>للإطلاق!<07 FF EC 19 80>,126,
+sys,22050,Use <09 DB> to <07 00 FA 30 80>roll<03>!,استخدم <09 DB> <03>للدوران!<07 00 FA 30 80>,180,wide
+sys,22051, <07 FF EC 19 80>Press down<03> <09 DA> to <07 00 FA 30 80>lock onto<03> a target!, <03>اضغط باستمرار<07 FF EC 19 80> <09 DA> <03>لتثبيت<07 00 FA 30 80> الهدف!,100,
+sys,22052,"After <07 00 FA 30 80>locking onto<03> a target, release <09 DA> to fire!","بعد <03>تثبيت<07 00 FA 30 80> الهدف, اترك <09 DA> للإطلاق!",84,
+sys,22053,"Fill the Slash Gauge in the lower left corner  ⏎ by defeating enemies. ⏎ Once full, press <09 DF> to use <07 00 FA 30 80>Slash Gummies<03>!","املأ مقياس القطع في الزاوية السفلية اليسرى  ⏎ بهزيمة الأعداء. ⏎ عند امتلائه, اضغط <09 DF> لاستخدام <03>غامي القطع!<07 00 FA 30 80>",118,
+sys,22054,Use <09 DF> to <07 FF EC 19 80>fire all Slashes<03> stocked in the <07 00 FA 30 80>Slash Gauge<03>!,استخدم <09 DF> <03>لإطلاق كل القطوع<07 FF EC 19 80> المخزنة في <03>مقياس القطع!<07 00 FA 30 80>,124,
+sys,22055,"With two types of <07 FF EC 19 80>Slash Gummies<03>, ⏎ press <09 DF> rapidly for a <07 00 FA 30 80>Slash Combo<03>!","مع نوعين من <03>غامي القطع,<07 FF EC 19 80> ⏎ اضغط <09 DF> بسرعة لتحصل على <03>كومبو القطع!<07 00 FA 30 80>",140,wide
+sys,22056,Use <09 E2>  and  <09 E3> to change the <07 00 FA 30 80>formation<03> ⏎ of the <07 FF EC 19 80>Teeny Ships<03>!,استخدم <09 E2>  و  <09 E3> لتغيير <03>تشكيل<07 00 FA 30 80> ⏎ السفن الصغيرة!<07 FF EC 19 80>,88,dblspace
+sys,22057,Use <09 DE> to have the Teeny Ships form  ⏎ into <07 00 FA 30 80>EX-Formation<03>!,استخدم <09 DE> لتجعل السفن الصغيرة تتشكل  ⏎ في <03>تشكيل إكس!<07 00 FA 30 80>,126,
+sys,22058,Use<09 E0> or <09 E1> to ⏎ <07 FF EC 19 80>move the camera<03>!,استخدم <09 E0> أو <09 E1>  ⏎ لتحريك الكاميرا!<07 FF EC 19 80>,111,
+sys,22059,Press <09 E0> and <09 E1> <07 FF EC 19 80>simultaneously<03> to  ⏎ rotate the camera 180°!,اضغط <09 E0> و<09 E1> <03>معا<07 FF EC 19 80>  ⏎ لتدوير الكاميرا 180 درجة!,103,
+sys,22060,⤷ <07 FF EC 19 80>All gauges<03> will be used in this challenge!,⤷ <03>كل المقاييس<07 FF EC 19 80> ستستخدم في هذا التحدي!,113,
+sys,22061,⤷ Be sure not to do anything when the gauge  ⏎     <07 FF EC 19 80>shows Sebastian<03>!,⤷ احرص ألا تفعل أي شيء عندما  ⏎     <03>يظهر المقياس سيباستيان!<07 FF EC 19 80>,87,dblspace

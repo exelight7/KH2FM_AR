@@ -1,0 +1,8 @@
+﻿bar,id,EN,AR,width_pct,flags
+ca,10319,"Maybe someday, Jack´ll be able ⏎ to use the Keyblade after all.","ربما يوما ما, يستطيع جاك ⏎ استخدام الكيبليد بعد كل شيء.",132,wide
+gumi,21695,<09 0B><07 F0 F0 00 80>NOTE<03> ⏎  ⏎ This contains a restricted character ⏎ combination.,<03>ملاحظة<07 F0 F0 00 80><09 0B> ⏎  ⏎ يحتوي هذا على تركيبة ⏎ أحرف محظورة.,83,
+hb,13020,"Hey, Rikku! Stop that singing ⏎ and listen to...<10>...Huh? You!?","هيه, ريكو! توقف عن الغناء ⏎ واستمع إلى...<10>...هاه? أنتم!?",122,
+jm,19157,"Attack flow ⏎  Comet ⏎    ⤷Comet Rain ⏎  ⏎ Notes: ⏎ Comet Rain is a finishing move that is ⏎ executed around Sora. Move in close ⏎ to the enemy to get in as many hits ⏎ as possible. ⏎  ⏎ Sora can move freely during this limit, ⏎ so stay close to the enemy and attack ⏎ away!","تسلسل الهجوم ⏎  المذنب ⏎    ⤷مطر المذنبات ⏎  ⏎ ملاحظات: ⏎ مطر المذنبات حركة ⏎ ختامية تنفذ حول سورا. ⏎ اقترب من العدو لتسدد ⏎ أكبر عدد من الضربات. ⏎  ⏎ يستطيع سورا التحرك ⏎ بحرية خلال هذا الليميت, ⏎ فابق قرب العدو وهاجم!",82,dblspace
+sys,480,Attack,هجوم,123,
+sys,13118,"A Limit Command that unleashes Goofy ⏎ and Sora´s joint attack, Knocksmash. ⏎ Consumes all of Sora´s MP.",أمر ليميت يطلق هجوم ⏎ غوفي وسورا المشترك دمار الكسر. ⏎ يستهلك كل MP لسورا.,112,
+tt,17464,"<13 00 01 40 01><08 02 00 06>Continue working? ⏎ <15 33 00>More munny couldn´t hurt! ⏎ <15 09 00>Nah, I´ve earned enough.","هل تواصل العمل<13 00 01 40 01><08 02 00 06>? ⏎ <15 33 00>مزيد من المال لا يضر!     ⏎ <15 09 00>لا, جمعت ما يكفي.    ",124,dblspace

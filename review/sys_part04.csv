@@ -1,0 +1,251 @@
+﻿bar,id,EN,AR,width_pct,flags
+sys,2701,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Failed to load save data.,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ فشل تحميل بيانات الحفظ.,99,dblspace
+sys,2702,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Memory card (PS2) in MEMORY CARD slot <0D> ⏎ is not formatted.,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ بطاقة الذاكرة PS2 في الفتحة <0D> ⏎ غير مهيأة.,99,dblspace
+sys,2703,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Deleting previous data ⏎ from PC. ⏎ Do not turn off the power.,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ جار حذف البيانات السابقة ⏎ من الحاسوب. ⏎ لا تطفئ الجهاز.,99,dblspace
+sys,2704,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Saving data to PC. ⏎ Do not turn off the power.,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ جار حفظ البيانات في الحاسوب. ⏎ لا تطفئ الجهاز.,99,dblspace
+sys,2705,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Loading PC for save data. ⏎ Do not turn off the power.,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ جار تحميل بيانات الحفظ من الحاسوب. ⏎ لا تطفئ الجهاز.,99,dblspace
+sys,2706,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Overwriting save data on system storage. ⏎ Do not turn off the power.,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ جار استبدال بيانات الحفظ في تخزين النظام. ⏎ لا تطفئ الجهاز.,104,dblspace
+sys,2707,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Deleting previous data ⏎ from PC. ⏎ Do not turn off the power.,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ جار حذف البيانات السابقة ⏎ من الحاسوب. ⏎ لا تطفئ الجهاز.,99,dblspace
+sys,2708,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Failed to check system storage.,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ فشل فحص تخزين النظام.,99,dblspace
+sys,2709,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Failed to delete previous data ⏎ from system storage.,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ فشل حذف البيانات السابقة ⏎ من تخزين النظام.,99,dblspace
+sys,2710,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Failed to delete previous data.,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ فشل حذف البيانات السابقة.,99,dblspace
+sys,2711,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ Insufficient free space on system storage. ⏎ At least 169 KB is required to save this data.,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ لا توجد مساحة كافية في تخزين النظام. ⏎ يلزم 169 كيلوبايت على الأقل لحفظ البيانات.,102,dblspace
+sys,2712,Not Used,مهمل,79,
+sys,2713,Not Used,مهمل,79,
+sys,2714,Save data is corrupt.,بيانات الحفظ تالفة.,103,
+sys,2715,Not Used,مهمل,79,
+sys,2716,Cannot save in new file.,لا يمكن الحفظ في ملف جديد.,148,wide
+sys,2717,Save new file.,حفظ ملف جديد.,139,wide
+sys,2718,<0B 5A>Insufficient free space on system storage.,لا توجد مساحة كافية في تخزين النظام<0B 5A>.,112,
+sys,2719,There is no data.,لا توجد بيانات.,102,
+sys,2721,Select file to save. ⏎  ⏎ <09 DF> Delete file,حدد ملف الحفظ. ⏎  ⏎ <09 DF> حذف ملف,103,
+sys,2722,Select file to load. ⏎  ⏎ <09 DF> Delete file,حدد ملف التحميل. ⏎  ⏎ <09 DF> حذف ملف,115,
+sys,2723,Not Used,مهمل,79,
+sys,2724,<09 0B><07 FF 00 00 80>QUESTION<03>                                     ⏎  ⏎ Overwrite existing file?,                                    <0A 10><03>سؤال<0A 12> <07 FF 00 00 80><09 0B> ⏎  ⏎ استبدال الملف الحالي?,98,dblspace
+sys,2725,<09 0B><07 FF 00 00 80>QUESTION<03>                                     ⏎  ⏎ Load this file?,                                    <0A 10><03>سؤال<0A 12> <07 FF 00 00 80><09 0B> ⏎  ⏎ تحميل هذا الملف?,98,dblspace
+sys,2726,<09 0B><07 FF 00 00 80>QUESTION<03>                                     ⏎  ⏎ Delete selected file?,                                    <0A 10><03>سؤال<0A 12> <07 FF 00 00 80><09 0B> ⏎  ⏎ حذف الملف المحدد?,98,dblspace
+sys,2734,<09 0A><07 FF 00 00 80>INFORMATION<03>                                     ⏎  ⏎ The file system on the system storage ⏎ is corrupted.,                                    <0A 10><03>معلومات<0A 12> <07 FF 00 00 80><09 0A> ⏎  ⏎ نظام الملفات في تخزين النظام ⏎ تالف.,99,dblspace
+sys,2735,Load Game,تحميل اللعبة,148,wide
+sys,2736,Continue,متابعة,95,
+sys,2737,Retry,أعد,92,
+sys,2738,Quit,اخرج,167,wide
+sys,2739,Skip Scene,تخطي,62,
+sys,2740,Continue,متابعة,95,
+sys,2741,I won´t give up!,لن أستسلم!,80,
+sys,2742,It´s all over...,انتهى كل شيء...,135,wide
+sys,2743,Jiminy´s Journal,يوميات جيميني,113,
+sys,2744,Wallace´s Weapon Shop,متجر والاس للأسلحة,105,
+sys,2745,Biggs's Armor Shop,متجر بيغس للدرع,112,
+sys,2746,Jessie´s Accessory Shop,متجر جيسي للإكسسوارات,123,
+sys,2747,Wantz´s Item Shop,متجر وانتز للأغراض,130,
+sys,2748,Elmina´s Workshop,ورشة إلمينا,81,
+sys,2749,"Huey, Dewey, and Louie´s Weapon Shop",متجر هوي ودوي ولوي للأسلحة,103,
+sys,2750,Wedge´s Armor Shop,متجر ويدج للدرع,113,
+sys,2751,"Huey, Dewey, and Louie´s Accessory Shop",متجر هوي ودوي ولوي للإكسسوارات,111,
+sys,2752,"Huey, Dewey, and Louie´s Item Shop",متجر هوي ودوي ولوي للأغراض,112,
+sys,2753,Kupo´s Moogle Shop,متجر كوبو الموغل,125,
+sys,2754,Monty´s Moogle Shop,متجر مونتي الموغل,124,
+sys,2755,Mosh´s Moogle Shop,متجر موش الموغل,121,
+sys,2756,Mogjiro´s Moogle Shop,متجر موجيرو الموغل,127,
+sys,2757,Morlock´s Moogle Shop,متجر مورلوك الموغل,129,
+sys,2758,Gumo´s Moogle Shop,متجر غومو الموغل,129,
+sys,2759,Mojito´s Moogle Shop,متجر موغيتو الموغل,130,
+sys,2760,Kumop´s Moogle Shop,متجر كوموب الموغل,131,wide
+sys,2761,Artemicion´s Moogle Shop,متجر أرتيميسيون الموغل,127,
+sys,2762,Mogtaro´s Moogle Shop,متجر موجتارو الموغل,128,
+sys,2763,Stiltzkin´s Moogle Shop,متجر ستيلتسكين الموغل,125,
+sys,2764,Buy,اشتر,155,wide
+sys,2765,Sell,بيع,109,
+sys,2766,Quit,اخرج,167,wide
+sys,2767,Yes,نعم,147,wide
+sys,2768,No,لا,76,
+sys,2769,Buy Items.,شراء أغراض.,148,wide
+sys,2770,Sell Items in Stock.,بيع أغراض التخزين.,119,
+sys,2771,Close Shop Menu.,إغلاق قائمة المتجر.,143,wide
+sys,2772,Stock,تخزين,146,wide
+sys,2774,<0A 0C><07 FA F0 00 80> Munny, مال<0A 0C><07 FA F0 00 80>,89,
+sys,2775,Buy how many? ⏎  ⏎ <09 EC>: Select 1 ⏎ <09 ED>: Select 10.,كم تريد أن تشتري? ⏎  ⏎ <09 EC>: اختر 1 ⏎ <09 ED>: اختر 10.,165,wide
+sys,2776,Sell how many? ⏎  ⏎ <09 EC>: Select 1 ⏎ <09 ED>: Select 10.,كم تريد أن تبيع? ⏎  ⏎ <09 EC>: اختر 1 ⏎ <09 ED>: اختر 10.,145,wide
+sys,2777,Purchase?,الشراء?,89,
+sys,2778,There are no items.,لا توجد أغراض.,97,
+sys,2779,Sell?,البيع?,142,wide
+sys,2780,FAKE,مزيف,144,wide
+sys,2782,Strength Increased!,ارتفعت القوة!,89,
+sys,2783,Magic Increased!,ارتفعت السحر!,106,
+sys,2784,Defense Increased!,ارتفع الدفاع!,92,
+sys,2785,Maximum AP Increased!,زادت نقاط AP!,75,
+sys,2786,Maximum HP Increased!,زادت نقاط HP!,75,
+sys,2787,Maximum MP Increased!,زادت نقاط MP!,75,
+sys,2788,Drive Gauge Powered Up!,ارتفع عداد الدرايف!,105,
+sys,2789,Gained Item Slot!,أضيفت خانة أغراض!,136,wide
+sys,2790,Gained Accessory Slot!,أضيفت خانة إكسسوارات!,128,
+sys,2791,Gained Armor Slot!,أضيفت خانة للدرع!,123,
+sys,2793,Radiant Garden,الحديقة المضيئة,131,wide
+sys,6430,Beginner Mode,وضع المبتدئ,118,
+sys,6431,Proud Mode,وضع برايد,121,
+sys,7486,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,7488,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,7490,"Sora: ⏎ Authorized personnel only, eh?",سورا: ⏎ للعاملين فقط ها?,66,
+sys,7492,Sora: ⏎ This isn´t the way to ⏎ Merlin´s house.,سورا: ⏎ هذا ليس الطريق إلى ⏎ بيت ميرلين.,111,
+sys,7494,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,7496,Sora: ⏎ It doesn´t look like it´ll open.,سورا: ⏎ لا يبدو أنه سيفتح.,75,
+sys,7498,Sora: ⏎ ,سورا: ⏎ ,135,wide
+sys,7500,Sora: ⏎ We can´t give up now!,سورا: ⏎ لا يمكننا الاستسلام الآن!,130,
+sys,7503,<0B 5A>Go To The Rescue,انطلق للإنقاذ<0B 5A>,85,
+sys,7504,Examine,افحص,82,
+sys,7505,Examine,افحص,82,
+sys,7506,Translate,ترجم,74,
+sys,7507,Translate,ترجم,74,
+sys,7508,<0B 5A>Examine The Wall,افحص الجدار<0B 5A>,89,
+sys,7517,<0B 5A>Access Computer,اتصل بالحاسوب<0B 5A>,107,
+sys,7533,Learn,تعلم,106,
+sys,7650,Speed Trap,فخ السرعة,122,
+sys,7658,<09 E1>Episode List,قائمة الحلقات<09 E1>,138,wide
+sys,7659,Summary of Events,ملخص الأحداث,89,
+sys,7660,Next Objective,الهدف التالي,104,
+sys,7661,<09 DF>Jiminy Memo,مذكرة جيميني<09 DF>,147,wide
+sys,7662,<09 E0><0B 5F>Select landing area,اختر منطقة الهبوط<0B 5F><09 E0>,121,
+sys,7663,Press,اضغط,118,
+sys,7664,Takedown,إسقاط,81,
+sys,7665,<0B 5A>Access Computer,اتصل بالحاسوب<0B 5A>,107,
+sys,7666,<0B 5A>Access Computer,اتصل بالحاسوب<0B 5A>,107,
+sys,7667,<0B 5A>Access Computer,اتصل بالحاسوب<0B 5A>,107,
+sys,7670,Launch,أطلق,90,
+sys,7671,Remove Shortcut settings.,إزالة إعدادات الاختصارات.,123,
+sys,7672,<09 08>MP Charge,شحن MP<09 08>,88,
+sys,7673,<09 12>Don´t MP Charge,عدم شحن MP<09 12>,101,
+sys,7674,"If there is not enough MP to use this ⏎ magic spell, wait a while and MP will ⏎ begin to regenerate until full.",لا يكفي MP لهذا السحر. ⏎ انتظر حتى يتجدد MP ⏎ ويمتلئ من جديد.,71,
+sys,7675,This magic spell cannot be used when ⏎ there is not enough MP.,لا يمكن استخدام هذا السحر ⏎ عند عدم اكتمال MP.,89,
+sys,7676,<09 0C><0A 0E><0B 5A>Auto-Reload ON,إعادة: تشغيل<0A 0E><0B 5A><09 0C>,109,
+sys,7677,<09 00><0A 0E><0B 5A>Auto-Reload OFF,إعادة: إيقاف<0A 0E><0B 5A><09 00>,100,
+sys,7678,"<0B 5F>If an item is used in battle, the same item ⏎ will be reloaded after battle, if in stock.<03>","عند استخدام غرض في المعركة, يعاد تحميل<0B 5F> ⏎ الغرض نفسه بعدها إن وجد في المخزون.",124,
+sys,7679,This item will not be set in a slot once ⏎ it´s been used.,لا يوضع هذا الغرض في خانة ⏎ بعد استخدامه.,87,
+sys,7752,Grab On,تمسك,83,
+sys,7753,Hang On,لا تفلت,106,
+sys,7754,Hit,ضربة,223,wide
+sys,7755,Fore!,انتبه!,117,
+sys,7756,Move center,اذهب للمركز,130,
+sys,7758,<09 1A>Free,مجاني<09 1A>,170,wide
+sys,7759,<09 1B>Well-Balanced,متوازن<09 1B>,72,
+sys,7760,<09 1C>Rare,نادر<09 1C>,117,
+sys,7761,<09 1A><0A 0D><0B 5A>Often,غالبا<0A 0D><0B 5A><09 1A>,102,
+sys,7762,<09 1C><0A 0D><0B 5A>Last hope!,الأمل الأخير<0A 0D><0B 5A>!<09 1C>,146,wide
+sys,7763,Comet,مذنب,111,
+sys,7764,Comet Rain,مطر المذنبين,147,wide
+sys,7765,Party Members fight with their ⏎ individual techniques.,أعضاء الفريق يقاتلون بتقنياتهم ⏎ الخاصة.,123,
+sys,7766,Party Members concentrate attacks on ⏎ Sora´s target.,يركز أعضاء الفريق هجماتهم ⏎ على هدف سورا.,91,
+sys,7767,Party Members fight close to Sora.,يقاتل أعضاء الفريق قرب سورا.,108,
+sys,7768,Party Members will fight a target other ⏎ than Sora´s.,يقاتل أعضاء الفريق ⏎ غير هدف سورا.,59,
+sys,7769,"While Sora attacks, Party Members will ⏎ support him.",بينما يهاجم سورا ⏎ يدعمه أعضاء الفريق.,67,
+sys,7770,Party Members defeat their target ⏎ before attacking another.,يهزم أعضاء الفريق هدفهم ⏎ قبل مهاجمة هدف آخر.,96,
+sys,7771, ⏎ Use this ability freely., ⏎ استخدم هذه القدرة بحرية.,148,wide
+sys,7772, ⏎ Use this ability conservatively., ⏎ استخدم هذه القدرة بحذر.,107,
+sys,7773, ⏎ Use this ability in special situations., ⏎ استخدم هذه القدرة في المواقف الخاصة.,136,wide
+sys,7774, ⏎ Use this item often., ⏎ استخدمه كثيرا.,90,
+sys,7775, ⏎ Use this item only in an emergency!, ⏎ استخدم هذا الغرض عند الضرورة فقط!,132,wide
+sys,7776,Upper Slash,قطع علوي,115,
+sys,7777,Knocks a target into the air ⏎ during a combo with <09 DE>.,اضغط <09 DE> أثناء الكومبو ⏎ لقذف الهدف في الهواء.,102,
+sys,7998,Roxas: ⏎ Not this way!,روكساس: ⏎ ليس هذا الطريق!,142,wide
+sys,7999,Roxas: ⏎ This isn´t the right way.,روكساس: ⏎ هذا ليس الطريق الصحيح.,114,
+sys,8000,Roxas: ⏎ Not over here...,روكساس: ⏎ ليس هنا...,65,
+sys,8001,"Roxas: ⏎ Wait, this isn´t right.",روكساس: ⏎ انتظر! هذا غير صحيح.,117,
+sys,8002,"Roxas: ⏎ Looks like it goes through, ⏎ but I can´t use it now.",روكساس: ⏎ يبدو أنه يمر من هنا. ⏎ لكنني لا أستطيع استخدامه الآن.,140,wide
+sys,8003,Roxas: ⏎ We better not run away!,روكساس: ⏎ لا يصح أن نهرب!,81,
+sys,8004,Roxas: ⏎ We better stand up for ourselves.,روكساس: ⏎ الأفضل أن ندافع عن أنفسنا.,98,
+sys,8005,"Roxas: ⏎ No running away, now!",روكساس: ⏎ لا هروب الآن!,77,
+sys,8006,Roxas: ⏎ Gotta follow him!,روكساس: ⏎ يجب أن نتبعه!,99,
+sys,8007,Roxas: ⏎ I don´t think I can go there yet.,روكساس: ⏎ لا أظن أنني أستطيع الذهاب هناك بعد.,136,wide
+sys,8008,Roxas: ⏎ There aren´t any jobs this way.,روكساس: ⏎ لا توجد مهام في هذا الطريق.,116,
+sys,8009,Roxas: ⏎ I´ve got a job to do!,روكساس: ⏎ عندي مهمة لإنجازها!,123,
+sys,8010,Roxas: ⏎ I need to make some munny...,روكساس: ⏎ أحتاج أن أصنع بعض المال...,113,
+sys,8011,Roxas: ⏎ They sell tickets inside the station.,روكساس: ⏎ يبيعون التذاكر داخل المحطة.,100,
+sys,8012,Roxas: ⏎ We could get on if we had tickets.,روكساس: ⏎ يمكننا الصعود لو توفرت التذاكر.,115,
+sys,8013,Sora: ⏎ Doesn´t look like it´s ready yet.,سورا: ⏎ لا يبدو أنه جاهز بعد.,84,
+sys,8014,Sora: ⏎ I can´t just barge in.,سورا: ⏎ لا يمكنني الدخول فجأة.,137,wide
+sys,8015,Sora: ⏎ This doesn´t feel right...,سورا: ⏎ هذا غير مريح...,80,
+sys,8016,Sora: ⏎ Something´s not letting us leave.,سورا: ⏎ شيء ما يمنعنا من المغادرة.,106,
+sys,8017,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8018,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8019,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8020,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8021,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8022,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8023,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8024,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8025,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8026,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8027,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8028,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8029,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8030,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8031,Roxas: ⏎ ₓₓₓ,روكساس: ⏎ ₓₓₓ,166,wide
+sys,8032,Sora: ⏎ ₓₓₓ,سورا: ⏎ ₓₓₓ,135,wide
+sys,8033,Sora: ⏎ ₓₓₓ,سورا: ⏎ ₓₓₓ,135,wide
+sys,8034,Sora: ⏎ ₓₓₓ,سورا: ⏎ ₓₓₓ,135,wide
+sys,8035,Sora: ⏎ ₓₓₓ,سورا: ⏎ ₓₓₓ,135,wide
+sys,8051,Scan,فحص,125,
+sys,8052,Inspects the target´s current HP.,يفحص HP الحالي للهدف.,81,
+sys,8058,<0B 5A>Access Computer,اتصل بالحاسوب<0B 5A>,107,
+sys,8143,OK,حسنا,218,wide
+sys,8144,Yes,نعم,147,wide
+sys,8145,No,لا,76,
+sys,8301,Aero Blade,نصل الريح,116,
+sys,8302,Select Landing Area,اختر منطقة الهبوط,117,
+sys,8303,Episode List,قائمة الحلقات,138,wide
+sys,8304,Warp Snipe,قنص التحول,129,
+sys,8307,Adamant Shield,درع الأدمانت,111,
+sys,8308,A shield that excels in defense rather ⏎ than strength. Blocks various attacks.,درع ممتاز في الدفاع لا في القوة. ⏎ يصد هجمات متنوعة.,113,
+sys,8309,Chain Gear,ترس السلسلة,135,wide
+sys,8310,A large shield that blocks various ⏎ attacks. Can also be used for attacking.,درع كبير يصد هجمات متنوعة. ⏎ ويصلح للهجوم كذلك.,92,
+sys,8311,Ogre Shield,درع الغول,129,
+sys,8312,A shield with great strength that also ⏎ blocks various attacks. Increases defense ⏎ by <07 F0 F0 00 80>3<03> in critical situations.,درع بقوة عظيمة يصد ⏎ هجمات متنوعة أيضا. يزيد الدفاع ⏎ بمقدار <07 F0 F0 00 80>3<03> في المواقف الحرجة.,97,
+sys,8313,Falling Star,النجم الساقط,130,
+sys,8314,"A small, easy-to-handle shield used ⏎ solely for attacking.",درع صغير سهل الاستخدام ⏎ يصلح للهجوم فقط.,90,
+sys,8315,Dreamcloud,سحابة الحلم,134,wide
+sys,8316,A shield with great strength used ⏎ solely for attacking.,درع بقوة عظيمة ⏎ يصلح للهجوم فقط.,67,
+sys,8317,Knight Defender,مدافع الفارس,110,
+sys,8318,A shield with great strength used ⏎ solely for attacking.,درع بقوة عظيمة ⏎ يصلح للهجوم فقط.,67,
+sys,8319,Genji Shield,درع الجينجي,135,wide
+sys,8320,"A shield with great strength and ⏎ defense. Quickly revives wielder when ⏎ fallen, and restores much of their HP.",درع بقوة ودفاع عظيمين. ⏎ يعيد حامله بسرعة بعد سقوطه ⏎ ويستعيد معظم HP.,96,
+sys,8321,Akashic Record,السجل الأكاشيكي,132,wide
+sys,8322,A shield with great strength. ⏎ Increases MP restoration speed ⏎ by <07 F0 F0 00 80>25%<03> when all MP is consumed.,درع بقوة عظيمة. ⏎ يزيد سرعة استعادة MP ⏎ بمقدار <07 F0 F0 00 80>25%<03> عند استهلاك كل MP.,116,
+sys,8323,Nobody Guard,حماية اللا أحد,136,wide
+sys,8324,<0B 5F>A shield with great strength. Restores MP ⏎ relative to the amount of damage taken.,درع شديد القوة<0B 5F>. ⏎ يستعيد MP بالنسبة للضرر المتلقى.,90,
+sys,8847,Hammer Staff,عصا المطرقة,113,
+sys,8848,A staff used for its strength.,عصا تستخدم لزيادة القوة.,106,
+sys,8849,Victory Bell,جرس النصر,111,
+sys,8850,A staff used to increase strength. ⏎ Also increases magic.,عصا لزيادة القوة ⏎ والسحر.,61,
+sys,8851,Meteor Staff,عصا النيزك,102,
+sys,8852,A staff of great strength that increases ⏎ magic. Increases damage done with ⏎ thunder-based attacks by <07 F0 F0 00 80>20%<03>.,عصا بقوة عظيمة تزيد ⏎ السحر. تزيد ضرر ⏎ هجمات ثاندر بمقدار <07 F0 F0 00 80>20%<03>.,76,
+sys,8853,Comet Staff,عصا المذنب,114,
+sys,8854,"A staff used for its strength and ⏎ magic, inspired by the stars.",عصا للقوة والسحر ⏎ مستوحاة من النجوم.,75,
+sys,8855,Lord´s Broom,مكنسة السيد,111,
+sys,8856,A staff used to increase strength ⏎ and magic.,عصا لزيادة القوة ⏎ والسحر.,62,
+sys,8857,Wisdom Wand,عصا الحكمة,108,
+sys,8858,A staff with great magic and strength. ⏎ ,عصا بسحر وقوة عظيمين. ⏎ ,76,
+sys,8859,Rising Dragon,التنين الصاعد,116,
+sys,8860,A staff with great strength and magic. ⏎ Increases damage done with fire-based ⏎ attacks by <07 F0 F0 00 80>20%<03>.,عصا بقوة وسحر عظيمين. ⏎ تزيد ضرر هجمات ⏎ فاير بمقدار <07 F0 F0 00 80>20%<03>.,77,
+sys,8861,Nobody Lance,رمح اللا أحد,124,
+sys,8862,A lance with great strength and magic. ⏎ Increases the effect of restoration ⏎ items used on the field by <07 F0 F0 00 80>50%<03>.,رمح بقوة وسحر عظيمين. ⏎ يزيد أثر أغراض الاستعادة ⏎ المستخدمة في الميدان بمقدار <07 F0 F0 00 80>50%<03>.,112,
+sys,8863,Shaman´s Relic,آثار الشامان,109,
+sys,8864,A staff with great magic and strength. ⏎ Increases damage done with ice-based ⏎ attacks by <07 F0 F0 00 80>20%<03>.,عصا بسحر وقوة عظيمين. ⏎ تزيد ضرر هجمات ⏎ بليزارد بمقدار <07 F0 F0 00 80>20%<03>.,76,
+sys,8869,Buy Tickets,شراء التذاكر,139,wide
+sys,8870,Touch The Light,المس الضوء,87,
+sys,8871,Learn The Rules,تعلم القواعد,105,
+sys,8872,Approach,اقترب,82,
+sys,8873,<0B 5A>Examine The Table,افحص الطاولة<0B 5A>,88,
+sys,8874,<0B 50>Listen to the story,استمع إلى القصة<0B 50>,103,
+sys,8875,Approach,اقترب,82,
+sys,8876,Touch The Beam,المس الشعاع,93,
+sys,8877,Isla de Muerta: Treasure Heap,إيسلا دي مويرتا: كومة الكنوز,122,
+sys,8993,Enter Password,أدخل كلمة السر,126,
+sys,8995,Key Counter,عداد المفاتيح,146,wide
+sys,8996,Lunarsault,لونارسالت,112,
+sys,8997,Break Raid,غارة الكسر,132,wide
+sys,9020,Rising Sun,الشروق,89,
+sys,9928,Duel Stance,المبارزة,91,
+sys,9929,The End,النهاية,100,
+sys,9933,Fail-Safe,ضمان الفشل,166,wide
+sys,9934,Scapegoat,كبش الفداء,139,wide
+sys,9945,Jump!,قفز!,98,
+sys,10328,Aerial Recovery,التعافي الجوي,115,

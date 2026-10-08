@@ -1,0 +1,62 @@
+﻿bar,id,EN,AR,width_pct,flags
+tr,10446,There´s a power booster for me!,هناك معزز طاقة لي!,84,
+tr,10447,And flight routines ⏎ for the solar sailer!,وروتينات طيران ⏎ للمركب الشمسي!,105,
+tr,13002,Oh boy!,رائع!,82,
+tr,15145,All right! It looks like we ⏎ can escape through there!,حسنا! يبدو أننا ⏎ نستطيع الهرب من هناك!,121,
+tr,16135,Jolt the parts!,اهز القطع!,93,
+tr,16136,Look out for the parts that change color!,احذر من القطع التي تغير لونها!,97,
+tr,16137,Stop the monitor!,أوقف الشاشة!,97,
+tr,16138,Two more to go!,بقي اثنان!,75,
+tr,16139,One more to go!,بقي واحد!,82,
+tr,16838,"With this much weight, the solar sailer won´t be able to fly!",بهذا الوزن لن يستطيع المركب الشمسي الطيران!,100,
+tr,16997,The power is off.,الطاقة مطفأة.,104,
+tr,16998,You don´t know how to operate this.,لا تعرف كيف تشغل هذا.,89,
+tr,16999,"It´s locked, and can´t be ⏎ operated from here.",إنه مقفل ولا يمكن ⏎ تشغيله من هنا.,105,
+tr,17324,The Delete ability requires Tron´s help!,قدرة الحذف تحتاج إلى مساعدة ترون!,129,
+tr,17873,"The MCP is originally a data ⏎ acquisition program.<10>If you hadn´t rescued me, it would ⏎ have stolen all my data.","برنامج التحكم الرئيسي في الأصل ⏎ برنامج لجمع البيانات.<10>لو لم تنقذني, لسرق ⏎ كل بياناتي.",117,
+tr,17874,Gwah... This is some place we´ve ⏎ been taken to.<10>Everything´s sparkling so much it´s ⏎ making me dizzy!,واو... هذا مكان غريب ⏎ أخذنا إليه.<10>كل شيء يتلألأ حتى ⏎ أصابني الدوار!,84,
+tr,17875,"Hey, this is the room we were ⏎ locked in when we first came here, right?<10>We opened the lock by gathering up ⏎ data, didn´t we?","مهلا, هذه هي الغرفة التي حبسنا فيها ⏎ عندما جئنا أول مرة, أليس كذلك?<10>فتحنا القفل بجمع ⏎ البيانات, أليس كذلك?",118,
+tr,17876,We can get to the <04 0A>game area <03>Tron is ⏎ in from the terminal! Let´s hurry!,نستطيع الذهاب إلى <03>منطقة اللعب <04 0A>الخاصة بترون ⏎ من الطرفية! لنسرع!,163,wide
+tr,17877,"You mean the door-thingy blocking ⏎ the exit is locked, right?<10>In that case, shouldn´t your Keyblade ⏎ be able to open it, Sora?","تقصد أن الباب الذي يسد ⏎ المخرج مقفل, أليس كذلك?<10>في تلك الحالة, ألا يفترض أن يفتحه ⏎ كيبلايدك يا سورا?",118,
+tr,17878,Apparently we can get to the ⏎ Dataspace from the <04 0A>Canyon<03>.<10>The shining red wall should show us the way.,على ما يبدو يمكننا الوصول إلى ⏎ البيانات من <03>الأخدود.<04 0A><10>الجدار الأحمر اللامع يجب أن يدلنا على الطريق.,133,wide
+tr,17879,"Tron´s been keeping the MCP in ⏎ check so far, right?<10>But if the MCP´s interfered with the ⏎ outside, Tron may be in trouble!","ترون يبقي برنامج التحكم الرئيسي ⏎ تحت السيطرة حتى الآن, أليس كذلك?<10>لكن إن تدخل البرنامج في الخارج, ⏎ قد يقع ترون في مشكلة!",122,
+tr,17880,That thing in the center´s the <04 0A>energy ⏎ core<03>. Let´s try accessing it.<10>We may be able to find parts to ⏎ reboot from all the junk.,<04 0A>ذلك الشيء في الوسط هو <03>نواة<04 0A> ⏎ <03>الطاقة.<04 0A> لنحاول الوصول إليها<03>.<10>قد نجد قطعا لإعادة التشغيل ⏎ من كل تلك الخردة.,102,
+tr,17881,"According to Tron, this is kind of like ⏎ a junkyard.<10>I wonder what all the junk in here ⏎ used to be.","بحسب ترون, هذا يشبه ⏎ ساحة خردة.<10>أتساءل ماذا كانت كل هذه الخردة ⏎ في الأصل.",114,
+tr,17882,"The ""MCP"" thing rules this world, ⏎ right?<10>Then we´d better search the <04 0A>energy ⏎ core <03>before it finds us out.","برنامج التحكم الرئيسي يحكم هذا العالم, ⏎ أليس كذلك?<10><04 0A>إذن الأفضل أن نفتش <03>نواة<04 0A> ⏎ الطاقة <04 0A>قبل أن يكتشفنا<03>.",148,wide
+tr,17883,I disengaged the security program. ⏎ Now the lift to the <04 0A>I/O tower <03>should work.<10>Hurry! The lift´s straight ahead out ⏎ of this room!,عطلت برنامج الأمان. ⏎ الآن يجب أن يعمل المصعد إلى <03>برج الإدخال .<04 0A><10>أسرعوا! المصعد أمامكم مباشرة ⏎ خارج هذه الغرفة!,133,space_before_punct;wide
+tr,17884,"The outside´s already bad enough ⏎ with Heartless and Nobodies!<10>Any more problems, and the town will ⏎ fall apart!","الخارج سيئ بما يكفي ⏎ مع بلا قلب واللا أحد!<10>أي مشكلة إضافية, وستنهار ⏎ البلدة!",93,
+tr,17885,We can extract the data later. ⏎ Let´s go to the <04 0A>I/O tower<03>!,نستطيع استخراج البيانات لاحقا. ⏎ لنذهب إلى <03>برج الإدخال!<04 0A>,128,
+tr,17886,More dangerous programs are sure ⏎ to follow. To fight these guys...<10>we should delete the enemy data ⏎ to limit their movements.,ستتبع ذلك برامج أخطر ⏎ بالتأكيد. لمحاربة هؤلاء...<10>يجب أن نحذف بيانات العدو ⏎ للحد من حركته.,101,
+tr,17887,I´ll stay here to make sure the MCP ⏎ doesn´t cause any more trouble.<10>The <04 0A>User world <03>is in trouble. You ⏎ should hurry back through this terminal.,سأبقى هنا لأتأكد أن برنامج التحكم الرئيسي ⏎ لن يسبب مزيدا من المشاكل.<10><03>عالم المستخدمين <04 0A>في خطر. ⏎ عليكم العودة بسرعة عبر هذا الطرف.,133,wide
+tr,17888,"We gotta stop ´em before ⏎ they get out.<10>Hurry to the next room, ⏎ let´s get them there!","علينا إيقافهم قبل أن ⏎ يخرجوا.<10>أسرعوا إلى الغرفة التالية, ⏎ لنوقفهم هناك!",133,wide
+tr,17889,It looks like this is the endgame.<10>I wonder what the solar sailer will be ⏎ like. I´m looking forward to this!,يبدو أن هذه هي النهاية.<10>أتساءل كيف سيكون المركب الشمسي. ⏎ أتطلع إلى هذا!,125,
+tr,17890,"We can get back to Hollow Bastion ⏎ through the terminal gizmo,<10>but right now, we need to help Tron!","نستطيع العودة إلى حصن هولو ⏎ عبر جهاز الطرف,<10>لكن الآن علينا مساعدة ترون!",107,
+tr,17891,We can get to the <04 0A>simulation hangar<03> ⏎ by leaving here and heading straight.,نستطيع الوصول إلى <03>حظيرة المحاكاة<04 0A> ⏎ بالخروج من هنا والمضي مباشرة.,129,
+tr,17892,"The MCP is well-protected. ⏎ First we´ll have to hack his defense.<10>Then we can start deleting him until ⏎ he´s erased. He´s only data, after all.",برنامج التحكم الرئيسي محمي جيدا. ⏎ علينا أولا اختراق دفاعه.<10>ثم نبدأ بحذفه حتى ⏎ يمحى. إنه مجرد بيانات بعد كل شيء.,126,
+tr,17893,"If we can just defeat the MCP, the ⏎ outside city should return to normal.<10>If we don´t do something, Leon and ⏎ the others don´t stand a chance.","إن هزمنا برنامج التحكم الرئيسي, ستعود ⏎ المدينة في الخارج إلى طبيعتها.<10>إن لم نفعل شيئا, فلا فرصة ⏎ لليون والآخرين.",140,wide
+tr,17894,"The time´s finally come to settle ⏎ things with the MCP.<10>The MCP still has lots of minions. ⏎ Be careful, everyone.",حان الوقت أخيرا لحسم الأمر ⏎ مع برنامج التحكم الرئيسي.<10>لا يزال لديه كثير من الأتباع. ⏎ كونوا حذرين جميعا.,106,
+tr,17895,The solar sailer doesn´t have a ⏎ defense system.<10>The MCP isn´t stupid. It´ll attack the ⏎ simulation. We´ll have to defend it.,المركب الشمسي ليس لديه ⏎ نظام دفاع.<10>برنامج التحكم الرئيسي ليس غبيا. سيهاجم ⏎ المحاكاة. علينا الدفاع عنها.,134,wide
+tr,17896,"Did you hear that? The solar sailer ⏎ moves on waves of light.<10>If it´s too heavy, it´ll slip off the ⏎ waves and eventually fall.","هل سمعت ذلك? المركب الشمسي ⏎ يتحرك على أمواج الضوء.<10>إن كان ثقيلا جدا, سينزلق عن ⏎ الأمواج ويسقط في النهاية.",117,
+tr,17897,"The view´s great, but I feel like a ⏎ sitting duck for the enemy.","المنظر رائع, لكنني أشعر أنني ⏎ هدف سهل للعدو.",109,
+tr,17898,I had to jump down there to get to ⏎ the system core.<10>I´m sorry for causing ⏎ you confusion.,اضطررت للقفز إلى هناك للوصول ⏎ إلى نواة النظام.<10>آسف لأنني سببت ⏎ لكم الارتباك.,120,
+tr,17899,"I´m glad that MCP is gone. ⏎ I bet Tron is relieved, too!",يسعدني زوال برنامج التحكم الرئيسي. ⏎ أراهن أن ترون مرتاح أيضا!,173,wide
+tr,17900,"We´ve been to a lot of different ⏎ worlds, but this one takes the cake!<10>I still can´t believe everything here ⏎ is data!","زرنا عوالم كثيرة مختلفة, لكن هذا ⏎ هو الأفضل!<10>ما زلت لا أصدق أن كل شيء هنا ⏎ بيانات!",127,
+tr,18381,"We need a password to access ⏎ the DTD.<10>Please, try to find the password in ⏎ the outside world.","نحتاج إلى كلمة سر للوصول إلى ⏎ دي تي دي.<10>من فضلك, حاول إيجاد كلمة السر ⏎ في العالم الخارجي.",121,
+tr,18712,Defeat the hostile program! ⏎ Fill the gauge and use Freeze!,اهزم البرنامج المعادي! ⏎ املأ المقياس واستخدم التجميد!,136,wide
+tr,18713,Eliminate Sark! ⏎ Defend yourself then move in with a counterattack!,تخلص من سارك! ⏎ دافع عن نفسك ثم اقترب بهجوم مضاد!,98,
+tr,18714,Destroy the MCP! ⏎ Break through the defensive walls ⏎ and Delete the MCP!,دمر برنامج التحكم الرئيسي! ⏎ اخترق جدران الدفاع ⏎ واحذف برنامج التحكم الرئيسي!,118,
+tr,18729,Attack,هجوم,142,wide
+tr,18730,Charge,شحن,100,
+tr,18731,Guard,حماية,140,wide
+tr,18732,Special Attack,هجوم خاص,110,
+tr,18951,Tron learned a new ability.,تعلم ترون قدرة جديدة.,126,
+tr,18952,Tron learned a new ability.,تعلم ترون قدرة جديدة.,126,
+tr,19112,You can´t ride it without the solar sailer.,لا يمكنك ركوبه بدون المركب الشمسي.,118,
+tr,19544,Defeat 5 of the Heartless!,اهزم 5 من بلا قلب!,95,
+tr,19545,Clear the enemies and head for the goal!,تخلص من الأعداء واتجه إلى الهدف!,111,
+tr,19567,"Use Attack, Charge, and Guard to ⏎ defeat 5 of the Heartless!",استخدم الهجوم والشحن والحماية ⏎ لهزيمة 5 من بلا قلب!,133,wide
+tr,19568,"Use Attack, Charge, and Guard to ⏎ clear the enemies and head for the goal!",استخدم الهجوم والشحن والحماية ⏎ للتخلص من الأعداء والاتجاه إلى الهدف!,124,
+tr,21558,"<17 07 B4>  ⏎ Using the Keyblade's power, Sora and his ⏎ friends manage to escape from the cell. ⏎   ⏎ There's no time to waste! Together with ⏎ Tron, they run to the canyon in order to ⏎ activate the energy core. ⏎   ⏎   ⏎   ⏎   ⏎ ","<17 07 B4>  ⏎ بقوة الكيبلايد, ينجح سورا ⏎ وأصدقاؤه في الهرب من الزنزانة. ⏎   ⏎ لا وقت لإضاعته! مع ⏎ ترون, يركضون إلى الأخدود من أجل ⏎ تشغيل نواة الطاقة. ⏎   ⏎   ⏎   ⏎   ⏎ ",115,
+tr,21559,"<17 07 B4>  ⏎ Energy core activation complete. ⏎   ⏎ They did it! ⏎   ⏎ Tron has a favor to ask, but first, they ⏎ head back to the pit cell, as Tron's ⏎ request will require Sora and his friends ⏎ to return to the real world. ⏎   ⏎   ⏎ ","<17 07 B4>  ⏎ اكتمل تشغيل نواة الطاقة. ⏎   ⏎ لقد نجحوا! ⏎   ⏎ لدى ترون خدمة يطلبها, لكن أولا ⏎ يعودون إلى زنزانة الحفرة, إذ ⏎ سيتطلب طلب ترون من سورا وأصدقائه ⏎ العودة إلى العالم الحقيقي. ⏎   ⏎   ⏎ ",124,
+tr,21560,"<17 07 B4>  ⏎ Once they access the DTD, Sora relays ⏎ the password to Tron. ⏎   ⏎ It is composed of the names of the Seven ⏎ Princesses: Belle, Snow White, Aurora, ⏎ Alice, Jasmine, Cinderella, and Kairi.  ⏎   ⏎   ⏎   ⏎   ⏎ ","<17 07 B4>  ⏎ عندما يدخلون دي تي دي, ينقل سورا ⏎ كلمة السر إلى ترون. ⏎   ⏎ تتكون من أسماء الأميرات ⏎ السبع: بيل, بياض الثلج, أورورا, ⏎ أليس, ياسمين, سندريلا, وكايري.  ⏎   ⏎   ⏎   ⏎   ⏎ ",121,
+tr,21561,<17 07 B4>  ⏎ Sora and Tron reunite just in time to learn ⏎ the MCP is preparing to engage in war with ⏎ the Users. ⏎   ⏎ The only solution is to de-rezz the MCP. ⏎ They rush to the I/O tower. They have to ⏎ make it! ⏎   ⏎   ⏎   ⏎ ,<17 07 B4>  ⏎ يلتقي سورا وترون في الوقت المناسب ليعرفا ⏎ أن برنامج التحكم الرئيسي يستعد لخوض حرب ⏎ على المستخدمين. ⏎   ⏎ الحل الوحيد هو تفكيك برنامج التحكم الرئيسي. ⏎ يسرعون إلى برج الإدخال. عليهم ⏎ أن ينجحوا! ⏎   ⏎   ⏎   ⏎ ,134,wide

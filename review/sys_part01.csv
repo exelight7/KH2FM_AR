@@ -1,0 +1,251 @@
+﻿bar,id,EN,AR,width_pct,flags
+sys,480,Attack,هجوم,123,
+sys,481,Magic,سحر,100,
+sys,482,Items,أغراض,145,wide
+sys,483,Drive,درايف,149,wide
+sys,484,Revert,إلغاء,97,
+sys,485,Valor Form,الشجاعة,87,
+sys,486,Wisdom Form,الحكمة,66,
+sys,487,Master Form,الإتقان,67,
+sys,488,Final Form,الأخير,69,
+sys,489,Antiform,المضاد,91,
+sys,490,Talk,تحدث,178,wide
+sys,491,Examine,افحص,82,
+sys,492,Reversal,انعكاس,96,
+sys,493,Full Swing,ضربة كاملة,140,wide
+sys,494,Tackle,ارتطام,142,wide
+sys,495,Snag,خطف,127,
+sys,496,Sparkle Ray,شعاع البريق,131,wide
+sys,497,Open,فتح,102,
+sys,498,Agrabah,أجرابا,96,
+sys,499,Bazaar,البازار,118,
+sys,500,The Peddler´s Shop,متجر البائع,74,
+sys,501,The Palace,القصر,64,
+sys,502,Vault,خزنة,126,
+sys,503,Above Agrabah,أعلى أجرابا,102,
+sys,504,Palace Walls,جدران القصر,136,wide
+sys,505,The Cave of Wonders: Entrance,كهف العجائب: المدخل,84,
+sys,507,The Cave of Wonders: Stone Guardians,كهف العجائب: حراس الحجر,82,
+sys,508,The Cave of Wonders: Treasure Room,كهف العجائب: قاعة الكنوز,85,
+sys,509,Ruined Chamber,القاعة المهدمة,125,
+sys,510,The Cave of Wonders: Valley of Stone,كهف العجائب: وادي الحجر,84,
+sys,511,<0B 5F>The Cave of Wonders: Chasm of Challenges,كهف العجائب: هاوية التحديات<0B 5F>,83,
+sys,512,Sandswept Ruins,أطلال الرمال,101,
+sys,513,The Peddler´s Shop,متجر البائع,74,
+sys,514,Entrance Hall,صالة المدخل,120,
+sys,515,Parlor,صالون,130,
+sys,516,Belle´s Room,غرفة بيل,96,
+sys,517,The Beast´s Room,غرفة الوحش,91,
+sys,518,Ballroom,قاعة الرقص,171,wide
+sys,519,Ballroom,قاعة الرقص,171,wide
+sys,520,Courtyard,الفناء,69,
+sys,521,The East Wing,الجناح الشرقي,118,
+sys,522,The West Hall,القاعة الغربية,127,
+sys,523,The West Wing,الجناح الغربي,112,
+sys,524,Dungeon,القبو,79,
+sys,525,Undercroft,المخزن,88,
+sys,526,Secret Passage,الممر السري,101,
+sys,527,Bridge,الجسر,109,
+sys,528,Ballroom,قاعة الرقص,171,wide
+sys,529,World ZZ,عالم تجريبي,173,wide
+sys,530,End of Sea,نهاية البحر,121,
+sys,531,Twilight Town,بلدة الشفق,98,
+sys,532,Destiny Islands,جزيرة المصير,113,
+sys,533,Hollow Bastion,حصن هولو,90,
+sys,534,Beast´s Castle,قلعة الوحش,104,
+sys,535,Olympus Coliseum,كولوسيوم أولمبيا,132,wide
+sys,536,Agrabah,أجرابا,96,
+sys,537,The Land of Dragons,أرض التنانين,69,
+sys,538,100 Acre Wood,غابة المئة فدان,139,wide
+sys,539,Pride Lands,أراضي الكبرياء,157,wide
+sys,540,Atlantica,أطلنطيكا,108,
+sys,541,Disney Castle,قلعة ديزني,109,
+sys,542,Timeless River,النهر الخالد,97,
+sys,543,Halloween Town,بلدة الهالوين,107,
+sys,544,World FA,عالم تجريبي,176,wide
+sys,545,Port Royal,ميناء رويال,144,wide
+sys,546,Space Paranoids,بارانويدز الفضاء,129,
+sys,547,The World That Never Was,العالم الذي لم يكن,90,
+sys,548,Asteroid Sweep,كنس الكويكبات,113,
+sys,549,Stardust Sweep,كنس النجوم,92,
+sys,550,Broken Highway,الطريق المتصدع,128,
+sys,551,Ancient Highway,الطريق القديم,112,
+sys,552,Phantom Storm,عاصفة الأشباح,114,
+sys,553,Sunlight Storm,عاصفة الشمس,110,
+sys,554,Splash Island,جزيرة الرذاذ,131,wide
+sys,555,Floating Island,الجزيرة العائمة,135,wide
+sys,556,Assault of the Dreadnought,هجوم الدريدنوت,80,
+sys,563,Audience Chamber,قاعة الاستقبال,103,
+sys,564,Library,المكتبة,116,
+sys,565,Colonnade,الرواق,90,
+sys,566,Courtyard,الفناء,69,
+sys,567,The Hall of the Cornerstone,قاعة الحجر الأساس,79,
+sys,568,The Hall of the Cornerstone,قاعة الحجر الأساس,79,
+sys,569,Gummi Hangar,حظيرة الغامي,125,
+sys,570,The Wilderness,البرية,48,
+sys,571,Triton´s Throne,عرش تريتون,104,
+sys,572,Ariel´s Grotto,كهف آرييل,98,
+sys,573,Undersea Courtyard,الفناء البحري,83,
+sys,574,Undersea Courtyard,الفناء البحري,83,
+sys,575,The Palace: Performance Hall,القصر: قاعة العرض,80,
+sys,576,Sunken Ship,سفينة غارقة,135,wide
+sys,577,The Shore,الشاطئ,80,
+sys,578,The Shore,الشاطئ,80,
+sys,579,Bamboo Grove,غابة الخيزران,129,
+sys,580,Encampment,المخيم,71,
+sys,581,Checkpoint,نقطة التفتيش,145,wide
+sys,582,Mountain Trail,ممر الجبل,89,
+sys,583,Village,القرية,122,
+sys,584,Village Cave,كهف القرية,118,
+sys,585,Ridge,الحافة,149,wide
+sys,586,Summit,القمة,97,
+sys,587,Imperial Square,ساحة إمبراطورية,139,wide
+sys,588,Palace Gate,بوابة القصر,123,
+sys,589,Antechamber,غرفة أمامية,131,wide
+sys,590,Throne Room,قاعة العرش,116,
+sys,591,Village,القرية,122,
+sys,592,Pit Cell,الحفرة,113,
+sys,593,Canyon,أخدود,131,wide
+sys,594,Game Grid,شبكة اللعب,133,wide
+sys,595,Dataspace,البيانات,85,
+sys,596,I/O Tower: Hallway,برج الإدخال: الممر,123,
+sys,597,I/O Tower: Communications Room,برج الإدخال: قاعة الاتصالات,103,
+sys,598,Simulation Hangar,حظيرة المحاكاة,108,
+sys,599,Solar Sailer Simulation,محاكاة المركب الشمسي,122,
+sys,600,Central Computer Mesa,هضبة الحاسوب المركزي,126,
+sys,601,Central Computer Core,نواة الحاسوب المركزي,125,
+sys,602,Solar Sailer Simulation,محاكاة المركب الشمسي,122,
+sys,603,Pride Rock,صخرة الكبرياء,171,wide
+sys,604,Stone Hollow,جوف الحجر,111,
+sys,605,The King´s Den,كهف الملك,88,
+sys,606,Wildebeest Valley,وادي الغزلان,101,
+sys,607,The Savannah,السافانا,62,
+sys,608,Elephant Graveyard,مقبرة الفيلة,80,
+sys,609,Gorge,المضيق,149,wide
+sys,610,Wastelands,بادية,58,
+sys,611,Jungle,أدغال,130,
+sys,612,Oasis,واحة,128,
+sys,613,Pride Rock,صخرة الكبرياء,171,wide
+sys,614,Oasis,واحة,128,
+sys,615,Overlook,الإطلالة,105,
+sys,616,Peak,قمة,115,
+sys,617,The Hundred Acre Wood,غابة المئة فدان,87,
+sys,618,Starry Hill,التل النجمي,129,
+sys,619,Pooh Bear´s House,بيت بوه,51,
+sys,620,Rabbit´s House,بيت الأرنب,83,
+sys,621,Piglet´s House,بيت بيركيت,91,
+sys,622,Kanga´s House,بيت كانغا,77,
+sys,623,A Windsday Tale,حكاية يوم الريح,133,wide
+sys,624,The Honey Hunt,مطاردة العسل,113,
+sys,625,Blossom Valley,وادي الأزهار,113,
+sys,626,The Spooky Cave,الكهف المرعب,104,
+sys,632,Goofy: ⏎ We have to help them!,غوفي: ⏎ لازم نساعدهم!,81,
+sys,633,Dummy text,نص تجريبي,110,
+sys,634,Sora: ⏎ We´ve got to get to the palace!,سورا: ⏎ لازم نوصل للقصر!,69,
+sys,636,Sora: ⏎ This can´t be right...,سورا: ⏎ المفروض مو كذا...,111,
+sys,638,"Sora: ⏎ C´mon, let´s follow Aladdin!",سورا: ⏎ يلا نتبع علاء الدين!,87,
+sys,642,Ping: ⏎ We need permission from ⏎ the Captain.,بينغ: ⏎ لازم نستأذن من ⏎ القائد.,79,
+sys,644,Ping: ⏎ We can´t go into the city ⏎ right now.,بينغ: ⏎ ما نقدر ندخل المدينة ⏎ الحين.,108,
+sys,648,Mulan: ⏎ We better not. We don´t want ⏎ to make anyone angry.,مولان: ⏎ الأفضل لا. ما نبي ⏎ أحد يزعل.,66,
+sys,652,Mulan: ⏎ Something´s not right. We can´t ⏎ go in from here.,مولان: ⏎ فيه شيء غلط. ما نقدر ⏎ ندخل من هنا.,89,
+sys,662,Sora: ⏎ I don´t think it´s going to open.,سورا: ⏎ ما أظنها بتفتح.,56,
+sys,664,Sora: ⏎ We´ve got to help her!,سورا: ⏎ لازم نساعدتها!,80,
+sys,666,Sora: ⏎ We´ve got to help her!,سورا: ⏎ لازم نساعدتها!,80,
+sys,668,Sora: ⏎ This isn´t the way to Hades.,سورا: ⏎ مو هذا طريق هاديس.,90,
+sys,672,Auron: ⏎ It´s too dangerous to go back now.,آرون: ⏎ الرجوع الحين خطر كبير.,84,
+sys,674,Sora: ⏎ ₓₓₓ,سورا: ⏎ ₓₓₓ,135,wide
+sys,676,Sora: ⏎ But what about Cerberus?,سورا: ⏎ وإيش عن سيربيروس?,96,
+sys,678,Sora: ⏎ ₓₓₓ,سورا: ⏎ ₓₓₓ,135,wide
+sys,680,Sora: ⏎ Poor Hercules...we can´t ⏎ just leave him.,سورا: ⏎ مسكين هرقل... ما نقدر ⏎ نتركه.,117,
+sys,682,Sora: ⏎ Hercules is in a match right now!,سورا: ⏎ هرقل في مباراة الحين!,83,
+sys,684,Sora: ⏎ ₓₓₓ,سورا: ⏎ ₓₓₓ,135,wide
+sys,686,Cornerstone Hill,تل الحجر الأساس,121,
+sys,687,Pier,مرسى,184,wide
+sys,688,Waterway,المجرى,98,
+sys,689,Wharf,رصيف,115,
+sys,690,Lilliput,ليليبوت,122,
+sys,691,Building Site,موقع البناء,117,
+sys,692,Scene of the Fire,مسرح الحريق,93,
+sys,693,Mickey´s House,بيت ميكي,77,
+sys,694,Villain´s Vale,وادي الأشرار,132,wide
+sys,695,The Dark Margin,الحافة المظلمة,111,
+sys,697,Halloween Town Square,ساحة بلدة الهالوين,103,
+sys,698,Dr. Finklestein´s Lab,مختبر د. فينكلشتاين,114,
+sys,699,Graveyard,المقبرة,95,
+sys,700,Curly Hill,تل ملتوي,128,
+sys,701,Hinterlands,أراض خلفية,127,
+sys,702,Yuletide Hill,تل الأعياد,102,
+sys,703,Candy Cane Lane,ممر العصا الحلوى,133,wide
+sys,704,Christmas Tree Plaza,ساحة شجرة الميلاد,108,
+sys,705,Santa´s House,بيت سانتا,73,
+sys,706,Toy Factory: Shipping and Receiving,مصنع اللعب: الشحن والاستلام,98,
+sys,707,Toy Factory: The Wrapping Room,مصنع اللعب: غرفة التغليف,97,
+sys,708,The Coliseum,الكولوسيوم,117,
+sys,709,Coliseum Gates,بوابات الكولوسيوم,159,wide
+sys,710,Coliseum Gates,بوابات الكولوسيوم,159,wide
+sys,711,Underworld Entrance,مدخل العالم السفلي,121,
+sys,712,Coliseum Foyer,بهو الكولوسيوم,137,wide
+sys,713,Valley of the Dead,وادي الموتى,90,
+sys,714,Hades´ Chamber,قاعة هاديس,95,
+sys,715,Cave of the Dead: Entrance,كهف الموتى: المدخل,94,
+sys,716,Well of Captivity,بئر الأسر,62,
+sys,717,The Underdrome,الحلبة السفلية,103,
+sys,718,Cave of the Dead: Inner Chamber,كهف الموتى: القاعة الداخلية,106,
+sys,719,Underworld Caverns: Entrance,كهوف العالم السفلي: المدخل,118,
+sys,720,The Lock,القفل,78,
+sys,721,The Underdrome,الحلبة السفلية,103,
+sys,722,Coliseum Gates,بوابات الكولوسيوم,159,wide
+sys,723,Cave of the Dead: Passage,كهف الموتى: الممر,88,
+sys,724,Underworld Caverns: The Lost Road,كهوف العالم السفلي: الطريق الضائع,120,
+sys,725,Underworld Caverns: Atrium,كهوف العالم السفلي: البهو,115,
+sys,726,Villain´s Vale,وادي الأشرار,132,wide
+sys,727,The Dark Depths,الأعماق المظلمة,121,
+sys,728,The Great Maw,الهاوية الكبرى,122,
+sys,729,Crystal Fissure,صدع الكريستال,123,
+sys,730,Castle Gate,بوابة القلعة,130,
+sys,731,Ansem´s Study,مكتب أنسيم,97,
+sys,732,Postern,الباب الخلفي,194,wide
+sys,733,Restoration Site,موقع الترميم,107,
+sys,734,Bailey,الرحيبة,155,wide
+sys,735,Borough,الحي,73,
+sys,736,Beach,الشاطئ,148,wide
+sys,737,Main Island: Ocean´s Road,الجزيرة الرئيسية: طريق المحيط,149,wide
+sys,738,Main Island: Shore,شاطئ الجزيرة,93,
+sys,739,The Empty Realm,العالم الفارغ,97,
+sys,740,Roxas´s Room,غرفة روكساس,136,wide
+sys,741,The Usual Spot,المكان المعتاد,120,
+sys,742,Back Alley,الزقاق,80,
+sys,743,Sandlot,الرملية,121,
+sys,744,Rampart,السور,86,
+sys,745,Harbor,الميناء,118,
+sys,746,Town,البلدة,147,wide
+sys,747,The Interceptor,المتعقب,60,
+sys,748,The Interceptor: Ship´s Hold,المتعقب: قاع السفينة,89,
+sys,749,The Black Pearl,اللؤلؤة السوداء,127,
+sys,750,The Black Pearl: Captain´s Stateroom,اللؤلؤة السوداء: مقصورة القبطان,112,
+sys,751,The Interceptor,المتعقب,60,
+sys,752,Isla de Muerta: Rock Face,إيسلا دي مويرتا: وجه الصخر,136,wide
+sys,753,Isla de Muerta: Cave Mouth,إيسلا دي مويرتا: فوهة الكهف,132,wide
+sys,754,Isla de Muerta: Treasure Heap,إيسلا دي مويرتا: كومة الكنوز,122,
+sys,755,Ship Graveyard: The Interceptor´s Hold,مقبرة السفن: قاع المتعقب,82,
+sys,756,Isla de Muerta: Powder Store,إيسلا دي مويرتا: مخزن البارود,131,wide
+sys,757,Isla de Muerta: Moonlight Nook,إيسلا دي مويرتا: زاوية ضوء القمر,141,wide
+sys,758,Ship Graveyard: Seadrift Keep,مقبرة السفن: حصن التيار,99,
+sys,759,Ship Graveyard: Seadrift Row,مقبرة السفن: صف التيار,96,
+sys,760,Potion,جرعة,121,
+sys,761,Restores 40% of the target´s HP. ⏎ An equippable item.,يستعيد 40% من HP الهدف. ⏎ عنصر قابل للتجهيز.,90,
+sys,762,Hi-Potion,جرعة قوية,164,wide
+sys,763,Restores 60% of the target´s HP. ⏎ An equippable item.,يستعيد 60% من HP الهدف. ⏎ عنصر قابل للتجهيز.,90,
+sys,764,Ether,إيثر,92,
+sys,765,<0B 5A>Fully restores target´s MP. Restores Charge ⏎ Gauge during MP Charge. An equippable item.<03>,يستعيد MP الهدف بالكامل. يستعيد<0B 5A> ⏎ عداد الشحن أثناء شحن MP. عنصر قابل للتجهيز.,124,
+sys,766,Elixir,إليكسير,159,wide
+sys,767,Fully restores target´s HP and MP. ⏎ An equippable item.,يستعيد HP وMP بالكامل للهدف. ⏎ عنصر قابل للتجهيز.,102,
+sys,768,Mega-Potion,جرعة كبيرة,128,
+sys,769,Restores 40% of the Party´s HP. ⏎ An equippable item.,يستعيد 40% من HP الفريق. ⏎ عنصر قابل للتجهيز.,95,
+sys,770,Mega-Ether,إيثر كبير,99,
+sys,771,<0B 5A>Fully restores Party´s MP. Restores Charge ⏎ Gauge during MP Charge. An equippable item.<03>,يستعيد MP الفريق بالكامل. يستعيد<0B 5A> ⏎ عداد الشحن أثناء شحن MP. عنصر قابل للتجهيز.,124,
+sys,772,Megalixir,ميجاليكسير,143,wide
+sys,773,Fully restores Party´s HP and MP. ⏎ An equippable item.,يستعيد HP وMP للفريق بالكامل. ⏎ عنصر قابل للتجهيز.,107,
+sys,1093,<11 1E 00 1C 00>OK,حسنا<11 1E 00 1C 00>,218,wide
+sys,1094,<11 1E 00 1C 00>Yes,نعم<11 1E 00 1C 00>,147,wide
+sys,1095,<11 19 00 1C 00>No,لا<11 19 00 1C 00>,76,

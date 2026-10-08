@@ -1,0 +1,60 @@
+﻿bar,id,EN,AR,width_pct,flags
+po,16085,"<13 00 01 40 01><08 02 00 06>Yep, that´s Pooh all right. ⏎ <15 33 00>Let´s watch a bit longer. ⏎ <15 09 00>Let´s hurry and help him!","أجل, هذا بوه بالتأكيد<13 00 01 40 01><08 02 00 06>. ⏎ <15 33 00>لنراقب قليلا بعد. ⏎ <15 09 00>لنسرع ونساعده!",107,
+po,16086,"Hi, Sora. ⏎ Want to get some more honey?",مرحبا يا سورا. ⏎ هل تريد جمع المزيد من العسل?,143,wide
+po,16087,"<13 00 01 40 01><08 02 00 06>Go get some honey? ⏎ <15 33 00>I don´t need any now. ⏎ <15 09 00>Yeah, let´s go!","هل تجمع العسل<13 00 01 40 01><08 02 00 06>? ⏎ <15 33 00>لا أحتاج إلى أي الآن. ⏎ <15 09 00>أجل, هيا!",128,
+po,16088,"It sure is windy today. If one´s not careful, ⏎ they might get swept off their feet!","الرياح قوية اليوم. إن لم يكن المرء حذرا, ⏎ قد تجرفه!",123,
+po,16089,<13 00 01 40 01><08 02 00 06>Try to fly away? ⏎ <15 33 00>I feel like walking. ⏎ <15 09 00>Let´s fly!,هل تحاول الطيران<13 00 01 40 01><08 02 00 06>? ⏎ <15 33 00>أود المشي. ⏎ <15 09 00>لنطر!,145,wide
+po,16090,"Hoo-hoo-hoo-hoo! Bouncing will cheer ⏎ you up today, too! Let´s bounce, Sora!",هو-هو-هو-هو! القفز سيرفع ⏎ معنوياتك اليوم أيضا! لنقفز يا سورا!,118,
+po,16091,"<13 00 01 40 01><08 02 00 06>Bounce with Tigger? ⏎ <15 33 00>Sorry, I´m busy. ⏎ <15 09 00>Let´s bounce!","هل تقفز مع تيغر<13 00 01 40 01><08 02 00 06>? ⏎ <15 33 00>آسف, أنا مشغول. ⏎ <15 09 00>لنقفز!",123,
+po,16092,"I want to go look again with everyone. ⏎ Will you help, too, Sora?",أريد البحث مجددا مع الجميع. ⏎ هل ستساعد أنت أيضا يا سورا?,102,
+po,16093,<13 00 01 40 01><08 02 00 06>Go look for him? ⏎ <15 33 00>I´ve got other things to do. ⏎ <15 09 00>Of course I´ll help!,هل تبحث عنه<13 00 01 40 01><08 02 00 06>? ⏎ <15 33 00>لدي أشياء أخرى لأفعلها. ⏎ <15 09 00>بالطبع سأساعد!,116,
+po,18087,"I had a great time floating around, ⏎ Somebody-I-Don´t-Know.<10>I seem to remember floating around before ⏎ on a balloon...","قضيت وقتا رائعا أطفو, ⏎ يا شخصا لا أعرفه.<10>أظنني أتذكر أنني طفوت من قبل ⏎ على بالون...",97,
+po,18088,"I was so happy to have all that hunny the ⏎ other day.<10>Let´s go looking for hunny again sometime, ⏎ Somebody-I-Don´t-Know.","كنت سعيدا جدا بكل ذلك العسل ⏎ قبل أيام.<10>لنبحث عن العسل مجددا يوما ما, ⏎ يا شخصا لا أعرفه.",99,
+po,18089,"Once, we all dressed up like Tigger and ⏎ bounced around.<10>If you want, let´s bounce again sometime, ⏎ Somebody-I-Don´t-Know.","ذات مرة تنكرنا جميعا بزي تيغر ⏎ وقفزنا.<10>إن أردت, لنقفز مجددا يوما ما, ⏎ يا شخصا لا أعرفه.",101,
+po,18090,"It´s fun to bounce with ⏎ everyone.<10>But for some reason, everyone always ⏎ seems to land on top of my house.",من الممتع القفز مع ⏎ الجميع.<10>لكن لسبب ما يبدو أن الجميع ⏎ يهبطون دائما فوق بيتي.,98,
+po,18091,"I´m so happy Pooh remembered you, ⏎ Sora.<10>I wonder why he forgot about you in the ⏎ first place, though.",أنا سعيد جدا أن بوه تذكرك ⏎ يا سورا.<10>أتساءل لماذا نساك أصلا ⏎ في المقام الأول.,92,
+po,18092,"If my house is done by the next time we ⏎ meet, I´ll invite you over.<10>I doubt it´ll be done, though...","إن انتهى بيتي قبل لقائنا ⏎ القادم, سأدعوك.<10>لكنني أشك أنه سينتهي.",73,
+po,18093,"There are other friends in the Hundred ⏎ Acre Wood, too.<10>I haven´t seen them lately, though. I hope ⏎ everyone´s doing well.",هناك أصدقاء آخرون في غابة المئة ⏎ فدان أيضا.<10>لم أرهم مؤخرا. آمل أن ⏎ الجميع بخير.,113,
+po,18094,"Tigger may like bouncing, but he´s afraid of ⏎ heights.<10>That may seem contradictory, but isn´t that ⏎ the way of the world? Ho ho!","قد يحب تيغر القفز, لكنه يخاف من ⏎ الأماكن العالية.<10>قد يبدو ذلك متناقضا, لكن أليست ⏎ هذه طبيعة العالم? هو هو!",99,
+po,18095,"I´m relieved Pooh´s memory is ⏎ back.<10>I wanted to sing a song in celebration, but ⏎ for some reason the others stopped me.","ارتحت لأن ذاكرة بوه ⏎ عادت.<10>أردت غناء أغنية احتفالا, لكن ⏎ لسبب ما منعني الآخرون.",88,
+po,18096,"Lazy days like this are ⏎ the best.<10>On stormy days, the tree I nest in creaks ⏎ so much I can hardly think!","الأيام الكسولة كهذه ⏎ هي الأفضل.<10>في الأيام العاصفة, الشجرة التي أعيش فيها ⏎ تصر حتى أنني بالكاد أفكر!",127,
+po,18097,Hm? What will I do after the balloon breaks ⏎ when gathering honey?<10>Don´t worry! I´m strong enough not to let ⏎ something like that faze me!,همم? ماذا سأفعل بعد انفجار البالون ⏎ عند جمع العسل?<10>لا تقلق! أنا قوي بما يكفي كي لا ⏎ يزعجني شيء كهذا!,110,
+po,18098,"Piglet may seem easily frightened, but when he ⏎ commits to something, he does it!<10>I was surprised when he went looking for ⏎ Pooh in a hole that scared even me!","قد يبدو بيركيت سهل الخوف, لكنه عندما ⏎ يلتزم بشيء, ينفذه!<10>فوجئت عندما ذهب يبحث عن ⏎ بوه في حفرة أخافتني أنا حتى!",113,
+po,18099,"My dream is to build the ultimate ⏎ tunnel.<10>If I ever get close to achieving my dream, ⏎ I´ll send you an invitation, Sora!","حلمي أن أبني النفق ⏎ النهائي.<10>إن اقتربت يوما من تحقيق حلمي, ⏎ سأرسل لك دعوة يا سورا!",100,
+po,18100,"Owl is always long-winded. Sometimes he ⏎ says the strangest things, too!",البومة تطيل الكلام دائما. وأحيانا ⏎ تقول أغرب الأشياء!,104,
+po,18101,"Tigger´s gonna teach me a cool ⏎ new jump!<10>It´s called the ""Whoop-di-Loopa Loop-di- ⏎ Lupa,"" or something like that!","تيغر سيعلمني قفزة ⏎ جديدة رائعة!<10>تسمى ووب-دي-لوبا لوب-دي- ⏎ لوبا, أو شيء كهذا!",93,
+po,18102,"Exploring can be a little scary, but it´s lots ⏎ of fun!<10>Everyone´s always exploring for love bugs ⏎ and such, so I wanna go too!","الاستكشاف مخيف قليلا, لكنه ممتع ⏎ جدا!<10>الجميع دائما يستكشفون بحثا عن حشرات الحب ⏎ وأمثالها, لذا أريد الذهاب أيضا!",133,wide
+po,18103,"When I was exploring by myself the other ⏎ day, I made a new friend.<10>It´s fun just having friends.","عندما كنت أستكشف وحدي ⏎ قبل أيام, كونت صديقا جديدا.<10>من الممتع أن يكون لك أصدقاء.",101,
+po,18104,"When Pooh´s not his usual self, it affects ⏎ us all.<10>That doesn´t apply to just Pooh, either. ⏎ We want everyone to be well.","عندما لا يكون بوه على طبيعته, يؤثر ⏎ ذلك علينا جميعا.<10>ولا ينطبق ذلك على بوه فقط. ⏎ نريد أن يكون الجميع بخير.",118,
+po,18324,This tree gently watches over the hill.,هذه الشجرة تراقب التل بلطف.,101,
+po,18325,You could probably see the moon ⏎ really well from here.,ربما تستطيع رؤية القمر ⏎ جيدا من هنا.,97,
+po,18326,"He probably meant to write ""Ring the bell"" ⏎ here.",ربما كان يقصد أن يكتب رن الجرس ⏎ هنا.,104,
+po,18327,You can see a cute curtain.,ترى ستارة جميلة.,89,
+po,18328,The sweet smell of honey floats by.,تفوح رائحة العسل الحلوة.,98,
+po,18329,"It should read: ""Carrots""",يجب أن تقرأ: جزر,93,
+po,18330,"It seems it was supposed to read: ""Cabbage""",يبدو أنها كان يفترض أن تقرأ: ملفوف,108,
+po,18331,"It seems to read: ""Pumpkins""",يبدو أنها تقرأ: يقطين,94,
+po,18332,This is the entrance to Rabbit´s house.,هذا مدخل بيت الأرنب.,72,
+po,18333,"This mailbox reads, ""Rabbit.""",يقرأ هذا صندوق البريد: الأرنب.,134,wide
+po,18334,Laundry is being hung to dry.,الغسيل منشور ليجف.,89,
+po,18335,It´s dammed up to catch fish.,مسدود لصيد السمك.,86,
+po,18336,"This small mailbox reads, ""Piglet.""",يقرأ صندوق البريد الصغير هذا: بيركيت.,144,wide
+po,18337,Only Piglet could fit through this door.,بيركيت فقط يستطيع المرور من هذا الباب.,132,wide
+po,18338,This must be Piglet´s grandpa´s name.,لا بد أن هذا اسم جد بيركيت.,101,
+po,18339,"These mailboxes read, ""Kanga"" and ""Roo.""",تقرأ صناديق البريد هذه: كانغا ورو.,111,
+po,18340,"This mailbox reads, ""Kanga.""",يقرأ صندوق البريد هذا: كانغا.,134,wide
+po,18521,<13 64 01 DA 00><06 00><08 01 01 05>That was rather fun! ⏎ Shall we do it again?,كان ذلك ممتعا جدا<13 64 01 DA 00><06 00><08 01 01 05>! ⏎ هل نكرره?,124,
+po,18522,"<13 CA 00 5C 00><06 00><08 01 01 06>With the way Pooh eats, we´ll ⏎ have to find more honey!","بالطريقة التي يأكل بها بوه<13 CA 00 5C 00><06 00><08 01 01 06>, ⏎ سنضطر لإيجاد المزيد من العسل!",140,wide
+po,18523,"<13 2E 01 3F 00><06 00><08 01 01 05>Say, your bouncin´ could ⏎ use some more bounce.","قل, قفزك يحتاج<13 2E 01 3F 00><06 00><08 01 01 05> ⏎ إلى مزيد من القفز.",100,
+po,18524,<13 37 01 83 00><06 00><08 01 00 05>Where did that bear go...?,إلى أين ذهب ذلك الدب<13 37 01 83 00><06 00><08 01 00 05>...?,120,
+po,18525,<13 9B 01 69 00><06 00><08 01 00 05>Great...,رائع<13 9B 01 69 00><06 00><08 01 00 05>...,96,
+po,18722,Hit,ضربة,219,wide
+po,18723,Dash,ركض,113,
+po,18996,<13 A7 00 86 00><06 02><08 03 01 05>Sora? Is that you?<10>Help!,سورا? هل هذا أنت<13 A7 00 86 00><06 02><08 03 01 05>?<10>النجدة!,136,wide
+po,19374,"<13 53 01 BD 00><06 00><08 01 01 05>I say, it seems we have a ⏎ rather serious predicament!<10>Sora, would you mind ⏎ going after poor Piglet?","أقول, يبدو أننا في<13 53 01 BD 00><06 00><08 01 01 05> ⏎ ورطة!<10>يا سورا, هل تمانع ⏎ في إنقاذ بيركيت المسكين?",119,
+po,19396,"Well then, I guess bouncin´s ⏎ not the answer.<14 C0 00><10>It makes a Tigger almost ⏎ never wanna bounce again...","حسنا إذن, أظن أن القفز ⏎ ليس الحل.<14 C0 00><10>إنه يجعل تيغر تقريبا ⏎ لا يريد القفز أبدا...",114,
+po,21520,<17 07 B4>  ⏎ Piglet is finally rescued! Or so they ⏎ thought. ⏎   ⏎ The poor little fellow is so stunned by ⏎ the fact that Pooh had forgotten him that ⏎ he's carried off by the wind once again. ⏎   ⏎ What a disastrous day for poor Piglet! ⏎   ⏎   ⏎ ,<17 07 B4>  ⏎ تم إنقاذ بيركيت أخيرا! أو هكذا ⏎ ظنوا. ⏎   ⏎ الصغير المسكين مذهول جدا ⏎ من أن بوه نسيه حتى ⏎ حملته الرياح مرة أخرى. ⏎   ⏎ يا له من يوم كارثي لبيركيت المسكين! ⏎   ⏎   ⏎ ,111,
+po,21521,"<17 07 B4>  ⏎ As Pooh happily finishes off the last of ⏎ the honey, Rabbit appears, unable to hide ⏎ his disbelief. His precious honey collection! ⏎   ⏎ But as soon as Rabbit notices Pooh acting ⏎ strangely, he coaxes his friend to eat more. ⏎ Perhaps a full stomach will get Pooh to ⏎ return to his usual ways. ⏎   ⏎   ⏎ ","<17 07 B4>  ⏎ بينما ينهي بوه بسعادة آخر ⏎ العسل, يظهر الأرنب عاجزا عن إخفاء ⏎ عدم تصديقه. مجموعة عسله الثمينة! ⏎   ⏎ لكن حالما يلاحظ الأرنب تصرف بوه ⏎ الغريب, يحث صديقه على الأكل أكثر. ⏎ ربما تعيد المعدة الممتلئة بوه ⏎ إلى عاداته المعتادة. ⏎   ⏎   ⏎ ",115,
+po,21522,"<17 07 B4>  ⏎ Tigger claims he knows just the thing to ⏎ jog Pooh's memory. What's better than a ⏎ bottle of medicine or a trove of honey? ⏎ Why, tiggeriffic bouncing, of course! ⏎   ⏎ Hoping for the best, Sora and his friends ⏎ all decide to give it a try. ⏎   ⏎   ⏎   ⏎ ","<17 07 B4>  ⏎ يدعي تيغر أنه يعرف الشيء المناسب لإنعاش ⏎ ذاكرة بوه. ما الأفضل من ⏎ زجاجة دواء أو كنز من العسل? ⏎ إنه القفز التيغري الرائع بالطبع! ⏎   ⏎ أملا في الأفضل, يقرر سورا وأصدقاؤه ⏎ جميعا تجربة ذلك. ⏎   ⏎   ⏎   ⏎ ",132,wide
+po,21523,"<17 07 B4>  ⏎ It looks like Pooh's gone and found trouble ⏎ again. This time, inside a cave. ⏎   ⏎ Although danger lurks around every corner, ⏎ everyone summons up their courage to help ⏎ find their friend. ⏎   ⏎   ⏎   ⏎   ⏎ ","<17 07 B4>  ⏎ يبدو أن بوه وجد المتاعب ⏎ مجددا. هذه المرة داخل كهف. ⏎   ⏎ مع أن الخطر يتربص في كل زاوية, ⏎ يستجمع الجميع شجاعتهم للمساعدة ⏎ في إيجاد صديقهم. ⏎   ⏎   ⏎   ⏎   ⏎ ",111,
+po,21524,"<17 07 B4>  ⏎ Atop the hill with the starry sky, Sora ⏎ finds Pooh with his head stuck in a honey ⏎ pot. Silly old bear! ⏎   ⏎ Although Sora's not quite sure whether to ⏎ help him or leave him be, after some ⏎ pondering, he decides to give Pooh a hand. ⏎   ⏎   ⏎   ⏎ ","<17 07 B4>  ⏎ على التل تحت النجوم, يجد سورا ⏎ بوه ورأسه عالق في إناء ⏎ عسل. يا له من دب أحمق! ⏎   ⏎ مع أن سورا متردد في مساعدته ⏎ أم تركه, بعد بعض ⏎ التفكير يقرر مساعدة بوه. ⏎   ⏎   ⏎   ⏎ ",102,
