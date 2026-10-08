@@ -121,5 +121,5 @@ forbidden: U+061F U+060C U+061B U+0640 U+064B-U+065F U+0670
 line_break_marker: ⏎
 max_growth_percent: 10
 min_growth_chars: 2
-unprotected_terms: أنواع أغراض الأغراض الشكل حماية الحماية ضربة الواحة المدافع
+unprotected_terms: أنواع أغراض الأغراض الشكل حماية الحماية ضربة الواحة المدافع استخدام
 ```
