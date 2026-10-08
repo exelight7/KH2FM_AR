@@ -1,0 +1,18 @@
+2	not found
+3	AR_old differs
+4	not allowed
+5	not allowed
+6	not allowed
+7	not allowed
+8	not allowed
+9	tags differ
+10	tags differ
+11	tags differ
+12	line breaks
+13	glossary term changed
+14	too long
+15	type
+16	severity
+17	reason must be in Arabic
+18	reason has 9 words
+19	identical
