@@ -14,6 +14,8 @@ and each row must satisfy the rules in RULES.md (see the ``rules`` block there):
   * AR_new at most max(``max_growth_percent`` of AR_old, ``min_growth_chars``)
     characters longer than AR_old
   * type / severity / reason are valid
+  * corrections/needs_width_check.csv is a report of fixes that were not applied
+    (bar,id,AR_old,AR_new,reason); it is skipped
 
 Prints one table of results and exits 1 if any row (or file) has an error.
 
@@ -33,6 +35,9 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 COLUMNS = ['bar', 'id', 'AR_old', 'AR_new', 'type', 'severity', 'reason']
+# Report files list proposed fixes that were NOT applied (for example because they
+# break the length rule). They are read by people, not applied, so they are skipped.
+REPORT_FILES = ('needs_width_check.csv',)
 TYPES = ('spelling', 'grammar', 'phrasing', 'meaning', 'glossary')
 SEVERITIES = ('1', '2', '3')
 REASON_MAX_WORDS = 8
@@ -283,7 +288,7 @@ def validate_file(path, review, rules, glossary):
     except csv.Error as e:
         return [('-', '', '', ['cannot read CSV: %s' % e])]
     if not rows:
-        return [('-', '', '', ['no rows'])]
+        return []        # header only: the file was proofread and nothing needed fixing
     results = []
     seen = set()
     for n, row in rows:
@@ -333,6 +338,10 @@ def main(argv=None):
     if not review:
         raise SystemExit('no review rows found in %s' % os.path.join(args.root, 'review'))
     files = args.files or sorted(glob.glob(os.path.join(args.root, 'corrections', '*.csv')))
+    skipped = [f for f in files if os.path.basename(f).lower() in REPORT_FILES]
+    files = [f for f in files if f not in skipped]
+    for f in skipped:
+        print('Skipped report file (not a correction file): %s' % os.path.relpath(f, args.root))
 
     all_results = [(f, validate_file(f, review, rules, glossary)) for f in files]
     n_rows = sum(len(r) for _, r in all_results)
