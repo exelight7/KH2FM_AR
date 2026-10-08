@@ -9,7 +9,8 @@ and each row must satisfy the rules in RULES.md (see the ``rules`` block there):
   * AR_new uses allowed characters only (forbidden characters never; other
     characters outside the allowed set only if they were already in AR_old)
   * the same tags in the same order, the same number of line-break markers
-  * glossary terms unchanged (skipped for files named corrections/glossary*.csv)
+  * glossary terms unchanged (skipped for files named corrections/glossary*.csv;
+    the ``unprotected_terms`` of RULES.md are not treated as glossary terms)
   * AR_new at most max(``max_growth_percent`` of AR_old, ``min_growth_chars``)
     characters longer than AR_old
   * type / severity / reason are valid
@@ -53,12 +54,13 @@ def is_arabic_letter(ch):
 
 # ---------------------------------------------------------------- RULES.md
 class Rules:
-    def __init__(self, allowed, forbidden, marker, max_growth, min_growth_chars):
+    def __init__(self, allowed, forbidden, marker, max_growth, min_growth_chars, unprotected=()):
         self.allowed = allowed        # set of non-letter characters allowed besides Arabic letters
         self.forbidden = forbidden    # set of characters never allowed
         self.marker = marker          # visible line-break marker
         self.max_growth = max_growth  # percent
         self.min_growth_chars = min_growth_chars  # growth always allowed, in characters
+        self.unprotected = set(unprotected)  # glossary entries that are ordinary words
 
     def growth_limit(self, old_len):
         """How many characters longer than the original a correction may be."""
@@ -100,8 +102,9 @@ def load_rules(path):
         else:
             forbidden |= set(tok)
     forbidden |= DIACRITICS | {TATWEEL}
+    unprotected = kv.get('unprotected_terms', '').replace('،', ' ').replace(',', ' ').split()
     return Rules(allowed, forbidden, kv['line_break_marker'], float(kv['max_growth_percent']),
-                 int(kv['min_growth_chars']))
+                 int(kv['min_growth_chars']), unprotected)
 
 
 # ---------------------------------------------------------------- glossary
@@ -150,6 +153,11 @@ def load_glossary_terms(path):
             if letters >= MIN_TERM_LETTERS:
                 terms.add(t)
     return terms
+
+
+def load_glossary(path, rules):
+    """The protected glossary: every approved form except the rules' unprotected_terms."""
+    return Glossary(load_glossary_terms(path) - rules.unprotected)
 
 
 _LETTER_CLASS = 'ء-غف-ي'
@@ -320,7 +328,7 @@ def main(argv=None):
         sys.stdout.reconfigure(encoding='utf-8')
 
     rules = load_rules(os.path.join(args.root, 'RULES.md'))
-    glossary = Glossary(load_glossary_terms(os.path.join(args.root, 'docs', 'glossary.md')))
+    glossary = load_glossary(os.path.join(args.root, 'docs', 'glossary.md'), rules)
     review = load_review(os.path.join(args.root, 'review'))
     if not review:
         raise SystemExit('no review rows found in %s' % os.path.join(args.root, 'review'))
