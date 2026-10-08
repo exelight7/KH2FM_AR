@@ -1,7 +1,7 @@
 # Summary: tt_part02
 
 - Rows reviewed: 250
-- Rows corrected: 21
+- Rows corrected: 20
 
 ## Top repeated error patterns
 
@@ -24,3 +24,7 @@
 - 13460 «تلة الغروب» vs the place name «تل الغروب».
 - 13350, 13422, 13423 call Twilight Town «المدينة» («the city»); the glossary
   name is «بلدة الشفق» and other rows say «البلدة».
+
+## Moved
+
+- tt 13289: combined with the Naminé change in `corrections/glossary_namine.csv` (one active correction per id).
