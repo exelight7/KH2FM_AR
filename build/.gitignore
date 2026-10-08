@@ -1,0 +1,5 @@
+payload/
+vendor/
+dist/
+out/
+*.zip

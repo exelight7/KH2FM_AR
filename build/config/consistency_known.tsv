@@ -1,0 +1,22 @@
+# rows where the kit decode of the INSTALLED bar differs from review/*.csv AR, reviewed 2026-10-08.
+# The consistency gate accepts exactly these rows, and only while none of them has a correction.
+bar	id	reason
+dc	18407	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only
+sys	1444	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only
+sys	1445	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only
+sys	1446	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only
+sys	1447	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only
+sys	1448	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only
+sys	1449	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only
+sys	2774	installed bar differs from the review export by a tag/space only (FIXLV install after the export)
+sys	14844	installed bar differs from the review export by a tag/space only (FIXLV install after the export)
+sys	17753	installed bar differs from the review export by a tag/space only (FIXLV install after the export)
+sys	17838	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only
+sys	17839	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only
+sys	19352	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only
+sys	19353	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only
+sys	19354	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only
+sys	19388	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only
+sys	19600	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only
+sys	19862	installed bar differs from the review export by a tag/space only (FIXLV install after the export)
+sys	19998	untranslated retail-English row: its cells overlap Arabic glyph cells, the kit decodes it in plain mode only

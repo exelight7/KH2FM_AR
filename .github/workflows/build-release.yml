@@ -1,0 +1,160 @@
+name: build-release
+
+# Rebuilds the Arabic text bars from the frozen payload + corrections/, runs every gate,
+# compiles the installer on Windows and creates a DRAFT release. Never publishes.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Release version
+        default: '1.0.1'
+        required: true
+  push:
+    branches: ['build/**']
+
+permissions:
+  contents: write
+
+env:
+  VERSION: ${{ github.event.inputs.version || '1.0.1' }}
+  PAYLOAD_TAG: build-payload
+  PAYLOAD_ZIP: build-payload-1.0.0-beta.zip
+
+jobs:
+  bars:
+    name: Bars and gates (Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download payload (build-payload release)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download "$PAYLOAD_TAG" -p "$PAYLOAD_ZIP" -D "$RUNNER_TEMP" -R "$GITHUB_REPOSITORY"
+          mkdir -p build/payload
+          unzip -q "$RUNNER_TEMP/$PAYLOAD_ZIP" -d build/payload
+          rm "$RUNNER_TEMP/$PAYLOAD_ZIP"
+
+      - name: a) Verify 798 payload files against FROZEN_MANIFEST.tsv
+        run: python build/tools/verify_payload.py build/payload
+
+      - name: a) Self-test on the payload bars
+        run: python build/tools/selftest.py build/payload/kh2/msg/us
+
+      - name: b-e) Consistency, corrections, width terms, gates, report, changelog
+        run: python build/tools/build_bars.py --payload build/payload --version "$VERSION"
+
+      - name: Report to the job summary
+        if: always()
+        run: test -f build/report/BUILD_REPORT.md && cat build/report/BUILD_REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Upload new bars, manifest and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bars-${{ env.VERSION }}
+          path: |
+            build/out/
+            build/report/
+          if-no-files-found: error
+
+  installer:
+    name: Installer (Windows)
+    needs: bars
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download payload (build-payload release)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download $env:PAYLOAD_TAG -p $env:PAYLOAD_ZIP -D $env:RUNNER_TEMP -R $env:GITHUB_REPOSITORY
+          7z x "$env:RUNNER_TEMP\$env:PAYLOAD_ZIP" -obuild\payload -y | Out-Null
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+          Remove-Item "$env:RUNNER_TEMP\$env:PAYLOAD_ZIP"
+
+      - name: Verify the frozen payload
+        run: python build/tools/verify_payload.py build/payload
+
+      - name: Get the new bars from the Linux job
+        uses: actions/download-artifact@v4
+        with:
+          name: bars-${{ env.VERSION }}
+          path: build/artifact
+
+      - name: Put the new bars in the payload and verify against the new manifest
+        run: |
+          Copy-Item build/artifact/out/kh2/msg/us/*.bar build/payload/kh2/msg/us/ -Force
+          python build/tools/verify_payload.py build/payload build/artifact/out/MANIFEST.tsv
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Fetch Panacea (hash-checked)
+        run: python build/tools/fetch_panacea.py
+
+      - name: Install Inno Setup 6.7.3 (SHA256 checked)
+        run: |
+          $url = 'https://github.com/jrsoftware/issrc/releases/download/is-6_7_3/innosetup-6.7.3.exe'
+          $want = '9c73c3bae7ed48d44112a0f48e66742c00090bdb5bef71d9d3c056c66e97b732'
+          $exe = "$env:RUNNER_TEMP\innosetup-6.7.3.exe"
+          Invoke-WebRequest -Uri $url -OutFile $exe
+          $got = (Get-FileHash $exe -Algorithm SHA256).Hash.ToLower()
+          if ($got -ne $want) { Write-Error "Inno Setup SHA256 mismatch: $got"; exit 1 }
+          Start-Process -FilePath $exe -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART','/SP-','/DIR=C:\InnoSetup673' -Wait
+          if (-not (Test-Path 'C:\InnoSetup673\ISCC.exe')) { Write-Error 'ISCC.exe not found'; exit 1 }
+
+      - name: Regenerate payload_files.iss, set version, add changelog
+        run: |
+          python build/tools/gen_iss_files.py build/artifact/out/MANIFEST.tsv
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+          Copy-Item build/artifact/report/CHANGELOG.md build/docs/CHANGELOG.md
+          $r = Get-Content build/docs/README.md -Raw -Encoding utf8
+          $r = $r.Replace('1.0.0-beta', $env:VERSION)
+          [IO.File]::WriteAllText("$PWD/build/docs/README.md", $r, [Text.UTF8Encoding]::new($false))
+
+      - name: Compile installer
+        run: |
+          $num = "$env:VERSION.0"
+          & 'C:\InnoSetup673\ISCC.exe' "/DAppVer=$env:VERSION" "/DAppVerNum=$num" build\installer\kh2fm_arabic.iss
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+          $exe = "build\dist\KH2FM-Arabic-Setup-$env:VERSION.exe"
+          if (-not (Test-Path $exe)) { Write-Error "missing $exe"; exit 1 }
+          New-Item -ItemType Directory -Force release | Out-Null
+          Copy-Item $exe release/
+          Copy-Item build/artifact/report/BUILD_REPORT.md release/
+          Copy-Item build/artifact/report/CHANGELOG.md release/
+          Push-Location release
+          Get-ChildItem -File | Where-Object Name -ne 'SHA256SUMS.txt' | Sort-Object Name | ForEach-Object {
+            "{0}  {1}" -f (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower(), $_.Name } | Set-Content -Encoding ascii SHA256SUMS.txt
+          Pop-Location
+          Get-Content release/SHA256SUMS.txt
+
+      - name: Upload installer artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: installer-${{ env.VERSION }}
+          path: release/
+          if-no-files-found: error
+
+      - name: Create or update the DRAFT release v${{ env.VERSION }} (never published)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = "v$env:VERSION"
+          $info = gh release view $tag -R $env:GITHUB_REPOSITORY --json isDraft 2>$null | ConvertFrom-Json
+          if ($info -and -not $info.isDraft) { Write-Error "$tag is already published; not touching it"; exit 1 }
+          if ($info) { gh release delete $tag -R $env:GITHUB_REPOSITORY --yes }
+          $files = Get-ChildItem release -File | ForEach-Object { $_.FullName }
+          gh release create $tag @files --draft --target $env:GITHUB_SHA --title "v$env:VERSION" `
+            --notes-file release/CHANGELOG.md -R $env:GITHUB_REPOSITORY
+          if ($LASTEXITCODE -ne 0) { exit 1 }
