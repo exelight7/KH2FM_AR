@@ -17,9 +17,12 @@ the chosen forms in its last section, «قرارات GLOSSARY (2026-10-08)».
 **sys rule** (docs/TASKS.md): for limit and attack names that differ between sys
 and jm, the sys form wins unless it is linguistically wrong.
 
-The length rule still applies. A change that makes a row too long is **not**
-applied: it is listed in `corrections/needs_width_check.csv` (marked "(width
-check)" below) and waits for a width check in the game.
+The length rule still applies, and a term is applied **everywhere or nowhere**
+(supervisor review, 2026-10-08). If one row of a term would be too long, none of
+its rows is applied: all of them are listed in `corrections/needs_width_check.csv`
+with the term in its `term` column (marked "(width check)" below), and the game
+keeps the current form until the width is checked. The validator refuses a term
+that is both in a glossary file (`term` column) and in `needs_width_check.csv`.
 
 The counts are rows of `review/` whose AR contains the form (with an attached
 و ف ب ل ك or the article); for one-word forms only rows whose EN has the term are
@@ -51,7 +54,8 @@ person reads this table and `corrections/glossary_decisions.csv` before merging.
 | Treasure Isle | «كنز الجزيرة» 1, «جزيرة الكنز» 1 | «جزيرة الكنز» | **rule 1:** sys «كنز الجزيرة» = "the island´s treasure", the wrong way round | 1 row: sys 13133 |
 | King´s Pride | «فخر الملك» 1, «كبرياء الملك» 1 | «فخر الملك» | **sys rule:** sys form (limit-name rule) | 1 row: jm 19176 |
 | Proud Roar | «العواء الفخم» 1, «الزئير الفخور» 1 | «الزئير الفخور» | **rule 1:** sys «العواء» = howl; a lion roars: «زئير» | 1 row: sys 14092 |
-| Setup / Cluster Code / Reprogram | «إعداد» 1, «التجهيز» 1, «رمز التجمع» 1, «شيفرة العنقود» 1, «برمجة» 2, «إعادة البرمجة» 1 | «الإعداد» / «رمز التجمع» / «إعادة البرمجة» | **sys rule, rule 1:** sys forms, except Reprogram: «برمجة» = "programming", the "re-" is lost | 2 rows (1 to width check): jm 19179; sys 14625 (width check) |
+| Setup / Cluster Code | «إعداد» 1, «التجهيز» 1, «رمز التجمع» 1, «شيفرة العنقود» 1 | «الإعداد» / «رمز التجمع» | **sys rule:** sys forms (limit-name rule) | 1 row: jm 19179 |
+| Reprogram | «برمجة» 2, «إعادة البرمجة» 1 | «إعادة البرمجة» | **rule 1:** «برمجة» = "programming", the "re-" is lost; jm already says «إعادة البرمجة» | 1 row (1 to width check): sys 14625 (width check) |
 | Complete Compilement | «الإكمال الكامل» 1, «التجميع الكامل» 1 | «الإكمال الكامل» | **sys rule:** sys form (limit-name rule) | 1 row: jm 19178 |
 | Eternal Session / Last Saber / Master Hearts / All´s End | «جلسة الأبدية» 1, «الجلسة الأبدية» 1, «النصل الأخير» 1, «السيف الأخير» 1, «القلوب المتقنة» 1, «قلوب السيد» 1, «نهاية الكل» 1, «النهاية الشاملة» 1 | «الجلسة الأبدية» / «النصل الأخير» / «القلوب المتقنة» / «نهاية الكل» | **rule 1, sys rule:** sys «جلسة الأبدية» is a broken construct → «الجلسة الأبدية»; the others: sys forms | 2 rows: sys 13129; jm 19181 |
 | Trinity Limit / Trinity / Major Drive | «ترينتي ليميت» 1, «ليميت الثالوث» 1, «ترينتي» 3, «الثالوث» 2, «الدرايف الأكبر» 1, «الدرايف الكبير» 1 | «ترينتي ليميت» / «ترينتي» / «الدرايف الأكبر» | **sys rule:** sys forms (limit-name rule; also the glossary form) | 2 rows: jm 19182, 19183 |
@@ -63,7 +67,7 @@ person reads this table and `corrections/glossary_decisions.csv` before merging.
 | Strike Raid / Strike | «سترايك ريد» 2, «ضربة غازية» 1, «الضرب» 2, «الضربة» 3 | «سترايك ريد» / «الضرب» | **rule 1, sys rule:** limit name: «ضربة غازية» means "gaseous strike"; parts: sys forms | 2 rows: sys 20228; jm 19305 |
 | Last Arcanum / Final Arcana / Arcana / Bash | «لاست أركانوم» 1, «أسرار النهاية» 2, «أركانا الأخيرة» 1, «الأسرار» 1, «أركانا» 2, «الكبس» 2, «الصدمة» 1 | «لاست أركانوم» / «أسرار النهاية» / «الأسرار» / «الكبس» | **rule 2, sys rule:** Last Arcanum: glossary transliteration; Final Arcana and the parts: sys forms | 3 rows: sys 20225; jm 19306, 19307 |
 | Infinity / Impact | «إنفينيتي» 3, «اللانهاية» 3, «الصدم» 6, «التأثير» 1 | «إنفينيتي» / «الصدم» | **rule 2, sys rule:** limit name: glossary transliteration (sys has both); Impact: sys form | 4 rows: sys 17171, 20214, 21600; jm 19309 |
-| Whirli-Goof / -ra / -ga | «دور غوفي» 4, «غوفي الدوار» 1, «دور غوفي را» 1, «غوفي الدوار 2» 1, «دور غوفي جا» 1, «غوفي الدوار 3» 1 | «غوفي الدوار» / «غوفي الدوار را» / «غوفي الدوار غا» | **rule 1:** sys «دور غوفي» means "Goofy´s turn"; "-ga" is written «غا» as in Firaga/Curaga | 5 rows (3 to width check): sys 1176 (width check), 1177 (width check), 1178 (width check), 13116; jm 19195 |
+| Whirli-Goof / -ra / -ga | «دور غوفي» 4, «غوفي الدوار» 1, «دور غوفي را» 1, «غوفي الدوار 2» 1, «دور غوفي جا» 1, «غوفي الدوار 3» 1 | «غوفي الدوار» / «غوفي الدوار را» / «غوفي الدوار غا» | **rule 1:** sys «دور غوفي» means "Goofy´s turn"; "-ga" is written «غا» as in Firaga/Curaga | 5 rows (5 to width check): sys 1176 (width check), 1177 (width check), 1178 (width check), 13116 (width check); jm 19195 (width check) |
 | "Valor"/"Wisdom"/"Master"/"Final" Genie | «جيني الشجاعة» 1, «الجني "الشجاعة"» 1, «جني الشجاعة» 0 | «جني الشجاعة» / «جني الحكمة» / «جني الإتقان» / «الجني النهائي» | **rule 1:** «جيني» is not the Genie´s name (glossary «الجني»); the construct form fits the sys space; Final takes an adjective | 8 rows: sys 17078, 17079, 17080, 17081; jm 19190, 19304, 19306, 19308 |
 | Genie | «الجني» 30, «جيني» 6 | «الجني» | **rule 1, rule 3:** glossary form; «جيني» reads as a girl´s name | 2 rows: sys 17810, 17817 |
 
@@ -92,9 +96,9 @@ person reads this table and `corrections/glossary_decisions.csv` before merging.
 | Tinker Bell | «تيكر بيل» 2, «تينكر بيل» 0 | «تينكر بيل» | **rule 2:** the name has an /n/ (Tinker) | 2 rows: sys 17818; jm 11505 |
 | Elixir | «إليكسير» 1, «إيليكسير» 0, «إكسير» 0 | «إكسير» | **rule 1:** «إكسير» is the real Arabic word (and shorter) | 1 row: sys 766 |
 | Candy Cane Lane | «ممر العصا الحلوى» 1, «ممر عصا الحلوى» 0 | «ممر عصا الحلوى» | **rule 1:** «العصا الحلوى» puts the article on the first noun of a construct | 1 row: sys 703 |
-| Sandlot | «الرملية» 11, «ساحة اللعب» 10 | «ساحة اللعب» | **rule 1:** «الرملية» ("the sandy") is an adjective with no noun; «ساحة اللعب» is already used in jm and sys | 11 rows (7 to width check): sys 743 (width check), 2637 (width check); tt 13227, 13292 (width check), 13641 (width check), 17297 (width check), 17304 (width check), 17359 (width check), 17613, 17664, 17670 |
+| Sandlot | «الرملية» 11, «ساحة اللعب» 10, «الساحة» 0 | «الساحة» | **rule 1, review:** «الرملية» ("the sandy") is an adjective with no noun; supervisor review 2026-10-08: «الساحة» fits every row («ساحة اللعب» did not) | 21 rows: sys 743, 2637, 17728, 18019, 18021, 18025, 18029; tt 13227, 13292, 13641, 17297, 17304, 17359, 17613, 17664, 17670; jm 10454, 10455, 10488, 10489, 11017 |
 | Wildebeest Valley | «وادي الغزلان» 8, «وادي النو» 0 | «وادي النو» | **rule 1:** «الغزلان» = gazelles; a wildebeest is «النو» | 9 rows: sys 606, 14853; jm 10795, 10797, 10798; lk 12899, 14229, 14233, 17174 |
-| Curly Hill | «تل ملتوي» 2, «التل الملتوي» 0 | «التل الملتوي» | **rule 1:** a place name is definite (glossary form); indefinite «ملتوي» would also need «ملتو» | 2 rows (2 to width check): sys 700 (width check), 16099 (width check) |
+| Curly Hill | «تل ملتوي» 2, «التل الملتوي» 0 | «تل ملتوي» | **review:** supervisor review 2026-10-08: keep «تل ملتوي» (the used form, fits the space); the glossary now says the same | none |
 | Cosmic Ring / Belt / Chain | «خاتم الكوني» 1, «حزام الكوني» 1, «سلسلة الكوني» 1, «الخاتم الكوني» 0, «سلسلة كونية» 0 | «الخاتم الكوني» / «الحزام الكوني» / «سلسلة كونية» | **rule 1:** an indefinite noun cannot take a definite adjective; all three are already fixed this way by the sys proofreading; those rows move here so the term change sits in a glossary file | 3 rows: sys 14909, 14939, 15005 |
 | Groundshaker | «مهزز الأرض» 3, «مزلزل الأرض» 0 | «مزلزل الأرض» | **rule 1:** «مهزز» is not a word; «مزلزل» = earth-shaker | 3 rows: jm 12038; sys 15532; title 21265 |
 | Grind | «الهرس» 1, «الانزلاق» 1 | «الانزلاق» | **rule 1:** «الهرس» = mashing; a rail grind is a slide (sys 22002) | 1 row (1 to width check): sys 16941 (width check) |
@@ -126,7 +130,7 @@ person reads this table and `corrections/glossary_decisions.csv` before merging.
 | Pence | «بنس» 11, «بينس» 13 | «بنس» | **rule 2:** follows the pronunciation /pɛns/; «بينس» reads "Pains" | 13 rows: tt 13361, 13362, 13432, 13497, 13578, 13676, 14328, 17295, 17985, 19554, 19557, 19923, 21479 |
 | Keyblade | «كيبلايد» 21, «كيبليد» 1 | «كيبلايد» | **rule 3:** glossary form; «كيبليد» is a slip | 2 rows: ca 9958, 10319 |
 | Rikku | «ريكا» 1, «ريكو» 1 | «ريكا» | **already decided:** Rikku is «ريكا» so that it does not collide with Riku «ريكو» (decided) | 1 row: hb 13020 |
-| DTD | «دي تي دي» 18, «بإظ» 1, «باب الظلام» 8 | «دي تي دي» | **rule 3:** glossary form and majority; hb 2960 still spells out "Door To Darkness" after it | 2 rows (1 to width check): hb 2958 (width check), 12536 |
+| DTD | «دي تي دي» 18, «بإظ» 1, «باب الظلام» 8 | «دي تي دي» | **rule 3:** glossary form and majority; hb 2960 still spells out "Door To Darkness" after it | 2 rows (2 to width check): hb 2958 (width check), 12536 (width check) |
 | Olympus Stone | «حجر أولمبيا» 18, «حجر أولمبوس» 1 | «حجر أولمبيا» | **rule 3:** majority and consistent with the world name «كولوسيوم أولمبيا» | 1 row: sys 15129 |
 | Hades Paradox Cup | «كأس مفارقة هاديس» 5, «كأس هاديس المتناقض» 1 | «كأس مفارقة هاديس» | **rule 3:** the form of all 14 other Paradox Cup rows | 1 row: sys 19471 |
 
@@ -177,7 +181,7 @@ person reads this table and `corrections/glossary_decisions.csv` before merging.
 
 ## Proofreading rows merged into the glossary file
 
-An id may have only one active correction. These 25 rows already had a
+An id may have only one active correction. These 24 rows already had a
 proofreading fix and also needed a glossary change (or their fix was itself the
 glossary change). Each one is now a single row in
 `corrections/glossary_decisions.csv` with both changes, and it is removed from
@@ -195,7 +199,6 @@ original counts):
 - sys_part03.csv: sys 1605
 - sys_part03.csv: sys 1607
 - sys_part03.csv: sys 2619
-- sys_part05.csv: sys 13116
 - sys_part06.csv: sys 14613
 - sys_part06.csv: sys 14909
 - sys_part06.csv: sys 14939
@@ -210,31 +213,19 @@ original counts):
 - sys_part13.csv: sys 22035
 - wm_part01.csv: wm 7711
 
-## Changes waiting for a width check
+## Terms waiting for a width check (not applied anywhere)
 
-21 rows, in `corrections/needs_width_check.csv` (not applied):
+8 terms, 15 rows, in `corrections/needs_width_check.csv`. "too long"
+rows exceed the length rule; the others fit but wait with their term:
 
-- hb 2958: «بإظ!» → «دي تي دي!» (قرار المسرد يزيد 5 أحرف والحد 2)
-- sys 700: «تل ملتوي» → «التل الملتوي» (قرار المسرد يزيد 4 أحرف والحد 2)
-- sys 732: «الباب الخلفي» → «البوابة الخلفية» (قرار المسرد يزيد 3 أحرف والحد 2)
-- sys 743: «الرملية» → «ساحة اللعب» (قرار المسرد يزيد 3 أحرف والحد 2)
-- sys 1176: «دور غوفي» → «غوفي الدوار» (قرار المسرد يزيد 3 أحرف والحد 2)
-- sys 1177: «دور غوفي را» → «غوفي الدوار را» (قرار المسرد يزيد 3 أحرف والحد 2)
-- sys 1178: «دور غوفي جا» → «غوفي الدوار غا» (قرار المسرد يزيد 3 أحرف والحد 2)
-- sys 2637: «الرملية» → «ساحة اللعب» (قرار المسرد يزيد 3 أحرف والحد 2)
-- sys 14110: «آلي» → «تلقائي» (قرار المسرد يزيد 3 أحرف والحد 2)
-- sys 14625: «برمجة» → «إعادة البرمجة» (قرار المسرد يزيد 8 أحرف والحد 2)
-- sys 16099: «خريطة تل ملتوي» → «خريطة التل الملتوي» (قرار المسرد يزيد 4 أحرف والحد 2)
-- sys 16941: «الهرس» → «الانزلاق» (قرار المسرد يزيد 3 أحرف والحد 2)
-- sys 17154: «آلي» → «تلقائي» (قرار المسرد يزيد 3 أحرف والحد 2)
-- sys 17239: «الهجوم الآلي» → «الهجوم التلقائي» (قرار المسرد يزيد 3 أحرف والحد 2)
-- sys 18066: «سورا: / المصاعد معطلة من إم سي بي!» → «سورا: / المصاعد معطلة من برنامج التحكم الرئيسي!» (قرار المسرد يزيد 13 أحرف والحد 3)
-- tt 13292: «أسرع إلى الرملية<13 22 01 50 00><08 01 00 05>! / ستتأخر!» → «أسرع إلى ساحة اللعب<13 22 01 50 00><08 01 00 05>! / ستتأخر!» (قرار المسرد يزيد 3 أحرف والحد 2)
-- tt 13641: «س-مساعدة! الرملية! سايفر!» → «س-مساعدة! ساحة اللعب! سايفر!» (قرار المسرد يزيد 3 أحرف والحد 2)
-- tt 17297: «الرملية ⇾ ارتفاعات المحطة  ⇽» → «ساحة اللعب ⇾ ارتفاعات المحطة  ⇽» (قرار المسرد يزيد 3 أحرف والحد 2)
-- tt 17304: «ارتفاعات المحطة ⇾ الرملية ⇽» → «ارتفاعات المحطة ⇾ ساحة اللعب ⇽» (قرار المسرد يزيد 3 أحرف والحد 2)
-- tt 17359: «الرملية ⇾ ساحة الترام ⇽» → «ساحة اللعب ⇾ ساحة الترام ⇽» (قرار المسرد يزيد 3 أحرف والحد 2)
-- wm 18554: «الهبوط في المئة فدان» → «الهبوط في غابة المئة فدان» (قرار المسرد يزيد 5 أحرف والحد 2)
+- **DTD**: hb 2958 «بإظ!» → «دي تي دي!» (too long); hb 12536 «أعرف! لندخل إلى باب الظلام!» → «أعرف! لندخل إلى دي تي دي!» (fits, waits with the term)
+- **Whirli-Goof / -ra / -ga**: jm 19195 «تسلسل الهجوم /  غوفي الدوار /    ⤷غوفي الدوار 2 /       ⤷غوف» → «تسلسل الهجوم /  غوفي الدوار /    ⤷غوفي الدوار را /       ⤷غوفي الدوار » (fits, waits with the term); sys 1176 «دور غوفي» → «غوفي الدوار» (too long); sys 1177 «دور غوفي را» → «غوفي الدوار را» (too long); sys 1178 «دور غوفي جا» → «غوفي الدوار غا» (too long); sys 13116 «أمر ليميت يطلق هجوم غوفي / الدوران دور غوفي. / يستهلك كل MP » → «أمر ليميت يطلق هجوم / غوفي الدوار. / يستهلك كل MP لسورا.» (fits, waits with the term)
+- **Postern**: sys 732 «الباب الخلفي» → «البوابة الخلفية» (too long)
+- **Auto**: sys 14110 «آلي» → «تلقائي» (too long); sys 17154 «آلي» → «تلقائي» (too long); sys 17239 «الهجوم الآلي» → «الهجوم التلقائي» (too long)
+- **Reprogram**: sys 14625 «برمجة» → «إعادة البرمجة» (too long)
+- **Grind**: sys 16941 «الهرس» → «الانزلاق» (too long)
+- **MCP**: sys 18066 «سورا: / المصاعد معطلة من إم سي بي!» → «سورا: / المصاعد معطلة من برنامج التحكم الرئيسي!» (too long)
+- **100 Acre Wood**: wm 18554 «الهبوط في المئة فدان» → «الهبوط في غابة المئة فدان» (too long)
 
 ## Notes on the Naminé rows
 
