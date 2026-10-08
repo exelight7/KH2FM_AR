@@ -1,7 +1,7 @@
 # Summary: sys_part02
 
 - Rows reviewed: 250
-- Rows corrected: 5
+- Rows corrected: 4
 
 ## Top repeated error patterns
 
@@ -21,3 +21,7 @@
 - 1220, 1221, 1254 Leave The Book / Depart: «اغادر» is not an Arabic imperative
   (should be «غادر»), but docs/glossary.md (lines 431-432) approves «اغادر».
 - 1393 Rafiki: «لرفايكي»; check the approved spelling of Rafiki.
+
+## Moved to the glossary file
+
+- sys 1122: also needed a glossary decision; the row (with this fix included) is now in `corrections/glossary_decisions.csv` (one correction per id).

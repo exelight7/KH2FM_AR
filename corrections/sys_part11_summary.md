@@ -1,7 +1,7 @@
 # Summary: sys_part11
 
 - Rows reviewed: 250
-- Rows corrected: 11
+- Rows corrected: 9
 
 ## Top repeated error patterns
 
@@ -31,3 +31,7 @@
 - 19388 «Sora: ⏎ ₓₓₓ» is untranslated; translating it adds the glossary name
   «سورا».
 - 20095 «فورم ليميت» vs 20097 «شكل الليميت» (Limit Form, glossary «للمراجعة»).
+
+## Moved to the glossary file
+
+- sys 19428, sys 19471: also needed a glossary decision; the row (with this fix included) is now in `corrections/glossary_decisions.csv` (one correction per id).

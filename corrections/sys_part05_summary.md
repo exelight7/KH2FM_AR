@@ -1,7 +1,7 @@
 # Summary: sys_part05
 
 - Rows reviewed: 250
-- Rows corrected: 4
+- Rows corrected: 3
 
 ## Top repeated error patterns
 
@@ -22,3 +22,7 @@
   «جزيرة الكنز». Approved in the glossary as «كنز الجزيرة».
 - 12096 / 13118 Knocksmash «دمار الكسر», 13124 Twin Howl «العواءان»: already
   listed for the GLOSSARY task (sys is canonical there).
+
+## Moved to the glossary file
+
+- sys 13116: also needed a glossary decision; the row (with this fix included) is now in `corrections/glossary_decisions.csv` (one correction per id).

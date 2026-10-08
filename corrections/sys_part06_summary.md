@@ -1,7 +1,7 @@
 # Summary: sys_part06
 
 - Rows reviewed: 250
-- Rows corrected: 7
+- Rows corrected: 3
 
 ## Top repeated error patterns
 
@@ -30,3 +30,7 @@
 - 14910 «يزيد أقصى AP هائلا» is awkward («زيادة هائلة»), but a correct rewrite
   is longer than the length rule allows.
 - 14883 «خاتم ذهب» has no article while the other rings do; left as is.
+
+## Moved to the glossary file
+
+- sys 14613, sys 14909, sys 14939, sys 14957: also needed a glossary decision; the row (with this fix included) is now in `corrections/glossary_decisions.csv` (one correction per id).

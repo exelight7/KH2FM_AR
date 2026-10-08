@@ -1,7 +1,7 @@
 # Summary: sys_part09
 
 - Rows reviewed: 250
-- Rows corrected: 11
+- Rows corrected: 10
 
 ## Top repeated error patterns
 
@@ -28,3 +28,7 @@
 - 16752 «محل الملحقات» while shops elsewhere say «الإكسسوارات».
 - 16480 Creations «المبتكرات» while the menu (15500, 16075) says «المصنوعات».
 - 16941 Grind «الهرس» ("mashing") for the skateboard grind.
+
+## Moved to the glossary file
+
+- sys 16036: also needed a glossary decision; the row (with this fix included) is now in `corrections/glossary_decisions.csv` (one correction per id).

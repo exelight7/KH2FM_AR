@@ -1,7 +1,7 @@
 # Summary: sys_part07
 
 - Rows reviewed: 250
-- Rows corrected: 5
+- Rows corrected: 4
 
 ## Top repeated error patterns
 
@@ -29,3 +29,7 @@
 - 15218 «الموجل», 15253/15292 «موج» for Moogle (glossary «موغل»).
 - 15307-15313: drive forms written «الشكل الشجاع / الحكيم / المتقن / النهائي»
   here, but «شكل الشجاعة / الحكمة / الإتقان» and Final = «الأخير» elsewhere.
+
+## Moved to the glossary file
+
+- sys 15005: also needed a glossary decision; the row (with this fix included) is now in `corrections/glossary_decisions.csv` (one correction per id).
