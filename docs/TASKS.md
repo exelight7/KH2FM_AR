@@ -229,8 +229,10 @@ below.
 الضرب القاضي, العواء المزدوج») next to the sys forms (lines 407, 570, 623); after
 this task it must list one form per name.
 
-**Other open conflicts to decide** (choose one form, give the reason): Naminé
-(نامين / ناميني), Genie (جيني / الجني), MCP (إم سي بي / برنامج التحكم الرئيسي),
+**Already decided** (see `docs/glossary_decisions.md`): Naminé = «ناميني»
+(`corrections/glossary_namine.csv`); «المدينة» for Twilight Town in dialogue is kept.
+
+**Other open conflicts to decide** (choose one form, give the reason): Genie (جيني / الجني), MCP (إم سي بي / برنامج التحكم الرئيسي),
 Central Computer Core (قلب / نواة), Christmas (ميلاد / كريسماس), Gauge (عداد /
 مقياس), Captain (قائد / قبطان), Postern (الباب الخلفي / البوابة الخلفية),
 Thundaga, Journal (يوميات / اليوميات), LV (مس / مستوى), Reaction Command in jm
