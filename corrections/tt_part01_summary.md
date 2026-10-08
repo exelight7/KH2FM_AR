@@ -1,7 +1,7 @@
 # Summary: tt_part01
 
 - Rows reviewed: 250
-- Rows corrected: 11
+- Rows corrected: 10
 
 ## Top repeated error patterns
 
@@ -25,3 +25,7 @@
   lists the short forms as deliberate).
 - 13178 «الآن المدينة وأمهاتهم» is a literal rendering of "the whole town and
   their mothers"; understandable, left as is.
+
+## Moved
+
+- tt 12316: combined with the Naminé change in `corrections/glossary_namine.csv` (one active correction per id).

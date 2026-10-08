@@ -14,6 +14,8 @@ and each row must satisfy the rules in RULES.md (see the ``rules`` block there):
   * AR_new at most max(``max_growth_percent`` of AR_old, ``min_growth_chars``)
     characters longer than AR_old
   * type / severity / reason are valid
+  * an id may be corrected in only one file: a (bar, id) found in a second file
+    is an error (combine all changes into one row in one file)
   * corrections/needs_width_check.csv is a report of fixes that were not applied
     (bar,id,AR_old,AR_new,reason); it is skipped
 
@@ -304,6 +306,21 @@ def validate_file(path, review, rules, glossary):
     return results
 
 
+def check_cross_file(all_results, root):
+    """An id may appear in only one correction file: flag it in every later file."""
+    first = {}
+    for f, results in all_results:
+        name = os.path.relpath(f, root)
+        for line, bar, rid, errs in results:
+            key = (bar, rid)
+            if not rid:
+                continue
+            if key not in first:
+                first[key] = name
+            elif first[key] != name:
+                errs.append('id already corrected in %s (combine into one row in one file)' % first[key])
+
+
 def print_table(all_results, out):
     head = ('file', 'line', 'bar', 'id', 'status', 'details')
     lines = []
@@ -344,6 +361,7 @@ def main(argv=None):
         print('Skipped report file (not a correction file): %s' % os.path.relpath(f, args.root))
 
     all_results = [(f, validate_file(f, review, rules, glossary)) for f in files]
+    check_cross_file(all_results, args.root)
     n_rows = sum(len(r) for _, r in all_results)
     n_bad = sum(1 for _, r in all_results for x in r if x[3])
     shown = [(f, [x for x in r if x[3]]) for f, r in all_results] if args.errors_only else all_results

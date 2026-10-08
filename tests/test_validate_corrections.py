@@ -4,6 +4,7 @@ Run from the repository root:
     python -m unittest discover -s tests -v
 """
 import contextlib
+import csv
 import io
 import os
 import shutil
@@ -207,6 +208,33 @@ class ValidatorTest(unittest.TestCase):
             self.assertIn('header must be', out)
         finally:
             for f in (report, valid, other):
+                if os.path.exists(f):
+                    os.remove(f)
+
+    def test_id_in_two_files_is_an_error(self):
+        corr = os.path.join(self.root, 'corrections')
+        a = os.path.join(corr, 'a_part01.csv')
+        b = os.path.join(corr, 'b_part01.csv')
+        report = os.path.join(corr, 'needs_width_check.csv')
+        shutil.copy(os.path.join(SAMPLES, 'valid.csv'), a)
+        shutil.copy(os.path.join(SAMPLES, 'valid.csv'), b)
+        with open(report, 'w', encoding='utf-8', newline='') as fh:    # the report may repeat an id
+            fh.write('bar,id,AR_old,AR_new,reason\n')
+            with open(os.path.join(SAMPLES, 'valid.csv'), encoding='utf-8') as src:
+                first = next(csv.DictReader(src))
+            fh.write('%s,%s,x,y,z\n' % (first['bar'], first['id']))
+        try:
+            code, out = run_main(['--root', self.root, a])               # one file: fine
+            self.assertEqual(code, 0, out)
+            code, out = run_main(['--root', self.root, a, b])            # same ids in two files
+            self.assertEqual(code, 1)
+            self.assertIn('id already corrected in corrections/a_part01.csv', out)
+            self.assertIn('Errors: 3', out)                              # the 3 rows of the second file
+            code, out = run_main(['--root', self.root])                  # default scan: the report is excluded
+            self.assertEqual(code, 1)
+            self.assertNotIn('needs_width_check', out.replace('Skipped report file (not a correction file): corrections/needs_width_check.csv', ''))
+        finally:
+            for f in (a, b, report):
                 if os.path.exists(f):
                     os.remove(f)
 

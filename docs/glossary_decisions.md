@@ -19,10 +19,11 @@ one is named in the last column.
 - The search covers all 75 review files: whole word «نامين» with an optional
   attached و ف ب ل ك. Only tt (19 rows), sys (2) and di (1) use the old form;
   every other bar already uses «ناميني» (15 rows) or does not name her.
-- Two rows also have a different fix in the tt proofreading files, on different
-  words: tt 12316 (`tt_part01.csv`, «بما يحل» → «مما يحل») and tt 13289
-  (`tt_part02.csv`, «نضيق من الوقت» → «الوقت ينفد»). When the corrections are
-  applied, both fixes go in; they do not touch the same words.
+- An id may have only one active correction (checked by the validator). Two
+  Naminé rows also had a tt proofreading fix: tt 12316 («بما يحل» → «مما يحل»)
+  and tt 13289 («نضيق من الوقت» → «الوقت ينفد»). Both fixes are combined into
+  the one row in `glossary_namine.csv` and removed from `tt_part01.csv` and
+  `tt_part02.csv`.
 - `corrections/glossary_namine.csv` passes `python tools/validate_corrections.py`
   (glossary files skip the glossary-term check; the length rule still applies and
   every row is within it).

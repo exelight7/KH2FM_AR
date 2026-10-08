@@ -95,9 +95,7 @@ round). Each needs a width check in the game before it can be applied.
 ## Glossary conflicts seen (not changed)
 
 - **Naminé**: di 16808 and the tt rows use «نامين»; the decision is «ناميني»
-  and is applied by `corrections/glossary_namine.csv` (merged in PR #7). tt 12316
-  and tt 13289 appear in both `glossary_namine.csv` and the tt correction files;
-  the Naminé change and the tt fix touch different words.
+  and is applied by `corrections/glossary_namine.csv` (merged in PR #7).
 - **Rikku**: hb 13020 uses «ريكو» (the glossary says «ريكا» for Rikku).
 - **Keyblade**: ca 9958 and ca 10319 write «كيبليد» instead of «كيبلايد».
 - **Nobodies** «اللا أحد»: hb 12597 «لا أحدا» is not a valid inflection and a
@@ -111,17 +109,24 @@ round). Each needs a width check in the game before it can be applied.
 
 - `corrections/tt_followup.csv` (tt 13625, tt 16132): two tt fixes that the tt
   round wrongly filed as too long; they pass the length rule and are applied here.
-- `tools/validate_corrections.py`: skips `needs_width_check.csv` (report file) and
-  accepts a header-only correction file (a file with nothing to correct). Two
-  new tests cover both.
+- One correction per id: tt 12316 and tt 13289 were in both
+  `glossary_namine.csv` and a tt file. Each is now one row in
+  `glossary_namine.csv` (Naminé + the tt fix), removed from `tt_part01.csv` and
+  `tt_part02.csv` (now 10 and 20 rows; the merged tt report counted 11 and 21).
+  No other id appears in two files.
+- `tools/validate_corrections.py`: checks that an id appears in only one correction
+  file (a later file is an error), skips `needs_width_check.csv` (report file) and
+  accepts a header-only correction file (a file with nothing to correct). Three
+  new tests cover the three checks.
 - The files were proofread in parallel by six reviewers. I read the proposed
   fixes and removed the ones that were taste, not errors (he 3760, lk 8683,
   lk 19254, lm 5011, nm 5827, wi 5728).
 
 ## Unsure
 
-- eh 19952: «من ترققه» → «من خوفه» (EN "apprehension"); the translator may have
-  meant «ترقبه». Check against the English before merging.
+- (Resolved) eh 19952: the EN is "That anger will fuel him to get rid of his
+  apprehension", i.e. his fear and hesitation, not anticipation, so the choice is
+  «خوفه» (not «ترقبه»).
 - he 3717: the line was garbled; the new wording «إنه بطلنا الفاشل ... المفضل
   للجميع» is a reading, not the only one.
 - wi 5689 and 5692: «بيت الذي قابلناه» (relative pronoun after a name) needs a
