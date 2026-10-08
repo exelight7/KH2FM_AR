@@ -1,7 +1,7 @@
 # Summary: lm_part01
 
 - Rows reviewed: 250
-- Rows corrected: 3
+- Rows corrected: 2
 
 ## Top repeated error patterns
 
@@ -15,3 +15,4 @@
 ## Not changed (noted)
 
 - 5115: «كم البشر خطرون» وتراكيب «كم» بمعنى how (مثل 18155 و18184) تُركت
+- lm 5011: «بكم الثلاثة» مقبولة، تُركت (ذوق)
