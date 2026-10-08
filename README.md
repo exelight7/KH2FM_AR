@@ -3,7 +3,8 @@
 <div dir="rtl">
 
 ## تعريب Kingdom Hearts II Final Mix
-https://x.com/psycho_njjm
+
+                                                                                                                                                                                                                                    https://x.com/psycho_njjm 
 مشروع مجاني من المعجبين لتعريب نصوص لعبة **Kingdom Hearts II Final Mix**
 (ضمن مجموعة Kingdom Hearts HD 1.5+2.5 ReMIX على Steam). المشروع غير رسمي ولا علاقة له
 بـ Square Enix أو Disney، ولا يحتوي على ملفات اللعبة.
