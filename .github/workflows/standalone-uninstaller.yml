@@ -35,7 +35,12 @@ jobs:
 
       - name: Run all removal and recovery tests in Windows PowerShell 5.1
         run: |
-          & ./tools/uninstaller/test_core.ps1
+          try { & ./tools/uninstaller/test_core.ps1 }
+          catch {
+            $detail=($_ | Out-String)+' '+$_.ScriptStackTrace
+            Write-Output ('::error::'+$detail.Replace('%','%25').Replace("`r",'%0D').Replace("`n",'%0A'))
+            throw
+          }
           if ($LASTEXITCODE -ne 0) { throw 'Core tests failed' }
 
       - name: Validate future installer manifest generation
