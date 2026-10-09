@@ -21,6 +21,8 @@ jobs:
         shell: powershell
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Snapshot the existing draft and main
         env:
@@ -61,7 +63,12 @@ jobs:
 
       - name: Prepare separate download files and report
         run: |
-          $tool='tools/uninstaller'
+          trap {
+            $detail=($_ | Out-String)+' '+$_.ScriptStackTrace
+            Write-Output ('::error::'+$detail.Replace('%','%25').Replace("`r",'%0D').Replace("`n",'%0A'))
+            throw
+          }
+          $tool='tools/uninstaller' 
           New-Item -ItemType Directory release/package -Force | Out-Null
           Copy-Item "$tool/dist/KH2FM-Arabic-Uninstaller.exe" release/
           Copy-Item "$tool/README_AR.md","$tool/INSTALLER_CONTRACT.md","$tool/CORE_TEST_REPORT.json","$tool/WINDOWS_TEST_REPORT.json","$tool/dist/BUILD_REPORT.json" release/
