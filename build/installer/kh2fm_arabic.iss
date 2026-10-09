@@ -111,6 +111,8 @@ english.ErrVerify=%1 file(s) failed verification after copying (disk full, or an
 Name: "openkh"; Description: "{cm:TaskOpenKH}"; Flags: unchecked
 
 [Files]
+; Stable ownership manifest for the standalone uninstaller (generated from this release).
+Source: "kh2ar_install_manifest.json"; DestDir: "{app}"; Flags: ignoreversion
 ; Panacea = official OpenKH release2-1691, installed exactly like the OpenKH Mod Manager does (only when missing)
 Source: "{#PanaceaDir}\OpenKH.Panacea.dll"; DestDir: "{code:GameDirC}"; DestName: "DBGHELP.dll"; Flags: ignoreversion; Check: NeedPanacea; BeforeInstall: BackupIfNeeded('ea8eb87b45194927898e3084aecb5f36d3b4c1e2bfd7262b85c11d3e603b52ea'); AfterInstall: VerifyFile('ea8eb87b45194927898e3084aecb5f36d3b4c1e2bfd7262b85c11d3e603b52ea', False)
 Source: "{#PanaceaDir}\avcodec-vgmstream-59.dll"; DestDir: "{code:GameDirC}\dependencies"; Flags: ignoreversion; Check: NeedPanacea; BeforeInstall: BackupIfNeeded('4d6cf54e7b3c26ef06e95bdb515a10d1e1bed3ec1ffd87ec3e5c4fbcd2a883f6'); AfterInstall: VerifyFile('4d6cf54e7b3c26ef06e95bdb515a10d1e1bed3ec1ffd87ec3e5c4fbcd2a883f6', False)
@@ -559,6 +561,7 @@ begin
       a := ExpandConstant('{app}');
       st := TStringList.Create;
       try
+        st.Add('Version={#AppVer}');
         st.Add('GameDir=' + GameDir);
         st.Add('ModRoot=' + ModRoot);
         if SettingsWritten then st.Add('SettingsByUs=1')   { keep the flag across re-installs }
