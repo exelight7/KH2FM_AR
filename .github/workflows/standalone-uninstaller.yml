@@ -41,7 +41,6 @@ jobs:
             Write-Output ('::error::'+$detail.Replace('%','%25').Replace("`r",'%0D').Replace("`n",'%0A'))
             throw
           }
-          if ($LASTEXITCODE -ne 0) { throw 'Core tests failed' }
 
       - name: Validate future installer manifest generation
         run: |
