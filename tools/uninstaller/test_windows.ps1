@@ -47,12 +47,11 @@ try {
     $base.DeleteSubKeyTree($keyPath,$false); $base.Dispose()
     Remove-Item -LiteralPath $root -Recurse -Force
 }
-Add-Type -AssemblyName UIAutomationClient
-Add-Type -AssemblyName UIAutomationTypes
 Add-Type -AssemblyName System.Drawing
 Add-Type -TypeDefinition @'
 using System;
 using System.Text;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 public static class KH2WindowTest {
     [DllImport("user32.dll", CharSet=CharSet.Unicode)]
@@ -62,6 +61,39 @@ public static class KH2WindowTest {
     [DllImport("user32.dll")]
     public static extern bool GetWindowRect(IntPtr window, out RECT rect);
     public struct RECT { public int Left, Top, Right, Bottom; }
+    public delegate bool EnumProc(IntPtr window, IntPtr data);
+    [DllImport("user32.dll")] static extern bool EnumChildWindows(IntPtr parent, EnumProc callback, IntPtr data);
+    [DllImport("user32.dll", CharSet=CharSet.Unicode)] static extern int GetClassName(IntPtr window, StringBuilder text, int count);
+    [DllImport("user32.dll", CharSet=CharSet.Unicode)] public static extern bool SetWindowText(IntPtr window, string text);
+    [DllImport("user32.dll")] public static extern bool IsWindowEnabled(IntPtr window);
+    [DllImport("user32.dll")] static extern uint GetWindowThreadProcessId(IntPtr window, out uint process);
+    [DllImport("kernel32.dll")] static extern uint GetCurrentThreadId();
+    [DllImport("user32.dll")] static extern bool AttachThreadInput(uint a, uint b, bool attach);
+    [DllImport("user32.dll")] static extern bool SetForegroundWindow(IntPtr window);
+    [DllImport("user32.dll")] static extern IntPtr SetFocus(IntPtr window);
+    [DllImport("user32.dll")] static extern IntPtr GetFocus();
+    [DllImport("user32.dll")] static extern bool PostMessage(IntPtr window, uint msg, IntPtr w, IntPtr l);
+    public static string Text(IntPtr window) {
+        var text=new StringBuilder(2048); GetWindowText(window,text,text.Capacity); return text.ToString();
+    }
+    public static IntPtr Find(IntPtr parent, string text, bool edit) {
+        IntPtr found=IntPtr.Zero;
+        EnumChildWindows(parent,delegate(IntPtr window,IntPtr data) {
+            var name=new StringBuilder(256); GetClassName(window,name,name.Capacity);
+            if((edit && name.ToString().Contains(".EDIT.")) || (!edit && Text(window)==text)) { found=window;return false; }
+            return true;
+        },IntPtr.Zero);
+        return found;
+    }
+    public static bool ActivateLink(IntPtr form,IntPtr link) {
+        uint process; uint target=GetWindowThreadProcessId(link,out process); uint current=GetCurrentThreadId();
+        bool attached=AttachThreadInput(current,target,true);
+        try {
+            SetForegroundWindow(form);SetFocus(link);
+            if(GetFocus()!=link) return false;
+            return PostMessage(link,0x0100,new IntPtr(13),IntPtr.Zero) && PostMessage(link,0x0101,new IntPtr(13),IntPtr.Zero);
+        } finally { if(attached) AttachThreadInput(current,target,false); }
+    }
 }
 '@
 function Put-TestFile([string]$Path,[string]$Text) {
@@ -99,17 +131,18 @@ $key=$uiBase.CreateSubKey($keyPath)
 try { $key.SetValue('InstallLocation',$uiApp);$key.SetValue('DisplayVersion','12.4.0');$key.SetValue('DisplayName','GUI click test fixture') } finally { $key.Dispose() }
 $exe=Join-Path $PSScriptRoot 'dist/KH2FM-Arabic-Uninstaller.exe'
 $launcher=$null; $child=$null
+$script:ControlHandles=@{}
 function Find-Control([string]$Name) {
-    $condition=New-Object Windows.Automation.PropertyCondition([Windows.Automation.AutomationElement]::NameProperty,$Name)
-    $control=$script:UiWindow.FindFirst([Windows.Automation.TreeScope]::Descendants,$condition)
-    if ($null -eq $control) { throw ('Missing interface control '+$Name) }
-    return $control
+    if($script:ControlHandles.ContainsKey($Name)) { return $script:ControlHandles[$Name] }
+    $texts=@{GamePath='';DeleteTranslation='حذف التعريب';StatusText='اضغط حذف التعريب.';UndoRemoval='تراجع عن الحذف'}
+    for($i=0;$i -lt 40;$i++) {
+        $handle=[KH2WindowTest]::Find($child.MainWindowHandle,$texts[$Name],($Name -eq 'GamePath'))
+        if($handle -ne [IntPtr]::Zero) { $script:ControlHandles[$Name]=$handle;return $handle }
+        Start-Sleep -Milliseconds 250
+    }
+    throw ('Missing native interface control '+$Name)
 }
-function Read-ControlText($Control) {
-    $buffer=New-Object Text.StringBuilder(2048)
-    [void][KH2WindowTest]::GetWindowText([IntPtr]$Control.Current.NativeWindowHandle,$buffer,$buffer.Capacity)
-    return $buffer.ToString()
-}
+function Read-ControlText([IntPtr]$Control) { return [KH2WindowTest]::Text($Control) }
 function Wait-Status([string]$Expected) {
     for($i=0;$i -lt 100;$i++) {
         $text=Read-ControlText (Find-Control 'StatusText')
@@ -140,22 +173,20 @@ try {
         if($launcher.HasExited) { throw 'EXE exited before showing the simple interface' }
     }
     if(-not $child -or $child.MainWindowTitle -ne 'حذف تعريب KH2FM' -or $child.MainWindowHandle -eq [IntPtr]::Zero) { throw 'Simple Arabic interface did not appear' }
-    $script:UiWindow=[Windows.Automation.AutomationElement]::FromHandle($child.MainWindowHandle)
     $gameField=Find-Control 'GamePath'
-    $value=$gameField.GetCurrentPattern([Windows.Automation.ValuePattern]::Pattern)
     $expected='C:\Program Files (x86)\Steam\steamapps\common\KINGDOM HEARTS -HD 1.5+2.5 ReMIX-'
-    if($value.Current.Value -cne $expected) { throw 'Game path is not prefilled as requested' }
+    if((Read-ControlText $gameField) -cne $expected) { throw 'Game path is not prefilled as requested' }
     $delete=Find-Control 'DeleteTranslation'
-    if(-not $delete.Current.IsEnabled -or (Read-ControlText $delete) -ne 'حذف التعريب') { throw 'One-click delete button is not ready' }
+    if(-not [KH2WindowTest]::IsWindowEnabled($delete) -or (Read-ControlText $delete) -ne 'حذف التعريب') { throw 'One-click delete button is not ready' }
     Save-WindowImage 'PROGRAM_PREVIEW.png'
     $results.Add('Actual simple Windows GUI has requested default game path and one enabled Delete button PASS')
-    $value.SetValue($uiRoot)
-    $delete.GetCurrentPattern([Windows.Automation.InvokePattern]::Pattern).Invoke()
+    if(-not [KH2WindowTest]::SetWindowText($gameField,$uiRoot)) { throw 'Cannot set game path in actual UI' }
+    [void][KH2WindowTest]::SendMessage($delete,0x00F5,[IntPtr]::Zero,[IntPtr]::Zero)
     Wait-Status 'اختر مجلد اللعبة'
     foreach($path in $uiBefore.Keys) { if((Get-ContentHash $path) -ne $uiBefore[$path]) { throw 'Wrong game path changed a fixture file' } }
     $results.Add('Actual Delete click on wrong game folder shows inline error and preserves all files PASS')
-    $value.SetValue($uiGame)
-    $delete.GetCurrentPattern([Windows.Automation.InvokePattern]::Pattern).Invoke()
+    if(-not [KH2WindowTest]::SetWindowText($gameField,$uiGame)) { throw 'Cannot set selected game in actual UI' }
+    [void][KH2WindowTest]::SendMessage($delete,0x00F5,[IntPtr]::Zero,[IntPtr]::Zero)
     Wait-Status 'تم حذف التعريب'
     if([IO.File]::Exists((Join-Path $uiMod 'kh2/msg/us/sys.bar'))) { throw 'One-click GUI did not remove the translation' }
     foreach($relative in @('KINGDOM HEARTS II FINAL MIX.exe','Save/save.dat','original.pkg')) {
@@ -171,9 +202,7 @@ try {
     Save-WindowImage 'PROGRAM_SUCCESS.png'
     $results.Add('Actual one Delete click automatically discovers, scans, backs up and removes only selected game translation PASS')
     $undo=Find-Control 'UndoRemoval'
-    $pattern=$null
-    if($undo.TryGetCurrentPattern([Windows.Automation.InvokePattern]::Pattern,[ref]$pattern)) { $pattern.Invoke() }
-    else { $undo.GetCurrentPattern([Windows.Automation.LegacyIAccessiblePattern]::Pattern).DoDefaultAction() }
+    if(-not [KH2WindowTest]::ActivateLink($child.MainWindowHandle,$undo)) { throw 'Cannot activate actual Undo link' }
     Wait-Status 'رجع التعريب'
     foreach($path in $uiBefore.Keys) { if((Get-ContentHash $path) -ne $uiBefore[$path]) { throw ('Undo did not restore original bytes '+$path) } }
     $key=$uiBase.OpenSubKey($keyPath)
@@ -189,6 +218,6 @@ try {
     $uiBase.DeleteSubKeyTree($keyPath,$false);$uiBase.Dispose()
     if([IO.Directory]::Exists($uiRoot)) { Remove-Item -LiteralPath $uiRoot -Recurse -Force }
 }
-$report=[pscustomobject]@{result='PASS';platform='Windows';powershell=$PSVersionTable.PSVersion.ToString();tests=@($results.ToArray());real_native_exe_delete_and_undo_clicked=$true;actual_game_installation_tested=$false;uac_interactive_prompt_tested=$false;scope='Native Windows EXE and real UI Automation clicks against controlled fixture files, registry, original game and save fixtures.'}
+$report=[pscustomobject]@{result='PASS';platform='Windows';powershell=$PSVersionTable.PSVersion.ToString();tests=@($results.ToArray());real_native_exe_delete_and_undo_clicked=$true;actual_game_installation_tested=$false;uac_interactive_prompt_tested=$false;scope='Native Windows EXE and native Windows control clicks against controlled fixture files, registry, original game and save fixtures.'}
 $report | ConvertTo-Json -Depth 5 | Set-Content (Join-Path $PSScriptRoot 'WINDOWS_TEST_REPORT.json') -Encoding UTF8
 $results
