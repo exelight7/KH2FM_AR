@@ -178,6 +178,7 @@ try {
     if((Read-ControlText $gameField) -cne $expected) { throw 'Game path is not prefilled as requested' }
     $delete=Find-Control 'DeleteTranslation'
     if(-not [KH2WindowTest]::IsWindowEnabled($delete) -or (Read-ControlText $delete) -ne 'حذف التعريب') { throw 'One-click delete button is not ready' }
+    [void](Find-Control 'StatusText')
     Save-WindowImage 'PROGRAM_PREVIEW.png'
     $results.Add('Actual simple Windows GUI has requested default game path and one enabled Delete button PASS')
     if(-not [KH2WindowTest]::SetWindowText($gameField,$uiRoot)) { throw 'Cannot set game path in actual UI' }
