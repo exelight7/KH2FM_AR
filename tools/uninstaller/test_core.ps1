@@ -47,7 +47,11 @@ function Plan($F) {
 }
 function Run-Test([string]$Name,[scriptblock]$Run) {
     try { & $Run; $script:Results.Add([pscustomobject]@{name=$Name;result='PASS'}); Write-Output ('PASS '+$Name) }
-    catch { Write-Output ('FAIL '+$Name+': '+$_.Exception.Message); throw }
+    catch {
+        $detail='FAIL '+$Name+': '+$_.Exception.Message+' '+$_.ScriptStackTrace
+        Write-Output ('::error::'+$detail.Replace('%','%25').Replace("`r",'%0D').Replace("`n",'%0A'))
+        throw
+    }
 }
 
 Run-Test 'fresh install removal and byte-identical recovery' {

@@ -1,5 +1,11 @@
 ﻿Set-StrictMode -Version 2.0
 $ErrorActionPreference='Stop'
+trap {
+    $detail=($_ | Out-String)+' '+$_.ScriptStackTrace
+    Write-Output ('::error::'+$detail.Replace('%','%25').Replace("`r",'%0D').Replace("`n",'%0A'))
+    throw
+}
+
 . (Join-Path $PSScriptRoot 'src/Remover.Core.ps1')
 if ([Environment]::OSVersion.Platform -ne [PlatformID]::Win32NT) { throw 'Windows is required' }
 $results=New-Object 'Collections.Generic.List[string]'

@@ -1,5 +1,11 @@
 ﻿Set-StrictMode -Version 2.0
 $ErrorActionPreference='Stop'
+trap {
+    $detail=($_ | Out-String)+' '+$_.ScriptStackTrace
+    Write-Output ('::error::'+$detail.Replace('%','%25').Replace("`r",'%0D').Replace("`n",'%0A'))
+    throw
+}
+
 $dist=Join-Path $PSScriptRoot 'dist'
 [void][IO.Directory]::CreateDirectory($dist)
 $vswhere='C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe'
