@@ -27,5 +27,5 @@ $cmdFile=Join-Path $dist 'compile.cmd'
 & cmd.exe /c $cmdFile
 if ($LASTEXITCODE -ne 0) { throw 'Native Windows build failed' }
 $exe=Join-Path $dist 'KH2FM-Arabic-Uninstaller.exe'
-$report=[pscustomobject]@{result='BUILT';tool_version='1.0.0';target='Windows 10/11 x64';compiler='Microsoft Visual C++ /MT static CRT';bytes=([IO.FileInfo]$exe).Length;sha256=(Get-FileHash $exe -Algorithm SHA256).Hash.ToLowerInvariant();legacy_versions=@('1.0.1','1.0.2');future_install_manifest_schema=1;commit=$env:GITHUB_SHA}
+$report=[pscustomobject]@{result='BUILT';tool_version='1.0.1';target='Windows 10/11 x64';compiler='Microsoft Visual C++ /MT static CRT';bytes=([IO.FileInfo]$exe).Length;sha256=(Get-FileHash $exe -Algorithm SHA256).Hash.ToLowerInvariant();legacy_versions=@('1.0.1','1.0.2');future_install_manifest_schema=1;commit=$env:GITHUB_SHA}
 $report | ConvertTo-Json -Depth 5 | Set-Content (Join-Path $dist 'BUILD_REPORT.json') -Encoding UTF8

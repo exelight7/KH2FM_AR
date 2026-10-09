@@ -302,7 +302,63 @@ Run-Test 'recovery manifest tampering cannot write to a save file' {
     Assert ([IO.File]::ReadAllText((Join-Path $f.Game 'Save/save.dat')) -eq 'private save, must remain untouched')
 }
 
-$report=[pscustomobject]@{ result='PASS'; passed=$script:Results.Count; platform=[Environment]::OSVersion.Platform.ToString(); scope='Real filesystem tests on Linux; Windows GUI, UAC and registry execution require a Windows smoke test.'; tests=@($script:Results.ToArray()) }
+Run-Test 'game folder finds its installer automatically from registry' {
+    $f=Fixture
+    Assert ((Find-InstallationForGame ($f.Game+[IO.Path]::DirectorySeparatorChar) @($f.Reg) (Join-Path $f.Root 'missing')) -eq $f.App)
+}
+Run-Test 'default local application folder is discovered without asking the player' {
+    $f=Fixture
+    Assert ((Find-InstallationForGame $f.Game @() $f.App) -eq $f.App)
+}
+Run-Test 'loader settings locate installer metadata when registry is missing' {
+    $f=Fixture
+    Assert ((Find-InstallationForGame $f.Game @() (Join-Path $f.Root 'missing')) -eq $f.App)
+}
+Run-Test 'relative loader mod path also locates its installer' {
+    $f=Fixture
+    Put (Join-Path $f.Game 'panacea_settings.txt') "mod_path=../KH2FM-Arabic/mod`nshow_console=false`n"
+    Assert ((Find-InstallationForGame $f.Game @() (Join-Path $f.Root 'missing')) -eq $f.App)
+}
+Run-Test 'choosing a different game does not remove the recorded installation' {
+    $f=Fixture; $other=Join-Path $f.Root 'different game'
+    Put (Join-Path $other 'KINGDOM HEARTS II FINAL MIX.exe') 'different executable'
+    Expect-Failure { New-GameRemovalPlan $other @{'1.0.1'=$f.Payload} $f.Loader @($f.Reg) $null $f.App }
+    Assert ([IO.File]::Exists((Join-Path $f.Mod 'kh2/msg/us/sys.bar')))
+    Assert ([IO.File]::Exists((Join-Path $other 'KINGDOM HEARTS II FINAL MIX.exe')))
+}
+Run-Test 'one game-path action removes and restores only its translation' {
+    $f=Fixture
+    $plan=New-GameRemovalPlan $f.Game @{'1.0.1'=$f.Payload} $f.Loader @($f.Reg) $null (Join-Path $f.Root 'missing')
+    Assert ($plan.State.GameDir -eq $f.Game -and $plan.Complete)
+    $plan.Registrations=@()
+    $r=Invoke-Removal $plan $f.Recovery
+    Assert (-not [IO.File]::Exists((Join-Path $f.Mod 'kh2/msg/us/sys.bar')))
+    Assert ([IO.File]::ReadAllText((Join-Path $f.Game 'Save/save.dat')) -eq 'private save, must remain untouched')
+    [void](Restore-Removal -Dir $r.RecoveryDir)
+    Assert ([IO.File]::Exists((Join-Path $f.Mod 'kh2/msg/us/sys.bar')))
+}
+Run-Test 'broken registry candidate does not hide a valid installation' {
+    $f=Fixture
+    $bad=[pscustomobject]@{InstallLocation='relative-invalid-directory'}
+    Assert ((Find-InstallationForGame $f.Game @($bad,$f.Reg) (Join-Path $f.Root 'missing')) -eq $f.App)
+    $plan=New-GameRemovalPlan $f.Game @{'1.0.1'=$f.Payload} $f.Loader @($bad,$f.Reg) $null (Join-Path $f.Root 'missing')
+    Assert ($plan.Complete -and $plan.State.GameDir -eq $f.Game)
+}
+Run-Test 'two recorded installs for the same game are not silently chosen' {
+    $f=Fixture; $second=Fixture
+    Put (Join-Path $second.App 'kh2ar_state.txt') ("GameDir=$($f.Game)`nModRoot=$($second.Mod)`nSettingsByUs=1`n")
+    Expect-Failure { Find-InstallationForGame $f.Game @($f.Reg,$second.Reg) (Join-Path $f.Root 'missing') }
+    Assert ([IO.File]::Exists((Join-Path $f.Mod 'kh2/msg/us/sys.bar')))
+    Assert ([IO.File]::Exists((Join-Path $second.Mod 'kh2/msg/us/sys.bar')))
+}
+Run-Test 'an installer folder or folder without the game executable is rejected' {
+    $f=Fixture
+    Expect-Failure { Find-InstallationForGame $f.App @($f.Reg) $f.App }
+    Expect-Failure { Find-InstallationForGame (Join-Path $f.Root 'not installed') @($f.Reg) $f.App }
+    Assert ([IO.File]::Exists((Join-Path $f.Mod 'kh2/msg/us/sys.bar')))
+}
+
+$report=[pscustomobject]@{ result='PASS'; passed=$script:Results.Count; platform=[Environment]::OSVersion.Platform.ToString(); scope='Real filesystem tests on this platform; GUI and registry checks are recorded separately in WINDOWS_TEST_REPORT.json.'; tests=@($script:Results.ToArray()) }
 $report | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $PSScriptRoot 'CORE_TEST_REPORT.json') -Encoding utf8
 Write-Output ('ALL '+$script:Results.Count+' TESTS PASS')
 Remove-Item -LiteralPath $script:TestRoot -Recurse -Force

@@ -496,3 +496,54 @@ function Assert-RegistrationIdentity($Entries) {
         } finally { $base.Dispose() }
     }
 }
+
+function Find-InstallationForGame([string]$GameDir, $Registrations, [string]$LocalAppDir = '') {
+    $game=Get-NormalPath $GameDir.Trim().Trim('"')
+    Assert-RegularPath $game
+    if (-not [IO.File]::Exists((Join-SafePath $game 'KINGDOM HEARTS II FINAL MIX.exe'))) {
+        throw 'اختر مجلد اللعبة الذي يحتوي KINGDOM HEARTS II FINAL MIX.exe.'
+    }
+    if (-not $LocalAppDir) { $LocalAppDir=Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'KH2FM-Arabic' }
+    $candidates=New-Object 'Collections.Generic.List[string]'
+    foreach ($reg in $Registrations) {
+        if ($reg.InstallLocation) { $candidates.Add(([string]$reg.InstallLocation).Trim('"')) }
+    }
+    $candidates.Add($LocalAppDir)
+    $candidates.Add((Join-SafePath $game 'KH2FM-Arabic'))
+    $settings=Join-SafePath $game 'panacea_settings.txt'
+    if ([IO.File]::Exists($settings) -and ([IO.FileInfo]$settings).Length -le 65536) {
+        foreach ($line in [IO.File]::ReadAllLines($settings)) {
+            if ($line -match '^mod_path=(.+)$') {
+                try {
+                    $modPath=$matches[1].Trim().Trim('"').Replace('/',[IO.Path]::DirectorySeparatorChar).Replace('\',[IO.Path]::DirectorySeparatorChar)
+                    if (-not [IO.Path]::IsPathRooted($modPath)) { $modPath=[IO.Path]::Combine($game,$modPath) }
+                    $current=Get-NormalPath $modPath
+                    for ($i=0;$i -lt 6 -and $current;$i++) {
+                        if ([IO.Path]::GetFileName($current) -eq 'KH2FM-Arabic') { $candidates.Add($current); break }
+                        $current=[IO.Path]::GetDirectoryName($current)
+                    }
+                } catch { }
+            }
+        }
+    }
+    $seen=@{}; $found=New-Object 'Collections.Generic.List[string]'
+    foreach ($candidate in $candidates) {
+        try {
+            $app=Get-NormalPath $candidate
+            if ($seen.ContainsKey($app)) { continue }; $seen[$app]=$true
+            $state=Read-InstallState $app
+            if ($state.GameDir -eq $game) { $found.Add($state.AppDir) }
+        } catch { }
+    }
+    if ($found.Count -eq 1) { return $found[0] }
+    if ($found.Count -gt 1) { throw 'وجدت أكثر من تثبيت للتعريب لهذه اللعبة. لم أحذف شيئًا.' }
+    throw 'لم أجد تعريبًا مثبتًا لهذه اللعبة. تأكد من مسار اللعبة ثم حاول مرة ثانية.'
+}
+
+function New-GameRemovalPlan([string]$GameDir, $Catalog, $LoaderManifest, $Registrations, [scriptblock]$Progress = $null, [string]$LocalAppDir = '') {
+    $app=Find-InstallationForGame $GameDir $Registrations $LocalAppDir
+    $matching=@($Registrations | Where-Object {
+        try { $_.InstallLocation -and (Get-NormalPath ([string]$_.InstallLocation).Trim('"')) -eq $app } catch { $false }
+    })
+    return New-GeneralRemovalPlan $app $Catalog $LoaderManifest $matching $Progress
+}

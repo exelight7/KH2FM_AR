@@ -1,0 +1,5 @@
+dist/
+CORE_TEST_REPORT.json
+WINDOWS_TEST_REPORT.json
+PROGRAM_*.png
+__pycache__/

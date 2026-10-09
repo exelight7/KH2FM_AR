@@ -1,0 +1,139 @@
+name: simple-uninstaller-draft
+
+on:
+  push:
+    branches: ['tools/simple-uninstaller-draft']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: simple-uninstaller-draft
+  cancel-in-progress: false
+
+env:
+  TOOL_VERSION: '1.0.1'
+  TOOL_TAG: uninstaller-v1.0.1
+
+jobs:
+  windows:
+    name: One-click EXE tests and DRAFT only
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: powershell
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Snapshot translation draft and main
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view v1.0.2 --json isDraft,tagName,targetCommitish,body,name,assets,url | Out-File -Encoding UTF8 "$env:RUNNER_TEMP/draft-before.json"
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot verify translation draft' }
+          if (-not (Get-Content "$env:RUNNER_TEMP/draft-before.json" -Raw | ConvertFrom-Json).isDraft) { throw 'Translation 1.0.2 must remain draft' }
+          git ls-remote origin refs/heads/main | Out-File -Encoding UTF8 "$env:RUNNER_TEMP/main-before.txt"
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot snapshot main' }
+
+      - name: File engine and selected game discovery tests
+        run: |
+          try { & ./tools/uninstaller/test_core.ps1 }
+          catch {
+            $detail=($_ | Out-String)+' '+$_.ScriptStackTrace
+            Write-Output ('::error::'+$detail.Replace('%','%25').Replace("`r",'%0D').Replace("`n",'%0A'))
+            throw
+          }
+
+      - name: Verify future installer ownership contract
+        run: |
+          python tools/uninstaller/create_install_manifest.py --payload-manifest build/config/FROZEN_MANIFEST.tsv --version 12.4.0 --output "$env:RUNNER_TEMP/future-manifest.json"
+          if ($LASTEXITCODE -ne 0) { throw 'Generator failed' }
+          . ./tools/uninstaller/src/Remover.Core.ps1
+          Assert-InstallManifest (Get-Content "$env:RUNNER_TEMP/future-manifest.json" -Raw | ConvertFrom-Json)
+
+      - name: Build Windows EXE
+        run: |
+          & ./tools/uninstaller/build_windows.ps1
+
+      - name: Actually click Delete and Undo in the native Windows EXE
+        run: |
+          & ./tools/uninstaller/test_windows.ps1
+
+      - name: Prepare EXE, real interface screenshots, sources and full report
+        shell: pwsh
+        run: |
+          $tool='tools/uninstaller'
+          New-Item -ItemType Directory release/package -Force | Out-Null
+          Copy-Item "$tool/dist/KH2FM-Arabic-Uninstaller.exe" release/
+          Copy-Item "$tool/README_AR.md","$tool/UNINSTALLER_REPORT.md","$tool/INSTALLER_CONTRACT.md","$tool/CORE_TEST_REPORT.json","$tool/WINDOWS_TEST_REPORT.json","$tool/dist/BUILD_REPORT.json","$tool/PROGRAM_PREVIEW.png","$tool/PROGRAM_SUCCESS.png" release/
+          $patch=git diff 56767c23e573ee52c740067a7fdf5d6750ac2502 -- build/installer/kh2fm_arabic.iss .github/workflows/build-release.yml
+          [IO.File]::WriteAllText("$PWD/release/installer-integration.patch",($patch -join "`n")+"`n",[Text.UTF8Encoding]::new($false))
+          Get-ChildItem release -File | Copy-Item -Destination release/package/
+          Copy-Item "$tool/src" release/package/src -Recurse
+          Copy-Item "$tool/licenses" release/package/licenses -Recurse
+          Copy-Item "$tool/test_core.ps1","$tool/test_windows.ps1","$tool/build_windows.ps1","$tool/create_install_manifest.py" release/package/
+          Compress-Archive release/package/* "release/KH2FM-Arabic-Uninstaller-$env:TOOL_VERSION.zip"
+          Remove-Item release/package -Recurse -Force
+          Get-ChildItem release -File | Sort-Object Name | ForEach-Object { '{0}  {1}' -f (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower(),$_.Name } | Set-Content -Encoding ASCII release/SHA256SUMS.txt
+
+      - name: Save downloadable build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: KH2FM-Arabic-Uninstaller-simple-${{ env.TOOL_VERSION }}
+          path: release/
+          if-no-files-found: error
+
+      - name: Save everything as DRAFT; owner publishes manually
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          trap {
+            $detail=($_ | Out-String)+' '+$_.ScriptStackTrace
+            Write-Output ('::error::'+$detail.Replace('%','%25').Replace("`r",'%0D').Replace("`n",'%0A'))
+            throw
+          }
+          $releases=gh release list --json tagName,isDraft --limit 100 | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot inspect releases' }
+          $current=$releases | Where-Object tagName -eq $env:TOOL_TAG
+          if ($current -and -not $current.isDraft) { throw 'Owner has published this tool version; refusing to overwrite it' }
+          $notes=@'
+          # حذف التعريب — افتح واضغط
+
+          افتح **KH2FM-Arabic-Uninstaller.exe** ثم اضغط **حذف التعريب**. مسار Steam مكتوب مسبقًا. إذا كانت اللعبة في مجلد آخر، غيّر المسار فقط.
+
+          يكتشف البرنامج مكان تثبيت التعريب ويفحص الملفات ويحفظ نسخة احتياطية ويحذف التعريب تلقائيًا. لا يحتاج اختيار مجلد التعريب أو فحصًا منفصلًا أو تأكيدًا إضافيًا. يظهر رابط التراجع بعد النجاح فقط.
+
+          صور الواجهة الفعلية والتقرير الكامل ونتائج اختبار ضغط زر الحذف والتراجع على Windows والمصادر مرفقة. الاختبارات تستخدم ملفات تجريبية؛ لم تُجرّب اللعبة أو جهاز المستخدم.
+
+          **هذه مسودة. صاحب المشروع يحمّل ويجرّب وينشر بنفسه.** مسودة مثبت التعريب 1.0.2 وmain بقيا كما هما. إصدار البرنامج السابق يعود إلى مسودة أيضًا.
+          '@
+          $notes | Out-File -Encoding UTF8 "$env:RUNNER_TEMP/simple-tool-notes.md"
+          $files=Get-ChildItem release -File | ForEach-Object FullName
+          if ($current) {
+            gh release edit $env:TOOL_TAG --draft --target $env:GITHUB_SHA --title 'حذف التعريب بضغطة واحدة — برنامج 1.0.1' --notes-file "$env:RUNNER_TEMP/simple-tool-notes.md" --latest=false
+            if ($LASTEXITCODE -ne 0) { throw 'Draft edit failed' }
+            gh release upload $env:TOOL_TAG @files --clobber
+          } else {
+            gh release create $env:TOOL_TAG @files --draft --target $env:GITHUB_SHA --title 'حذف التعريب بضغطة واحدة — برنامج 1.0.1' --notes-file "$env:RUNNER_TEMP/simple-tool-notes.md" --latest=false
+          }
+          if ($LASTEXITCODE -ne 0) { throw 'Draft asset upload failed' }
+          if ($releases | Where-Object tagName -eq 'uninstaller-v1.0.0') {
+            gh release edit uninstaller-v1.0.0 --draft --latest=false
+            if ($LASTEXITCODE -ne 0) { throw 'Previous program must return to draft' }
+            $old=gh release view uninstaller-v1.0.0 --json isDraft | ConvertFrom-Json
+            if ($LASTEXITCODE -ne 0 -or -not $old.isDraft) { throw 'Previous program is not draft' }
+          }
+          $result=gh release view $env:TOOL_TAG --json isDraft,url,assets | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0 -or -not $result.isDraft -or -not ($result.assets | Where-Object name -eq 'KH2FM-Arabic-Uninstaller.exe')) { throw 'New EXE must be present in a draft' }
+          gh release view v1.0.2 --json isDraft,tagName,targetCommitish,body,name,assets,url | Out-File -Encoding UTF8 "$env:RUNNER_TEMP/draft-after.json"
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot verify translation draft after build' }
+          if ((Get-Content "$env:RUNNER_TEMP/draft-before.json" -Raw) -cne (Get-Content "$env:RUNNER_TEMP/draft-after.json" -Raw)) { throw 'Translation draft changed' }
+          $mainAfter=git ls-remote origin refs/heads/main
+          if (($mainAfter | Out-String).Trim() -ne (Get-Content "$env:RUNNER_TEMP/main-before.txt" -Raw).Trim()) { throw 'main changed' }
+          "Simple program DRAFT: $($result.url)" | Out-File -Encoding UTF8 -Append $env:GITHUB_STEP_SUMMARY
+          'No release published; previous program also draft; translation 1.0.2 and main verified unchanged.' | Out-File -Encoding UTF8 -Append $env:GITHUB_STEP_SUMMARY
