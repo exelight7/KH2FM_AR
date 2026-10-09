@@ -25,6 +25,7 @@ jobs:
           fetch-depth: 0
 
       - name: Snapshot the existing draft and main
+        shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -62,6 +63,7 @@ jobs:
           & ./tools/uninstaller/test_windows.ps1
 
       - name: Prepare separate download files and report
+        shell: pwsh
         run: |
           trap {
             $detail=($_ | Out-String)+' '+$_.ScriptStackTrace
@@ -74,7 +76,7 @@ jobs:
           Copy-Item "$tool/README_AR.md","$tool/INSTALLER_CONTRACT.md","$tool/CORE_TEST_REPORT.json","$tool/WINDOWS_TEST_REPORT.json","$tool/dist/BUILD_REPORT.json" release/
           git diff 56767c23e573ee52c740067a7fdf5d6750ac2502 -- build/installer/kh2fm_arabic.iss .github/workflows/build-release.yml | Out-File -Encoding UTF8 release/installer-integration.patch
           Get-ChildItem release -File | Copy-Item -Destination release/package/
-          Copy-Item "$tool/src" release/package/source -Recurse
+          Copy-Item "$tool/src" release/package/src -Recurse
           Copy-Item "$tool/licenses" release/package/licenses -Recurse
           Copy-Item "$tool/test_core.ps1","$tool/test_windows.ps1","$tool/build_windows.ps1","$tool/create_install_manifest.py" release/package/
           $report=@'
@@ -106,6 +108,7 @@ jobs:
           if-no-files-found: error
 
       - name: Publish the separate uninstaller release
+        shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -129,8 +132,16 @@ jobs:
           '@
           $notes | Out-File -Encoding UTF8 "$env:RUNNER_TEMP/uninstaller-release-notes.md"
           $files=Get-ChildItem release -File | ForEach-Object FullName
-          gh release create uninstaller-v1.0.0 @files --verify-tag --target $env:GITHUB_SHA --title 'أداة إزالة تعريب KH2FM — برنامج مستقل 1.0.0' --notes-file "$env:RUNNER_TEMP/uninstaller-release-notes.md" --latest=false
-          if ($LASTEXITCODE -ne 0) { throw 'Separate release creation failed' }
+          $releases=gh release list --json tagName --limit 100 | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot inspect separate release' }
+          if ($releases | Where-Object tagName -eq 'uninstaller-v1.0.0') {
+            gh release edit uninstaller-v1.0.0 --draft=false --title 'أداة إزالة تعريب KH2FM — برنامج مستقل 1.0.0' --notes-file "$env:RUNNER_TEMP/uninstaller-release-notes.md" --latest=false
+            if ($LASTEXITCODE -ne 0) { throw 'Separate release metadata update failed' }
+            gh release upload uninstaller-v1.0.0 @files --clobber
+          } else {
+            gh release create uninstaller-v1.0.0 @files --verify-tag --target $env:GITHUB_SHA --title 'أداة إزالة تعريب KH2FM — برنامج مستقل 1.0.0' --notes-file "$env:RUNNER_TEMP/uninstaller-release-notes.md" --latest=false
+          }
+          if ($LASTEXITCODE -ne 0) { throw 'Separate program publication failed' }
           $result=gh release view uninstaller-v1.0.0 --json isDraft,url,assets | ConvertFrom-Json
           if ($LASTEXITCODE -ne 0 -or $result.isDraft -or -not ($result.assets | Where-Object name -eq 'KH2FM-Arabic-Uninstaller.exe')) { throw 'Published program download verification failed' }
           gh release view v1.0.2 --json isDraft,tagName,targetCommitish,body,name,assets,url | Out-File -Encoding UTF8 "$env:RUNNER_TEMP/draft-after.json"
