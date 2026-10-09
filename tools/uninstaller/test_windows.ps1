@@ -66,6 +66,8 @@ public static class KH2WindowTest {
     [DllImport("user32.dll", CharSet=CharSet.Unicode)] static extern int GetClassName(IntPtr window, StringBuilder text, int count);
     [DllImport("user32.dll", EntryPoint="SendMessageW", CharSet=CharSet.Unicode)]
     static extern IntPtr SendText(IntPtr window,uint msg,IntPtr w,string text);
+    [DllImport("user32.dll", EntryPoint="SendMessageW", CharSet=CharSet.Unicode)]
+    static extern IntPtr ReadText(IntPtr window,uint msg,IntPtr count,StringBuilder text);
     public static bool SetControlText(IntPtr window,string text) { return SendText(window,0x000C,IntPtr.Zero,text)!=IntPtr.Zero; }
     [DllImport("user32.dll")] public static extern bool IsWindowEnabled(IntPtr window);
     [DllImport("user32.dll")] static extern uint GetWindowThreadProcessId(IntPtr window, out uint process);
@@ -76,7 +78,7 @@ public static class KH2WindowTest {
     [DllImport("user32.dll")] static extern IntPtr GetFocus();
     [DllImport("user32.dll")] static extern bool PostMessage(IntPtr window, uint msg, IntPtr w, IntPtr l);
     public static string Text(IntPtr window) {
-        var text=new StringBuilder(2048); GetWindowText(window,text,text.Capacity); return text.ToString();
+        var text=new StringBuilder(2048); ReadText(window,0x000D,new IntPtr(text.Capacity),text); return text.ToString();
     }
     public static IntPtr Find(IntPtr parent, string text, bool edit) {
         IntPtr found=IntPtr.Zero;
@@ -184,13 +186,13 @@ try {
     Save-WindowImage 'PROGRAM_PREVIEW.png'
     $results.Add('Actual simple Windows GUI has requested default game path and one enabled Delete button PASS')
     if(-not [KH2WindowTest]::SetControlText($gameField,$uiRoot)) { throw 'Cannot set game path in actual UI' }
-    if((Read-ControlText $gameField) -cne $uiRoot) { throw 'Wrong game folder was not entered into the actual text control' }
+    if((Read-ControlText $gameField) -cne $uiRoot) { throw ('Game text mismatch; actual='+ (Read-ControlText $gameField)+'; expected='+$uiRoot) }
     [void][KH2WindowTest]::SendMessage($delete,0x00F5,[IntPtr]::Zero,[IntPtr]::Zero)
     Wait-Status 'اختر مجلد اللعبة'
     foreach($path in $uiBefore.Keys) { if((Get-ContentHash $path) -ne $uiBefore[$path]) { throw 'Wrong game path changed a fixture file' } }
     $results.Add('Actual Delete click on wrong game folder shows inline error and preserves all files PASS')
     if(-not [KH2WindowTest]::SetControlText($gameField,$uiGame)) { throw 'Cannot set selected game in actual UI' }
-    if((Read-ControlText $gameField) -cne $uiGame) { throw 'Selected game was not entered into the actual text control' }
+    if((Read-ControlText $gameField) -cne $uiGame) { throw ('Selected game text mismatch; actual='+ (Read-ControlText $gameField)+'; expected='+$uiGame) }
     [void][KH2WindowTest]::SendMessage($delete,0x00F5,[IntPtr]::Zero,[IntPtr]::Zero)
     Wait-Status 'تم حذف التعريب'
     if([IO.File]::Exists((Join-Path $uiMod 'kh2/msg/us/sys.bar'))) { throw 'One-click GUI did not remove the translation' }
