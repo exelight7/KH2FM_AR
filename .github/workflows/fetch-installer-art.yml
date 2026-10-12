@@ -1,0 +1,21 @@
+name: Fetch supplied installer artwork
+on:
+  push:
+    branches: ['installer/**']
+    paths: ['.github/workflows/fetch-installer-art.yml', 'apps/manager/scripts/fetch_art.py']
+permissions:
+  contents: read
+jobs:
+  artwork:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python apps/manager/scripts/fetch_art.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: supplied-artwork
+          path: apps/manager/artwork-download/
+          if-no-files-found: error
