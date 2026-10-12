@@ -4,6 +4,8 @@ const assert=require('node:assert/strict');
 const {fixture}=require('./fixture.cjs');
 const {fs,path,exists,hash,readJSON,safeJoin}=require('../src/paths.cjs');
 const {GAME_EXE}=require('../src/compatibility.cjs');
+const {spawnSync}=require('node:child_process');
+const {crypto,hashBytes,writeJSON}=require('../src/paths.cjs');
 
 (async()=>{
   const root=path.resolve(__dirname,'..'),dist=path.join(root,'dist'),output=path.join(root,'test-results');await fs.mkdir(output,{recursive:true});
@@ -34,7 +36,17 @@ const {GAME_EXE}=require('../src/compatibility.cjs');
     await page.locator('#menu-toggle').click();await page.locator('#undo').click();await page.waitForFunction(()=>document.getElementById('feedback-title').textContent.includes('الاستعادة'),null,{timeout:240000});
     for(const entry of state.entries)assert.equal(await hash(safeJoin(entry.root==='mod'?state.modRoot:f.game,entry.path)),entry.sha256);
     assert.equal(await hash(path.join(f.game,GAME_EXE)),gameHash);assert.equal(await fs.readFile(path.join(f.game,'save.dat'),'utf8'),'KEEP MY SAVE');
-    const report={platform:process.platform,arch:process.arch,packagedApplication:true,passed:true,actualPayloadFiles:798,allFilesSHA256Verified:true,manualFolderSelection:true,menuRemoval:true,menuUndo:true,gameAndSavePreserved:true,fixtureGame:true,actualGamePlayTested:false};
+    let windowsWorkerTested=false;
+    if(process.platform==='win32') {
+      const jobDir=path.join(f.root,'job-'+crypto.randomUUID());await fs.mkdir(jobDir);
+      const request=path.join(jobDir,'request.json');await writeJSON(request,{schema:1,game:f.game,operation:'remove',prefixOverride:null});
+      const digest=hashBytes(await fs.readFile(request));
+      const child=spawnSync(executable,['--manager-job='+request,'--manager-job-hash='+digest],{encoding:'utf8',timeout:240000});
+      assert.equal(child.status,0,(child.stdout || '')+(child.stderr || ''));
+      const result=await readJSON(path.join(jobDir,'result.json'));assert.equal(result.ok,true,JSON.stringify(result));
+      assert.equal(await exists(path.join(f.game,'DBGHELP.dll')),false);windowsWorkerTested=true;
+    }
+    const report={platform:process.platform,arch:process.arch,packagedApplication:true,passed:true,actualPayloadFiles:798,allFilesSHA256Verified:true,manualFolderSelection:true,menuRemoval:true,menuUndo:true,windowsWorkerTested,interactiveUACTested:false,gameAndSavePreserved:true,fixtureGame:true,actualGamePlayTested:false};
     await fs.writeFile(path.join(output,'PACKAGED-'+process.platform+'-'+process.arch+'.json'),JSON.stringify(report,null,2)+'\n');
     console.log(JSON.stringify(report));
   }finally{if(application)await application.close();await f.cleanup();}

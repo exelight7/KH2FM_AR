@@ -39,8 +39,11 @@ async function legacy(f,version='1.0.1') {
     const target=path.join(mod,...file.path.split('/')); await fs.mkdir(path.dirname(target),{recursive:true}); await fs.writeFile(target,version+':'+file.path);
   }
   await fs.writeFile(path.join(f.game,'DBGHELP.dll'),f.loaderData);
-  await fs.writeFile(path.join(f.game,'panacea_settings.txt'),'mod_path='+mod+'\nshow_console=false\n');
-  await fs.writeFile(path.join(app,'kh2ar_state.txt'),'GameDir='+f.game+'\nModRoot='+mod+'\nSettingsByUs=1\n');
+  const simulateWineOnWindows=process.platform==='win32' && f.options.platform!=='win32';
+  const configuredMod=simulateWineOnWindows ? path.relative(f.game,mod).split(path.sep).join('/') : mod;
+  const configuredGame=simulateWineOnWindows ? '.' : f.game;
+  await fs.writeFile(path.join(f.game,'panacea_settings.txt'),'mod_path='+configuredMod+'\nshow_console=false\n');
+  await fs.writeFile(path.join(app,'kh2ar_state.txt'),'GameDir='+configuredGame+'\nModRoot='+configuredMod+'\nSettingsByUs=1\n');
   await fs.writeFile(path.join(app,'kh2ar_backups.txt'),'');
   return {app,mod};
 }
