@@ -57,7 +57,7 @@
       "target": [
         "nsis"
       ],
-      "requestedExecutionLevel": "requireAdministrator",
+      "requestedExecutionLevel": "asInvoker",
       "signAndEditExecutable": true,
       "artifactName": "KH2FM-Arabic-1.0.3-Windows-${arch}.${ext}"
     },

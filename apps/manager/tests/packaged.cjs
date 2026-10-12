@@ -17,6 +17,7 @@ const {GAME_EXE}=require('../src/compatibility.cjs');
   const f=await fixture(process.platform);let application;
   try{
     application=await electron.launch({executablePath:executable,args:process.platform==='linux'?['--no-sandbox']:[],timeout:120000});
+    application.process().stderr?.on('data',data=>process.stderr.write(data));
     const page=await application.firstWindow();await page.waitForSelector('#choose-game');await page.evaluate(()=>document.fonts.ready);
     await application.evaluate(({dialog},game)=>{dialog.showOpenDialog=async()=>({canceled:false,filePaths:[game]});},f.game);
     await page.locator('#choose-game').click();await page.waitForFunction(()=>!document.getElementById('install').disabled);

@@ -3,7 +3,7 @@ const os = require('node:os');
 const zlib = require('node:zlib');
 const {pipeline} = require('node:stream/promises');
 const {fs,fss,path,crypto,exists,assertRegular,safeJoin,hash,hashBytes,readJSON,atomicCopy,writeJSON,filesBelow} = require('./paths.cjs');
-const {GAME_EXE,REG_SECTION,REG_LINE,discoverPrefix,settingsRoot,windowsPathToHost,registryValue,patchRegistry} = require('./compatibility.cjs');
+const {GAME_EXE,REG_SECTION,REG_LINE,discoverPrefix,settingsRoot,settingsValue,windowsPathToHost,registryValue,patchRegistry} = require('./compatibility.cjs');
 const {snapshotOperation,applyOperation,restoreOperation,operations} = require('./transaction.cjs');
 const META = '.kh2fm-arabic';
 const SHA = /^[a-f0-9]{64}$/;
@@ -31,6 +31,8 @@ class Manager {
   async validateGame(gameDir) {
     if (typeof gameDir!=='string' || !gameDir.trim()) throw new Error('اختر مجلد اللعبة أولًا.');
     gameDir=path.resolve(gameDir);
+    if(!(await exists(gameDir))) throw new Error('مجلد اللعبة غير موجود.');
+    gameDir=await fs.realpath(gameDir);
     await assertRegular(gameDir);
     const exe=path.join(gameDir,GAME_EXE);
     if (!(await exists(exe)) || !(await fs.stat(exe)).isFile()) throw new Error('هذا المجلد لا يحتوي KINGDOM HEARTS II FINAL MIX.exe. اختر مجلد اللعبة الصحيح.');
@@ -38,10 +40,11 @@ class Manager {
     return gameDir;
   }
   async context(gameDir,prefixOverride) {
+    const chosenDir=path.resolve(gameDir);
     gameDir=await this.validateGame(gameDir);
     const manifest=await this.manifest();
     const meta=path.join(gameDir,META); await assertRegular(meta);
-    const prefix=await discoverPrefix(gameDir,this.platform,prefixOverride);
+    const prefix=await discoverPrefix(chosenDir,this.platform,prefixOverride);
     let state=null;
     if (await exists(path.join(meta,'state.json'))) {
       state=await readJSON(path.join(meta,'state.json'));
@@ -146,8 +149,10 @@ class Manager {
         const at=line.indexOf('='); if (at>0) { const key=line.slice(0,at); if (Object.hasOwn(values,key)) throw new Error('سجل المثبت القديم يحتوي قيمًا مكررة.'); values[key]=line.slice(at+1); }
       }
       if (!values.GameDir || !values.ModRoot) continue;
-      const game=await windowsPathToHost(values.GameDir,c.gameDir,c.prefix,this.platform);
-      const mod=await windowsPathToHost(values.ModRoot,c.gameDir,c.prefix,this.platform);
+      let game=await windowsPathToHost(values.GameDir,c.gameDir,c.prefix,this.platform);
+      let mod=await windowsPathToHost(values.ModRoot,c.gameDir,c.prefix,this.platform);
+      if(await exists(game)) game=await fs.realpath(game);
+      if(await exists(mod)) mod=await fs.realpath(mod);
       if (!samePath(game,c.gameDir) || !samePath(mod,c.modRoot)) continue;
       const backups=[]; const list=path.join(appDir,'kh2ar_backups.txt');
       if (await exists(list)) {
@@ -223,8 +228,7 @@ class Manager {
         }
         const settingTarget=path.join(c.gameDir,'panacea_settings.txt');
         if (!loaderPresent || old.some(x=>x.path==='panacea_settings.txt') || legacy.settingsOwned) {
-          let relative=path.relative(c.gameDir,c.modRoot).split(path.sep).join('/');
-          if (/^[a-zA-Z]:/.test(relative)) relative=c.modRoot;
+          const relative=settingsValue(c.gameDir,c.modRoot,c.prefix,this.platform);
           const data=Buffer.from('mod_path='+relative+'\nshow_console=false\n');
           const entry={root:'game',path:'panacea_settings.txt',sha256:hashBytes(data),size:data.length};
           const oldEntry=old.find(x=>x.path===entry.path);

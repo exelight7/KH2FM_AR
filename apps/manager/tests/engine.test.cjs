@@ -125,3 +125,14 @@ test('forged recovery record cannot target the game executable',async()=>withFix
   await assert.rejects(f.manager.undo(f.game),/غير مسموح/);
   assert.equal(await fs.readFile(path.join(f.game,GAME_EXE),'utf8'),'ORIGINAL GAME EXECUTABLE');
 }));
+test('the manually selected Steam library link resolves to its actual game directory',async()=>withFixture('win32',async f=>{
+  const link=path.join(f.root,'game-link');await fs.symlink(f.game,link,process.platform==='win32'?'junction':'dir');
+  await f.manager.install(link);const state=await readJSON(path.join(f.game,'.kh2fm-arabic','state.json'));
+  assert.equal(state.gameDir,await fs.realpath(f.game));await f.manager.remove(link);
+}));
+test('Wine upgrade migrates the owned DBGHELP loader to version.dll and can undo it',async()=>withFixture('linux',async f=>{
+  const old=await legacy(f);await f.manager.install(f.game);
+  assert.equal(await exists(path.join(f.game,'DBGHELP.dll')),false);assert.equal(await exists(path.join(f.game,'version.dll')),true);
+  await f.manager.undo(f.game);assert.equal(await exists(path.join(f.game,'DBGHELP.dll')),true);assert.equal(await exists(path.join(f.game,'version.dll')),false);
+  assert.equal(await fs.readFile(path.join(old.mod,...f.payload[0].split('/')),'utf8'),'1.0.1:'+f.payload[0]);
+}));

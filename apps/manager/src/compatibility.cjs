@@ -15,13 +15,15 @@ async function discoverPrefix(gameDir, platform, override) {
     ancestor = path.dirname(ancestor);
   }
   for (const candidate of candidates) {
-    await assertRegular(candidate);
-    const file = path.join(candidate, 'user.reg');
+    if (!(await exists(candidate))) continue;
+    const canonical=await fs.realpath(candidate);
+    await assertRegular(canonical);
+    const file = path.join(canonical, 'user.reg');
     if (await exists(file)) {
       await assertRegular(file);
       const contents = await fs.readFile(file, 'utf8');
       if (!contents.startsWith('WINE REGISTRY Version 2')) throw new Error('مجلد بيئة اللعبة لا يحتوي سجل Wine صالحًا.');
-      return candidate;
+      return canonical;
     }
   }
   return null;
@@ -54,7 +56,18 @@ async function settingsRoot(gameDir, prefix, platform) {
   const text = await fs.readFile(settings, 'utf8');
   const values = text.replace(/^\ufeff/, '').split(/\r?\n/).filter(x => x.startsWith('mod_path='));
   if (values.length > 1) throw new Error('إعدادات محمل المودات تحتوي أكثر من مسار.');
-  return windowsPathToHost(values.length ? values[0].slice(9).trim() : './mod', gameDir, prefix, platform);
+  const root=await windowsPathToHost(values.length ? values[0].slice(9).trim() : './mod', gameDir, prefix, platform);
+  return await exists(root) ? fs.realpath(root) : root;
+}
+function settingsValue(game,mod,prefix,platform) {
+  const relative=path.relative(game,mod).split(path.sep).join('/');
+  if(platform==='win32') return /^[a-zA-Z]:/.test(relative) ? mod : relative;
+  if(prefix) {
+    const drive=path.join(prefix,'drive_c');
+    const inC=p=>p===drive || p.startsWith(drive+path.sep);
+    if(inC(game)!==inC(mod)) return inC(mod) ? 'C:\\'+path.relative(drive,mod).split(path.sep).join('\\') : 'Z:\\'+mod.slice(1).split(path.sep).join('\\');
+  }
+  return relative;
 }
 function registryValue(text, section = REG_SECTION, name = 'version') {
   if (!['version','dbghelp'].includes(name)) throw new Error('اسم محمل المودات غير صالح.');
@@ -90,4 +103,4 @@ function patchRegistry(text, desiredLine, section = REG_SECTION, name = 'version
   } else if (desiredLine!==null) lines.splice(start+1,0,desiredLine);
   return lines.join(eol);
 }
-module.exports = {GAME_EXE, APP_ID, REG_SECTION, REG_LINE, discoverPrefix, settingsRoot, windowsPathToHost, registryValue, patchRegistry};
+module.exports = {GAME_EXE, APP_ID, REG_SECTION, REG_LINE, discoverPrefix, settingsRoot, settingsValue, windowsPathToHost, registryValue, patchRegistry};
