@@ -49,6 +49,7 @@ class Manager {
     if (await exists(path.join(meta,'state.json'))) {
       state=await readJSON(path.join(meta,'state.json'));
       await this.validateState(state,gameDir,manifest);
+      if(state.registry && (this.platform==='win32' || !prefix || !samePath(state.registry.prefix,prefix))) throw new Error('بيئة Wine لا تطابق سجل التعريب.');
     }
     const modRoot=state ? path.resolve(state.modRoot) : await settingsRoot(gameDir,prefix,this.platform);
     await assertRegular(modRoot);

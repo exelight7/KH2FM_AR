@@ -55,12 +55,13 @@ async function runWorker(request,digest) {
   if(job.schema!==1 || !['install','remove','undo'].includes(job.operation) || typeof job.game!=='string')throw new Error('طلب التثبيت غير صالح.');
   const dataDir=app.isPackaged?path.join(process.resourcesPath,'translation'):path.resolve(__dirname,'../data');
   const manager=new Manager({dataDir,catalog});
-  let lastProgress=0;
+  let lastProgress=0,progressWrites=Promise.resolve();
   try {
     const value=await manager[job.operation](job.game,{prefixOverride:job.prefixOverride,
       checkCancel:()=>{if(require('node:fs').existsSync(path.join(directory,'cancel.json')))throw new Error('أُلغيت العملية وأُعيدت الملفات إلى حالتها السابقة.');},
-      progress:message=>{const now=Date.now();if(now-lastProgress>200){lastProgress=now;require('node:fs').writeFileSync(path.join(directory,'progress.json'),JSON.stringify(message));}}
+      progress:message=>{const now=Date.now();if(now-lastProgress>200){lastProgress=now;progressWrites=progressWrites.then(()=>writeJSON(path.join(directory,'progress.json'),message));progressWrites.catch(()=>{});}}
     });
+    await progressWrites;
     await writeJSON(path.join(directory,'result.json'),{ok:true,value});
     return 0;
   }catch(error){await writeJSON(path.join(directory,'result.json'),{ok:false,error:error.message});return 1;}

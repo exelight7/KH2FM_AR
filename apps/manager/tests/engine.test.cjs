@@ -136,3 +136,9 @@ test('Wine upgrade migrates the owned DBGHELP loader to version.dll and can undo
   await f.manager.undo(f.game);assert.equal(await exists(path.join(f.game,'DBGHELP.dll')),true);assert.equal(await exists(path.join(f.game,'version.dll')),false);
   assert.equal(await fs.readFile(path.join(old.mod,...f.payload[0].split('/')),'utf8'),'1.0.1:'+f.payload[0]);
 }));
+test('a modified state cannot redirect removal to another Wine prefix',async()=>withFixture('linux',async f=>{
+  await f.manager.install(f.game);const file=path.join(f.game,'.kh2fm-arabic','state.json');const state=await readJSON(file);
+  const other=path.join(f.root,'another-prefix');await fs.mkdir(other);const reg=path.join(other,'user.reg');await fs.writeFile(reg,'WINE REGISTRY Version 2\nKEEP THIS REGISTRY');
+  state.registry.prefix=other;await writeJSON(file,state);await assert.rejects(f.manager.remove(f.game),/لا تطابق/);
+  assert.equal(await fs.readFile(reg,'utf8'),'WINE REGISTRY Version 2\nKEEP THIS REGISTRY');
+}));
