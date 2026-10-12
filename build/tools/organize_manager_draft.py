@@ -53,6 +53,8 @@ def main():
     for name in supporting:
         subprocess.run(['gh', 'api', f"repos/{REPOSITORY}/releases/assets/{assets[name]['id']}", '--method', 'DELETE'], check=True)
     body = {
+        'tag_name': 'v1.0.3',
+        'name': 'v1.0.3',
         'body': Path('docs/releases/1.0.3.md').read_text(),
         'target_commitish': gh('api', f'repos/{REPOSITORY}/git/ref/heads/installer/1.0.3', '--jq', '.object.sha').strip(),
         'draft': True,
@@ -60,7 +62,7 @@ def main():
     }
     Path('release-update.json').write_text(json.dumps(body))
     final = api(f'releases/{release_id}', '--method', 'PATCH', '--input', 'release-update.json')
-    assert final['draft'] and not final['prerelease']
+    assert final['tag_name'] == 'v1.0.3' and final['draft'] and not final['prerelease']
     assert {a['name'] for a in final['assets']} == expected
     for old, new in PRIMARY.items():
         current = next(a for a in final['assets'] if a['name'] == new)
