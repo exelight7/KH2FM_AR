@@ -1,5 +1,8 @@
 name: Organize existing 1.0.3 draft downloads
 on:
+  push:
+    branches: ['installer/1.0.3']
+    paths: ['.github/workflows/organize-release-assets.yml', 'build/tools/organize_manager_draft.py']
   workflow_dispatch:
 permissions:
   contents: write
