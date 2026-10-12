@@ -2,7 +2,7 @@ name: KH2FM 1.0.3 — Windows macOS Linux
 on:
   push:
     branches: ['installer/**']
-    paths: ['apps/manager/**', '.github/workflows/cross-platform-release.yml', 'docs/releases/1.0.3.md']
+    paths: ['apps/manager/**', 'build/tools/*manager_release.py', '.github/workflows/cross-platform-release.yml', 'docs/releases/1.0.3.md']
   workflow_dispatch:
 permissions:
   contents: read
@@ -142,6 +142,7 @@ jobs:
                   lines.append(digest+'  '+p.name)
           (root/'SHA256SUMS.txt').write_text('\n'.join(lines)+'\n')
           PY
+          python build/tools/assemble_manager_release.py release
       - name: Create or update only the 1.0.3 draft (the owner publishes)
         env:
           GH_TOKEN: ${{ github.token }}
@@ -150,8 +151,22 @@ jobs:
             python -c 'import json; assert json.load(open("release-info.json"))["isDraft"], "The owner already published 1.0.3; refusing to modify it"'
             gh release edit v1.0.3 --draft --prerelease=false --title v1.0.3 --target "$GITHUB_SHA" --notes-file docs/releases/1.0.3.md -R "$GITHUB_REPOSITORY"
             gh release upload v1.0.3 release/* --clobber -R "$GITHUB_REPOSITORY"
+            # New downloads are uploaded before removing obsolete loose supporting files.
+            gh release view v1.0.3 -R "$GITHUB_REPOSITORY" --json isDraft,assets > uploaded.json
+            python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+          release = json.load(open('uploaded.json'))
+          assert release['isDraft'], 'The owner published the release; refusing cleanup'
+          expected = {p.name for p in Path('release').iterdir() if p.is_file()}
+          assert expected.issubset({a['name'] for a in release['assets']})
+          for asset in release['assets']:
+              if asset['name'] not in expected:
+                  subprocess.run(['gh', 'release', 'delete-asset', 'v1.0.3', asset['name'], '--yes'], check=True)
+          PY
           else
             gh release create v1.0.3 release/* --draft --title v1.0.3 --target "$GITHUB_SHA" --notes-file docs/releases/1.0.3.md -R "$GITHUB_REPOSITORY"
           fi
           gh release view v1.0.3 -R "$GITHUB_REPOSITORY" --json isDraft,url,assets > result.json
-          python -c 'import json; r=json.load(open("result.json")); assert r["isDraft"]; assert len(r["assets"])>=20; print(r["url"])'
+          python -c 'import json; from pathlib import Path; r=json.load(open("result.json")); assert r["isDraft"]; names=sorted(a["name"] for a in r["assets"]); assert names==sorted(p.name for p in Path("release").iterdir()); assert len(names)==6 and names[0].startswith("01-") and names[0].endswith(".exe"); print(r["url"])'
