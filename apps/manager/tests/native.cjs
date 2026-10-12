@@ -16,7 +16,7 @@ const {GAME_EXE}=require('../src/compatibility.cjs');
   let application;
   try{
     application=await electron.launch({args:[root,...(process.platform==='linux'?['--no-sandbox']:[])],env:{...process.env,LANG:'en_US.UTF-8'},timeout:90000});
-    const page=await application.firstWindow(); const errors=[]; page.on('pageerror',e=>errors.push(e.message));
+    const page=await application.firstWindow();await page.emulateMedia({reducedMotion:'reduce'}); const errors=[]; page.on('pageerror',e=>errors.push(e.message));
     await page.waitForSelector('#owner-art'); await page.evaluate(()=>document.fonts.ready);
     assert.equal(await page.locator('#install').isDisabled(),true);
     await application.evaluate(({dialog},game)=>{dialog.showOpenDialog=async()=>({canceled:false,filePaths:[game]});},f.game);

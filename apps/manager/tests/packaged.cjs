@@ -20,7 +20,7 @@ const {crypto,hashBytes,writeJSON}=require('../src/paths.cjs');
   try{
     application=await electron.launch({executablePath:executable,args:process.platform==='linux'?['--no-sandbox']:[],timeout:120000});
     application.process().stderr?.on('data',data=>process.stderr.write(data));
-    const page=await application.firstWindow();await page.waitForSelector('#choose-game');await page.evaluate(()=>document.fonts.ready);
+    const page=await application.firstWindow();await page.emulateMedia({reducedMotion:'reduce'});await page.waitForSelector('#choose-game');await page.evaluate(()=>document.fonts.ready);
     await application.evaluate(({dialog},game)=>{dialog.showOpenDialog=async()=>({canceled:false,filePaths:[game]});},f.game);
     await page.locator('#choose-game').click();await page.waitForFunction(()=>!document.getElementById('install').disabled);
     const gameHash=await hash(path.join(f.game,GAME_EXE));

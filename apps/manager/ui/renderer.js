@@ -2,7 +2,7 @@
 const $=id=>document.getElementById(id);
 let inspection=null,busy=false,platform='win32';
 const api=window.kh2fm;
-function showFeedback(title,text,error=false){$('feedback-title').textContent=title;$('feedback-text').textContent=text;$('feedback').classList.toggle('error',error);$('feedback').hidden=false;}
+function showFeedback(title,text,error=false){$('feedback-title').textContent=title;$('feedback-text').textContent=text;$('feedback').classList.toggle('error',error);$('feedback').hidden=false;$('feedback').scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
 function closeMenu(){$('management-menu').hidden=true;$('menu-toggle').setAttribute('aria-expanded','false');}
 function refresh(value){
   inspection=value;
@@ -25,7 +25,7 @@ async function choose(which){
 }
 async function run(operation){
   closeMenu();if(busy)return;
-  busy=true;$('feedback').hidden=true;$('progress-area').hidden=false;$('progress-fill').style.width='0%';$('progress-percent').textContent='0%';$('progress-label').textContent=operation==='undo' ? 'استعادة الحالة السابقة' : 'تجهيز العملية';$('cancel').hidden=operation==='undo';$('cancel').disabled=false;$('cancel').textContent='إلغاء العملية';refresh(inspection);
+  busy=true;$('feedback').hidden=true;$('progress-area').hidden=false;$('progress-fill').style.width='0%';$('progress-percent').textContent='0%';$('progress-label').textContent=operation==='undo' ? 'استعادة الحالة السابقة' : 'تجهيز العملية';$('cancel').hidden=operation==='undo';$('cancel').disabled=false;$('cancel').textContent='إلغاء العملية';refresh(inspection);$('progress-area').scrollIntoView({block:'nearest',behavior:'instant'});
   try{
     const response=await api.run(operation);
     if(!response.ok){showFeedback('لم تكتمل العملية',response.error,true);return;}
