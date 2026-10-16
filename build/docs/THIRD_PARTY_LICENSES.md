@@ -9,7 +9,8 @@ next to the translation (`%LOCALAPPDATA%\KH2FM-Arabic\docs\licenses\`). This fil
 | Panacea dependencies | `dependencies\*.dll` (avcodec/avformat/avutil/swresample-vgmstream, libatrac9, libcelt, libg719_decode, libmpg123, libspeex, libvorbis, bass_vgmstream, bass) | vgmstream (§2), bass_vgmstream (§3), BASS (§4); the remaining codec DLLs are the builds shipped unchanged by OpenKH |
 | OpenKH Mod Manager (optional, unchecked by default) | the full official `openkh.zip` release2-1691 in `OpenKH\` | Apache License 2.0 (§1) + the notices inside that release |
 | Inno Setup 6.7.3 | the installer/uninstaller program | Inno Setup License (§5) |
-| Segoe UI (Microsoft) | Arabic glyphs drawn into the font atlases and images | Microsoft font license (§6) |
+| Noto Naskh Arabic Bold (Google) | Arabic glyphs in the font atlases (since 1.0.4) | SIL Open Font License 1.1 (§6, `licenses/Noto-OFL.txt`) |
+| Segoe UI (Microsoft) | Arabic words drawn into the translated images (and the font atlases up to 1.0.3) | Microsoft font license (§6) |
 
 Source of every OpenKH file: https://github.com/OpenKH/OpenKh/releases/tag/release2-1691 (unchanged binaries; SHA256 in `PANACEA_NOTES.md`).
 
@@ -283,8 +284,11 @@ https://jrsoftware.org/
 ```
 
 ## 6. Fonts
-The Arabic letters in the translated font atlases (`remastered\msg\us\fontimage.bar\*.png`, `msg\us\fontimage.bar`) and in the translated images were rendered from **Segoe UI** (Regular/Bold/Semibold), a Microsoft font that ships with Windows. No font file is included in this package. Microsoft's font license does not explicitly grant redistribution of bitmaps derived from the font; see `KNOWN_ISSUES.md` §4 and the project's plan to re-render them with an open-licensed (SIL OFL) font.
+The Arabic letters in the translated images, and up to 1.0.3 in the font atlases (`remastered\msg\us\fontimage.bar\*.png`, `msg\us\fontimage.bar`), were rendered from **Segoe UI** (Regular/Bold/Semibold), a Microsoft font that ships with Windows. No font file is included in this package. Microsoft's font license does not explicitly grant redistribution of bitmaps derived from the font; see `KNOWN_ISSUES.md` §4 and the project's plan to re-render them with an open-licensed (SIL OFL) font.
 
 
 ### Version 1.0.4 font update
 The Arabic glyph cells in the sys and evt font atlases were re-rendered from Noto Naskh Arabic Bold (Google, SIL Open Font License 1.1). See licenses/Noto-OFL.txt. Existing Latin, digit, symbol and icon cells, and text embedded in other images, retain their existing sources and notices described above.
+
+### Version 1.0.6 font update
+The same Noto Naskh Arabic glyph cells were modified (dark outline in the dialogue atlas, re-encoded SD cells); the game's own Latin, digit and symbol cells were moved up to the Arabic baseline without other change. No new font source was added.

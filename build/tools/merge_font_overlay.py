@@ -1,4 +1,4 @@
-"""Merge the four verified font files into the complete corrected release payload."""
+"""Merge the verified font files (experiments/fonts/outline-baseline, 1.0.6) into the complete corrected release payload."""
 import argparse
 import csv
 import hashlib
@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 ap = argparse.ArgumentParser(description=__doc__)
 ap.add_argument('--out', type=Path, default=ROOT / 'build/out')
 args = ap.parse_args()
-preview = ROOT / 'experiments/fonts/alef-spacing'
+preview = ROOT / 'experiments/fonts/outline-baseline'
 archive = preview / 'font-overlay.zip'
 expected_zip = next(line.split()[0] for line in (preview / 'SHA256SUMS.txt').read_text().splitlines()
                     if line.split(maxsplit=1)[1] == 'font-overlay.zip')
@@ -50,4 +50,4 @@ with manifest_path.open('w', newline='') as f:
     writer = csv.DictWriter(f, fieldnames=['path', 'size', 'sha256'], delimiter='\t', lineterminator='\n')
     writer.writeheader()
     writer.writerows(manifest)
-print('Full payload: 798 files verified; four font files integrated with corrected message bars')
+print('Full payload: 798 files verified; 1.0.6 font files integrated with corrected message bars')

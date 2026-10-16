@@ -7,7 +7,7 @@ out = app / 'release-output'
 out.mkdir(exist_ok=True)
 extensions = ('.exe', '.dmg', '.zip', '.AppImage', '.tar.gz', '.deb')
 for p in (app / 'dist').iterdir():
-    if p.is_file() and p.name.startswith('KH2FM-Arabic-1.0.5-') and p.name.endswith(extensions):
+    if p.is_file() and p.name.startswith('KH2FM-Arabic-1.0.6-') and p.name.endswith(extensions):
         shutil.copy2(p, out / p.name)
 for p in (app / 'test-results').iterdir():
     if p.is_file() and p.suffix in ('.png', '.json', '.txt'):
