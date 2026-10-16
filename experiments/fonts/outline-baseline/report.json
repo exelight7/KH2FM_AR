@@ -1,0 +1,111 @@
+{
+  "atlases": {
+    "sys": {
+      "arabic_cells": 117,
+      "native_cells_moved": 147,
+      "sd_native_cells_moved_less": {},
+      "sd_level_share_of_ink": {
+        "native": [
+          0.123,
+          0.358,
+          0.518
+        ],
+        "arabic": [
+          0.383,
+          0.23,
+          0.386
+        ]
+      },
+      "sd_bytes_with_level_above_3": 0,
+      "joined_pairs_checked": 1141,
+      "broken_joins": 0,
+      "max_body_pixels_covered_by_ring_per_pair": 0,
+      "body_pixels_covered_by_ring_in_text": 0,
+      "digit_1_body_bottom_hd": 31,
+      "arabic_stroke_bottom_hd": 30,
+      "baseline_gap_hd": 1
+    },
+    "evt": {
+      "arabic_cells": 118,
+      "native_cells_moved": 153,
+      "join_rows_hd": [
+        38,
+        39,
+        40
+      ],
+      "sd_native_cells_moved_less": {
+        "55": 2,
+        "64": 2,
+        "65": 2,
+        "72": 2
+      },
+      "sd_level_share_of_ink": {
+        "native": [
+          0.555,
+          0.125,
+          0.321
+        ],
+        "arabic": [
+          0.466,
+          0.139,
+          0.395
+        ]
+      },
+      "sd_bytes_with_level_above_3": 0,
+      "joined_pairs_checked": 1648,
+      "broken_joins": 0,
+      "max_body_pixels_covered_by_ring_per_pair": 5,
+      "body_pixels_covered_by_ring_in_text": 13744,
+      "digit_1_body_bottom_hd": 40,
+      "arabic_stroke_bottom_hd": 40,
+      "baseline_gap_hd": 0
+    }
+  },
+  "version": "1.0.6",
+  "input_overlay_sha256": "b2ca689c4af1ebf8266d6e4df9a9b9debfa9d024a6028b368c6a429100a30b2b",
+  "advance_table_changed_bytes": 0,
+  "native_shift_hd_px": 6,
+  "native_shift_sd_px": 3,
+  "ring_profile_hd": [
+    [
+      0.0,
+      232
+    ],
+    [
+      1.25,
+      226
+    ],
+    [
+      1.75,
+      198
+    ],
+    [
+      2.25,
+      130
+    ],
+    [
+      2.75,
+      72
+    ],
+    [
+      3.25,
+      26
+    ],
+    [
+      3.75,
+      6
+    ],
+    [
+      4.0,
+      0
+    ]
+  ],
+  "body_rgb": 126,
+  "overlay_files": {
+    "kh2/msg/us/fontimage.bar": "f4537601d1df1fb59946dc3ea5a39fd2cb74380ef752c30f77137e8b3a16e544",
+    "kh2/msg/us/fontinfo.bar": "33f73e667b502e7539a358e3d820d18feded7fddc79c8cef22cc2f7f09964b31",
+    "kh2/remastered/msg/us/fontimage.bar/US_fontimage_bar0.png": "66ed2ba1b027f8e37a0345465217b838227c028c43737ecd54dda803860ca18d",
+    "kh2/remastered/msg/us/fontimage.bar/US_fontimage_bar1.png": "9331fd8f2ce676173b1b0c614ad5968fa6ccbf1dbf8a4c6e99531fefa47d5a21"
+  },
+  "in_game_verified": false
+}

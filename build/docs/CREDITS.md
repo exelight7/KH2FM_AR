@@ -11,7 +11,8 @@
 | **vgmstream** / **bass_vgmstream** (Panacea dependencies) | vgmstream authors; angryzor | ISC-style (see THIRD_PARTY_LICENSES.md) | audio libraries shipped with Panacea |
 | **BASS** (`bass.dll`, Panacea dependency) | Un4seen Developments, https://www.un4seen.com/ | free for non-commercial use | audio library shipped with Panacea |
 | **Inno Setup** 6.7.3 | Jordan Russell and Martijn Laan, https://jrsoftware.org/ | Inno Setup License | this installer |
-| **Segoe UI** | Microsoft | Windows font (see THIRD_PARTY_LICENSES.md §5) | the Arabic letters drawn into the font atlases and images |
+| **Noto Naskh Arabic** (Bold) | Google / The Noto Project Authors | SIL Open Font License 1.1 (see THIRD_PARTY_LICENSES.md §6) | the Arabic letters in the font atlases since 1.0.4 |
+| **Segoe UI** | Microsoft | Windows font (see THIRD_PARTY_LICENSES.md §6) | the Arabic words drawn into the translated images (and the font atlases up to 1.0.3) |
 
 ## اللعبة — The game
 **KINGDOM HEARTS II FINAL MIX** and **KINGDOM HEARTS -HD 1.5+2.5 ReMIX-** © Disney. Developed by SQUARE ENIX. This project is not affiliated with, endorsed or sponsored by Square Enix or Disney. All trademarks belong to their owners.

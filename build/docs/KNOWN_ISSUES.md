@@ -17,8 +17,8 @@ This is a beta. Numbers are measured on the shipped files.
 ## 2. لم يُتحقَّق منه بلقطات — Not screenshot-verified
 - نحو **31 %** فقط من النص رُوجع داخل اللعبة بلقطات. الباقي مبني بفحوص آلية (ترميز، عدد الأسطر، الوسوم) لكن قد تظهر أسطر **أطول من النافذة** أو كلمات تحتاج مراجعة لغوية.
 - About **31 %** of the text was checked in-game. The rest passed automatic gates (encoding, line counts, tags) but some lines may **overflow their window** or need wording review.
-- الخط الحالي في القوائم والحوار نسخة **اختبار** (Segoe UI Regular بتباعد أوسع): قيس أنه يزيد العرض فيفيض نحو **110 سطراً** إضافياً (79 في الحوار، 31 في jm/gumi)، ولم يجتز «بوابة الشاشة» الآلية بالكامل.
-- The current menu/dialogue font is a **test** build (Segoe UI Regular, wider spacing): it makes about **110 more lines** overflow (79 dialogue, 31 in jm/gumi) and does not fully pass the automatic screen gate.
+- خط القوائم والحوار منذ 1.0.4 هو Noto Naskh Arabic Bold بتباعد أضيق (لا يوجد سطر أعرض من قبل)، وأضاف 1.0.6 الحد الداكن لحروف الحوار ورفع الأرقام والترقيم إلى خط القاعدة العربي. مظهر 1.0.6 داخل اللعبة لم يتحقق بلقطات بعد.
+- Since 1.0.4 the menu/dialogue font is Noto Naskh Arabic Bold with tighter spacing (no line wider than before); 1.0.6 adds the dark ring of the game's dialogue glyphs and moves digits and punctuation onto the Arabic baseline. The 1.0.6 in-game appearance is not screenshot-verified yet.
 - شاشة **Load Game**: إصلاح موضع رقم المستوى (LV) مثبَّت لكنه **بانتظار لقطة** تؤكده. / **Load Game** screen: the level-number fix is installed but **awaits a screenshot**.
 - كلمات أغاني عالم Pride Lands (lm، 171 سطراً) ترجمة حرّة تحتاج مراجعة متحدّث أصلي. / Pride Lands song lyrics (171 lines) are a free rendering that needs a native review.
 
@@ -36,5 +36,5 @@ This is a beta. Numbers are measured on the shipped files.
 - Epic Games Store غير مدعوم في الاكتشاف التلقائي (يمكن اختيار المجلد يدوياً، لكنه لم يُختبر). / Epic Games Store: not auto-detected and not tested.
 
 ## 4. الخطوط — Fonts
-الحروف العربية في الأطلس والصور مرسومة من خط Segoe UI (من Microsoft). راجع `THIRD_PARTY_LICENSES.md`.
-The Arabic glyphs in the font atlases and images are rendered from Segoe UI (Microsoft). See `THIRD_PARTY_LICENSES.md`.
+الحروف العربية في أطلسي الخط مرسومة منذ 1.0.4 من خط Noto Naskh Arabic Bold (رخصة SIL OFL 1.1)، والكلمات العربية داخل الصور المعرّبة مرسومة من خط Segoe UI (من Microsoft). راجع `THIRD_PARTY_LICENSES.md`.
+Since 1.0.4 the Arabic glyphs in the font atlases are rendered from Noto Naskh Arabic Bold (SIL OFL 1.1); the Arabic words inside translated images are rendered from Segoe UI (Microsoft). See `THIRD_PARTY_LICENSES.md`.
