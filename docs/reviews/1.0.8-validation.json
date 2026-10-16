@@ -1,0 +1,52 @@
+{
+  "version": "1.0.8",
+  "validation_scope": "local candidate builds, before GitHub publication",
+  "font_texture_cells_checked": 235,
+  "font_hd_sd_joined_pairs": 2799,
+  "font_unjoined_pairs_without_touching": 1230,
+  "arabic_message_widths_checked": 15537,
+  "messages_wider": 0,
+  "validator_unit_tests_passed": 19,
+  "manager_unit_tests_passed": 42,
+  "linux_native_ui_passed": true,
+  "linux_packaged_test": {
+    "platform": "linux",
+    "arch": "x64",
+    "packagedApplication": true,
+    "passed": true,
+    "actualPayloadFiles": 798,
+    "allFilesSHA256Verified": true,
+    "manualFolderSelection": true,
+    "menuRemoval": true,
+    "menuUndo": true,
+    "windowsWorkerTested": false,
+    "interactiveUACTested": false,
+    "gameAndSavePreserved": true,
+    "fixtureGame": true,
+    "actualGamePlayTested": false
+  },
+  "windows_portable_archive": {
+    "passed": true,
+    "version": "1.0.8",
+    "portable_exe_sha256": "9fe2c359e8bfc8e3d01670dfbcb65f878fb68ff967fa83add52d8aea17275a3e",
+    "embedded_archive_crc_verified": true,
+    "extracted_manifest_verified": true,
+    "actual_payload_files": 798,
+    "full_blob_sha256_verified": true,
+    "app_asar_matches_staging": true,
+    "native_windows_execution_tested": false,
+    "actual_game_play_tested": false
+  },
+  "actual_upgrade_1_0_7_to_1_0_8": {
+    "passed": true,
+    "previousVersion": "1.0.7",
+    "nextVersion": "1.0.8",
+    "actualPayloadFiles": 798,
+    "upgradedHashesVerified": true,
+    "previousHashesRestored": true,
+    "removalPassed": true,
+    "gameAndSavePreserved": true,
+    "environment": "Linux host, Windows installation paths; not a native Windows or in-game test"
+  },
+  "in_game_verified": false
+}

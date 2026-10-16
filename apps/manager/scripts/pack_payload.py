@@ -13,15 +13,15 @@ config = json.loads((ROOT / 'build/config/panacea.json').read_text())
 manifest = list(csv.DictReader((ROOT / 'build/out/MANIFEST.tsv').open(), delimiter='\t'))
 catalog = json.loads((APP / 'catalog/legacy.json').read_text())
 reference = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.2' for f in v['files']}
-previous = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.6' for f in v['files']}
+previous = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.7' for f in v['files']}
 version = json.loads((APP / 'package.json').read_text())['version']
-assert version == '1.0.7'
+assert version == '1.0.8'
 font_paths = {'msg/us/fontimage.bar', 'msg/us/fontinfo.bar',
               'remastered/msg/us/fontimage.bar/US_fontimage_bar0.png',
               'remastered/msg/us/fontimage.bar/US_fontimage_bar1.png'}
 font_manifest = {f['path'].replace('\\', '/'): f for f in csv.DictReader(
-    (ROOT / 'experiments/fonts/dialogue-size/MANIFEST.tsv').open(), delimiter='\t')}
-# 1.0.7 ships text corrections: a text bar may differ from 1.0.2 only when
+    (ROOT / 'experiments/fonts/natural-proportions/MANIFEST.tsv').open(), delimiter='\t')}
+# 1.0.8 ships text corrections: a text bar may differ from 1.0.2 only when
 # build_bars.py rebuilt it (all its gates passed) and wrote it to build/out.
 text_changed = []
 files = []
@@ -35,12 +35,12 @@ with (OUT / 'payload.bin').open('wb') as blob:
             expected = font_manifest[relative]['sha256']
         elif relative.startswith('msg/us/') and relative.endswith('.bar') and bar.is_file():
             expected = hashlib.sha256(bar.read_bytes()).hexdigest()
-            if expected != reference['kh2/' + relative]['sha256']:
+            if expected != previous['kh2/' + relative]['sha256']:
                 text_changed.append(relative)
         else:
             expected = reference['kh2/' + relative]['sha256']
         if expected != entry['sha256']:
-            raise SystemExit('1.0.7 source does not match the approved translation/font: ' + relative)
+            raise SystemExit('1.0.8 source does not match the approved translation/font: ' + relative)
         sources.append(('kh2/' + relative, 'payload', source, entry['sha256']))
     vendor = ROOT / 'build' / config['extract_to'] / config['files_under']
     for name, expected in config['files'].items():
@@ -62,6 +62,6 @@ result = {'schema': 1, 'version': version, 'blobHash': blob_hash, 'files': files
 (OUT / 'manifest.json').write_text(json.dumps(result, indent=2) + '\n')
 print(json.dumps({'version': result['version'], 'files': len(files), 'payload_files': len(manifest),
                   'packed_bytes': (OUT / 'payload.bin').stat().st_size, 'blob_sha256': blob_hash,
-                  'text_bars_changed_from_1_0_6': sorted(text_changed),
-                  'font_files_changed_from_1_0_6': sum(previous['kh2/' + p]['sha256'] != font_manifest[p]['sha256'] for p in font_paths)},
+                  'text_bars_changed_from_1_0_7': sorted(text_changed),
+                  'font_files_changed_from_1_0_7': sum(previous['kh2/' + p]['sha256'] != font_manifest[p]['sha256'] for p in font_paths)},
                  indent=2))
