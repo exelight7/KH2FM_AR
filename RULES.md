@@ -34,6 +34,14 @@ Some installed rows already contain characters outside this list (game symbols
 drawn by the font, such as `⤷ ★ ₓ % / "`, or English left untranslated). A
 correction may **keep** them as they are, but may never **add** one.
 
+### Brackets and «?!» on screen
+
+The game does not mirror brackets and keeps punctuation runs in their written
+order, so a run next to Arabic text appears reversed on screen. Write such a run
+reversed, with `(` and `)` swapped: `)المقامر(` shows as «(المقامر)», `")قائدهم("`
+shows as «("قائدهم")», and `!?` shows as «?!». Leave runs that only touch digits
+or Latin, such as `(1992)`, as they are (24 rows were fixed this way in 1.0.7).
+
 ## 3. Tags
 
 Tags are control codes, written in angle brackets, for example `<10>`,
