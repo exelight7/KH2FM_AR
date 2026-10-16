@@ -76,6 +76,9 @@ fix such as «15 أنواع» → «15 نوعا» or «أغراض جديدة» �
 The magic and Drive names chosen in 1.0.7 (نار، جليد، صاعقة، شفاء، جذب، حاجز،
 تحول) are ordinary words too and are listed there; their forms with a tier number
 (`نار 2`, `جليد 3`, …) stay protected.
+Also in 1.0.7, Limit became «الذروة» (Limit Form «شكل الذروة», Trinity Limit
+«ذروة ترينتي»), Overdrive «الجموح», and the Gummi command Warp «انتقال» so it no
+longer reads like the Drive «التحول».
 
 ## 6. Length
 

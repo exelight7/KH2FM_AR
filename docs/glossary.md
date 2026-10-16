@@ -83,8 +83,8 @@
 | الإنجليزي | العربي المعتمد | ملاحظات |
 |---|---|---|
 | Drive Form | شكل التحول | قرار 1.0.7 |
-| Limit | ليميت | الدفعة 2 — ترجمة صوتية؛ **للمراجعة** |
-| Limit Form | شكل الليميت | قرار GLOSSARY 2026-10-08 (كان: فورم ليميت) |
+| Limit | الذروة | 1.0.7: ترجمة عربية بدل «ليميت» (أمر الذروة، هجمات الذروة، تلقائي: الذروة) |
+| Limit Form | شكل الذروة | 1.0.7 (كان: شكل الليميت، وقبله فورم ليميت) |
 | Reaction Command | أمر التفاعل | قرار GLOSSARY 2026-10-08 (jm كان: أمر رد الفعل) |
 | Summon | استدعاء | الدفعة 2 |
 | Strength | القوة | الدفعة 2 |
@@ -155,7 +155,7 @@
 | Scan | فحص | |
 | Explosion | انفجار | |
 | Jackpot | جاكبوت | |
-| Trinity Limit | ترينتي ليميت | |
+| Trinity Limit | ذروة ترينتي | 1.0.7 |
 | Sonic Rave / Last Arcanum / Strike Raid / Infinity / Zantetsuken / Ripple Drive | سونيك ريف / لاست أركانوم / سترايك ريد / إنفينيتي / زانتيتسوكين / ريبل درايف | أسماء حدود — ترجمة صوتية |
 | Hurricane Period | فترة الإعصار | |
 | Remembrance / Tranquility series | الذكرى / الطمأنينة | شظية/حجر/جوهرة/بلورة |
@@ -165,7 +165,7 @@
 | A map of the area. | خريطة المنطقة. | تكرار بلا dedupe (1535,14632,16047,20212) |
 
 **ملاحظات الدفعة 2:**
-- **للمراجعة:** `Limit=ليميت`، `Limit Form=شكل الليميت` (حُسم 2026-10-08)، `Lucky Lucky=لكي لاكي` — تسميات معتمدة من الدفعة 2، لا تُغيَّر في بقية الملفات دون قرار.
+- **للمراجعة:** `Lucky Lucky=لكي لاكي` — تسميات معتمدة من الدفعة 2، لا تُغيَّر في بقية الملفات دون قرار.
 - `Save=حفظ` و`Party=الفريق` و`Status=الحالة` و`Attack=هجوم` و`Magic=سحر` و`Items=أغراض` و`Drive=تحول` (كان درايف حتى 1.0.6) موحّدة مع الدفعة 1 لكل الـ ids (بما فيها التكرارات: Save=1286/2686، Items=1127/13171/482/1099...).
 - الأرقام/المتغيّرات والوسوم تبقى مكانها؛ لا تشكيل ولا همزات معلقة ولا `،`؛ و**`ى` تُكتب صحيحة دائماً** (مُخصّصة في الأطلس منذ 2026-09-29 — أُلغيت قاعدة الاستبدال `ى→ي` نهائياً §4-6-12).
 
@@ -430,7 +430,7 @@ HP/MP تبقى لاتينية (ids 761,763,767,769,773).
 | Sprinkle | رش | 1215 |
 | Open The Door / Enter The Book / Leave The Book | افتح الباب / ادخل الكتاب / غادر الكتاب | 1218-1220 |
 | Depart | غادر | 1221,1254 |
-| Warp | التحول | 1222 |
+| Warp | انتقال | 1222، 1.0.7: كان «تحول» فتعارض مع التحول (Drive) |
 | Approach | اقترب | 1224,1227,1232,1234,1235,1243,1251 |
 | Move / Persuade / Report / Tinker With It / Punish / Question / Interrogate | تحرك / إقناع / أبلغ / أصلحه / عاقب / اسأل / استجوب | 1225,1228,1229,1233,1244,1252,1253 |
 | Ask For Help | اطلب مساعدة | 1226,1256 |
@@ -582,7 +582,7 @@ HP/MP تبقى لاتينية (ids 761,763,767,769,773).
 | Falling Star / Dreamcloud / Knight Defender / Genji Shield | النجم الساقط / سحابة الحلم / مدافع الفارس / درع الجينجي |
 | Akashic Record / Nobody Guard / Nobody Lance | السجل الأكاشيكي / حماية اللا أحد / رمح اللا أحد |
 | Hammer/Victory Bell/Meteor/Comet Staff, Lord´s Broom, Wisdom Wand | عصا المطرقة / جرس النصر / عصا النيزك / عصا المذنب / مكنسة السيد / عصا الحكمة |
-| Rising Dragon / Shaman´s Relic / Warp Snipe | التنين الصاعد / تحفة الشامان / قنص التحول |
+| Rising Dragon / Shaman´s Relic / Warp Snipe | التنين الصاعد / تحفة الشامان / قنص الانتقال |
 | **Nobody** | **اللا أحد** — مصطلح جديد للمنظمة (مثل Heartless=بلا قلب) |
 
 **أوامر متفرقة (8869-9933):**
@@ -631,7 +631,7 @@ HP/MP تبقى لاتينية (ids 761,763,767,769,773).
 | Donald Fire/Blizzard/Thunder/Cure | نار دونالد / جليد دونالد / صاعقة دونالد / شفاء دونالد |
 | Speedster/Quickplay/Trickster/Return Fire/Bluff/Slasher/Jackknife/Final Trap | الاندفاع/لعب سريع/الحيلة/رد الهجوم/الخداع/القاطع/طعنة السكين/الفخ الأخير |
 | Healing Water/Furious Shout/Cure Potion/Healing Herb/Slow 3/(Delete) | ماء الشفاء/صرخة الغضب/جرعة الشفاء/عشبة الشفاء/بطيء 3/(حذف) |
-| عائلة أوامر Limit (13110-13136) | قالب ثابت: `أمر ليميت ... يستهلك كل MP لسورا.` + أسماء: فانتازيا، قوة الفلاير، اندماج الإعصار، روح الفريق، فانتازيا الحيلة، الأوفردرايف، عواء القمر، تصفيق تصفيق، لهيب التنين، الجلسة الأبدية، فخر الملك، جزيرة الكنز، الإكمال الكامل |
+| عائلة أوامر Limit (13110-13136) | قالب ثابت: `أمر الذروة ... يستهلك كل MP لسورا.` + أسماء: فانتازيا، قوة الفلاير، اندماج الإعصار، روح الفريق، فانتازيا الحيلة، الجموح، عواء القمر، تصفيق تصفيق، لهيب التنين، الجلسة الأبدية، فخر الملك، جزيرة الكنز، الإكمال الكامل |
 | أسماء الهجمات المشتركة داخل الأوصاف | غوفي الدوار، دمار الكسر، الاندفاع، بوشيدو، العواءان، نداء الرقص، الصاروخ الأحمر، الجلسة، القط البري، الخداع، الإعداد |
 | Wisdom / There are no Abilities. | الحكمة / لا توجد قدرات. |
 
@@ -787,7 +787,7 @@ HP/MP تبقى لاتينية (ids 761,763,767,769,773).
 |---|---|
 | Combination Boost / Leaf Bracer / Magic Lock-On / No Experience | تعزيز الدمج / درع الورقة / تثبيت السحر / بلا خبرة |
 | Fire/Blizzard/Thunder Boost | تعزيز النار / تعزيز الجليد / تعزيز الصاعقة — مطابقة بنمط تعزيز X |
-| Defender / Auto Limit / Auto Change / Auto Healing / Hyper Healing | المدافع / تلقائي: ليميت / التبديل / الشفاء / الشفاء الفوري |
+| Defender / Auto Limit / Auto Change / Auto Healing / Hyper Healing | المدافع / تلقائي: الذروة / التبديل / الشفاء / الشفاء الفوري |
 | MP Hastera / MP Hastega | تسريع MP+ / تسريع MP++ | تدرّج بعلامة + مقابل التصريح المفرد `تسريع MP` |
 | أوصاف | قوالب `اجعل عدة منها لزيادة الأثر.` + `1 نقطة صحة` |
 
@@ -1231,21 +1231,21 @@ HP/MP تبقى لاتينية (ids 761,763,767,769,773).
 | Flare Force / Duck Flare / Rocket Flare / Megaduck Flare | قوة الفلاير / فلاير البط / شعلة الصاروخ / ميجا فلاير البط | صيغ sys؛ jm يتبعها |
 | Teamwork / Knocksmash / Duo Raid / Cosmo Boost | تعاون / دمار الكسر / غارة ثنائية / كوزمو بوست | صيغ sys |
 | Howling Moon / Twin Howl / Stalwart Fang / Outcry / Last Howl | عواء القمر / العواءان / الناب المتين / الصراخ / آخر عواء | صيغ sys |
-| Overdrive / Shooting Star / Banishing Blade / Spiral | أوفردرايف / الشهاب / نصل النفي / اللولب | نصل النفي بدل «النصل المطرد» |
+| Overdrive / Shooting Star / Banishing Blade / Spiral | الجموح / الشهاب / نصل النفي / اللولب | نصل النفي بدل «النصل المطرد» |
 | Dragonblaze / Trick Fantasy / Speedster / Trickster | لهيب التنين / فانتازيا الحيلة / الاندفاع / الحيلة | صيغ sys |
 | Downbeat / Synchronization / Finale | النبضة / التزامن / النهاية | صيغ sys |
 | Treasure Isle / King´s Pride / Proud Roar | جزيرة الكنز / فخر الملك / الزئير الفخور | جزيرة الكنز والزئير بدل الصيغ الخاطئة |
 | Complete Compilement / Setup / Cluster Code | الإكمال الكامل / الإعداد / رمز التجمع | إعادة البرمجة بانتظار فحص العرض في sys 14625 |
 | Eternal Session / Last Saber / Master Hearts / All´s End | الجلسة الأبدية / النصل الأخير / القلوب المتقنة / نهاية الكل | صيغ sys |
-| Trinity Limit / Trinity / Ultima / Major Drive | ترينتي ليميت / ترينتي / ألتيما / الاندفاع الأكبر | ألتيما بالألف |
+| Trinity Limit / Trinity / Ultima / Major Drive | ذروة ترينتي / ترينتي / ألتيما / الاندفاع الأكبر | ألتيما بالألف |
 | Never Land / FPS Mode / Firecracker / Ukulele | نيفر لاند / منظور 1 / الشماريخ / يوكوليلي | صيغ sys |
 | Sonic Rave / Sonic / Rave | سونيك ريف / الرنين / حفلة | اسم الليميت بالترجمة الصوتية |
 | Strike Raid / Strike / Judgment | سترايك ريد / الضرب / الحكم | بدل «ضربة غازية» |
 | Last Arcanum / Final Arcana / Arcana / Bash | لاست أركانوم / أسرار النهاية / الأسرار / الكبس |  |
 | Infinity / Impact | إنفينيتي / الصدم | بدل «اللانهاية» |
 | "Valor"/"Wisdom"/"Master"/"Final" Genie | جني الشجاعة / جني الحكمة / جني الإتقان / الجني النهائي | لا «جيني» |
-| Drive Forms (names) | الشجاعة / الحكمة / الإتقان / النهائي / ليميت | Final = النهائي |
-| Valor/Wisdom/Master/Final/Limit Form (in a sentence) | الشكل الشجاع / الشكل الحكيم / الشكل المتقن / الشكل النهائي / شكل الليميت |  |
+| Drive Forms (names) | الشجاعة / الحكمة / الإتقان / النهائي / الذروة | Final = النهائي |
+| Valor/Wisdom/Master/Final/Limit Form (in a sentence) | الشكل الشجاع / الشكل الحكيم / الشكل المتقن / الشكل النهائي / شكل الذروة |  |
 | Leave / Depart / Fail-Safe / Key Counter | غادر / صمام الأمان / الرد بالمفتاح |  |
 | Twilight Shard / Gem / Crystal | شظية الشفق / جوهرة الشفق / بلورة الشفق |  |
 | Save the King / Full Bloom / The Clocktower | منقذ الملك / الإزهار / برج الساعة |  |
