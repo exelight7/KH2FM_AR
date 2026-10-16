@@ -1,4 +1,4 @@
-"""Merge the verified font files (experiments/fonts/natural-proportions, 1.0.8) into the complete corrected release payload."""
+"""Merge the verified font files (experiments/fonts/clean-joins, 1.0.9) into the complete corrected release payload."""
 import argparse
 import csv
 import hashlib
@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 ap = argparse.ArgumentParser(description=__doc__)
 ap.add_argument('--out', type=Path, default=ROOT / 'build/out')
 args = ap.parse_args()
-preview = ROOT / 'experiments/fonts/natural-proportions'
+preview = ROOT / 'experiments/fonts/clean-joins'
 archive = preview / 'font-overlay.zip'
 expected_zip = next(line.split()[0] for line in (preview / 'SHA256SUMS.txt').read_text().splitlines()
                     if line.split(maxsplit=1)[1] == 'font-overlay.zip')

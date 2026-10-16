@@ -317,13 +317,13 @@ def check_cross_file(all_results, root):
     """An id may appear in only one correction file: flag it in every later file."""
     first = {}
     for f, results in all_results:
-        name = os.path.relpath(f, root)
+        name = os.path.relpath(f, root).replace('\\', '/')
         for line, bar, rid, errs in results:
             key = (bar, rid)
             if not rid:
                 continue
             if key not in first:
-                first[key] = name
+                first[key] = name.replace('\\', '/')
             elif first[key] != name:
                 errs.append('id already corrected in %s (combine into one row in one file)' % first[key])
 
@@ -404,7 +404,7 @@ def main(argv=None):
     skipped = [f for f in files if os.path.basename(f).lower() in REPORT_FILES]
     files = [f for f in files if f not in skipped]
     for f in skipped:
-        print('Skipped report file (not a correction file): %s' % os.path.relpath(f, args.root))
+        print('Skipped report file (not a correction file): %s' % os.path.relpath(f, args.root).replace('\\', '/'))
 
     all_results = [(f, validate_file(f, review, rules, glossary)) for f in files]
     check_cross_file(all_results, args.root)

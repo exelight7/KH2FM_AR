@@ -143,7 +143,7 @@ def used_text_cells():
     return pairs
 
 
-def build(source):
+def build(source, natural=False):
     allocation = list(csv.DictReader((ROOT / 'build/tables/allocation.tsv').open(encoding='utf-8-sig'), delimiter='\t'))
     assert len(allocation) == 117
     info = entries(source['info'])
@@ -170,7 +170,7 @@ def build(source):
             ini = [c for c, f in forms.items() if f == 'INI']
             band = set.intersection(*(set(np.nonzero(hd[cell_slice(c, g, 2)][:, 0, 3] >= 128)[0]) for c in ini))
             band = sorted(int(y) for y in band)
-            assert len(band) == 3 and band[-1] - band[0] == 2, band
+            assert len(band) in ((2, 3) if natural else (3,)) and band[-1] - band[0] == len(band) - 1, band
             rec['join_rows_hd'] = band
             bridges = {}
             for c, form in sorted(forms.items()):
@@ -191,7 +191,7 @@ def build(source):
                 if form in ('INI', 'MED'):
                     # The overhanging stroke of the previous glyph is up to 3 px
                     # thicker than the bridge; keep this glyph's ring off it.
-                    ring[band[0] - 3:band[-1] + 4, :bridges[c]] = 0
+                    ring[band[0] - 3:band[-1] + 4, :(max(2, bridges[c]) if natural else bridges[c])] = 0
                 if form in ('FIN', 'MED'):
                     # The next glyph's connecting stroke starts at the advance:
                     # no ring may close the stroke across the join.
@@ -317,7 +317,7 @@ PREVIEWS = {
 
 def preview(before, after, atlas, path, labels=('1.0.5', '1.0.6')):
     """Atlas simulation (not a game screenshot), before and after."""
-    font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 22)
+    font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 22) if Path('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf').exists() else ImageFont.load_default(size=22)
     samples, colours = PREVIEWS[atlas]
     rows = []
     for label, data in zip(labels, (before, after)):
