@@ -166,8 +166,12 @@ for name, font in font_paths.items():
                         bridges += 1
             mask = Image.fromarray(a)
             assert mask.getbbox() and mask.getbbox()[3] <= ch * 2
-            ink = Image.new('RGBA', mask.size, (126, 126, 126, 0))
-            ink.putalpha(mask)
+            # Dialogue textures also use RGB as a coverage signal. Alpha zero
+            # alone is insufficient: hidden RGB would draw a solid glyph cell.
+            rgba = np.zeros((ch * 2, cw * 4, 4), dtype=np.uint8)
+            rgba[:, :, :3] = np.where(a[:, :, None] > 0, 126, 0)
+            rgba[:, :, 3] = a
+            ink = Image.fromarray(rgba)
             texture.paste(ink, box[:2])
             masks[c] = np.array(mask) >= 96
             bounds_report.append({'cell': c, 'form': form, 'font_size_hd': size, 'bridge_rows': bridges})
@@ -178,6 +182,16 @@ for name, font in font_paths.items():
             x0, y0, x1, y1 = cell_box(c, cols, cw * 4, ch * 2)
             allowed[y0:y1, x0:x1] = True
         assert np.array_equal(before[~allowed], after[~allowed])
+        transparent = allowed & (after[:, :, 3] == 0)
+        assert not np.any(after[:, :, :3][transparent]), 'Nonzero RGB behind transparent Arabic pixels'
+        # Both alpha and RGB coverage must contain actual glyph holes, rather
+        # than a rectangle spanning the entire glyph cell.
+        for c in changed_cells:
+            x0, y0, x1, y1 = cell_box(c, cols, cw * 4, ch * 2)
+            tile = after[y0:y1, x0:x1]
+            rgb_coverage = np.any(tile[:, :, :3] > 0, axis=2)
+            assert np.array_equal(rgb_coverage, tile[:, :, 3] > 0)
+            assert rgb_coverage.any() and not rgb_coverage.all()
         target = overlay / f'remastered/msg/us/fontimage.bar/US_fontimage_bar{ix}.png'
         target.parent.mkdir(parents=True, exist_ok=True)
         texture.save(target)
@@ -221,7 +235,8 @@ for name, font in font_paths.items():
             'baseline_hd': baseline, 'join_y_hd': join_y, 'unique_connected_pairs': len(used_pairs),
             'connected_pair_occurrences': sum(used_pairs.values()), 'broken_hd_pairs': broken,
             'broken_sd_pairs': broken_sd,
-            'outside_arabic_pixels_changed': 0, 'glyphs': bounds_report}
+            'outside_arabic_pixels_changed': 0, 'transparent_arabic_pixels_with_rgb': 0,
+            'rgb_coverage_matches_alpha_occupancy': True, 'glyphs': bounds_report}
         assert not broken and not broken_sd, (name, atlas, 'disconnected raster pairs')
     # All BAR headers, icon data, and padding remain byte-identical.
     allowed_bytes = np.zeros(len(image_bar), dtype=bool)

@@ -7,35 +7,36 @@ const {REG_LINE,REG_SECTION,registryValue,patchRegistry,GAME_EXE}=require('../sr
 const {fixture,legacy}=require('./fixture.cjs');
 
 async function withFixture(platform,body) { const f=await fixture(platform); try { await body(f); } finally { await f.cleanup(); } }
-async function previousManagerInstall(f) {
+async function previousManagerInstall(f,version) {
+  const catalogVersion=version==='1.0.3'?'1.0.2':version;
   await f.manager.install(f.game);
   const file=path.join(f.game,'.kh2fm-arabic','state.json');
-  const state=await readJSON(file); state.version='1.0.3';
+  const state=await readJSON(file); state.version=version;
   for(const entry of state.entries.filter(x=>x.root==='mod')) {
-    const previous=f.catalog.versions.find(v=>v.version==='1.0.2').files.find(x=>x.path===entry.path);
-    const bytes=Buffer.from('1.0.2:'+entry.path);
+    const previous=f.catalog.versions.find(v=>v.version===catalogVersion).files.find(x=>x.path===entry.path);
+    const bytes=Buffer.from(catalogVersion+':'+entry.path);
     await fs.writeFile(path.join(state.modRoot,...entry.path.split('/')),bytes);
     entry.sha256=previous.sha256;entry.size=bytes.length;
   }
   await writeJSON(file,state);
   return state;
 }
-for(const platform of ['win32','linux','darwin']) {
-  test(platform+': upgrade 1.0.3 with changed font bytes, undo, and remove',async()=>withFixture(platform,async f=>{
-    const previous=await previousManagerInstall(f);
-    assert.equal((await f.manager.inspect(f.game)).version,'1.0.3');
+for(const version of ['1.0.3','1.0.4']) for(const platform of ['win32','linux','darwin']) {
+  test(platform+': upgrade '+version+' with changed font bytes, undo, and remove',async()=>withFixture(platform,async f=>{
+    const previous=await previousManagerInstall(f,version);
+    assert.equal((await f.manager.inspect(f.game)).version,version);
     await f.manager.install(f.game);
-    assert.equal((await f.manager.inspect(f.game)).version,'1.0.4');
-    for(const p of f.payload) assert.equal(await fs.readFile(path.join(previous.modRoot,...p.split('/')),'utf8'),'1.0.4:'+p);
+    assert.equal((await f.manager.inspect(f.game)).version,'1.0.5');
+    for(const p of f.payload) assert.equal(await fs.readFile(path.join(previous.modRoot,...p.split('/')),'utf8'),'1.0.5:'+p);
     await f.manager.undo(f.game);
-    assert.equal((await f.manager.inspect(f.game)).version,'1.0.3');
-    for(const p of f.payload) assert.equal(await fs.readFile(path.join(previous.modRoot,...p.split('/')),'utf8'),'1.0.2:'+p);
+    assert.equal((await f.manager.inspect(f.game)).version,version);
+    for(const p of f.payload) assert.equal(await fs.readFile(path.join(previous.modRoot,...p.split('/')),'utf8'),(version==='1.0.3'?'1.0.2':version)+':'+p);
     await f.manager.remove(f.game);
     for(const p of f.payload) assert.equal(await exists(path.join(previous.modRoot,...p.split('/'))),false);
     assert.equal(await fs.readFile(path.join(f.game,'save.dat'),'utf8'),'KEEP MY SAVE');
   }));
 }
-test('a forged 1.0.3 state cannot claim the new 1.0.4 file hashes',async()=>withFixture('win32',async f=>{
+test('a forged 1.0.3 state cannot claim the new 1.0.5 file hashes',async()=>withFixture('win32',async f=>{
   await f.manager.install(f.game);
   const file=path.join(f.game,'.kh2fm-arabic','state.json');
   const state=await readJSON(file);state.version='1.0.3';await writeJSON(file,state);
@@ -48,19 +49,19 @@ for (const platform of ['win32','linux','darwin']) {
     const exe=await hash(path.join(f.game,GAME_EXE)); const save=await hash(path.join(f.game,'save.dat'));
     await f.manager.install(f.game);
     const state=await readJSON(path.join(f.game,'.kh2fm-arabic','state.json'));
-    assert.equal((await f.manager.inspect(f.game)).version,'1.0.4');
+    assert.equal((await f.manager.inspect(f.game)).version,'1.0.5');
     for (const entry of state.entries) assert.equal(await hash(path.join(entry.root==='mod' ? state.modRoot : f.game,...entry.path.split('/'))),entry.sha256);
     if (platform!=='win32') assert.equal(registryValue(await fs.readFile(path.join(f.prefix,'user.reg'),'utf8')),REG_LINE);
     await f.manager.remove(f.game); assert.equal((await f.manager.inspect(f.game)).installed,false);
     assert.equal(await exists(path.join(f.game,platform==='win32'?'DBGHELP.dll':'version.dll')),false);
-    await f.manager.undo(f.game); assert.equal((await f.manager.inspect(f.game)).version,'1.0.4');
+    await f.manager.undo(f.game); assert.equal((await f.manager.inspect(f.game)).version,'1.0.5');
     assert.equal(await hash(path.join(f.game,GAME_EXE)),exe); assert.equal(await hash(path.join(f.game,'save.dat')),save);
   }));
 }
 test('upgrade 1.0.1 then remove does not restore the old Arabic translation',async()=>withFixture('win32',async f=>{
   const old=await legacy(f); await f.manager.install(f.game); await f.manager.remove(f.game);
   for (const p of f.payload) assert.equal(await exists(path.join(old.mod,...p.split('/'))),false);
-  await f.manager.undo(f.game); assert.equal((await f.manager.inspect(f.game)).version,'1.0.4');
+  await f.manager.undo(f.game); assert.equal((await f.manager.inspect(f.game)).version,'1.0.5');
 }));
 test('undo an upgrade restores every old Arabic byte',async()=>withFixture('win32',async f=>{
   const old=await legacy(f); await f.manager.install(f.game); await f.manager.undo(f.game);
@@ -101,7 +102,7 @@ test('late reinstall failure restores the entire preceding installation',async()
   await f.manager.install(f.game); const before=await fs.readFile(path.join(f.game,'.kh2fm-arabic','state.json'));
   await assert.rejects(f.manager.install(f.game,{afterWrite:i=>{if(i===3) throw new Error('simulated disk failure');}}),/simulated disk failure/);
   assert.deepEqual(await fs.readFile(path.join(f.game,'.kh2fm-arabic','state.json')),before);
-  assert.equal((await f.manager.inspect(f.game)).version,'1.0.4');
+  assert.equal((await f.manager.inspect(f.game)).version,'1.0.5');
 }));
 test('cancel during copying restores the previous version',async()=>withFixture('win32',async f=>{
   const old=await legacy(f); let cancel=false;
@@ -141,7 +142,7 @@ test('changed Wine override is protected during removal',async()=>withFixture('l
   await f.manager.install(f.game); const reg=path.join(f.prefix,'user.reg');
   await fs.writeFile(reg,patchRegistry(await fs.readFile(reg,'utf8'),'"version"="builtin"'));
   await assert.rejects(f.manager.remove(f.game),/تغير إعداد/);
-  assert.equal((await f.manager.inspect(f.game)).version,'1.0.4');
+  assert.equal((await f.manager.inspect(f.game)).version,'1.0.5');
 }));
 test('a real interrupted child process can be recovered after restart',async()=>withFixture('win32',async f=>{
   const child=spawnSync(process.execPath,['-e',"const {Manager}=require(process.argv[1]);const options=JSON.parse(process.argv[2]);new Manager(options).install(process.argv[3],{afterWrite:()=>process.exit(77)}).catch(e=>{console.error(e);process.exit(1)})",path.resolve(__dirname,'../src/engine.cjs'),JSON.stringify(f.options),f.game],{encoding:'utf8'});
