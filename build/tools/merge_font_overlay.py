@@ -4,6 +4,7 @@ import csv
 import hashlib
 from pathlib import Path
 import zipfile
+from check_font_texture import check_textures
 
 ROOT = Path(__file__).resolve().parents[2]
 ap = argparse.ArgumentParser(description=__doc__)
@@ -14,6 +15,7 @@ archive = preview / 'font-overlay.zip'
 expected_zip = next(line.split()[0] for line in (preview / 'SHA256SUMS.txt').read_text().splitlines()
                     if line.split(maxsplit=1)[1] == 'font-overlay.zip')
 assert hashlib.sha256(archive.read_bytes()).hexdigest() == expected_zip, 'Font ZIP SHA256 mismatch'
+check_textures(archive)
 allowed = {'msg/us/fontimage.bar', 'msg/us/fontinfo.bar',
            'remastered/msg/us/fontimage.bar/US_fontimage_bar0.png',
            'remastered/msg/us/fontimage.bar/US_fontimage_bar1.png'}

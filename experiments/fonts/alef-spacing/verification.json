@@ -1,7 +1,9 @@
 {
-  "repeatability": "passed",
+  "repeatability": "previous version tested; corrected raster checked against coverage invariants",
   "effective_payload_files": 798,
   "changed_files": 4,
   "zip_crc": "passed",
-  "frozen_payload": "unchanged"
+  "frozen_payload": "unchanged",
+  "rgba_background": "RGB zero wherever alpha is zero in all 235 Arabic cells",
+  "rgb_coverage_matches_alpha_occupancy": true
 }

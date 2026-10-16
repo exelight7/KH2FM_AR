@@ -14,7 +14,7 @@ manifest = list(csv.DictReader((ROOT / 'build/out/MANIFEST.tsv').open(), delimit
 catalog = json.loads((APP / 'catalog/legacy.json').read_text())
 reference = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.2' for f in v['files']}
 version = json.loads((APP / 'package.json').read_text())['version']
-assert version == '1.0.4'
+assert version == '1.0.5'
 font_paths = {'msg/us/fontimage.bar', 'msg/us/fontinfo.bar',
               'remastered/msg/us/fontimage.bar/US_fontimage_bar0.png',
               'remastered/msg/us/fontimage.bar/US_fontimage_bar1.png'}
@@ -29,7 +29,7 @@ with (OUT / 'payload.bin').open('wb') as blob:
         source = bar if bar.is_file() else ROOT / 'build/payload/kh2' / relative
         expected = font_manifest[relative] if relative in font_paths else reference['kh2/' + relative]
         if expected['sha256'] != entry['sha256']:
-            raise SystemExit('1.0.4 source does not match the approved translation/font: ' + relative)
+            raise SystemExit('1.0.5 source does not match the approved translation/font: ' + relative)
         sources.append(('kh2/' + relative, 'payload', source, entry['sha256']))
     vendor = ROOT / 'build' / config['extract_to'] / config['files_under']
     for name, expected in config['files'].items():
