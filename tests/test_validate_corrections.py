@@ -74,7 +74,8 @@ class ValidatorTest(unittest.TestCase):
             self.assertNotIn('معلّق', t)   # pending entries are not approved
 
     def test_unprotected_terms(self):
-        words = {'أنواع', 'أغراض', 'الأغراض', 'الشكل', 'حماية', 'الحماية', 'ضربة', 'الواحة', 'المدافع', 'استخدام'}
+        words = {'أنواع', 'أغراض', 'الأغراض', 'الشكل', 'حماية', 'الحماية', 'ضربة', 'الواحة', 'المدافع', 'استخدام',
+                 'نار', 'جليد', 'صاعقة', 'شفاء', 'الشفاء', 'جذب', 'انعكاس', 'تحول', 'التحول'}
         self.assertEqual(self.rules.unprotected, words)
         raw = vc.load_glossary_terms(os.path.join(self.root, 'docs', 'glossary.md'))
         self.assertTrue(words <= raw)                       # they are in the glossary file
@@ -83,6 +84,8 @@ class ValidatorTest(unittest.TestCase):
         self.assertEqual(self.glossary.changed('احصل على 15 أنواع من المواد.',
                                                'احصل على 15 نوعا من المواد.'), [])
         self.assertEqual(self.glossary.changed('اصنع أغراض جديدة!', 'اصنع أغراضا جديدة!'), [])
+        self.assertIn('نار 2', self.glossary.terms)          # spell tiers stay protected
+        self.assertEqual(self.glossary.changed('أشعل النيران.', 'أشعل النار.'), [])
         # a full check_row on a real row: «حماية» may now be added
         old = self.review[('gumi', '21695')]
         row = dict(bar='gumi', id='21695', AR_old=old, AR_new=old.replace('أحرف محظورة', 'أحرف الحماية'),
