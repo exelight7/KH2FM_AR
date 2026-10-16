@@ -1,0 +1,681 @@
+{
+  "atlases": {
+    "sys": {
+      "changed_advances": [
+        {
+          "letter": "ء",
+          "form": "ISO",
+          "cell": 99,
+          "old_advance_sd": 8.5,
+          "new_advance_sd": 6.0
+        },
+        {
+          "letter": "آ",
+          "form": "ISO",
+          "cell": 104,
+          "old_advance_sd": 7.5,
+          "new_advance_sd": 5.5
+        },
+        {
+          "letter": "أ",
+          "form": "ISO",
+          "cell": 106,
+          "old_advance_sd": 5.5,
+          "new_advance_sd": 3.5
+        },
+        {
+          "letter": "ؤ",
+          "form": "ISO",
+          "cell": 148,
+          "old_advance_sd": 9.5,
+          "new_advance_sd": 7.0
+        },
+        {
+          "letter": "إ",
+          "form": "ISO",
+          "cell": 150,
+          "old_advance_sd": 5.5,
+          "new_advance_sd": 3.5
+        },
+        {
+          "letter": "ئ",
+          "form": "ISO",
+          "cell": 153,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ئ",
+          "form": "INI",
+          "cell": 155,
+          "old_advance_sd": 7.5,
+          "new_advance_sd": 5.0
+        },
+        {
+          "letter": "ا",
+          "form": "ISO",
+          "cell": 158,
+          "old_advance_sd": 4.5,
+          "new_advance_sd": 2.5
+        },
+        {
+          "letter": "ب",
+          "form": "ISO",
+          "cell": 160,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ب",
+          "form": "INI",
+          "cell": 163,
+          "old_advance_sd": 6.5,
+          "new_advance_sd": 5.0
+        },
+        {
+          "letter": "ة",
+          "form": "ISO",
+          "cell": 165,
+          "old_advance_sd": 8.5,
+          "new_advance_sd": 6.0
+        },
+        {
+          "letter": "ت",
+          "form": "ISO",
+          "cell": 167,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ت",
+          "form": "INI",
+          "cell": 169,
+          "old_advance_sd": 7.5,
+          "new_advance_sd": 6.0
+        },
+        {
+          "letter": "ث",
+          "form": "ISO",
+          "cell": 176,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ث",
+          "form": "INI",
+          "cell": 178,
+          "old_advance_sd": 8.5,
+          "new_advance_sd": 6.0
+        },
+        {
+          "letter": "ج",
+          "form": "ISO",
+          "cell": 180,
+          "old_advance_sd": 9.5,
+          "new_advance_sd": 8.0
+        },
+        {
+          "letter": "ج",
+          "form": "INI",
+          "cell": 182,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ح",
+          "form": "ISO",
+          "cell": 184,
+          "old_advance_sd": 9.5,
+          "new_advance_sd": 8.0
+        },
+        {
+          "letter": "ح",
+          "form": "INI",
+          "cell": 186,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "خ",
+          "form": "ISO",
+          "cell": 188,
+          "old_advance_sd": 9.5,
+          "new_advance_sd": 8.0
+        },
+        {
+          "letter": "خ",
+          "form": "INI",
+          "cell": 190,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "د",
+          "form": "ISO",
+          "cell": 192,
+          "old_advance_sd": 8.5,
+          "new_advance_sd": 7.0
+        },
+        {
+          "letter": "ذ",
+          "form": "ISO",
+          "cell": 194,
+          "old_advance_sd": 8.5,
+          "new_advance_sd": 7.0
+        },
+        {
+          "letter": "ر",
+          "form": "ISO",
+          "cell": 196,
+          "old_advance_sd": 8.5,
+          "new_advance_sd": 6.0
+        },
+        {
+          "letter": "ز",
+          "form": "ISO",
+          "cell": 198,
+          "old_advance_sd": 8.5,
+          "new_advance_sd": 6.0
+        },
+        {
+          "letter": "س",
+          "form": "ISO",
+          "cell": 200,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.5
+        },
+        {
+          "letter": "س",
+          "form": "INI",
+          "cell": 97,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ش",
+          "form": "ISO",
+          "cell": 212,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.5
+        },
+        {
+          "letter": "ش",
+          "form": "INI",
+          "cell": 201,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ص",
+          "form": "ISO",
+          "cell": 203,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 10.0
+        },
+        {
+          "letter": "ص",
+          "form": "INI",
+          "cell": 217,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 9.5
+        },
+        {
+          "letter": "ض",
+          "form": "ISO",
+          "cell": 219,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 10.0
+        },
+        {
+          "letter": "ض",
+          "form": "INI",
+          "cell": 221,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 9.5
+        },
+        {
+          "letter": "ط",
+          "form": "ISO",
+          "cell": 95,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ط",
+          "form": "INI",
+          "cell": 151,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ظ",
+          "form": "ISO",
+          "cell": 98,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ظ",
+          "form": "INI",
+          "cell": 103,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ع",
+          "form": "ISO",
+          "cell": 138,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 7.5
+        },
+        {
+          "letter": "ع",
+          "form": "INI",
+          "cell": 147,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "غ",
+          "form": "ISO",
+          "cell": 143,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 7.5
+        },
+        {
+          "letter": "غ",
+          "form": "INI",
+          "cell": 123,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ف",
+          "form": "ISO",
+          "cell": 127,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ف",
+          "form": "INI",
+          "cell": 146,
+          "old_advance_sd": 9.5,
+          "new_advance_sd": 7.0
+        },
+        {
+          "letter": "ق",
+          "form": "ISO",
+          "cell": 128,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ق",
+          "form": "INI",
+          "cell": 142,
+          "old_advance_sd": 9.5,
+          "new_advance_sd": 7.0
+        },
+        {
+          "letter": "ك",
+          "form": "ISO",
+          "cell": 133,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ك",
+          "form": "INI",
+          "cell": 139,
+          "old_advance_sd": 9.5,
+          "new_advance_sd": 8.0
+        },
+        {
+          "letter": "ل",
+          "form": "ISO",
+          "cell": 140,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 8.5
+        },
+        {
+          "letter": "ل",
+          "form": "INI",
+          "cell": 122,
+          "old_advance_sd": 6.5,
+          "new_advance_sd": 5.0
+        },
+        {
+          "letter": "م",
+          "form": "ISO",
+          "cell": 141,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 8.0
+        },
+        {
+          "letter": "م",
+          "form": "INI",
+          "cell": 39,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ن",
+          "form": "ISO",
+          "cell": 37,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 8.5
+        },
+        {
+          "letter": "ن",
+          "form": "INI",
+          "cell": 23,
+          "old_advance_sd": 6.5,
+          "new_advance_sd": 5.0
+        },
+        {
+          "letter": "ه",
+          "form": "ISO",
+          "cell": 34,
+          "old_advance_sd": 8.5,
+          "new_advance_sd": 6.0
+        },
+        {
+          "letter": "ه",
+          "form": "INI",
+          "cell": 19,
+          "old_advance_sd": 9.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "و",
+          "form": "ISO",
+          "cell": 25,
+          "old_advance_sd": 9.5,
+          "new_advance_sd": 7.0
+        },
+        {
+          "letter": "ى",
+          "form": "ISO",
+          "cell": 28,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ي",
+          "form": "ISO",
+          "cell": 20,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ي",
+          "form": "INI",
+          "cell": 17,
+          "old_advance_sd": 7.5,
+          "new_advance_sd": 6.0
+        }
+      ],
+      "connected_pairs_checked": 1170,
+      "disconnected_pairs": 0,
+      "digit_1_unchanged": true
+    },
+    "evt": {
+      "changed_advances": [
+        {
+          "letter": "ئ",
+          "form": "ISO",
+          "cell": 153,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ا",
+          "form": "ISO",
+          "cell": 158,
+          "old_advance_sd": 4.5,
+          "new_advance_sd": 4.0
+        },
+        {
+          "letter": "ة",
+          "form": "ISO",
+          "cell": 165,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ج",
+          "form": "ISO",
+          "cell": 180,
+          "old_advance_sd": 12.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ج",
+          "form": "INI",
+          "cell": 182,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.5
+        },
+        {
+          "letter": "ح",
+          "form": "ISO",
+          "cell": 184,
+          "old_advance_sd": 12.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ح",
+          "form": "INI",
+          "cell": 186,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.5
+        },
+        {
+          "letter": "خ",
+          "form": "ISO",
+          "cell": 188,
+          "old_advance_sd": 12.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "خ",
+          "form": "INI",
+          "cell": 190,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.5
+        },
+        {
+          "letter": "س",
+          "form": "INI",
+          "cell": 97,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ش",
+          "form": "INI",
+          "cell": 201,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ص",
+          "form": "INI",
+          "cell": 217,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.5
+        },
+        {
+          "letter": "ض",
+          "form": "INI",
+          "cell": 221,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.5
+        },
+        {
+          "letter": "ط",
+          "form": "ISO",
+          "cell": 95,
+          "old_advance_sd": 12.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ط",
+          "form": "INI",
+          "cell": 151,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ظ",
+          "form": "ISO",
+          "cell": 98,
+          "old_advance_sd": 12.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ظ",
+          "form": "INI",
+          "cell": 103,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ع",
+          "form": "ISO",
+          "cell": 138,
+          "old_advance_sd": 12.5,
+          "new_advance_sd": 11.5
+        },
+        {
+          "letter": "ع",
+          "form": "INI",
+          "cell": 147,
+          "old_advance_sd": 12.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "غ",
+          "form": "ISO",
+          "cell": 143,
+          "old_advance_sd": 12.5,
+          "new_advance_sd": 11.5
+        },
+        {
+          "letter": "غ",
+          "form": "INI",
+          "cell": 123,
+          "old_advance_sd": 12.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ف",
+          "form": "ISO",
+          "cell": 127,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 13.0
+        },
+        {
+          "letter": "ق",
+          "form": "ISO",
+          "cell": 128,
+          "old_advance_sd": 12.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ك",
+          "form": "ISO",
+          "cell": 133,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ل",
+          "form": "ISO",
+          "cell": 140,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "م",
+          "form": "ISO",
+          "cell": 141,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "م",
+          "form": "INI",
+          "cell": 39,
+          "old_advance_sd": 11.5,
+          "new_advance_sd": 11.0
+        },
+        {
+          "letter": "ن",
+          "form": "ISO",
+          "cell": 37,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ه",
+          "form": "ISO",
+          "cell": 34,
+          "old_advance_sd": 10.5,
+          "new_advance_sd": 9.0
+        },
+        {
+          "letter": "ه",
+          "form": "INI",
+          "cell": 19,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ى",
+          "form": "ISO",
+          "cell": 28,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "ي",
+          "form": "ISO",
+          "cell": 20,
+          "old_advance_sd": 13.5,
+          "new_advance_sd": 12.0
+        },
+        {
+          "letter": "لا",
+          "form": "ISO",
+          "cell": 36,
+          "old_advance_sd": 12.5,
+          "new_advance_sd": 11.5
+        }
+      ],
+      "connected_pairs_checked": 1642,
+      "disconnected_pairs": 0,
+      "digit_1_unchanged": true
+    }
+  },
+  "input_fontinfo_sha256": "64fdb0ce9e04b8aa008b140a4a9cee82266b2b99e1808e5c7994aad872a06b6e",
+  "width_scan": {
+    "rows": 15552,
+    "grew": 0,
+    "narrower": 14920,
+    "unchanged": 632
+  },
+  "alef_is_not_digit_1": {
+    "alef_iso_cell": 158,
+    "alef_final_cell": 159,
+    "digit_1_cell": 113
+  },
+  "overlay_files": [
+    "msg/us/fontimage.bar",
+    "msg/us/fontinfo.bar",
+    "remastered/msg/us/fontimage.bar/US_fontimage_bar0.png",
+    "remastered/msg/us/fontimage.bar/US_fontimage_bar1.png"
+  ],
+  "in_game_verified": false
+}
