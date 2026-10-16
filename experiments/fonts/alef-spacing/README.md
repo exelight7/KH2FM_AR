@@ -1,0 +1,58 @@
+# خط عربي تجريبي — تحسين الألف والتباعد
+
+**الإصدار:** `font-preview-alef-spacing-20261016`
+
+نسخة تجريبية لتحسين شكل الألف التي تبدو كرقم «1»، وتقليل الفراغ الزائد داخل الكلمات في القوائم والحوار. تستخدم Noto Naskh Arabic Bold، وتحافظ على التمييز بين `ا أ إ آ` والرقم `1` وعلى قواعد اتصال الحروف.
+
+**لم تختبر داخل اللعبة بعد.** اجتازت فحوص الملفات والترميز والاتصال وقياس عرض النص. هذه حزمة خط وليست مثبت التعريب الكامل.
+
+## التنزيل والمعاينة
+
+- [تنزيل حزمة الخط](https://github.com/exelight7/KH2FM_AR/raw/refs/tags/font-preview-alef-spacing-20261016/experiments/fonts/alef-spacing/font-overlay.zip)
+- [مقارنة القوائم](comparison-sys.png)
+- [مقارنة الحوار](comparison-evt.png)
+- [بصمات SHA256](SHA256SUMS.txt)
+
+في صور المقارنة: الخط السابق يسارا والتعديل يمينا. الصور محاكاة لرسم الأطلس بحبر أبيض موحد وليست لقطات من اللعبة بعد التثبيت.
+
+## طريقة التجربة
+
+1. أغلق اللعبة، واحتفظ بنسخة من الملفات الأربعة الحالية في المود.
+2. فك `font-overlay.zip`. انسخ محتويات `kh2` إلى مجلد `kh2` في مود Panacea النشط. المسار الافتراضي لمثبت المشروع هو `%LOCALAPPDATA%\KH2FM-Arabic\mod\kh2`؛ إذا استعملت مجلد مودات مختلفا فاستخدم مساره النشط.
+3. شغل اللعبة وراجع «أغراض»، وحوارا طويلا، واليوميات، والحفظ/التحميل، وGummi. للرجوع إلى الخط السابق، أعد الملفات الأربعة التي احتفظت بها.
+
+لا تستبدل ملفات اللعبة الأصلية. احتفظ بملفي `fontimage.bar` و`fontinfo.bar` من النسخة نفسها، لأن التباعد محسوب لرسم هذه النسخة.
+
+```text
+kh2/msg/us/fontimage.bar
+kh2/msg/us/fontinfo.bar
+kh2/remastered/msg/us/fontimage.bar/US_fontimage_bar0.png
+kh2/remastered/msg/us/fontimage.bar/US_fontimage_bar1.png
+```
+
+الحزمة مبنية على `build-payload-1.0.0-beta.zip` من إصدار `build-payload`، وفق `build/config/FROZEN_MANIFEST.tsv`. لا تغير نصوص الرسائل أو التصحيحات. الكلمات المرسومة داخل صور أخرى من الواجهة لا يشملها هذا التعديل.
+
+## نتائج التحقق
+
+| الفحص | النتيجة |
+|---|---|
+| قياس السطور | 15,552 سطرا: 14,920 أضيق، و632 بلا تغيير، وصفر أعرض |
+| أزواج الحروف المتصلة | 1,170 في القوائم و1,642 في الحوار، بلا انقطاع في HD وSD |
+| التباعد | خفض 59 قيمة في القوائم و33 في الحوار، مع إبقاء تقدّم الوصل FIN/MED ثابتا |
+| الحزمة المركبة | تحقق 798 ملفا، مع استبدال الملفات الأربعة المقصودة فقط |
+| قابلية إعادة التوليد | المخرجات متطابقة بايتا عند تكرار التوليد |
+| تشغيل اللعبة | لم ينفذ بعد |
+
+تفاصيل القيم في [report.json](report.json)، والتحقق في [verification.json](verification.json). قياسات العرض تستخدم جداول تقدم الحروف ولا تثبت ملاءمة جميع النوافذ بصريا.
+
+## مصادر التوليد
+
+الأداتان في `sources/` تستعملان بيئة السحابة المهيأة عند `/workspace/KH2FM_AR`، والحزمة المجمدة في `build/payload`، ومجلد عمل `/workspace/shared/kh2fm-cloud`. تحتاجان Python 3.12 وPillow وNumPy وfontTools وخطي Noto Sans Arabic Bold وNoto Naskh Arabic Bold الموجودين في `/usr/share/fonts/truetype/noto`.
+
+```bash
+cd /workspace/KH2FM_AR
+python experiments/fonts/alef-spacing/sources/font_lab.py
+python experiments/fonts/alef-spacing/sources/compact_font.py
+```
+
+تكتب الأداتان النتائج خارج المستودع، ولا تغيران الحزمة المجمدة. مصدر الخط بترخيص SIL OFL 1.1؛ انظر [FONT_SOURCE_LICENSE.txt](FONT_SOURCE_LICENSE.txt). إشعارات الخلايا والملفات المحفوظة تبقى كما في وثائق تراخيص المشروع.
