@@ -292,3 +292,6 @@ The Arabic glyph cells in the sys and evt font atlases were re-rendered from Not
 
 ### Version 1.0.6 font update
 The same Noto Naskh Arabic glyph cells were modified (dark outline in the dialogue atlas, re-encoded SD cells); the game's own Latin, digit and symbol cells were moved up to the Arabic baseline without other change. No new font source was added.
+
+### Version 1.0.8 font update
+Arabic sys/evt cells use Noto Sans Arabic Regular (Google, SIL OFL 1.1) with a quarter-HD-pixel stroke, rendered at natural proportions. The source font and notices are in experiments/fonts/natural-proportions/. Native Latin, digit, symbol and icon cells retain the 1.0.7 pixels. See licenses/Noto-OFL.txt.
