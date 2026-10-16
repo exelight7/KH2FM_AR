@@ -126,7 +126,9 @@ jobs:
         run: |
           cp apps/manager/README_AR.md release/
           cp apps/manager/REPORT_1.0.9.md release/
-          cp experiments/fonts/natural-proportions/comparison-*.png release/
+          cp experiments/fonts/clean-joins/comparison-*.png release/
+          cp prepared/build/report/HUD_TRANSFORM.* release/
+          cp experiments/fonts/clean-joins/report.json release/FONT_REPORT_1.0.9.json
           cp prepared/build/report/BUILD_REPORT.md release/
           cp prepared/build/report/CHANGELOG.md release/
           cp prepared/PAYLOAD_PACK.json release/
