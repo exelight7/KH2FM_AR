@@ -1,6 +1,6 @@
 {
   "name": "kh2fm-arabic-manager",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Arabic installer and removal manager for Kingdom Hearts II Final Mix",
   "author": "KH2FM Arabic fan project",
   "license": "MIT",
@@ -59,15 +59,15 @@
       ],
       "requestedExecutionLevel": "asInvoker",
       "signAndEditExecutable": true,
-      "artifactName": "KH2FM-Arabic-1.0.8-Windows-${arch}.${ext}"
+      "artifactName": "KH2FM-Arabic-1.0.9-Windows-${arch}.${ext}"
     },
     "nsis": {
       "oneClick": true,
       "perMachine": false,
       "runAfterFinish": true,
       "deleteAppDataOnUninstall": false,
-      "shortcutName": "\u062a\u0639\u0631\u064a\u0628 KH2FM",
-      "uninstallDisplayName": "KH2FM Arabic Manager 1.0.8"
+      "shortcutName": "تعريب KH2FM",
+      "uninstallDisplayName": "KH2FM Arabic Manager 1.0.9"
     },
     "mac": {
       "target": [
@@ -76,7 +76,7 @@
       ],
       "category": "public.app-category.utilities",
       "identity": "-",
-      "artifactName": "KH2FM-Arabic-1.0.8-macOS-${arch}.${ext}",
+      "artifactName": "KH2FM-Arabic-1.0.9-macOS-${arch}.${ext}",
       "hardenedRuntime": false
     },
     "linux": {
@@ -85,7 +85,7 @@
         "tar.gz"
       ],
       "category": "Utility",
-      "artifactName": "KH2FM-Arabic-1.0.8-Linux-${arch}.${ext}"
+      "artifactName": "KH2FM-Arabic-1.0.9-Linux-${arch}.${ext}"
     }
   }
 }
