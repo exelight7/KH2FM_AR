@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>تعريب KH2FM — 1.0.4</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg class="symbols" aria-hidden="true"><defs>
+    <symbol id="icon-heart" viewBox="0 0 32 32"><path d="M16 28 4 15C-4 5 9-3 16 7 23-3 36 5 28 15Z"/></symbol>
+    <symbol id="icon-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M3 10h18"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M20 12H4m7-7-7 7 7 7"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="icon-undo" viewBox="0 0 24 24"><path d="M9 5 4 10l5 5M4 10h10a6 6 0 0 1 0 12"/></symbol>
+    <symbol id="icon-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 10v7m4-7v7"/></symbol>
+  </defs></svg>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark"><svg><use href="#icon-heart"/></svg></span><div><strong>KH2FM <span>ARABIC</span></strong><small>تعريب كينغدوم هارتس</small></div></div>
+      <div class="header-actions"><span class="version">1.0.4</span><div class="menu-wrap">
+        <button id="menu-toggle" class="icon-button" aria-label="إدارة التعريب" aria-expanded="false" aria-controls="management-menu"><span>•••</span></button>
+        <div id="management-menu" class="menu" hidden>
+          <span class="menu-label">إدارة التعريب</span>
+          <button id="remove" disabled><svg><use href="#icon-trash"/></svg>حذف التعريب</button>
+          <button id="undo" disabled><svg><use href="#icon-undo"/></svg>التراجع عن آخر عملية</button>
+          <button id="prefix" hidden><svg><use href="#icon-folder"/></svg>اختيار بيئة Wine</button>
+          <button id="help"><span class="help-icon">?</span>طريقة الاستخدام</button>
+        </div>
+      </div></div>
+    </header>
+    <section class="workspace">
+      <section class="content">
+        <div class="eyebrow"><span></span>KINGDOM HEARTS II FINAL MIX</div>
+        <h1>حكايتك،<br><em>بالعربي.</em></h1>
+        <p class="intro">رحلة مألوفة، بكلمات أقرب.<br>ثبّت التعريب وارجع لعالمك المفضّل.</p>
+        <div class="setup-card">
+          <div class="card-title"><span class="step">01</span><div><h2>اختر مكان لعبتك</h2><p id="platform-hint">اختر مجلد KINGDOM HEARTS -HD 1.5+2.5 ReMIX-.</p></div></div>
+          <button id="choose-game" class="folder-picker"><svg><use href="#icon-folder"/></svg><span id="folder-label">اختيار مجلد اللعبة</span><svg class="picker-arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+          <p id="game-path" class="game-path" dir="ltr" hidden></p>
+          <div id="selection-status" class="selection-status"><span class="status-dot"></span><span id="selection-text">أنت تختار المجلد، ونحن نكمل الباقي.</span></div>
+          <div class="divider"></div>
+          <button id="install" class="primary" disabled><span id="install-label">تثبيت التعريب</span><svg><use href="#icon-arrow"/></svg></button>
+          <p class="reassurance"><svg><use href="#icon-check"/></svg>نسخة احتياطية تلقائية · حذف واستعادة من القائمة</p>
+        </div>
+        <section id="feedback" class="feedback" role="status" aria-live="polite" hidden><strong id="feedback-title"></strong><p id="feedback-text"></p></section>
+        <section id="progress-area" class="progress-area" hidden><div class="progress-heading"><span id="progress-label">جاري تجهيز التعريب</span><span id="progress-percent" dir="ltr">0%</span></div><div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-fill"></div></div><button id="cancel" class="text-button">إلغاء العملية</button></section>
+      </section>
+      <aside class="art-panel" aria-label="الرسم الذي اختاره صاحب المشروع">
+        <div class="art-caption"><span class="tiny-star">✧</span><span>بين النور والظلام</span></div>
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><span class="art-star star-one">✧</span><span class="art-star star-two">✦</span>
+        <img id="owner-art" src="../assets/user-art.jpg" alt="رسم الشخصية بالسيوف الذي اختاره صاحب المشروع" draggable="false">
+        <div class="art-footer"><span>YOUR NEXT CHAPTER</span><strong>رحلتك تبدأ هنا.</strong></div>
+      </aside>
+    </section>
+    <footer class="footer"><span class="platform-badge" id="platform-badge">WINDOWS · macOS · LINUX</span><span>تعريب مجاني من المعجبين <span class="footer-dot">•</span> KH2FM AR</span></footer>
+  </main>
+  <dialog id="help-dialog"><button id="close-help" class="dialog-close" aria-label="إغلاق">×</button><span class="eyebrow">خطوات بسيطة</span><h2>كل شيء في مكان واحد.</h2><ol><li>أغلق اللعبة قبل التثبيت أو الحذف.</li><li>في Steam: إدارة ← تصفّح الملفات المحلية، ثم اختر هذا المجلد في البرنامج.</li><li>اضغط «تثبيت التعريب»، واختر English كلغة اللعبة في Steam.</li><li>لحذف التعريب أو التراجع، افتح قائمة ••• أعلى النافذة.</li></ol><p id="compatibility-help">نسخة اللعبة على الكمبيوتر خاصة بويندوز. على لينكس تعمل عبر Proton، وعلى ماك عبر Wine أو CrossOver.</p><p>النسخ الاحتياطية محفوظة داخل مجلد اللعبة. احتفظ بها إذا أردت التراجع لاحقًا.</p></dialog>
+  <script src="renderer.js"></script>
+</body>
+</html>

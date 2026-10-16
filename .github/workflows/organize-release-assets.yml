@@ -1,0 +1,23 @@
+name: Organize existing 1.0.3 draft downloads
+on:
+  push:
+    branches: ['installer/1.0.3']
+    paths: ['.github/workflows/organize-release-assets.yml', 'build/tools/organize_manager_draft.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kh2fm-draft-1-0-3
+  cancel-in-progress: false
+jobs:
+  organize:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Preserve supporting files, then arrange six draft downloads
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python build/tools/organize_manager_draft.py

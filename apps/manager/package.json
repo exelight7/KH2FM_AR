@@ -1,0 +1,91 @@
+{
+  "name": "kh2fm-arabic-manager",
+  "version": "1.0.4",
+  "description": "Arabic installer and removal manager for Kingdom Hearts II Final Mix",
+  "author": "KH2FM Arabic fan project",
+  "license": "MIT",
+  "main": "src/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.cjs",
+    "test:ui": "node tests/ui.cjs",
+    "test:native": "node tests/native.cjs",
+    "dist": "electron-builder --publish never"
+  },
+  "devDependencies": {
+    "@fontsource/noto-sans-arabic": "5.3.0",
+    "electron": "44.7.0",
+    "electron-builder": "26.15.3",
+    "playwright": "1.64.0"
+  },
+  "build": {
+    "appId": "org.kh2fm.arabic.manager",
+    "productName": "KH2FM Arabic",
+    "asar": true,
+    "directories": {
+      "output": "dist",
+      "buildResources": "assets"
+    },
+    "files": [
+      "src/**/*",
+      "ui/**/*",
+      "assets/**/*",
+      "catalog/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "data",
+        "to": "translation",
+        "filter": [
+          "payload.bin",
+          "manifest.json"
+        ]
+      },
+      {
+        "from": "../../build/docs",
+        "to": "licenses",
+        "filter": [
+          "licenses/**/*",
+          "THIRD_PARTY_LICENSES.md",
+          "CREDITS.md",
+          "DISCLAIMER.txt"
+        ]
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "requestedExecutionLevel": "asInvoker",
+      "signAndEditExecutable": true,
+      "artifactName": "KH2FM-Arabic-1.0.4-Windows-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false,
+      "shortcutName": "\u062a\u0639\u0631\u064a\u0628 KH2FM",
+      "uninstallDisplayName": "KH2FM Arabic Manager 1.0.4"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.utilities",
+      "identity": "-",
+      "artifactName": "KH2FM-Arabic-1.0.4-macOS-${arch}.${ext}",
+      "hardenedRuntime": false
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "tar.gz"
+      ],
+      "category": "Utility",
+      "artifactName": "KH2FM-Arabic-1.0.4-Linux-${arch}.${ext}"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+name: Fetch supplied installer artwork
+on:
+  push:
+    branches: ['installer/**']
+    paths: ['.github/workflows/fetch-installer-art.yml', 'apps/manager/scripts/fetch_art.py']
+permissions:
+  contents: write
+jobs:
+  artwork:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python apps/manager/scripts/fetch_art.py
+      - name: Store the supplied original artwork on the installer branch
+        run: |
+          mkdir -p apps/manager/assets
+          cp apps/manager/artwork-download/user-art.* apps/manager/assets/
+          cp apps/manager/artwork-download/ARTWORK_SOURCE.json apps/manager/assets/
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add apps/manager/assets/
+          git diff --cached --quiet && exit 0
+          git commit -m 'Embed the artwork supplied by the project owner'
+          git push origin HEAD:${GITHUB_REF_NAME}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: supplied-artwork
+          path: apps/manager/artwork-download/
+          if-no-files-found: error

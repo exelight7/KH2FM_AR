@@ -7,7 +7,7 @@ on:
     inputs:
       version:
         description: Release version
-        default: '1.0.1'
+        default: '1.0.2'
         required: true
   push:
     branches: ['build/**']
@@ -16,7 +16,7 @@ permissions:
   contents: write
 
 env:
-  VERSION: ${{ github.event.inputs.version || '1.0.1' }}
+  VERSION: ${{ github.event.inputs.version || '1.0.2' }}
   PAYLOAD_TAG: build-payload
   PAYLOAD_ZIP: build-payload-1.0.0-beta.zip
 
@@ -29,6 +29,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - name: Validator tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Validate corrections before release build
+        run: python tools/validate_corrections.py
 
       - name: Download payload (build-payload release)
         env:
@@ -133,6 +139,9 @@ jobs:
           Copy-Item $exe release/
           Copy-Item build/artifact/report/BUILD_REPORT.md release/
           Copy-Item build/artifact/report/CHANGELOG.md release/
+          if ($env:VERSION -eq '1.0.2') {
+            Copy-Item docs/releases/CODEX_TEXT_REVIEW_1.0.2.md release/
+          }
           Push-Location release
           Get-ChildItem -File | Where-Object Name -ne 'SHA256SUMS.txt' | Sort-Object Name | ForEach-Object {
             "{0}  {1}" -f (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower(), $_.Name } | Set-Content -Encoding ascii SHA256SUMS.txt
@@ -153,8 +162,23 @@ jobs:
           $tag = "v$env:VERSION"
           $info = gh release view $tag -R $env:GITHUB_REPOSITORY --json isDraft 2>$null | ConvertFrom-Json
           if ($info -and -not $info.isDraft) { Write-Error "$tag is already published; not touching it"; exit 1 }
-          if ($info) { gh release delete $tag -R $env:GITHUB_REPOSITORY --yes }
           $files = Get-ChildItem release -File | ForEach-Object { $_.FullName }
-          gh release create $tag @files --draft --target $env:GITHUB_SHA --title "v$env:VERSION" `
-            --notes-file release/CHANGELOG.md -R $env:GITHUB_REPOSITORY
+          $notes = 'release/CHANGELOG.md'
+          if ($env:VERSION -eq '1.0.2') { $notes = 'docs/releases/1.0.2.md' }
+          if ($info) {
+            gh release edit $tag --draft --target $env:GITHUB_SHA --title "v$env:VERSION" `
+              --notes-file $notes -R $env:GITHUB_REPOSITORY
+            if ($LASTEXITCODE -ne 0) { exit 1 }
+            gh release upload $tag @files --clobber -R $env:GITHUB_REPOSITORY
+          } else {
+            gh release create $tag @files --draft --target $env:GITHUB_SHA --title "v$env:VERSION" `
+              --notes-file $notes -R $env:GITHUB_REPOSITORY
+          }
           if ($LASTEXITCODE -ne 0) { exit 1 }
+          $result = gh release view $tag -R $env:GITHUB_REPOSITORY --json isDraft,url,assets | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+          if (-not $result.isDraft) { Write-Error "Release must remain a draft"; exit 1 }
+          $installer = "KH2FM-Arabic-Setup-$env:VERSION.exe"
+          if (-not ($result.assets | Where-Object name -eq $installer)) { Write-Error "Installer asset missing"; exit 1 }
+          "Draft release: $($result.url)" | Tee-Object -FilePath "$env:GITHUB_STEP_SUMMARY" -Append
+          "Installer: $installer" | Tee-Object -FilePath "$env:GITHUB_STEP_SUMMARY" -Append
