@@ -21,14 +21,14 @@ async function fixture(platform='win32') {
   const files=[]; const chunks=[]; let offset=0;
   for (const p of [...payload,'DBGHELP.dll','version.dll']) {
     const group=p.startsWith('kh2/') ? 'payload' : 'loader';
-    const bytes=group==='payload' ? Buffer.from('1.0.2:'+p) : loaderData;
+    const bytes=group==='payload' ? Buffer.from('1.0.4:'+p) : loaderData;
     const compressed=zlib.gzipSync(bytes);
     files.push({path:p,group,size:bytes.length,sha256:hashBytes(bytes),offset,compressedSize:compressed.length});
     chunks.push(compressed); offset+=compressed.length;
   }
   const blob=Buffer.concat(chunks);
   await fs.writeFile(path.join(dataDir,'payload.bin'),blob);
-  await writeJSON(path.join(dataDir,'manifest.json'),{schema:1,version:'1.0.3',blobHash:hashBytes(blob),files});
+  await writeJSON(path.join(dataDir,'manifest.json'),{schema:1,version:'1.0.4',blobHash:hashBytes(blob),files});
   const options={dataDir,catalog,platform};
   const manager=new Manager(options);
   return {root,game,prefix,dataDir,catalog,options,manager,payload,loaderData,cleanup:()=>fs.rm(root,{recursive:true,force:true})};

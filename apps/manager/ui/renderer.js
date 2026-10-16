@@ -13,7 +13,7 @@ function refresh(value){
   $('undo').disabled=busy || (!value?.canUndo && !value?.pendingRecovery);
   $('prefix').disabled=busy || !value;
   $('undo').lastChild.textContent=value?.pendingRecovery ? 'استعادة العملية السابقة' : 'التراجع عن آخر عملية';
-  $('install-label').textContent=busy ? 'جاري العمل…' : value?.installed ? (value.version==='1.0.3' ? 'إعادة تثبيت التعريب' : 'تحديث التعريب إلى 1.0.3') : 'تثبيت التعريب';
+  $('install-label').textContent=busy ? 'جاري العمل…' : value?.installed ? (value.version==='1.0.4' ? 'إعادة تثبيت التعريب' : 'تحديث التعريب إلى 1.0.4') : 'تثبيت التعريب';
   $('selection-status').classList.toggle('ready',!!value && !value.needsPrefix && !value.pendingRecovery);
   $('selection-text').textContent=!value ? 'أنت تختار المجلد، ونحن نكمل الباقي.' : value.pendingRecovery ? 'عملية سابقة لم تكتمل — الاستعادة متاحة في القائمة.' : value.needsPrefix ? 'شغّل اللعبة مرة واحدة، أو اختر بيئة Wine من القائمة.' : value.installed ? 'التعريب '+value.version+' موجود — يمكنك تحديثه أو حذفه.' : 'مجلد اللعبة جاهز للتثبيت.';
 }

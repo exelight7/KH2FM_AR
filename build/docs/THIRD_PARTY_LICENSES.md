@@ -284,3 +284,7 @@ https://jrsoftware.org/
 
 ## 6. Fonts
 The Arabic letters in the translated font atlases (`remastered\msg\us\fontimage.bar\*.png`, `msg\us\fontimage.bar`) and in the translated images were rendered from **Segoe UI** (Regular/Bold/Semibold), a Microsoft font that ships with Windows. No font file is included in this package. Microsoft's font license does not explicitly grant redistribution of bitmaps derived from the font; see `KNOWN_ISSUES.md` §4 and the project's plan to re-render them with an open-licensed (SIL OFL) font.
+
+
+### Version 1.0.4 font update
+The Arabic glyph cells in the sys and evt font atlases were re-rendered from Noto Naskh Arabic Bold (Google, SIL Open Font License 1.1). See licenses/Noto-OFL.txt. Existing Latin, digit, symbol and icon cells, and text embedded in other images, retain their existing sources and notices described above.

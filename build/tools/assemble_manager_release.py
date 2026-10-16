@@ -6,13 +6,13 @@ import zipfile
 from pathlib import Path
 
 PRIMARY = {
-    'KH2FM-Arabic-1.0.3-Windows-x64.exe': '01-KH2FM-Arabic-1.0.3-Windows-x64.exe',
-    'KH2FM-Arabic-1.0.3-macOS-arm64.dmg': '02-KH2FM-Arabic-1.0.3-macOS-Apple-Silicon.dmg',
-    'KH2FM-Arabic-1.0.3-macOS-x64.dmg': '03-KH2FM-Arabic-1.0.3-macOS-Intel.dmg',
-    'KH2FM-Arabic-1.0.3-Linux-x86_64.AppImage': '04-KH2FM-Arabic-1.0.3-Linux-x64.AppImage',
-    'KH2FM-Arabic-1.0.3-Linux-arm64.AppImage': '05-KH2FM-Arabic-1.0.3-Linux-ARM64.AppImage',
+    'KH2FM-Arabic-1.0.4-Windows-x64.exe': '01-KH2FM-Arabic-1.0.4-Windows-x64.exe',
+    'KH2FM-Arabic-1.0.4-macOS-arm64.dmg': '02-KH2FM-Arabic-1.0.4-macOS-Apple-Silicon.dmg',
+    'KH2FM-Arabic-1.0.4-macOS-x64.dmg': '03-KH2FM-Arabic-1.0.4-macOS-Intel.dmg',
+    'KH2FM-Arabic-1.0.4-Linux-x86_64.AppImage': '04-KH2FM-Arabic-1.0.4-Linux-x64.AppImage',
+    'KH2FM-Arabic-1.0.4-Linux-arm64.AppImage': '05-KH2FM-Arabic-1.0.4-Linux-ARM64.AppImage',
 }
-EXTRAS = '06-KH2FM-Arabic-1.0.3-Extras-and-Reports.zip'
+EXTRAS = '06-KH2FM-Arabic-1.0.4-Extras-and-Reports.zip'
 
 
 def sha256(path):
@@ -37,9 +37,9 @@ def package_extras(root, destination, original_hashes):
         assert sha256(path) == original_hashes[path.name], f'Hash mismatch: {path.name}'
     checksum_lines = [original_hashes[old] + '  ' + new for old, new in PRIMARY.items()]
     checksum_lines += [original_hashes[p.name] + '  ' + archive_path(p.name) for p in supporting]
-    readme = '''# ملفات إضافية لتحديث 1.0.3
+    readme = '''# ملفات إضافية لتحديث 1.0.4
 
-هذا الملف اختياري. للتثبيت حمّل برنامج نظامك مباشرة من مسودة الإصدار.
+هذا الملف اختياري. للتثبيت حمّل برنامج نظامك مباشرة من الإصدار.
 نسخة ويندوز هي الملف الأول في قائمة التحميل، ويبدأ اسمها بـ01.
 
 - reports: التقارير ونتائج الاختبارات ودليل استخدام البرنامج.
@@ -49,7 +49,7 @@ def package_extras(root, destination, original_hashes):
 - checksums/ORIGINAL-SHA256SUMS.txt: قائمة البصمات القديمة بالأسماء الأصلية، محفوظة للرجوع إليها.
 - ORIGINAL_ASSET_HASHES.json: بصمات جميع الملفات الأصلية قبل ترتيب قائمة التحميل.
 
-لم تتغير محتويات أي برنامج عند إعادة تسمية الملفات. يبقى الإصدار مسودة حتى ينشره صاحب المشروع.
+لم تتغير محتويات أي برنامج عند إعادة تسمية الملفات. تنشر النسخة التجريبية بعد نجاح فحوص الأنظمة الخمسة.
 '''
     destination.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(destination, 'w', allowZip64=True) as archive:
