@@ -1,0 +1,83 @@
+{
+  "atlases": {
+    "sys": {
+      "arabic_cells": 117,
+      "native_cells_moved": 147,
+      "sd_native_cells_moved_less": {},
+      "sd_level_share_of_ink": {
+        "native": [
+          0.123,
+          0.358,
+          0.518
+        ],
+        "arabic": [
+          0.383,
+          0.23,
+          0.386
+        ]
+      },
+      "sd_bytes_with_level_above_3": 0,
+      "joined_pairs_checked": 1141,
+      "broken_joins": 0,
+      "max_body_pixels_covered_by_ring_per_pair": 0,
+      "body_pixels_covered_by_ring_in_text": 0,
+      "digit_1_body_bottom_hd": 31,
+      "arabic_stroke_bottom_hd": 30,
+      "baseline_gap_hd": 1
+    },
+    "evt": {
+      "arabic_cells": 118,
+      "native_cells_moved": 153,
+      "join_rows_hd": [
+        38,
+        39,
+        40
+      ],
+      "sd_native_cells_moved_less": {
+        "55": 2,
+        "64": 2,
+        "65": 2,
+        "72": 2
+      },
+      "sd_level_share_of_ink": {
+        "native": [
+          0.555,
+          0.125,
+          0.321
+        ],
+        "arabic": [
+          0.479,
+          0.179,
+          0.342
+        ]
+      },
+      "sd_bytes_with_level_above_3": 0,
+      "joined_pairs_checked": 1648,
+      "broken_joins": 0,
+      "max_body_pixels_covered_by_ring_per_pair": 3,
+      "body_pixels_covered_by_ring_in_text": 7904,
+      "digit_1_body_bottom_hd": 40,
+      "arabic_stroke_bottom_hd": 40,
+      "baseline_gap_hd": 0,
+      "touching_unjoined_pairs": 0
+    }
+  },
+  "version": "1.0.7",
+  "input_overlay_sha256": "b2ca689c4af1ebf8266d6e4df9a9b9debfa9d024a6028b368c6a429100a30b2b",
+  "dialogue_scale": 0.9,
+  "dialogue_advances_changed": 118,
+  "width_scan_evt": {
+    "rows": 12506,
+    "narrower": 12504,
+    "unchanged": 2,
+    "wider": 0
+  },
+  "native_shift_hd_px": 6,
+  "overlay_files": {
+    "kh2/msg/us/fontimage.bar": "6eec11ff8acb0e39be163619cd1be730c08bd45aba932bf7388ffe0dda044bf2",
+    "kh2/msg/us/fontinfo.bar": "44cced6d21c996e9937cbed22690b9cfea451e650e315eabaefac4488ca9ae7d",
+    "kh2/remastered/msg/us/fontimage.bar/US_fontimage_bar0.png": "66ed2ba1b027f8e37a0345465217b838227c028c43737ecd54dda803860ca18d",
+    "kh2/remastered/msg/us/fontimage.bar/US_fontimage_bar1.png": "9d7610f20e1319bee546f6dbc6865c741d127d789f8c746c67b89b04e3c32a7b"
+  },
+  "in_game_verified": false
+}
