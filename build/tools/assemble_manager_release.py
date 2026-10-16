@@ -7,12 +7,9 @@ from pathlib import Path
 
 PRIMARY = {
     'KH2FM-Arabic-1.0.5-Windows-x64.exe': '01-KH2FM-Arabic-1.0.5-Windows-x64.exe',
-    'KH2FM-Arabic-1.0.5-macOS-arm64.dmg': '02-KH2FM-Arabic-1.0.5-macOS-Apple-Silicon.dmg',
-    'KH2FM-Arabic-1.0.5-macOS-x64.dmg': '03-KH2FM-Arabic-1.0.5-macOS-Intel.dmg',
-    'KH2FM-Arabic-1.0.5-Linux-x86_64.AppImage': '04-KH2FM-Arabic-1.0.5-Linux-x64.AppImage',
-    'KH2FM-Arabic-1.0.5-Linux-arm64.AppImage': '05-KH2FM-Arabic-1.0.5-Linux-ARM64.AppImage',
+    'KH2FM-Arabic-1.0.5-Linux-x86_64.AppImage': '02-KH2FM-Arabic-1.0.5-Linux-x64.AppImage',
 }
-EXTRAS = '06-KH2FM-Arabic-1.0.5-Extras-and-Reports.zip'
+EXTRAS = '03-KH2FM-Arabic-1.0.5-Extras-and-Reports.zip'
 
 
 def sha256(path):
@@ -44,12 +41,12 @@ def package_extras(root, destination, original_hashes):
 
 - reports: التقارير ونتائج الاختبارات ودليل استخدام البرنامج.
 - screenshots: صور البرنامج وقائمة الحذف على الأنظمة المختلفة.
-- alternative-downloads: نسخ ZIP لماك وTAR.GZ للينكس عند الحاجة.
-- SHA256SUMS.txt: بصمات البرامج الخمسة بأسمائها الجديدة، ومحتويات هذا الأرشيف.
+- alternative-downloads: نسخة TAR.GZ للينكس عند الحاجة.
+- SHA256SUMS.txt: بصمات البرنامجين بأسمائها الجديدة، ومحتويات هذا الأرشيف.
 - checksums/ORIGINAL-SHA256SUMS.txt: قائمة البصمات القديمة بالأسماء الأصلية، محفوظة للرجوع إليها.
 - ORIGINAL_ASSET_HASHES.json: بصمات جميع الملفات الأصلية قبل ترتيب قائمة التحميل.
 
-لم تتغير محتويات أي برنامج عند إعادة تسمية الملفات. تنشر النسخة التجريبية بعد نجاح فحوص الأنظمة الخمسة.
+لم تتغير محتويات أي برنامج عند إعادة تسمية الملفات. تنشر النسخة التجريبية بعد نجاح فحوص Windows ولينكس.
 '''
     destination.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(destination, 'w', allowZip64=True) as archive:
@@ -71,7 +68,7 @@ def package_extras(root, destination, original_hashes):
 def main():
     root = Path(sys.argv[1])
     reports = [json.loads(p.read_text()) for p in root.glob('PACKAGED-*.json')]
-    assert len(reports) == 5 and all(r['passed'] for r in reports)
+    assert len(reports) == 2 and all(r['passed'] for r in reports)
     for name in PRIMARY:
         assert (root / name).is_file(), f'Missing primary program: {name}'
     original_hashes = {p.name: sha256(p) for p in sorted(root.iterdir()) if p.is_file()}
