@@ -73,7 +73,7 @@ Some glossary entries are ordinary nouns that sit in the glossary only as menu
 words (for example «أنواع» Types, «أغراض» Items, «الشكل» Form, «المدافع» Defender). They are listed
 under `unprotected_terms` below and are **not** protected, so a normal grammar
 fix such as «15 أنواع» → «15 نوعا» or «أغراض جديدة» → «أغراضا جديدة» is allowed.
-The magic and Drive names chosen in 1.0.7 (نار، جليد، صاعقة، شفاء، جذب، انعكاس،
+The magic and Drive names chosen in 1.0.7 (نار، جليد، صاعقة، شفاء، جذب، حاجز،
 تحول) are ordinary words too and are listed there; their forms with a tier number
 (`نار 2`, `جليد 3`, …) stay protected.
 
@@ -132,5 +132,5 @@ forbidden: U+061F U+060C U+061B U+0640 U+064B-U+065F U+0670
 line_break_marker: ⏎
 max_growth_percent: 10
 min_growth_chars: 2
-unprotected_terms: أنواع أغراض الأغراض الشكل حماية الحماية ضربة الواحة المدافع استخدام نار جليد صاعقة شفاء الشفاء جذب انعكاس تحول التحول
+unprotected_terms: أنواع أغراض الأغراض الشكل حماية الحماية ضربة الواحة المدافع استخدام نار جليد صاعقة شفاء الشفاء جذب حاجز تحول التحول
 ```

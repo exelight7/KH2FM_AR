@@ -75,7 +75,7 @@ class ValidatorTest(unittest.TestCase):
 
     def test_unprotected_terms(self):
         words = {'أنواع', 'أغراض', 'الأغراض', 'الشكل', 'حماية', 'الحماية', 'ضربة', 'الواحة', 'المدافع', 'استخدام',
-                 'نار', 'جليد', 'صاعقة', 'شفاء', 'الشفاء', 'جذب', 'انعكاس', 'تحول', 'التحول'}
+                 'نار', 'جليد', 'صاعقة', 'شفاء', 'الشفاء', 'جذب', 'حاجز', 'تحول', 'التحول'}
         self.assertEqual(self.rules.unprotected, words)
         raw = vc.load_glossary_terms(os.path.join(self.root, 'docs', 'glossary.md'))
         self.assertTrue(words <= raw)                       # they are in the glossary file
