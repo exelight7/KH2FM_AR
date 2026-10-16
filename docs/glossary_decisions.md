@@ -31,6 +31,22 @@ counted. A form with count 0 is not used yet.
 **Review before merge:** these changes rename terms across the whole game; a
 person reads this table and `corrections/glossary_decisions.csv` before merging.
 
+## متابعة أسماء 1.0.7
+
+هذه الأسماء تحل محل الصيغ القديمة في الجداول التاريخية أدناه:
+
+| EN | الصيغة الحالية |
+|---|---|
+| Drive | التحول؛ عداد التحول، كرات التحول، نقاط التحول |
+| Limit / Limit Form | الذروة / شكل الذروة |
+| Overdrive | الجموح |
+| Warp | انتقال |
+| Warp Snipe | قنص الانتقال |
+
+«الذروة» مؤنثة في الجمل: هذه الذروة، ستلغى الذروة. يبقى «شكل الذروة» مذكرا: كان شكل الذروة متاحا. يوصف أمر التفاعل باسم «الذروة»؛ أما Auto Limit فهو اسم القدرة التي تضبط ذلك الأمر تلقائيا. أسماء الحركات الخاصة مثل Ripple Drive «ريبل درايف» مستقلة عن أمر Drive، ولا تستبدل آليا.
+
+تدقيق المتابعة وتفاصيل الصفوف: [تقرير متابعة 1.0.7](reviews/1.0.7-terms.md).
+
 ## Decisions
 
 ### Limit and attack names (sys wins unless it is wrong)

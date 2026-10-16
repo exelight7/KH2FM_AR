@@ -34,6 +34,14 @@ Some installed rows already contain characters outside this list (game symbols
 drawn by the font, such as `⤷ ★ ₓ % / "`, or English left untranslated). A
 correction may **keep** them as they are, but may never **add** one.
 
+### Brackets and «?!» on screen
+
+The game does not mirror brackets and keeps punctuation runs in their written
+order, so a run next to Arabic text appears reversed on screen. Write such a run
+reversed, with `(` and `)` swapped: `)المقامر(` shows as «(المقامر)», `")قائدهم("`
+shows as «("قائدهم")», and `!?` shows as «?!». Leave runs that only touch digits
+or Latin, such as `(1992)`, as they are (24 rows were fixed this way in 1.0.7).
+
 ## 3. Tags
 
 Tags are control codes, written in angle brackets, for example `<10>`,
@@ -65,6 +73,12 @@ Some glossary entries are ordinary nouns that sit in the glossary only as menu
 words (for example «أنواع» Types, «أغراض» Items, «الشكل» Form, «المدافع» Defender). They are listed
 under `unprotected_terms` below and are **not** protected, so a normal grammar
 fix such as «15 أنواع» → «15 نوعا» or «أغراض جديدة» → «أغراضا جديدة» is allowed.
+The magic and Drive names chosen in 1.0.7 (نار، جليد، صاعقة، شفاء، جذب، حاجز،
+تحول) are ordinary words too and are listed there; their forms with a tier number
+(`نار 2`, `جليد 3`, …) stay protected.
+Also in 1.0.7, Limit became «الذروة» (Limit Form «شكل الذروة», Trinity Limit
+«ذروة ترينتي»), Overdrive «الجموح», and the Gummi command Warp «انتقال» so it no
+longer reads like the Drive «التحول».
 
 ## 6. Length
 
@@ -121,5 +135,5 @@ forbidden: U+061F U+060C U+061B U+0640 U+064B-U+065F U+0670
 line_break_marker: ⏎
 max_growth_percent: 10
 min_growth_chars: 2
-unprotected_terms: أنواع أغراض الأغراض الشكل حماية الحماية ضربة الواحة المدافع استخدام
+unprotected_terms: أنواع أغراض الأغراض الشكل حماية الحماية ضربة الواحة المدافع استخدام نار جليد صاعقة شفاء الشفاء جذب حاجز تحول التحول
 ```

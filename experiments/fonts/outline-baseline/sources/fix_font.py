@@ -315,12 +315,12 @@ PREVIEWS = {
 }
 
 
-def preview(before, after, atlas, path):
+def preview(before, after, atlas, path, labels=('1.0.5', '1.0.6')):
     """Atlas simulation (not a game screenshot), before and after."""
     font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 22)
     samples, colours = PREVIEWS[atlas]
     rows = []
-    for label, data in (('1.0.5', before), ('1.0.6', after)):
+    for label, data in zip(labels, (before, after)):
         for bg, ink in colours:
             for text in samples:
                 rows.append((label, compose(data, atlas, text, bg, ink)))
