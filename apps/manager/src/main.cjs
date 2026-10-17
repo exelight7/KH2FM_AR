@@ -47,7 +47,7 @@ if(workerRequest) {
 app.whenReady().then(()=>{
   const dataDir=app.isPackaged ? path.join(process.resourcesPath,'translation') : path.resolve(__dirname,'../data');
   manager=new Manager({dataDir,catalog});
-  window=new BrowserWindow({width:1130,height:790,minWidth:940,minHeight:690,title:'تعريب KH2FM — 1.0.9',backgroundColor:'#f6f7fb',autoHideMenuBar:true,
+  window=new BrowserWindow({width:1130,height:790,minWidth:940,minHeight:690,title:'تعريب KH2FM — 1.0.10',backgroundColor:'#f6f7fb',autoHideMenuBar:true,
     webPreferences:{preload:path.join(__dirname,'preload.cjs'),contextIsolation:true,nodeIntegration:false,sandbox:true}});
   window.setMenu(null);
   window.webContents.setWindowOpenHandler(()=>({action:'deny'}));

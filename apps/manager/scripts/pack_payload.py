@@ -14,16 +14,18 @@ manifest = list(csv.DictReader((ROOT / 'build/out/MANIFEST.tsv').open(), delimit
 catalog = json.loads((APP / 'catalog/legacy.json').read_text())
 reference = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.2' for f in v['files']}
 previous = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.7' for f in v['files']}
-published108 = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.8' for f in v['files']}
+published109 = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.9' for f in v['files']}
 version = json.loads((APP / 'package.json').read_text())['version']
-assert version == '1.0.9'
+assert version == '1.0.10'
 font_paths = {'msg/us/fontimage.bar', 'msg/us/fontinfo.bar',
               'remastered/msg/us/fontimage.bar/US_fontimage_bar0.png',
               'remastered/msg/us/fontimage.bar/US_fontimage_bar1.png'}
 font_manifest = {f['path'].replace('\\', '/'): f for f in csv.DictReader(
-    (ROOT / 'experiments/fonts/natural-proportions/MANIFEST.tsv').open(), delimiter='\t')}
-# 1.0.9 ships text corrections: a text bar may differ from 1.0.2 only when
+    (ROOT / 'experiments/fonts/clean-joins/MANIFEST.tsv').open(), delimiter='\t')}
+# 1.0.10 ships text corrections: a text bar may differ from 1.0.2 only when
 # build_bars.py rebuilt it (all its gates passed) and wrote it to build/out.
+hud_manifest = {r['path']: r for r in json.loads((ROOT / 'build/report/HUD_TRANSFORM.json').read_text(encoding='utf-8'))['files']}
+assert len(hud_manifest) == 19
 text_changed = []
 files = []
 with (OUT / 'payload.bin').open('wb') as blob:
@@ -34,6 +36,8 @@ with (OUT / 'payload.bin').open('wb') as blob:
         source = bar if bar.is_file() else ROOT / 'build/payload/kh2' / relative
         if relative in font_paths:
             expected = font_manifest[relative]['sha256']
+        elif relative in hud_manifest:
+            expected = hud_manifest[relative]['sha256']
         elif relative.startswith('msg/us/') and relative.endswith('.bar') and bar.is_file():
             expected = hashlib.sha256(bar.read_bytes()).hexdigest()
             if expected != previous['kh2/' + relative]['sha256']:
@@ -41,9 +45,9 @@ with (OUT / 'payload.bin').open('wb') as blob:
         else:
             expected = reference['kh2/' + relative]['sha256']
         if expected != entry['sha256']:
-            raise SystemExit('1.0.9 source does not match the approved translation/font: ' + relative)
-        if entry['sha256'] != published108['kh2/' + relative]['sha256']:
-            raise SystemExit('1.0.9 is an installer repair; payload must match published 1.0.8: ' + relative)
+            raise SystemExit('1.0.10 source does not match the approved translation/font: ' + relative)
+        if entry['sha256'] != published109['kh2/' + relative]['sha256']:
+            raise SystemExit('1.0.10 must preserve published 1.0.9 translation/font/HUD: ' + relative)
         sources.append(('kh2/' + relative, 'payload', source, entry['sha256']))
     vendor = ROOT / 'build' / config['extract_to'] / config['files_under']
     for name, expected in config['files'].items():

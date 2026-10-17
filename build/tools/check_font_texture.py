@@ -61,7 +61,8 @@ def check_textures(archive):
             # Baseline: rows of the digit 1 body vs rows of the Arabic connecting stroke (ب initial, left edge).
             digit = tile(DIGIT_1)
             body = [(r >= 63) if atlas == 'evt' else (a >= 128) for r, _, _, a in digit]
-            stroke = [a >= 128 for _, _, _, a in tile(INI_BA)]
+            # Measure the connecting body, not a dark outline around a dot.
+            stroke = [(r >= 63) if atlas == 'evt' else (a >= 128) for r, _, _, a in tile(INI_BA)]
             gap = bottom([body[y * width:(y + 1) * width] for y in range(height)]) - \
                 bottom([[stroke[y * width]] for y in range(height)])
             assert abs(gap) <= 2, f'Digits sit {gap} HD px off the Arabic baseline in {atlas}'
