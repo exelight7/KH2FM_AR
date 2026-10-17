@@ -4,11 +4,13 @@ const path=require('node:path');
 const {execFile}=require('node:child_process');
 const {promisify}=require('node:util');
 const {Manager}=require('./engine.cjs');
+const {Updates}=require('./updates.cjs');
+const {loadPreferences,savePreferences}=require('./preferences.cjs');
 const {needsElevation,elevatedOperation,runWorker}=require('./windows-worker.cjs');
 const fs=require('node:fs/promises');
 const catalog=require('../catalog/legacy.json');
 const exec=promisify(execFile);
-let window,manager,selected=null,prefixOverride=null,busy=false,cancelled=false,closeAfter=false;
+let window,manager,updates,preferences={},preferencesFile,selected=null,prefixOverride=null,busy=false,cancelled=false,closeAfter=false;
 const respond=async callback=>{try{return {ok:true,value:await callback()};}catch(e){return {ok:false,error:e.message};}};
 function trusted(event) { if (!window || event.sender!==window.webContents || event.senderFrame!==window.webContents.mainFrame) throw new Error('طلب غير مسموح.'); }
 async function ensureGameClosed(prefix) {
@@ -44,35 +46,61 @@ if(workerRequest) {
     catch(error){console.error(error);app.exit(1);}
   });
 }else{
-app.whenReady().then(()=>{
+app.whenReady().then(async()=>{
   const dataDir=app.isPackaged ? path.join(process.resourcesPath,'translation') : path.resolve(__dirname,'../data');
   manager=new Manager({dataDir,catalog});
-  window=new BrowserWindow({width:1130,height:790,minWidth:940,minHeight:690,title:'تعريب KH2FM — 1.0.10',backgroundColor:'#f6f7fb',autoHideMenuBar:true,
+  preferencesFile=path.join(app.getPath('userData'),'manager-preferences.json');
+  preferences=await loadPreferences(preferencesFile);
+  const {autoUpdater}=require('electron-updater');
+  updates=new Updates({updater:autoUpdater,version:app.getVersion(),
+    supported:app.isPackaged && (process.platform==='win32' || (process.platform==='linux' && !!process.env.APPIMAGE)),
+    changed:value=>{if(window && !window.isDestroyed())window.webContents.send('manager:update-state',value);},isBusy:()=>busy,
+    beforeRestart:async version=>{
+      const inspection=selected?await manager.inspect(selected,prefixOverride):null;
+      const installed=inspection?.installed;
+      if(installed)await ensureGameClosed(inspection.prefix);
+      if(selected){preferences={gameDir:selected,prefixOverride,pendingVersion:installed?version:null};await savePreferences(preferencesFile,preferences);}
+    }});
+  window=new BrowserWindow({width:1130,height:790,minWidth:940,minHeight:690,title:'تعريب KH2FM — 1.0.11',backgroundColor:'#f6f7fb',autoHideMenuBar:true,
     webPreferences:{preload:path.join(__dirname,'preload.cjs'),contextIsolation:true,nodeIntegration:false,sandbox:true}});
   window.setMenu(null);
   window.webContents.setWindowOpenHandler(()=>({action:'deny'}));
   window.webContents.on('will-navigate',event=>event.preventDefault());
-  window.on('close',event=>{if(busy){event.preventDefault();cancelled=true;closeAfter=true;progress({phase:'cancelling',current:0,total:1});}});
+  window.on('close',event=>{if(busy){event.preventDefault();cancelled=true;closeAfter=true;progress({phase:'cancelling',current:0,total:1});}else updates.cancel();});
   ipcMain.handle('manager:platform',event=>{trusted(event);return {platform:process.platform,version:app.getVersion()};});
+  ipcMain.handle('manager:bootstrap',event=>respond(async()=>{
+    trusted(event);
+    let inspection=null;
+    if(preferences.gameDir) {
+      try{inspection=await manager.inspect(preferences.gameDir,preferences.prefixOverride);selected=inspection.gameDir;prefixOverride=preferences.prefixOverride;}
+      catch{selected=null;prefixOverride=null;}
+    }
+    return {inspection,update:{...updates.state},applyPending:!!inspection?.installed && preferences.pendingVersion===app.getVersion()};
+  }));
+  ipcMain.handle('manager:update',(event,operation)=>respond(async()=>{
+    trusted(event);if(!['check','download','restart'].includes(operation))throw new Error('عملية تحديث غير مسموحة.');
+    return await updates[operation]();
+  }));
+  ipcMain.handle('manager:update-cancel',event=>{trusted(event);updates.cancel();return true;});
   ipcMain.handle('manager:choose-game',(event)=>respond(async()=>{
-    trusted(event); if(busy) throw new Error('انتظر حتى تنتهي العملية الحالية.');
+    trusted(event); if(busy || updates.busy) throw new Error('انتظر حتى تنتهي العملية الحالية.');
     const result=await dialog.showOpenDialog(window,{title:'اختر مجلد اللعبة',properties:['openDirectory'],defaultPath:selected || undefined});
     if(result.canceled || !result.filePaths.length) return null;
     const choice=result.filePaths[0];
     const inspection=await manager.inspect(choice,prefixOverride);
-    selected=choice; return inspection;
+    selected=inspection.gameDir;preferences={gameDir:selected,prefixOverride,pendingVersion:null};await savePreferences(preferencesFile,preferences);return inspection;
   }));
   ipcMain.handle('manager:choose-prefix',event=>respond(async()=>{
-    trusted(event); if(busy || !selected) throw new Error('اختر مجلد اللعبة أولًا.');
+    trusted(event); if(busy || updates.busy || !selected) throw new Error('اختر مجلد اللعبة وانتظر انتهاء العملية الحالية.');
     const result=await dialog.showOpenDialog(window,{title:'اختر بيئة Wine التي تحتوي user.reg',properties:['openDirectory']});
     if(result.canceled || !result.filePaths.length) return null;
     const inspection=await manager.inspect(selected,result.filePaths[0]);
     if(inspection.needsPrefix) throw new Error('هذا المجلد لا يحتوي بيئة Wine صالحة.');
-    prefixOverride=result.filePaths[0]; return inspection;
+    prefixOverride=result.filePaths[0];preferences={gameDir:selected,prefixOverride,pendingVersion:null};await savePreferences(preferencesFile,preferences);return inspection;
   }));
   ipcMain.handle('manager:run',(event,operation)=>respond(async()=>{
     trusted(event); if(!['install','remove','undo'].includes(operation)) throw new Error('عملية غير مسموحة.');
-    if(busy || !selected) throw new Error('اختر مجلد اللعبة وانتظر انتهاء العملية الحالية.');
+    if(busy || updates.busy || !selected) throw new Error('اختر مجلد اللعبة وانتظر انتهاء العملية الحالية.');
     busy=true;cancelled=false;
     try {
       const inspection=await manager.inspect(selected,prefixOverride);
@@ -82,6 +110,7 @@ app.whenReady().then(()=>{
       const result=process.platform==='win32' && await needsElevation(context.gameDir,context.modRoot)
         ? await elevatedOperation(selected,operation,prefixOverride,progress,options.checkCancel)
         : await manager[operation](selected,options);
+      preferences={gameDir:selected,prefixOverride,pendingVersion:null};await savePreferences(preferencesFile,preferences);
       return {result,inspection:await manager.inspect(selected,prefixOverride)};
     } finally {busy=false;if(closeAfter) app.quit();}
   }));

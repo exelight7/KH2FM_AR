@@ -18,7 +18,9 @@ const {crypto,hashBytes,writeJSON}=require('../src/paths.cjs');
   }else executable=path.join(dist,entries.find(x=>x.startsWith('linux') && x.endsWith('unpacked')),'kh2fm-arabic-manager');
   const f=await fixture(process.platform);let application;
   try{
-    application=await electron.launch({executablePath:executable,args:process.platform==='linux'?['--no-sandbox']:[],timeout:120000});
+    const appImage=path.join(dist,'KH2FM-Arabic-'+require('../package.json').version+'-Linux-x86_64.AppImage');
+    const env=process.platform==='linux'?{...process.env,APPIMAGE:appImage,XDG_CONFIG_HOME:path.join(f.root,'config'),XDG_CACHE_HOME:path.join(f.root,'cache')}:process.env;
+    application=await electron.launch({executablePath:executable,args:process.platform==='linux'?['--no-sandbox']:[],env,timeout:120000});
     application.process().stderr?.on('data',data=>process.stderr.write(data));
     const page=await application.firstWindow();await page.emulateMedia({reducedMotion:'reduce'});await page.waitForSelector('#choose-game');await page.evaluate(()=>document.fonts.ready);
     await application.evaluate(({dialog},game)=>{dialog.showOpenDialog=async()=>({canceled:false,filePaths:[game]});},f.game);
@@ -49,6 +51,7 @@ const {crypto,hashBytes,writeJSON}=require('../src/paths.cjs');
     assert.equal(await fs.readFile(conflictingImage,'utf8'),'ORIGINAL CONFLICTING FONT');
     await fs.rm(conflictingImage);
     for(const entry of state.entries)assert.equal(await hash(safeJoin(entry.root==='mod'?state.modRoot:f.game,entry.path)),entry.sha256);
+    const updateChecks=await require('./update-feed.cjs').exerciseUpdate(application,page,f,dist,executable);
     let windowsWorkerTested=false;
     if(process.platform==='win32') {
       const jobDir=path.join(f.root,'job-'+crypto.randomUUID());await fs.mkdir(jobDir);
@@ -58,9 +61,15 @@ const {crypto,hashBytes,writeJSON}=require('../src/paths.cjs');
       assert.equal(child.status,0,(child.stdout || '')+(child.stderr || ''));
       const result=await readJSON(path.join(jobDir,'result.json'));assert.equal(result.ok,true,JSON.stringify(result));
       assert.equal(await exists(path.join(f.game,'DBGHELP.dll')),false);windowsWorkerTested=true;
+      const {Manager}=require('../src/engine.cjs');
+      const manager=new Manager({dataDir:path.join(root,'data'),catalog:require('../catalog/legacy.json'),platform:'win32'});
+      await manager.undo(f.game);
+      const profile=await application.evaluate(({app})=>app.getPath('userData'));
+      await application.close();application=null;
+      Object.assign(updateChecks,await require('./windows-self-update.cjs').exerciseWindowsSelfUpdate(f,dist,profile));
     }
-    const report={platform:process.platform,arch:process.arch,packagedApplication:true,passed:true,actualPayloadFiles:798,allFilesSHA256Verified:true,manualFolderSelection:true,menuRemoval:true,menuUndo:true,fontConflictRepairAndUndo:true,windowsWorkerTested,interactiveUACTested:false,gameAndSavePreserved:true,fixtureGame:true,actualGamePlayTested:false};
+    const report={platform:process.platform,arch:process.arch,packagedApplication:true,passed:true,actualPayloadFiles:798,allFilesSHA256Verified:true,manualFolderSelection:true,menuRemoval:true,menuUndo:true,fontConflictRepairAndUndo:true,...updateChecks,windowsWorkerTested,interactiveUACTested:false,gameAndSavePreserved:true,fixtureGame:true,actualGamePlayTested:false};
     await fs.writeFile(path.join(output,'PACKAGED-'+process.platform+'-'+process.arch+'.json'),JSON.stringify(report,null,2)+'\n');
     console.log(JSON.stringify(report));
   }finally{if(application)await application.close();await f.cleanup();}
-})().catch(e=>{console.error(e);process.exitCode=1;});
+})().catch(e=>{console.error(e);if(process.env.GITHUB_ACTIONS==='true')console.error('::error title=Packaged application test::'+String(e.stack || e).replaceAll('%','%25').replaceAll('\r','%0D').replaceAll('\n','%0A'));process.exitCode=1;});
