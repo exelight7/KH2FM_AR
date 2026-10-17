@@ -36,6 +36,19 @@ const {crypto,hashBytes,writeJSON}=require('../src/paths.cjs');
     await page.locator('#menu-toggle').click();await page.locator('#undo').click();await page.waitForFunction(()=>document.getElementById('feedback-title').textContent.includes('الاستعادة'),null,{timeout:240000});
     for(const entry of state.entries)assert.equal(await hash(safeJoin(entry.root==='mod'?state.modRoot:f.game,entry.path)),entry.sha256);
     assert.equal(await hash(path.join(f.game,GAME_EXE)),gameHash);assert.equal(await fs.readFile(path.join(f.game,'save.dat'),'utf8'),'KEEP MY SAVE');
+    const conflictingImage=safeJoin(state.modRoot,'kh2/remastered/msg/us/fontimage.bar/fixture-old-font.dds');
+    await fs.writeFile(conflictingImage,'ORIGINAL CONFLICTING FONT');
+    await page.locator('#install').click();
+    await page.waitForFunction(()=>document.getElementById('feedback-title').textContent.includes('جاهز') && document.getElementById('progress-area').hidden,null,{timeout:240000});
+    assert.equal(await exists(conflictingImage),false);
+    const repaired=await readJSON(path.join(f.game,'.kh2fm-arabic/state.json'));
+    assert.equal(repaired.fontConflicts.length,1);
+    assert.equal(await fs.readFile(safeJoin(path.join(f.game,'.kh2fm-arabic'),repaired.fontConflicts[0].original.path),'utf8'),'ORIGINAL CONFLICTING FONT');
+    await page.locator('#menu-toggle').click();await page.locator('#undo').click();
+    await page.waitForFunction(()=>document.getElementById('feedback-title').textContent.includes('الاستعادة'),null,{timeout:240000});
+    assert.equal(await fs.readFile(conflictingImage,'utf8'),'ORIGINAL CONFLICTING FONT');
+    await fs.rm(conflictingImage);
+    for(const entry of state.entries)assert.equal(await hash(safeJoin(entry.root==='mod'?state.modRoot:f.game,entry.path)),entry.sha256);
     let windowsWorkerTested=false;
     if(process.platform==='win32') {
       const jobDir=path.join(f.root,'job-'+crypto.randomUUID());await fs.mkdir(jobDir);
@@ -46,7 +59,7 @@ const {crypto,hashBytes,writeJSON}=require('../src/paths.cjs');
       const result=await readJSON(path.join(jobDir,'result.json'));assert.equal(result.ok,true,JSON.stringify(result));
       assert.equal(await exists(path.join(f.game,'DBGHELP.dll')),false);windowsWorkerTested=true;
     }
-    const report={platform:process.platform,arch:process.arch,packagedApplication:true,passed:true,actualPayloadFiles:798,allFilesSHA256Verified:true,manualFolderSelection:true,menuRemoval:true,menuUndo:true,windowsWorkerTested,interactiveUACTested:false,gameAndSavePreserved:true,fixtureGame:true,actualGamePlayTested:false};
+    const report={platform:process.platform,arch:process.arch,packagedApplication:true,passed:true,actualPayloadFiles:798,allFilesSHA256Verified:true,manualFolderSelection:true,menuRemoval:true,menuUndo:true,fontConflictRepairAndUndo:true,windowsWorkerTested,interactiveUACTested:false,gameAndSavePreserved:true,fixtureGame:true,actualGamePlayTested:false};
     await fs.writeFile(path.join(output,'PACKAGED-'+process.platform+'-'+process.arch+'.json'),JSON.stringify(report,null,2)+'\n');
     console.log(JSON.stringify(report));
   }finally{if(application)await application.close();await f.cleanup();}

@@ -23,7 +23,7 @@ const http=require('node:http');
       page.on('pageerror',e=>errors.push(e.message));
       await page.addInitScript(platform=>{
         let state=null;
-        window.kh2fm={platform:async()=>({platform,version:'1.0.8'}),chooseGame:async()=>({ok:true,value:state={gameDir:platform==='win32'?'D:\\Games\\KINGDOM HEARTS -HD 1.5+2.5 ReMIX-':'/home/player/Steam/steamapps/common/KINGDOM HEARTS -HD 1.5+2.5 ReMIX-',platform,installed:false,version:null,needsPrefix:false,pendingRecovery:false,canUndo:false}}),choosePrefix:async()=>({ok:true,value:state}),run:async operation=>({ok:true,value:{result:{},inspection:state={...state,installed:operation!=='remove',version:operation!=='remove'?'1.0.8':null,canUndo:true}}}),cancel:async()=>true,onProgress:()=>{}};
+        window.kh2fm={platform:async()=>({platform,version:'1.0.9'}),chooseGame:async()=>({ok:true,value:state={gameDir:platform==='win32'?'D:\\Games\\KINGDOM HEARTS -HD 1.5+2.5 ReMIX-':'/home/player/Steam/steamapps/common/KINGDOM HEARTS -HD 1.5+2.5 ReMIX-',platform,installed:false,version:null,needsPrefix:false,pendingRecovery:false,canUndo:false}}),choosePrefix:async()=>({ok:true,value:state}),run:async operation=>({ok:true,value:{result:{},inspection:state={...state,installed:operation!=='remove',version:operation!=='remove'?'1.0.9':null,canUndo:true}}}),cancel:async()=>true,onProgress:()=>{}};
       },platform);
       await page.goto('http://127.0.0.1:'+server.address().port+'/ui/index.html'); await page.evaluate(()=>document.fonts.ready);
       assert.equal(await page.locator('#install').isDisabled(),true);
@@ -41,6 +41,14 @@ const http=require('node:http');
       await page.locator('#close-help').click(); assert.equal(errors.length,0,errors.join('\n'));
       await page.setViewportSize({width:940,height:690}); await page.screenshot({path:path.join(output,'UI-small-'+platform+'.png')});
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+      await page.evaluate(()=>{
+        const warning={...inspection,fontCheck:{issues:['يوجد خط في مجلد التطوير له أولوية على خط التعريب.']}};
+        refresh(warning);window.kh2fm.run=async()=>({ok:true,value:{result:{},inspection:warning}});
+      });
+      assert.match(await page.locator('#selection-text').textContent(),/مجلد التطوير/);
+      await page.locator('#install').click();
+      await page.waitForFunction(()=>document.getElementById('feedback-title').textContent.includes('مراجعة'));
+      assert.equal(await page.locator('#feedback').evaluate(e=>e.classList.contains('error')),true);
       await page.close();
     }
     console.log('UI checks passed for Windows, Linux and macOS layouts, artwork, folder selection, install, menu removal, undo and help.');

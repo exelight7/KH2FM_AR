@@ -5,6 +5,78 @@ const {spawnSync}=require('node:child_process');
 const {fs,path,hash,hashBytes,readJSON,writeJSON,exists}=require('../src/paths.cjs');
 const {REG_LINE,REG_SECTION,registryValue,patchRegistry,GAME_EXE}=require('../src/compatibility.cjs');
 const {fixture,legacy}=require('./fixture.cjs');
+const {FONT_FOLDER}=require('../src/font-runtime.cjs');
+
+for(const platform of ['win32','linux']) test(platform+': conflicting font images are saved, disabled, retained across reinstall, and restored on removal',async()=>withFixture(platform,async f=>{
+  const old=await legacy(f),folder=path.join(old.mod,FONT_FOLDER);
+  for(const name of ['-0.DDS','old.png','nested/1.dds']) {
+    const target=path.join(folder,name);await fs.mkdir(path.dirname(target),{recursive:true});await fs.writeFile(target,'ORIGINAL:'+name);
+  }
+  assert.equal((await f.manager.inspect(f.game)).fontCheck.extraImages.length,3);
+  await f.manager.install(f.game);
+  let state=await readJSON(path.join(f.game,'.kh2fm-arabic/state.json'));
+  assert.equal(state.fontConflicts.length,3);
+  for(const entry of state.fontConflicts) assert.equal(await exists(path.join(old.mod,entry.path)),false);
+  assert.deepEqual((await f.manager.inspect(f.game)).fontCheck.issues,[]);
+  await f.manager.install(f.game);
+  state=await readJSON(path.join(f.game,'.kh2fm-arabic/state.json'));
+  assert.equal(state.fontConflicts.length,3);
+  await f.manager.remove(f.game);
+  for(const name of ['-0.DDS','old.png','nested/1.dds']) assert.equal(await fs.readFile(path.join(folder,name),'utf8'),'ORIGINAL:'+name);
+  assert.equal(await exists(path.join(f.game,platform==='win32'?'DBGHELP.dll':'version.dll')),true);
+  await f.manager.undo(f.game);
+  for(const entry of state.fontConflicts) assert.equal(await exists(path.join(old.mod,entry.path)),false);
+  assert.deepEqual((await f.manager.inspect(f.game)).fontCheck.issues,[]);
+}));
+test('font conflict repair can be undone and rolls back on a copying failure',async()=>withFixture('win32',async f=>{
+  const old=await legacy(f),target=path.join(old.mod,FONT_FOLDER,'-0.dds');await fs.writeFile(target,'ORIGINAL DDS');
+  await assert.rejects(f.manager.install(f.game,{afterWrite:()=>{throw new Error('disk failure');}}),/disk failure/);
+  assert.equal(await fs.readFile(target,'utf8'),'ORIGINAL DDS');
+  await f.manager.install(f.game);await f.manager.undo(f.game);
+  assert.equal(await fs.readFile(target,'utf8'),'ORIGINAL DDS');
+  for(const relative of f.payload) assert.equal(await fs.readFile(path.join(old.mod,relative),'utf8'),'1.0.1:'+relative);
+}));
+test('a modified saved conflicting font and a newly reintroduced font are protected',async()=>withFixture('win32',async f=>{
+  const old=await legacy(f),target=path.join(old.mod,FONT_FOLDER,'-0.dds');await fs.writeFile(target,'ORIGINAL DDS');
+  await f.manager.install(f.game);
+  await fs.writeFile(target,'MY NEW FONT');
+  await assert.rejects(f.manager.install(f.game),/تغيرت صورة خط/);
+  await assert.rejects(f.manager.remove(f.game),/أضيفت صورة خط/);
+  assert.equal(await fs.readFile(target,'utf8'),'MY NEW FONT');
+  await fs.rm(target);
+  const state=await readJSON(path.join(f.game,'.kh2fm-arabic/state.json'));
+  await fs.writeFile(path.join(f.game,'.kh2fm-arabic',state.fontConflicts[0].original.path),'DAMAGED');
+  await assert.rejects(f.manager.install(f.game),/النسخة الأصلية لصورة الخط/);
+  await assert.rejects(f.manager.remove(f.game),/النسخة الأصلية لصورة الخط/);
+}));
+test('an external active mod path change is reported and blocked before copying',async()=>withFixture('win32',async f=>{
+  const old=await legacy(f);await fs.rm(path.join(old.app,'kh2ar_state.txt'));
+  await f.manager.install(f.game);
+  const target=path.join(old.mod,f.payload[0]),before=await hash(target);
+  await fs.writeFile(path.join(f.game,'panacea_settings.txt'),'mod_path=other\n');
+  const check=(await f.manager.inspect(f.game)).fontCheck;
+  assert.ok(check.issues.some(x=>x.includes('مجلد مودات مختلف')));
+  await assert.rejects(f.manager.install(f.game),/مجلد مودات مختلف/);
+  assert.equal(await hash(target),before);
+  assert.equal(await fs.readFile(path.join(f.game,'panacea_settings.txt'),'utf8'),'mod_path=other\n');
+}));
+test('an external development font override is reported and preserved',async()=>withFixture('win32',async f=>{
+  const old=await legacy(f);await fs.rm(path.join(old.app,'kh2ar_state.txt'));
+  const dev=path.join(f.game,'dev',FONT_FOLDER);await fs.mkdir(dev,{recursive:true});await fs.writeFile(path.join(dev,'-0.dds'),'DEV FONT');
+  await fs.appendFile(path.join(f.game,'panacea_settings.txt'),'dev_path=dev\n');
+  assert.ok((await f.manager.inspect(f.game)).fontCheck.issues.some(x=>x.includes('مجلد التطوير')));
+  await assert.rejects(f.manager.install(f.game),/مجلد التطوير/);
+  assert.equal(await fs.readFile(path.join(dev,'-0.dds'),'utf8'),'DEV FONT');
+}));
+test('inspection detects damaged installed fonts and a forged conflict record cannot target messages',async()=>withFixture('win32',async f=>{
+  await f.manager.install(f.game);
+  const statePath=path.join(f.game,'.kh2fm-arabic/state.json'),state=await readJSON(statePath);
+  await fs.writeFile(path.join(state.modRoot,'kh2/msg/us/fontimage.bar'),'CHANGED');
+  assert.ok((await f.manager.inspect(f.game)).fontCheck.issues.some(x=>x.includes('لا تطابق')));
+  state.fontConflicts=[{path:'kh2/msg/us/sys.bar',original:{path:'originals/'+ 'a'.repeat(32)+'.bin',sha256:'a'.repeat(64)}}];
+  await writeJSON(statePath,state);
+  await assert.rejects(f.manager.remove(f.game),/سجل تعارض الخط/);
+}));
 
 async function withFixture(platform,body) { const f=await fixture(platform); try { await body(f); } finally { await f.cleanup(); } }
 async function previousManagerInstall(f,version) {
@@ -21,13 +93,13 @@ async function previousManagerInstall(f,version) {
   await writeJSON(file,state);
   return state;
 }
-for(const version of ['1.0.3','1.0.4','1.0.5','1.0.6','1.0.7']) for(const platform of ['win32','linux','darwin']) {
+for(const version of ['1.0.3','1.0.4','1.0.5','1.0.6','1.0.7','1.0.8']) for(const platform of ['win32','linux','darwin']) {
   test(platform+': upgrade '+version+' with changed font bytes, undo, and remove',async()=>withFixture(platform,async f=>{
     const previous=await previousManagerInstall(f,version);
     assert.equal((await f.manager.inspect(f.game)).version,version);
     await f.manager.install(f.game);
-    assert.equal((await f.manager.inspect(f.game)).version,'1.0.8');
-    for(const p of f.payload) assert.equal(await fs.readFile(path.join(previous.modRoot,...p.split('/')),'utf8'),'1.0.8:'+p);
+    assert.equal((await f.manager.inspect(f.game)).version,'1.0.9');
+    for(const p of f.payload) assert.equal(await fs.readFile(path.join(previous.modRoot,...p.split('/')),'utf8'),'1.0.9:'+p);
     await f.manager.undo(f.game);
     assert.equal((await f.manager.inspect(f.game)).version,version);
     for(const p of f.payload) assert.equal(await fs.readFile(path.join(previous.modRoot,...p.split('/')),'utf8'),(version==='1.0.3'?'1.0.2':version)+':'+p);
@@ -36,7 +108,7 @@ for(const version of ['1.0.3','1.0.4','1.0.5','1.0.6','1.0.7']) for(const platfo
     assert.equal(await fs.readFile(path.join(f.game,'save.dat'),'utf8'),'KEEP MY SAVE');
   }));
 }
-for(const version of ['1.0.3','1.0.6','1.0.7']) test('a forged '+version+' state cannot claim the new 1.0.8 file hashes',async()=>withFixture('win32',async f=>{
+for(const version of ['1.0.3','1.0.6','1.0.7']) test('a forged '+version+' state cannot claim the new 1.0.9 file hashes',async()=>withFixture('win32',async f=>{
   await f.manager.install(f.game);
   const file=path.join(f.game,'.kh2fm-arabic','state.json');
   const state=await readJSON(file);state.version=version;await writeJSON(file,state);
@@ -49,19 +121,19 @@ for (const platform of ['win32','linux','darwin']) {
     const exe=await hash(path.join(f.game,GAME_EXE)); const save=await hash(path.join(f.game,'save.dat'));
     await f.manager.install(f.game);
     const state=await readJSON(path.join(f.game,'.kh2fm-arabic','state.json'));
-    assert.equal((await f.manager.inspect(f.game)).version,'1.0.8');
+    assert.equal((await f.manager.inspect(f.game)).version,'1.0.9');
     for (const entry of state.entries) assert.equal(await hash(path.join(entry.root==='mod' ? state.modRoot : f.game,...entry.path.split('/'))),entry.sha256);
     if (platform!=='win32') assert.equal(registryValue(await fs.readFile(path.join(f.prefix,'user.reg'),'utf8')),REG_LINE);
     await f.manager.remove(f.game); assert.equal((await f.manager.inspect(f.game)).installed,false);
     assert.equal(await exists(path.join(f.game,platform==='win32'?'DBGHELP.dll':'version.dll')),false);
-    await f.manager.undo(f.game); assert.equal((await f.manager.inspect(f.game)).version,'1.0.8');
+    await f.manager.undo(f.game); assert.equal((await f.manager.inspect(f.game)).version,'1.0.9');
     assert.equal(await hash(path.join(f.game,GAME_EXE)),exe); assert.equal(await hash(path.join(f.game,'save.dat')),save);
   }));
 }
 test('upgrade 1.0.1 then remove does not restore the old Arabic translation',async()=>withFixture('win32',async f=>{
   const old=await legacy(f); await f.manager.install(f.game); await f.manager.remove(f.game);
   for (const p of f.payload) assert.equal(await exists(path.join(old.mod,...p.split('/'))),false);
-  await f.manager.undo(f.game); assert.equal((await f.manager.inspect(f.game)).version,'1.0.8');
+  await f.manager.undo(f.game); assert.equal((await f.manager.inspect(f.game)).version,'1.0.9');
 }));
 test('undo an upgrade restores every old Arabic byte',async()=>withFixture('win32',async f=>{
   const old=await legacy(f); await f.manager.install(f.game); await f.manager.undo(f.game);
@@ -102,7 +174,7 @@ test('late reinstall failure restores the entire preceding installation',async()
   await f.manager.install(f.game); const before=await fs.readFile(path.join(f.game,'.kh2fm-arabic','state.json'));
   await assert.rejects(f.manager.install(f.game,{afterWrite:i=>{if(i===3) throw new Error('simulated disk failure');}}),/simulated disk failure/);
   assert.deepEqual(await fs.readFile(path.join(f.game,'.kh2fm-arabic','state.json')),before);
-  assert.equal((await f.manager.inspect(f.game)).version,'1.0.8');
+  assert.equal((await f.manager.inspect(f.game)).version,'1.0.9');
 }));
 test('cancel during copying restores the previous version',async()=>withFixture('win32',async f=>{
   const old=await legacy(f); let cancel=false;
@@ -142,7 +214,7 @@ test('changed Wine override is protected during removal',async()=>withFixture('l
   await f.manager.install(f.game); const reg=path.join(f.prefix,'user.reg');
   await fs.writeFile(reg,patchRegistry(await fs.readFile(reg,'utf8'),'"version"="builtin"'));
   await assert.rejects(f.manager.remove(f.game),/تغير إعداد/);
-  assert.equal((await f.manager.inspect(f.game)).version,'1.0.8');
+  assert.equal((await f.manager.inspect(f.game)).version,'1.0.9');
 }));
 test('a real interrupted child process can be recovered after restart',async()=>withFixture('win32',async f=>{
   const child=spawnSync(process.execPath,['-e',"const {Manager}=require(process.argv[1]);const options=JSON.parse(process.argv[2]);new Manager(options).install(process.argv[3],{afterWrite:()=>process.exit(77)}).catch(e=>{console.error(e);process.exit(1)})",path.resolve(__dirname,'../src/engine.cjs'),JSON.stringify(f.options),f.game],{encoding:'utf8'});

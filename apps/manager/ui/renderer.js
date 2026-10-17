@@ -12,10 +12,12 @@ function refresh(value){
   $('remove').disabled=busy || !value?.installed || value.pendingRecovery;
   $('undo').disabled=busy || (!value?.canUndo && !value?.pendingRecovery);
   $('prefix').disabled=busy || !value;
+  $('font-report').disabled=busy || !value;
   $('undo').lastChild.textContent=value?.pendingRecovery ? 'استعادة العملية السابقة' : 'التراجع عن آخر عملية';
-  $('install-label').textContent=busy ? 'جاري العمل…' : value?.installed ? (value.version==='1.0.8' ? 'إعادة تثبيت التعريب' : 'تحديث التعريب إلى 1.0.8') : 'تثبيت التعريب';
-  $('selection-status').classList.toggle('ready',!!value && !value.needsPrefix && !value.pendingRecovery);
+  $('install-label').textContent=busy ? 'جاري العمل…' : value?.installed ? (value.version==='1.0.9' ? 'إعادة تثبيت التعريب' : 'تحديث التعريب إلى 1.0.9') : 'تثبيت التعريب';
+  $('selection-status').classList.toggle('ready',!!value && !value.needsPrefix && !value.pendingRecovery && !value.fontCheck?.issues.length);
   $('selection-text').textContent=!value ? 'أنت تختار المجلد، ونحن نكمل الباقي.' : value.pendingRecovery ? 'عملية سابقة لم تكتمل — الاستعادة متاحة في القائمة.' : value.needsPrefix ? 'شغّل اللعبة مرة واحدة، أو اختر بيئة Wine من القائمة.' : value.installed ? 'التعريب '+value.version+' موجود — يمكنك تحديثه أو حذفه.' : 'مجلد اللعبة جاهز للتثبيت.';
+  if(value?.fontCheck?.issues.length && !value.pendingRecovery && !value.needsPrefix) $('selection-text').textContent=value.fontCheck.issues.join(' ');
 }
 async function choose(which){
   closeMenu();
@@ -30,7 +32,8 @@ async function run(operation){
     const response=await api.run(operation);
     if(!response.ok){showFeedback('لم تكتمل العملية',response.error,true);return;}
     refresh(response.value.inspection);
-    if(operation==='install')showFeedback('التعريب جاهز ✦','اختر English كلغة اللعبة في Steam، ثم شغّل اللعبة واستمتع.');
+    if(operation==='install' && response.value.inspection.fontCheck?.issues.length)showFeedback('تحتاج إعدادات الخط إلى مراجعة',response.value.inspection.fontCheck.issues.join(' ')+' انسخ تقرير فحص الخط من القائمة.',true);
+    else if(operation==='install')showFeedback('التعريب جاهز ✦','تم التحقق من ملفات الخط ومسار المودات. اختر English كلغة اللعبة في Steam، ثم شغّل اللعبة.');
     else if(operation==='remove')showFeedback('تم حذف التعريب','يمكنك التراجع عن الحذف من القائمة إذا أردت إعادته.');
     else showFeedback('تمت الاستعادة','رجعت الملفات إلى حالتها قبل العملية الأخيرة.');
   }catch(error){showFeedback('تعذر إكمال العملية',error.message,true);}
@@ -41,6 +44,7 @@ $('prefix').addEventListener('click',()=>choose('choosePrefix'));
 $('install').addEventListener('click',()=>run('install'));
 $('remove').addEventListener('click',()=>run('remove'));
 $('undo').addEventListener('click',()=>run('undo'));
+$('font-report').addEventListener('click',async()=>{closeMenu();try{const result=await api.fontReport();showFeedback(result.ok?'نُسخ تقرير الخط':'تعذر نسخ التقرير',result.ok?'الصق التقرير في المحادثة لفحص مسارات الخط وملفاته.':result.error,!result.ok);}catch(error){showFeedback('تعذر نسخ التقرير',error.message,true);}});
 $('cancel').addEventListener('click',async()=>{$('cancel').disabled=true;$('cancel').textContent='جاري الإلغاء والاستعادة…';await api.cancel();});
 $('menu-toggle').addEventListener('click',()=>{$('management-menu').hidden=!$('management-menu').hidden;$('menu-toggle').setAttribute('aria-expanded',String(!$('management-menu').hidden));});
 document.addEventListener('click',event=>{if(!event.target.closest('.menu-wrap'))closeMenu();});

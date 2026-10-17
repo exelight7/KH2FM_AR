@@ -5,6 +5,7 @@ const {pipeline} = require('node:stream/promises');
 const {fs,fss,path,crypto,exists,assertRegular,safeJoin,hash,hashBytes,readJSON,atomicCopy,writeJSON,filesBelow} = require('./paths.cjs');
 const {GAME_EXE,REG_SECTION,REG_LINE,discoverPrefix,settingsRoot,settingsValue,windowsPathToHost,registryValue,patchRegistry} = require('./compatibility.cjs');
 const {snapshotOperation,applyOperation,restoreOperation,operations} = require('./transaction.cjs');
+const {conflictPath,extraImages,fontReport}=require('./font-runtime.cjs');
 const META = '.kh2fm-arabic';
 const SHA = /^[a-f0-9]{64}$/;
 const samePath=(a,b)=>process.platform==='win32' ? path.resolve(a).toLowerCase()===path.resolve(b).toLowerCase() : path.resolve(a)===path.resolve(b);
@@ -15,7 +16,7 @@ class Manager {
   }
   async manifest() {
     const manifest=await readJSON(path.join(this.dataDir,'manifest.json'));
-    if (manifest.schema!==1 || manifest.version!=='1.0.8' || !Array.isArray(manifest.files) || manifest.files.length>900 || !SHA.test(manifest.blobHash)) throw new Error('حزمة التعريب غير صالحة. أعد تنزيل البرنامج.');
+    if (manifest.schema!==1 || manifest.version!=='1.0.9' || !Array.isArray(manifest.files) || manifest.files.length>900 || !SHA.test(manifest.blobHash)) throw new Error('حزمة التعريب غير صالحة. أعد تنزيل البرنامج.');
     const seen=new Set();
     for (const entry of manifest.files) {
       if (!['payload','loader'].includes(entry.group) || !SHA.test(entry.sha256) || !Number.isSafeInteger(entry.size) || entry.size<0 || !Number.isSafeInteger(entry.offset) || entry.offset<0 || !Number.isSafeInteger(entry.compressedSize) || entry.compressedSize<=0) throw new Error('سجل الحزمة غير صالح.');
@@ -57,13 +58,19 @@ class Manager {
     return {gameDir,meta,prefix,manifest,state,modRoot};
   }
   async validateState(state,gameDir,manifest) {
-    if (state.schema!==2 || !['1.0.3','1.0.4','1.0.5','1.0.6','1.0.7','1.0.8'].includes(state.version) || !samePath(state.gameDir,gameDir) || typeof state.modRoot!=='string' || !path.isAbsolute(state.modRoot) || !Array.isArray(state.entries) || state.entries.length>900) throw new Error('سجل التعريب غير صالح أو يعود إلى لعبة أخرى.');
+    if (state.schema!==2 || !['1.0.3','1.0.4','1.0.5','1.0.6','1.0.7','1.0.8','1.0.9'].includes(state.version) || !samePath(state.gameDir,gameDir) || typeof state.modRoot!=='string' || !path.isAbsolute(state.modRoot) || !Array.isArray(state.entries) || state.entries.length>900) throw new Error('سجل التعريب غير صالح أو يعود إلى لعبة أخرى.');
     // 1.0.3 shipped exactly the 1.0.2 translation; validate its records against
     // those pinned bytes so updating the font does not invalidate upgrades/undo.
     const previousVersion=state.version==='1.0.3' ? '1.0.2' : state.version;
-    const statePayload=state.version==='1.0.8'
+    const statePayload=state.version==='1.0.9'
       ? manifest.files.filter(x=>x.group==='payload')
       : (this.catalog.versions.find(v=>v.version===previousVersion)?.files || []);
+    if(state.fontConflicts!==undefined && (!Array.isArray(state.fontConflicts) || state.fontConflicts.length>64 || (state.version!=='1.0.9' && state.fontConflicts.length>0))) throw new Error('سجل تعارض الخط غير صالح.');
+    const conflicts=new Set();
+    for(const entry of state.fontConflicts || []) {
+      if(typeof entry.path!=='string' || !conflictPath(entry.path) || conflicts.has(entry.path) || !entry.original || !/^originals\/[a-f0-9]{32}\.bin$/.test(entry.original.path) || !SHA.test(entry.original.sha256)) throw new Error('سجل تعارض الخط غير صالح.');
+      safeJoin(state.modRoot,entry.path);conflicts.add(entry.path);
+    }
     const seen=new Set();
     for (const entry of state.entries) {
       const key=entry.root+':'+entry.path;
@@ -83,6 +90,8 @@ class Manager {
     if (context.prefix && samePath(target,path.join(context.prefix,'user.reg'))) return true;
     if (samePath(target,path.join(game,'panacea_settings.txt'))) return true;
     if (this.catalog.loader.some(x=>samePath(target,safeJoin(game,x.path)))) return true;
+    const relative=path.relative(mod,path.resolve(target)).split(path.sep).join('/');
+    if(conflictPath(relative) && samePath(target,safeJoin(mod,relative))) return true;
     return this.catalog.versions.some(v=>v.files.some(x=>samePath(target,safeJoin(mod,x.path))));
   }
   async inspect(gameDir,prefixOverride) {
@@ -99,7 +108,7 @@ class Manager {
     }
     const installed=!!c.state || !!legacyVersion;
     return {gameDir:c.gameDir,installed,version:c.state?.version || legacyVersion,platform:this.platform,
-      prefix:c.prefix,needsPrefix:this.platform!=='win32' && !c.prefix,pendingRecovery:!!pending,
+      fontCheck:await fontReport(c,this.platform),prefix:c.prefix,needsPrefix:this.platform!=='win32' && !c.prefix,pendingRecovery:!!pending,
       canUndo:!!last && last.journal.phase==='committed',lastOperation:last?.journal.kind || null};
   }
   async withLock(gameDir,callback) {
@@ -206,12 +215,29 @@ class Manager {
       const alternateLoader=selectedLoader==='version.dll' ? 'DBGHELP.dll' : 'version.dll';
       if (!loaderPresent && !c.state) c.modRoot=path.join(c.meta,'mod');
       await assertRegular(c.modRoot);
+      const writesSettings=!loaderPresent || c.state?.entries.some(x=>x.path==='panacea_settings.txt') || legacy.settingsOwned;
+      const fontCheck=await fontReport(c,this.platform);
+      if(!writesSettings && (fontCheck.pathMismatch || fontCheck.developmentOverride)) throw new Error(fontCheck.issues.join(' ')+' انسخ تقرير فحص الخط من القائمة لمراجعة المسار.');
       const total=c.manifest.files.reduce((n,x)=>n+x.size,0);
       const disk=await fs.statfs(c.gameDir);
       if (disk.bavail*disk.bsize<total*3+50*1024*1024) throw new Error('المساحة غير كافية للتثبيت والنسخة الاحتياطية. وفر نحو '+Math.ceil((total*3+50*1024*1024)/1024**3)+' جيجابايت.');
       const stage=await this.extract(c,options);
       try {
         const entries=[],actions=[];
+        const fontConflicts=[...(c.state?.fontConflicts || [])];
+        for(const relative of await extraImages(c.modRoot)) {
+          const target=safeJoin(c.modRoot,relative),current=await hash(target);
+          let saved=fontConflicts.find(x=>x.path===relative);
+          if(saved && current!==saved.original.sha256) throw new Error('تغيرت صورة خط متعارضة بعد حفظها؛ أوقفنا الكتابة لحماية تعديلاتك.');
+          if(!saved) {
+            const original=await this.original(c,target,{root:'mod',path:relative},null,legacy);
+            if(!original) throw new Error('تعذر حفظ صورة الخط المتعارضة.');
+            saved={path:relative,original};fontConflicts.push(saved);
+          }
+          actions.push({target,beforeHash:current});
+        }
+        if(fontConflicts.length>64) throw new Error('مجلد الخط يحتوي صورًا إضافية كثيرة؛ انسخ تقرير فحص الخط من القائمة.');
+        for(const saved of fontConflicts) if(await hash(safeJoin(c.meta,saved.original.path))!==saved.original.sha256) throw new Error('النسخة الأصلية لصورة الخط تغيرت أو لم تعد موجودة.');
         const old=c.state?.entries || [];
         if(ownsLoader) {
           const alternate=path.join(c.gameDir,alternateLoader),digest=await hash(alternate);
@@ -234,7 +260,7 @@ class Manager {
           actions.push({target,beforeHash:current,source:safeJoin(stage,file.path)});
         }
         const settingTarget=path.join(c.gameDir,'panacea_settings.txt');
-        if (!loaderPresent || old.some(x=>x.path==='panacea_settings.txt') || legacy.settingsOwned) {
+        if (writesSettings) {
           const relative=settingsValue(c.gameDir,c.modRoot,c.prefix,this.platform);
           const data=Buffer.from('mod_path='+relative+'\nshow_console=false\n');
           const entry={root:'game',path:'panacea_settings.txt',sha256:hashBytes(data),size:data.length};
@@ -255,14 +281,14 @@ class Manager {
             actions.push({target,beforeHash:hashBytes(Buffer.from(text)),data:Buffer.from(patchRegistry(text,line,REG_SECTION,name))});
           }
         }
-        const state={schema:2,version:'1.0.8',gameDir:c.gameDir,modRoot:c.modRoot,entries,registry,installedAt:new Date().toISOString()};
+        const state={schema:2,version:'1.0.9',gameDir:c.gameDir,modRoot:c.modRoot,entries,fontConflicts,registry,installedAt:new Date().toISOString()};
         const stateTarget=path.join(c.meta,'state.json');
         actions.push({target:stateTarget,beforeHash:await hash(stateTarget),data:Buffer.from(JSON.stringify(state,null,2)+'\n')});
         const context={gameDir:c.gameDir,modRoot:c.modRoot,prefix:c.prefix};
         options.progress?.({phase:'backup',current:0,total:actions.length});
         const operation=await snapshotOperation(c.meta,context,actions,'install');
         await applyOperation(operation,{...options,allowedTarget:this.allowedTarget.bind(this)});
-        return {installed:true,version:'1.0.8',operationId:operation.journal.id};
+        return {installed:true,version:'1.0.9',operationId:operation.journal.id};
       } finally { await fs.rm(stage,{recursive:true,force:true}); }
     });
   }
@@ -303,7 +329,7 @@ class Manager {
       const state=await this.removalState(c);
       const known=new Set(state.entries.filter(x=>x.root==='mod').map(x=>safeJoin(c.modRoot,x.path)));
       const knownBackups=new Set([...known].map(x=>x+'.kh2ar.bak'));
-      const otherMods=state.entries.some(x=>x.root==='mod' && x.original) || (await filesBelow(c.modRoot)).some(x=>!known.has(x) && !knownBackups.has(x));
+      const otherMods=!!state.fontConflicts?.length || state.entries.some(x=>x.root==='mod' && x.original) || (await filesBelow(c.modRoot)).some(x=>!known.has(x) && !knownBackups.has(x));
       const actions=[];
       for (const entry of state.entries) {
         if (otherMods && entry.root==='game') continue;
@@ -316,6 +342,13 @@ class Manager {
           if (await hash(source)!==entry.original.sha256) throw new Error('النسخة الأصلية تغيرت أو لم تعد موجودة؛ أوقفنا الحذف.');
         }
         if (current || source) actions.push({target,beforeHash:current,source});
+      }
+      for(const entry of state.fontConflicts || []) {
+        const target=safeJoin(c.modRoot,entry.path),current=await hash(target);
+        if(current) throw new Error('أضيفت صورة خط بعد التثبيت؛ أوقفنا الاستعادة لحماية تعديلاتك.');
+        const source=safeJoin(c.meta,entry.original.path);
+        if(await hash(source)!==entry.original.sha256) throw new Error('النسخة الأصلية لصورة الخط تغيرت أو لم تعد موجودة.');
+        actions.push({target,beforeHash:null,source});
       }
       if (state.registry && !otherMods) {
         const target=path.join(state.registry.prefix,'user.reg'); await assertRegular(target);
