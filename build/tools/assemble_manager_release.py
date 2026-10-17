@@ -6,10 +6,10 @@ import zipfile
 from pathlib import Path
 
 PRIMARY = {
-    'KH2FM-Arabic-1.0.9-Windows-x64.exe': '01-KH2FM-Arabic-1.0.9-Windows-x64.exe',
-    'KH2FM-Arabic-1.0.9-Linux-x86_64.AppImage': '02-KH2FM-Arabic-1.0.9-Linux-x64.AppImage',
+    'KH2FM-Arabic-1.0.10-Windows-x64.exe': '01-KH2FM-Arabic-1.0.10-Windows-x64.exe',
+    'KH2FM-Arabic-1.0.10-Linux-x86_64.AppImage': '02-KH2FM-Arabic-1.0.10-Linux-x64.AppImage',
 }
-EXTRAS = '03-KH2FM-Arabic-1.0.9-Extras-and-Reports.zip'
+EXTRAS = '03-KH2FM-Arabic-1.0.10-Extras-and-Reports.zip'
 
 
 def sha256(path):
@@ -34,7 +34,7 @@ def package_extras(root, destination, original_hashes):
         assert sha256(path) == original_hashes[path.name], f'Hash mismatch: {path.name}'
     checksum_lines = [original_hashes[old] + '  ' + new for old, new in PRIMARY.items()]
     checksum_lines += [original_hashes[p.name] + '  ' + archive_path(p.name) for p in supporting]
-    readme = '''# ملفات إضافية لتحديث 1.0.9
+    readme = '''# ملفات إضافية لتحديث 1.0.10
 
 هذا الملف اختياري. للتثبيت حمّل برنامج نظامك مباشرة من الإصدار.
 نسخة ويندوز هي الملف الأول في قائمة التحميل، ويبدأ اسمها بـ01.

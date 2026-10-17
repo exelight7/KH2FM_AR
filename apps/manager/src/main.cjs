@@ -1,5 +1,5 @@
 'use strict';
-const {app,BrowserWindow,ipcMain,dialog}=require('electron');
+const {app,BrowserWindow,ipcMain,dialog,clipboard}=require('electron');
 const path=require('node:path');
 const {execFile}=require('node:child_process');
 const {promisify}=require('node:util');
@@ -47,7 +47,7 @@ if(workerRequest) {
 app.whenReady().then(()=>{
   const dataDir=app.isPackaged ? path.join(process.resourcesPath,'translation') : path.resolve(__dirname,'../data');
   manager=new Manager({dataDir,catalog});
-  window=new BrowserWindow({width:1130,height:790,minWidth:940,minHeight:690,title:'تعريب KH2FM — 1.0.9',backgroundColor:'#f6f7fb',autoHideMenuBar:true,
+  window=new BrowserWindow({width:1130,height:790,minWidth:940,minHeight:690,title:'تعريب KH2FM — 1.0.10',backgroundColor:'#f6f7fb',autoHideMenuBar:true,
     webPreferences:{preload:path.join(__dirname,'preload.cjs'),contextIsolation:true,nodeIntegration:false,sandbox:true}});
   window.setMenu(null);
   window.webContents.setWindowOpenHandler(()=>({action:'deny'}));
@@ -86,6 +86,12 @@ app.whenReady().then(()=>{
     } finally {busy=false;if(closeAfter) app.quit();}
   }));
   ipcMain.handle('manager:cancel',event=>{trusted(event);cancelled=true;return true;});
+  ipcMain.handle('manager:font-report',event=>respond(async()=>{
+    trusted(event);if(busy || !selected) throw new Error('اختر مجلد اللعبة وانتظر انتهاء العملية الحالية.');
+    const inspection=await manager.inspect(selected,prefixOverride);
+    clipboard.writeText(JSON.stringify({managerVersion:app.getVersion(),...inspection},null,2));
+    return true;
+  }));
   window.loadFile(path.resolve(__dirname,'../ui/index.html'));
 });
 app.on('window-all-closed',()=>app.quit());
