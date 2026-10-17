@@ -7,7 +7,7 @@ const {loadPreferences,savePreferences}=require('../src/preferences.cjs');
 test('remember the game directory, Wine prefix and pending update across restarts',async()=>{
   const root=await fs.mkdtemp(path.join(os.tmpdir(),'kh2-preferences-'));
   try {
-    const file=path.join(root,'preferences.json'),value={gameDir:path.join(root,'Game'),prefixOverride:path.join(root,'Wine'),pendingVersion:'1.0.12'};
+    const file=path.join(root,'preferences.json'),value={gameDir:path.join(root,'Game'),prefixOverride:path.join(root,'Wine'),pendingVersion:'1.0.13'};
     assert.deepEqual(await loadPreferences(file),{});await savePreferences(file,value);
     assert.deepEqual(await loadPreferences(file),value);
   }finally{await fs.rm(root,{recursive:true,force:true});}

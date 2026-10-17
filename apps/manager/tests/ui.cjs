@@ -23,7 +23,7 @@ const http=require('node:http');
       page.on('pageerror',e=>errors.push(e.message));
       await page.addInitScript(platform=>{
         let state=null,sendUpdate=()=>{};
-        window.kh2fm={platform:async()=>({platform,version:'1.0.11'}),chooseGame:async()=>({ok:true,value:state={gameDir:platform==='win32'?'D:\\Games\\KINGDOM HEARTS -HD 1.5+2.5 ReMIX-':'/home/player/Steam/steamapps/common/KINGDOM HEARTS -HD 1.5+2.5 ReMIX-',platform,installed:false,version:null,needsPrefix:false,pendingRecovery:false,canUndo:false}}),choosePrefix:async()=>({ok:true,value:state}),run:async operation=>({ok:true,value:{result:{},inspection:state={...state,installed:operation!=='remove',version:operation!=='remove'?'1.0.11':null,canUndo:true}}}),cancel:async()=>true,onProgress:()=>{},onUpdate:cb=>{sendUpdate=cb;},update:async operation=>{const next={status:operation==='check'?'available':operation==='download'?'downloaded':'restarting',version:'1.0.12',percent:operation==='download'?100:0};sendUpdate(next);return {ok:true,value:next};},cancelUpdate:async()=>true};
+        window.kh2fm={platform:async()=>({platform,version:'1.0.12'}),chooseGame:async()=>({ok:true,value:state={gameDir:platform==='win32'?'D:\\Games\\KINGDOM HEARTS -HD 1.5+2.5 ReMIX-':'/home/player/Steam/steamapps/common/KINGDOM HEARTS -HD 1.5+2.5 ReMIX-',platform,installed:false,version:null,needsPrefix:false,pendingRecovery:false,canUndo:false}}),choosePrefix:async()=>({ok:true,value:state}),run:async operation=>({ok:true,value:{result:{},inspection:state={...state,installed:operation!=='remove',version:operation!=='remove'?'1.0.12':null,canUndo:true}}}),cancel:async()=>true,onProgress:()=>{},onUpdate:cb=>{sendUpdate=cb;},update:async operation=>{const next={status:operation==='check'?'available':operation==='download'?'downloaded':'restarting',version:'1.0.13',percent:operation==='download'?100:0};sendUpdate(next);return {ok:true,value:next};},cancelUpdate:async()=>true};
       },platform);
       await page.goto('http://127.0.0.1:'+server.address().port+'/ui/index.html'); await page.evaluate(()=>document.fonts.ready);
       assert.equal(await page.locator('#install').isDisabled(),true);
@@ -50,7 +50,7 @@ const http=require('node:http');
       await page.waitForFunction(()=>document.getElementById('feedback-title').textContent.includes('مراجعة'));
       assert.equal(await page.locator('#feedback').evaluate(e=>e.classList.contains('error')),true);
       await page.locator('#launcher-update').click();
-      await page.waitForFunction(()=>document.getElementById('update-action').textContent.includes('1.0.12'));
+      await page.waitForFunction(()=>document.getElementById('update-action').textContent.includes('1.0.13'));
       await page.locator('#update-action').click();
       await page.waitForFunction(()=>document.getElementById('update-action').textContent==='التحديث وإعادة التشغيل');
       await page.screenshot({path:path.join(output,'UPDATE-'+platform+'.png')});

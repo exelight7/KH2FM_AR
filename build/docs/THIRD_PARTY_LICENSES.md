@@ -10,6 +10,7 @@ next to the translation (`%LOCALAPPDATA%\KH2FM-Arabic\docs\licenses\`). This fil
 | OpenKH Mod Manager (optional, unchecked by default) | the full official `openkh.zip` release2-1691 in `OpenKH\` | Apache License 2.0 (§1) + the notices inside that release |
 | Inno Setup 6.7.3 | the installer/uninstaller program | Inno Setup License (§5) |
 | Noto Naskh Arabic Bold (Google) | Arabic glyphs in the font atlases (since 1.0.4) | SIL Open Font License 1.1 (§6, `licenses/Noto-OFL.txt`) |
+| Noto Sans Arabic Regular / Condensed Medium (The Noto Project Authors) | current Arabic dialogue/menu glyphs; larger baked menu labels in 1.0.12 | SIL Open Font License 1.1 (`licenses/NotoSansArabic-Menu-OFL.txt`) |
 | Segoe UI (Microsoft) | Arabic words drawn into the translated images (and the font atlases up to 1.0.3) | Microsoft font license (§6) |
 
 Source of every OpenKH file: https://github.com/OpenKH/OpenKh/releases/tag/release2-1691 (unchanged binaries; SHA256 in `PANACEA_NOTES.md`).

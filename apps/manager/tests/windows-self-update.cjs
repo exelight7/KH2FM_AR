@@ -3,6 +3,11 @@ const {_electron:electron}=require('playwright');
 const assert=require('node:assert/strict');
 const {execFile}=require('node:child_process');
 const {promisify}=require('node:util');
+const {Readable}=require('node:stream');
+const {pipeline}=require('node:stream/promises');
+const fss=require('node:fs');
+const {gunzipSync}=require('node:zlib');
+const {createHash}=require('node:crypto');
 const {fs,path,readJSON,writeJSON,exists,hash}=require('../src/paths.cjs');
 const {updateServer}=require('./update-feed.cjs');
 const exec=promisify(execFile);
@@ -18,16 +23,35 @@ async function exerciseWindowsSelfUpdate(f,dist,profile) {
   const quote=text=>"'"+text.replaceAll("'","''")+"'";
   let application;
   try {
-    await exec(installer,['/S','/D='+installDir],{timeout:120000,windowsHide:true});
+    // Exercise the exact published launcher the user already has. Neither
+    // its code nor its updater comparison version is modified for this test.
+    const previousInstaller=path.join(f.root,'published-1.0.11.exe');
+    const response=await fetch('https://github.com/exelight7/KH2FM_AR/releases/download/v1.0.11/01-KH2FM-Arabic-1.0.11-Windows-x64.exe');
+    assert.equal(response.ok,true,'Published 1.0.11 installer unavailable');
+    await pipeline(Readable.fromWeb(response.body),fss.createWriteStream(previousInstaller));
+    assert.equal(await hash(previousInstaller),'e17e3a326d70d278b77fa743c1ad7dfe982d01f1c6a4cd5e0ada85e8b968d5ed');
+    await exec(previousInstaller,['/S','/D='+installDir],{timeout:120000,windowsHide:true});
     assert.equal(await exists(executable),true);
+    const previousData=path.join(installDir,'resources/translation');
+    const previousManifest=await readJSON(path.join(previousData,'manifest.json'));
+    assert.equal(previousManifest.version,'1.0.11');
+    const blob=await fs.readFile(path.join(previousData,'payload.bin'));
+    assert.equal(createHash('sha256').update(blob).digest('hex'),previousManifest.blobHash);
+    const oldState=structuredClone(state);oldState.version='1.0.11';
+    for(const entry of oldState.entries.filter(x=>x.root==='mod')) {
+      const source=previousManifest.files.find(x=>x.path===entry.path);
+      const bytes=gunzipSync(blob.subarray(source.offset,source.offset+source.compressedSize));
+      assert.equal(createHash('sha256').update(bytes).digest('hex'),source.sha256);
+      await fs.writeFile(path.join(oldState.modRoot,entry.path),bytes);
+      entry.sha256=source.sha256;entry.size=source.size;
+    }
+    await writeJSON(stateFile,oldState);
     application=await electron.launch({executablePath:executable,timeout:120000});
+    assert.equal(await application.evaluate(({app})=>app.getVersion()),'1.0.11');
     const page=await application.firstWindow();await page.waitForFunction(game=>document.getElementById('game-path').textContent===game,f.game);
     await application.evaluate(async({app},{url,cache})=>{
       const {createRequire}=process.getBuiltinModule('module');const require=createRequire(app.getAppPath()+'/package.json');
       const updater=require('electron-updater').autoUpdater;
-      // Test comparison only: the downloaded installer is the real release
-      // being built, so the test can exercise a real silent reinstall/relaunch.
-      updater.currentVersion=new updater.currentVersion.constructor('0.0.0');
       Object.defineProperty(updater.app,'baseCachePath',{value:cache});
       updater.setFeedURL({provider:'generic',url});
     },{url:server.url,cache:path.join(f.root,'real-update-cache')});
@@ -49,7 +73,8 @@ async function exerciseWindowsSelfUpdate(f,dist,profile) {
     assert.equal(applied,true,'The silently updated launcher did not resume and apply the translation');
     assert.equal(await hash(executable),await hash(path.join(dist,'win-unpacked/KH2FM Arabic.exe')));
     for(const entry of state.entries)assert.equal(await hash(path.join(entry.root==='mod'?state.modRoot:f.game,entry.path)),entry.sha256);
-    return {realSilentSelfUpdate:true,newLauncherRelaunched:true,gameDirectoryRestored:true,translationAppliedAfterSelfUpdate:true};
+    return {realSilentSelfUpdate:true,previousLauncherVersion:'1.0.11',previousPublishedInstallerSHA256Verified:true,
+      updaterComparisonVersionUnmodified:true,newLauncherRelaunched:true,gameDirectoryRestored:true,translationAppliedAfterSelfUpdate:true};
   }finally {
     if(application)await application.close().catch(()=>{});
     // Only stop this test's installed executable, never other launchers.

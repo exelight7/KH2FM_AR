@@ -14,18 +14,22 @@ manifest = list(csv.DictReader((ROOT / 'build/out/MANIFEST.tsv').open(), delimit
 catalog = json.loads((APP / 'catalog/legacy.json').read_text())
 reference = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.2' for f in v['files']}
 previous = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.7' for f in v['files']}
-published110 = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.10' for f in v['files']}
+published111 = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.11' for f in v['files']}
 version = json.loads((APP / 'package.json').read_text())['version']
-assert version == '1.0.11'
+assert version == '1.0.12'
 font_paths = {'msg/us/fontimage.bar', 'msg/us/fontinfo.bar',
               'remastered/msg/us/fontimage.bar/US_fontimage_bar0.png',
               'remastered/msg/us/fontimage.bar/US_fontimage_bar1.png'}
 font_manifest = {f['path'].replace('\\', '/'): f for f in csv.DictReader(
-    (ROOT / 'experiments/fonts/clean-joins/MANIFEST.tsv').open(), delimiter='\t')}
-# 1.0.11 ships text corrections: a text bar may differ from 1.0.2 only when
+    (ROOT / 'experiments/fonts/menu-legibility/MANIFEST.tsv').open(), delimiter='\t')}
+# 1.0.12 ships text corrections: a text bar may differ from 1.0.2 only when
 # build_bars.py rebuilt it (all its gates passed) and wrote it to build/out.
 hud_manifest = {r['path']: r for r in json.loads((ROOT / 'build/report/HUD_TRANSFORM.json').read_text(encoding='utf-8'))['files']}
 assert len(hud_manifest) == 19
+command_manifest = {r['path']: r for r in json.loads((ROOT / 'build/report/HUD_COMMANDS.json').read_text(encoding='utf-8'))['files']}
+assert len(command_manifest) == 5
+reaction_report = json.loads((ROOT / 'build/report/REACTION_COMMANDS.json').read_text(encoding='utf-8'))
+approved_changes = font_paths | set(command_manifest) | {reaction_report['path']}
 text_changed = []
 files = []
 with (OUT / 'payload.bin').open('wb') as blob:
@@ -38,6 +42,8 @@ with (OUT / 'payload.bin').open('wb') as blob:
             expected = font_manifest[relative]['sha256']
         elif relative in hud_manifest:
             expected = hud_manifest[relative]['sha256']
+        elif relative in command_manifest:
+            expected = command_manifest[relative]['sha256']
         elif relative.startswith('msg/us/') and relative.endswith('.bar') and bar.is_file():
             expected = hashlib.sha256(bar.read_bytes()).hexdigest()
             if expected != previous['kh2/' + relative]['sha256']:
@@ -45,9 +51,11 @@ with (OUT / 'payload.bin').open('wb') as blob:
         else:
             expected = reference['kh2/' + relative]['sha256']
         if expected != entry['sha256']:
-            raise SystemExit('1.0.11 source does not match the approved translation/font: ' + relative)
-        if entry['sha256'] != published110['kh2/' + relative]['sha256']:
-            raise SystemExit('1.0.11 must preserve published 1.0.10 translation/font/HUD: ' + relative)
+            raise SystemExit('1.0.12 source does not match the approved translation/font: ' + relative)
+        if relative == reaction_report['path']:
+            assert expected == reaction_report['sha256']
+        if relative not in approved_changes and entry['sha256'] != published111['kh2/' + relative]['sha256']:
+            raise SystemExit('1.0.12 unexpectedly changes published 1.0.11 content: ' + relative)
         sources.append(('kh2/' + relative, 'payload', source, entry['sha256']))
     vendor = ROOT / 'build' / config['extract_to'] / config['files_under']
     for name, expected in config['files'].items():
