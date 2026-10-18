@@ -100,7 +100,7 @@ static class Collector {
             }
         }
         if(!assets.ContainsKey(Targets[0])) throw new InvalidDataException("لم أجد تخطيط القائمة المطلوب في حزم KH2. اختر مجلد اللعبة الصحيح ونسخة English.");
-        var report=new {schema=1,tool="KH2FM HUD Layout Exporter 1",files=records,
+        var report=new {schema=1,tool="KH2FM HUD Layout Exporter 2",files=records,
             missing=Targets.Where(x=>!assets.ContainsKey(x)).ToArray()};
         string temporary=outputFile+"."+Guid.NewGuid().ToString("N")+".tmp";
         try {

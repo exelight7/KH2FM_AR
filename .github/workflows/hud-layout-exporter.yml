@@ -22,8 +22,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           cd tools/hud-layout-exporter
-          if gh release view hud-layout-diagnostic-v1 -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+          if gh release view hud-layout-diagnostic-v2 -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
             echo 'Diagnostic release already exists; refusing to overwrite it'
             exit 1
           fi
-          gh release create hud-layout-diagnostic-v1 KH2FM-HUD-Layout-Windows-x64.zip SHA256SUMS.txt --prerelease --latest=false --title 'أداة جمع تخطيط قائمة الأوامر' --target "$GITHUB_SHA" --notes-file README_AR.md -R "$GITHUB_REPOSITORY"
+          gh release create hud-layout-diagnostic-v2 KH2FM-HUD-Layout-Windows-x64.zip SHA256SUMS.txt --prerelease --latest=false --title 'أداة جمع تخطيط قائمة الأوامر' --target "$GITHUB_SHA" --notes-file README_AR.md -R "$GITHUB_REPOSITORY"

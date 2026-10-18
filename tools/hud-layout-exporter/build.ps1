@@ -6,6 +6,8 @@ $compiler = Join-Path $env:WINDIR 'Microsoft.NET\Framework64\v4.0.30319\csc.exe'
 if ($LASTEXITCODE -ne 0) { throw 'Compilation failed' }
 & ./out/KH2FM-HUD-Layout.exe --self-test fixtures
 if ($LASTEXITCODE -ne 0) { throw 'Exporter tests failed' }
+$report = Get-Content out/SELF_TEST.json -Raw | ConvertFrom-Json
+if (-not $report.passed -or $report.checks -ne 32) { throw 'Required 32 exporter checks did not run' }
 Copy-Item README_AR.md, NOTICE.txt, LICENSE-OpenKH.txt out/
 Compress-Archive -Path out/* -DestinationPath KH2FM-HUD-Layout-Windows-x64.zip
 (Get-FileHash KH2FM-HUD-Layout-Windows-x64.zip -Algorithm SHA256).Hash.ToLower() + '  KH2FM-HUD-Layout-Windows-x64.zip' | Set-Content -Encoding ascii SHA256SUMS.txt

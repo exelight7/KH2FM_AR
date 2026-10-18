@@ -90,6 +90,7 @@ static class Tests {
             Check(!File.Exists(missing),"no incomplete ZIP on failure");Same(before,game,"game unchanged after failed export");
             Check(Directory.GetFiles(temporary,"*.tmp",SearchOption.AllDirectories).Length==0,"temporary exports cleaned up");
         } finally {Directory.Delete(temporary,true);}
+        File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"SELF_TEST.json"), "{\"passed\":true,\"checks\":"+passed+",\"realGameTested\":false}");
         Console.WriteLine("Passed "+passed+" checks");
     }
 }

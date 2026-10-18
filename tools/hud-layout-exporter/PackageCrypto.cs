@@ -1,3 +1,4 @@
+// Copyright 2019-2022 OpenKH Team and Contributors. Licensed under Apache-2.0.
 // Adapted from OpenKH OpenKh.Egs/EgsEncryption.cs (Apache-2.0).
 // Changes: .NET Framework array operations and bounded byte-wise XOR.
 using System;
