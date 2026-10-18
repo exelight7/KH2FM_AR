@@ -1,4 +1,4 @@
-"""Keep the published label scale without overriding the renderer's pen position.
+"""Tune primary HUD and green reaction text separately at the native pen.
 
 The game's sys 1444..1449 command-name lists identify the reaction family.
 Only exact, single-line system labels from that family and the primary HUD
@@ -16,7 +16,13 @@ import width as W
 
 ROOT = Path(__file__).resolve().parents[2]
 PRIMARY_IDS = {480, 481, 482, 483, 490, 491, 1284, 1286, 1287}
-SCALE = b'\x0a\x12'
+# Talk, Examine and Save use the green reaction row, not the primary rows.
+HUD_IDS = {480, 481, 482, 483, 1284, 1287}
+HUD_SCALE, REACTION_SCALE = 17, 20
+
+
+def scale_prefix(msg_id):
+    return bytes((0x0a, HUD_SCALE if msg_id in HUD_IDS else REACTION_SCALE))
 
 
 def command_ids():
@@ -47,22 +53,31 @@ def main():
         assert not any(x[0] == 'nl' or (x[0] == 't' and x[1][0] not in (0x0b,)) for x in items), (msg_id, 'unexpected command state')
         # Compare the same corrected label against its original font budget.
         # Retained width multipliers affect both sides equally.
-        width = W.maxw(raw, new_adv) * 18 / 16
+        scale = scale_prefix(msg_id)
+        width = W.maxw(raw, new_adv) * scale[1] / 16
         previous_width = W.maxw(raw, old_adv)
         assert width <= previous_width, (msg_id, 'larger than original label budget')
-        result = A.replace_msg(result, msg_id, SCALE + raw)
+        result = A.replace_msg(result, msg_id, scale + raw)
         records.append({'id': msg_id, 'text': A.decode(messages[msg_id], True, False),
+                        'group': 'primary' if msg_id in HUD_IDS else 'green',
+                        'scale_byte': scale[1], 'previous_scale_byte': 18,
                         'width': width, 'original_font_budget': previous_width,
                         'position_override': False})
     catalog = json.loads((ROOT / 'apps/manager/catalog/legacy.json').read_text())
     previous = next(v for v in catalog['versions'] if v['version'] == '1.0.14')
     expected = next(f['sha256'] for f in previous['files'] if f['path'] == 'kh2/msg/us/sys.bar')
-    assert hashlib.sha256(result).hexdigest() == expected, 'Hotfix must restore the exact published 1.0.14 sys.bar'
+    # Reconstruct the previous policy independently: all text and controls
+    # must still match the published, position-override-free 1.0.14 baseline.
+    previous_result = before
+    for msg_id in sorted(ids):
+        previous_result = A.replace_msg(previous_result, msg_id, b'\x0a\x12' + A.padded(messages[msg_id]))
+    assert hashlib.sha256(previous_result).hexdigest() == expected, 'Source labels differ from the published 1.0.14 baseline'
     assert len(ids - PRIMARY_IDS) == 225
+    assert HUD_IDS <= ids and len(ids - HUD_IDS) == 228
     final = A.msgs(result)
     for msg_id, raw in messages.items():
         if msg_id in ids:
-            assert A.padded(final[msg_id]) == SCALE + A.padded(raw)
+            assert A.padded(final[msg_id]) == scale_prefix(msg_id) + A.padded(raw)
         else:
             assert final[msg_id] == raw
     target.write_bytes(result)
@@ -73,13 +88,16 @@ def main():
     with manifest_path.open('w', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=['path', 'size', 'sha256'], delimiter='\t', lineterminator='\n')
         writer.writeheader(); writer.writerows(manifest)
-    report = {'version': '1.0.16', 'scale': 18 / 16, 'position_override': False,
-              'reaction_position_overrides_removed': len(ids - PRIMARY_IDS), 'published_1_0_14_baseline_verified': True, 'primary_hud_position_unchanged': True, 'labels': records,
+    report = {'version': '1.0.19', 'previous_scale': 18 / 16, 'position_override': False,
+              'primary_scale': HUD_SCALE / 16, 'green_scale': REACTION_SCALE / 16,
+              'primary_labels': len(HUD_IDS), 'green_labels': len(ids - HUD_IDS),
+              'published_1_0_14_label_and_controls_verified': True,
+              'native_pen_positions_unchanged': True, 'labels': records,
               'all_other_messages_byte_identical': True, 'original_control_bytes_preserved': True,
               'all_labels_within_original_font_width_budget': True,
               'path': 'msg/us/sys.bar', 'sha256': row['sha256'], 'in_game_verified': False}
     (ROOT / 'build/report/REACTION_COMMANDS.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
-    print(f'Reaction/HUD labels: {len(records)} enlarged, original controls retained, original width budgets passed')
+    print(f'HUD: {len(HUD_IDS)} labels at 17/16; green: {len(ids - HUD_IDS)} at 20/16; all original controls and width budgets passed')
 
 
 if __name__ == '__main__':

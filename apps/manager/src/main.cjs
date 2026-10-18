@@ -61,7 +61,7 @@ app.whenReady().then(async()=>{
       if(installed)await ensureGameClosed(inspection.prefix);
       if(selected){preferences={gameDir:selected,prefixOverride,pendingVersion:installed?version:null};await savePreferences(preferencesFile,preferences);}
     }});
-  window=new BrowserWindow({width:1130,height:790,minWidth:940,minHeight:690,title:'تعريب KH2FM — 1.0.18',backgroundColor:'#f6f7fb',autoHideMenuBar:true,
+  window=new BrowserWindow({width:1130,height:790,minWidth:940,minHeight:690,title:'تعريب KH2FM — 1.0.19',backgroundColor:'#f6f7fb',autoHideMenuBar:true,
     webPreferences:{preload:path.join(__dirname,'preload.cjs'),contextIsolation:true,nodeIntegration:false,sandbox:true}});
   window.setMenu(null);
   window.webContents.setWindowOpenHandler(()=>({action:'deny'}));

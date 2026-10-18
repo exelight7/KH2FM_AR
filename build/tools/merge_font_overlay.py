@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 ap = argparse.ArgumentParser(description=__doc__)
 ap.add_argument('--out', type=Path, default=ROOT / 'build/out')
 args = ap.parse_args()
-preview = ROOT / 'experiments/fonts/menu-lower-baseline'
+preview = ROOT / 'experiments/fonts/menu-context-alignment'
 archive = preview / 'font-overlay.zip'
 expected_zip = next(line.split()[0] for line in (preview / 'SHA256SUMS.txt').read_text().splitlines()
                     if line.split(maxsplit=1)[1] == 'font-overlay.zip')

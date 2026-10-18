@@ -17,19 +17,19 @@ async function fixture(platform='win32') {
   const {FONT_FOLDER}=require('../src/font-runtime.cjs');
   const payload=['kh2/msg/us/fontimage.bar','kh2/msg/us/fontinfo.bar',...Array.from({length:3},(_,i)=>FONT_FOLDER+'/US_fontimage_bar'+i+'.png'),'kh2/msg/us/sys.bar','kh2/msg/us/tt.bar','kh2/msg/us/eh.bar','kh2/fontimage.png'];
   const loaderData=Buffer.from('Test Panacea loader: panacea_settings.txt');
-  const catalog={versions:['1.0.1','1.0.2','1.0.4','1.0.5','1.0.6','1.0.7','1.0.8','1.0.9','1.0.10','1.0.11','1.0.12','1.0.13','1.0.14','1.0.15','1.0.16','1.0.17'].map(version=>({version,files:payload.map(p=>({path:p,sha256:hashBytes(Buffer.from(version+':'+p)),size:Buffer.byteLength(version+':'+p)}))})),loader:[{path:'DBGHELP.dll',sha256:hashBytes(loaderData),size:loaderData.length}]};
+  const catalog={versions:['1.0.1','1.0.2','1.0.4','1.0.5','1.0.6','1.0.7','1.0.8','1.0.9','1.0.10','1.0.11','1.0.12','1.0.13','1.0.14','1.0.15','1.0.16','1.0.17','1.0.18'].map(version=>({version,files:payload.map(p=>({path:p,sha256:hashBytes(Buffer.from(version+':'+p)),size:Buffer.byteLength(version+':'+p)}))})),loader:[{path:'DBGHELP.dll',sha256:hashBytes(loaderData),size:loaderData.length}]};
   catalog.loader.push({...catalog.loader[0],path:'version.dll'});
   const files=[]; const chunks=[]; let offset=0;
   for (const p of [...payload,'DBGHELP.dll','version.dll']) {
     const group=p.startsWith('kh2/') ? 'payload' : 'loader';
-    const bytes=group==='payload' ? Buffer.from('1.0.18:'+p) : loaderData;
+    const bytes=group==='payload' ? Buffer.from('1.0.19:'+p) : loaderData;
     const compressed=zlib.gzipSync(bytes);
     files.push({path:p,group,size:bytes.length,sha256:hashBytes(bytes),offset,compressedSize:compressed.length});
     chunks.push(compressed); offset+=compressed.length;
   }
   const blob=Buffer.concat(chunks);
   await fs.writeFile(path.join(dataDir,'payload.bin'),blob);
-  await writeJSON(path.join(dataDir,'manifest.json'),{schema:1,version:'1.0.18',blobHash:hashBytes(blob),files});
+  await writeJSON(path.join(dataDir,'manifest.json'),{schema:1,version:'1.0.19',blobHash:hashBytes(blob),files});
   const options={dataDir,catalog,platform};
   const manager=new Manager(options);
   return {root,game,prefix,dataDir,catalog,options,manager,payload,loaderData,cleanup:()=>fs.rm(root,{recursive:true,force:true,maxRetries:10,retryDelay:300})};
