@@ -1,23 +1,23 @@
-round: BUILD-1.0.1
+round: BUILD-1.0.14
 
-# Build report 1.0.1
+# Build report 1.0.14
 
-**Result: ALL GATES PASS.** 728 messages changed in 22 bars; 15530 other messages byte-identical.
+**Result: ALL GATES PASS.** 1855 messages changed in 22 bars; 14403 other messages byte-identical.
 
 ## Gates
 
 | gate | result | detail |
 |---|---|---|
 | b. consistency (kit decode == review AR) | PASS | 15552 review rows compared, 19 differ: 19 accepted (config/consistency_known.tsv: dc 18407, sys 1444, sys 1445, sys 1446, sys 1447, sys 1448, sys 1449, sys 2774, sys 14844, sys 17753, sys 17838, sys 17839, sys 19352, sys 19353, sys 19354, sys 19388, sys 19600, sys 19862, sys 19998), 0 unexpected |
-| c0. one correction per id | PASS | 724 corrections in 78 files, no id twice |
-| c1. AR_old equals the current text | PASS | all 724 rows |
+| c0. one correction per id | PASS | 1851 corrections in 83 files, no id twice |
+| c1. AR_old equals the current text | PASS | all 1851 rows |
 | d0. width rows readable | PASS | 22 rows in 15 terms/rows measured |
-| e0. every correction encodes (allowed characters) | PASS | all 728 encoded |
-| e1. only intended ids differ | PASS | 728 messages changed, 728 intended |
-| e2. every untouched message byte-identical | PASS | 15530 untouched messages identical |
-| e3. round-trip (decode == AR_new, re-encode identical) | PASS | all 728 changed messages |
-| e4. tags and line breaks equal to the old row | PASS | all 728 changed messages |
-| e5. allowed cells only (no new unknown cell) | PASS | all 728 changed messages |
+| e0. every correction encodes (allowed characters) | PASS | all 1855 encoded |
+| e1. only intended ids differ | PASS | 1855 messages changed, 1855 intended |
+| e2. every untouched message byte-identical | PASS | 14403 untouched messages identical |
+| e3. round-trip (decode == AR_new, re-encode identical) | PASS | all 1855 changed messages |
+| e4. tags and line breaks equal to the old row | PASS | all 1855 changed messages |
+| e5. allowed cells only (no new unknown cell) | PASS | all 1855 changed messages |
 | e6. bars re-parse | PASS | 22 bars, 16258 messages parsed |
 | e7. payload files = FROZEN_MANIFEST (input) | PASS | 798 files, size and SHA256 match |
 | e8. all other payload files unchanged in the new manifest | PASS | 776 of 798 files unchanged, 22 bars replaced |
@@ -26,29 +26,29 @@ round: BUILD-1.0.1
 
 | bar | proofreading | glossary | shorten | width-check term | total | new SHA256 |
 |---|---:|---:|---:|---:|---:|---|
-| sys | 64 | 163 | 5 | 2 | 234 | `075f6818ffcf24c9…` |
-| tt | 69 | 46 | 6 | 1 | 122 | `3dd6d9dfbdf22428…` |
-| di | 1 | 1 | 1 | 0 | 3 | `73c58919de218836…` |
-| es | 0 | 0 | 1 | 0 | 1 | `9928a5372975965d…` |
-| wm | 2 | 1 | 5 | 0 | 8 | `975b9d78c0c3ea32…` |
-| hb | 7 | 9 | 15 | 0 | 31 | `51e1ed9327706ecb…` |
-| mu | 3 | 12 | 6 | 1 | 22 | `d7ad43e19402bee7…` |
-| bb | 5 | 0 | 5 | 0 | 10 | `3adfd145df096fc9…` |
-| he | 11 | 25 | 2 | 0 | 38 | `b4e154be72f7d3b1…` |
-| dc | 2 | 0 | 1 | 0 | 3 | `7d259d64e904d53d…` |
-| ca | 3 | 2 | 3 | 0 | 8 | `ae9c3522195f3995…` |
-| al | 3 | 0 | 3 | 0 | 6 | `701ce5a10f375935…` |
-| nm | 5 | 0 | 6 | 0 | 11 | `59c0cc5a84ec28a2…` |
-| lk | 1 | 4 | 3 | 0 | 8 | `07727c7761137c62…` |
-| lm | 2 | 0 | 6 | 0 | 8 | `50f56b1f5b0608fb…` |
-| tr | 1 | 3 | 6 | 0 | 10 | `7e5ac067de366fea…` |
-| po | 6 | 0 | 0 | 0 | 6 | `1decf7d58bb1e562…` |
-| wi | 4 | 0 | 1 | 0 | 5 | `fd3e57c63ed17b4d…` |
-| eh | 4 | 0 | 2 | 0 | 6 | `243aefba7fcd8727…` |
-| jm | 19 | 111 | 11 | 0 | 141 | `fccee11e5f08217a…` |
-| title | 0 | 6 | 4 | 0 | 10 | `436c6ee274fba0b7…` |
-| gumi | 0 | 15 | 22 | 0 | 37 | `a0cfa1744ee0ae80…` |
-| **total** | **212** | **398** | **114** | **4** | **728** | |
+| sys | 121 | 280 | 5 | 2 | 408 | `9eeb0c5a7427c9b0…` |
+| tt | 239 | 61 | 1 | 1 | 302 | `bc5ed2b4abddc1eb…` |
+| di | 3 | 1 | 1 | 0 | 5 | `800ab16a5b1bbeae…` |
+| es | 4 | 1 | 1 | 0 | 6 | `0a1522ea9c8fb719…` |
+| wm | 7 | 6 | 5 | 0 | 18 | `abf0530bb09c7ca8…` |
+| hb | 104 | 16 | 14 | 0 | 134 | `dbc3ec138a2f2b8c…` |
+| mu | 37 | 13 | 6 | 1 | 57 | `d1cc64318e0f6112…` |
+| bb | 44 | 2 | 5 | 0 | 51 | `7fe7c349d6762211…` |
+| he | 67 | 33 | 2 | 0 | 102 | `44e64d876d8dac1e…` |
+| dc | 12 | 0 | 1 | 0 | 13 | `840087a4251b6083…` |
+| ca | 47 | 3 | 3 | 0 | 53 | `f9bb15841d23f438…` |
+| al | 49 | 1 | 3 | 0 | 53 | `e9c01be887602475…` |
+| nm | 42 | 0 | 6 | 0 | 48 | `9921674751a0cbda…` |
+| lk | 42 | 4 | 3 | 0 | 49 | `55adf197eee6efe6…` |
+| lm | 47 | 0 | 6 | 0 | 53 | `8559314ce46de1ea…` |
+| tr | 16 | 4 | 6 | 0 | 26 | `2ba62d66cf5a4c22…` |
+| po | 38 | 0 | 0 | 0 | 38 | `779b344765536b38…` |
+| wi | 38 | 0 | 1 | 0 | 39 | `af2c14f9a61d1e90…` |
+| eh | 55 | 2 | 2 | 0 | 59 | `7902d64fbd67ec20…` |
+| jm | 142 | 124 | 9 | 0 | 275 | `27830141af2cca2e…` |
+| title | 5 | 6 | 4 | 0 | 15 | `d25d29a92a75e588…` |
+| gumi | 7 | 22 | 22 | 0 | 51 | `a5ad28bd79cb6f76…` |
+| **total** | **1166** | **579** | **106** | **4** | **1855** | |
 
 ## needs_width_check.csv: real widths
 

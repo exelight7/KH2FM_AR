@@ -1,0 +1,237 @@
+{
+  "files": [
+    {
+      "path": "remastered/menu/us/title.2ld/US_title_2ld8.png",
+      "source_sha256": "1af115df242c43699c43889ba196f0cafbea2554f4ce266c61ed6dd5f9ff0f97",
+      "sha256": "a712af08fe49f972a86f38cc7fafe92aa609a7d82b7132de203857d89dbc3287",
+      "strips": [
+        [
+          0,
+          151,
+          568,
+          152
+        ],
+        [
+          0,
+          247,
+          280,
+          248
+        ],
+        [
+          0,
+          551,
+          284,
+          552
+        ]
+      ],
+      "removed_visible_pixels": 908,
+      "outside_changed_pixels": 0,
+      "dimensions_unchanged": true,
+      "glyph_pixels_unchanged": true
+    },
+    {
+      "path": "remastered/menu/us/title.2ld/US_title_2ld9.png",
+      "source_sha256": "926a032f4971284447cd0cb5980efa6397259b383f1497d399b1a6d5fc016b9c",
+      "sha256": "9501013e67078dad4cc98d040933d9641f07f1b6f488362c9c9f1f852eaef310",
+      "strips": [
+        [
+          0,
+          75,
+          284,
+          76
+        ],
+        [
+          0,
+          123,
+          140,
+          124
+        ],
+        [
+          0,
+          275,
+          142,
+          276
+        ]
+      ],
+      "removed_visible_pixels": 307,
+      "outside_changed_pixels": 0,
+      "dimensions_unchanged": true,
+      "glyph_pixels_unchanged": true
+    },
+    {
+      "path": "remastered/menu/us/title.2ld/US_title_2ld10.png",
+      "source_sha256": "3ca895c5412e2ee16aa1ac08ed285295f7c289dc510e8e558f09bd9c4df95857",
+      "sha256": "32999d5af76e6171d73e707d3fc39c4614e33f70ec10af1d627c468d5ad44c5a",
+      "strips": [
+        [
+          0,
+          151,
+          568,
+          152
+        ],
+        [
+          0,
+          247,
+          280,
+          248
+        ],
+        [
+          0,
+          551,
+          284,
+          552
+        ]
+      ],
+      "removed_visible_pixels": 981,
+      "outside_changed_pixels": 0,
+      "dimensions_unchanged": true,
+      "glyph_pixels_unchanged": true
+    },
+    {
+      "path": "remastered/menu/us/title.2ld/US_title_2ld11.png",
+      "source_sha256": "90c63bbfcb77d5fb63bae66ece6bf3301be199d0d8f7c43ab8c655c5466ac877",
+      "sha256": "866a19724b898eb89a1e259535668b780332c568088b49fe3f1d73878ac27eb2",
+      "strips": [
+        [
+          0,
+          75,
+          284,
+          76
+        ],
+        [
+          0,
+          123,
+          140,
+          124
+        ],
+        [
+          0,
+          275,
+          142,
+          276
+        ]
+      ],
+      "removed_visible_pixels": 307,
+      "outside_changed_pixels": 0,
+      "dimensions_unchanged": true,
+      "glyph_pixels_unchanged": true
+    },
+    {
+      "path": "remastered/menu/fm/title.2ld/US_title_2ld8.png",
+      "source_sha256": "1af115df242c43699c43889ba196f0cafbea2554f4ce266c61ed6dd5f9ff0f97",
+      "sha256": "a712af08fe49f972a86f38cc7fafe92aa609a7d82b7132de203857d89dbc3287",
+      "strips": [
+        [
+          0,
+          151,
+          568,
+          152
+        ],
+        [
+          0,
+          247,
+          280,
+          248
+        ],
+        [
+          0,
+          551,
+          284,
+          552
+        ]
+      ],
+      "removed_visible_pixels": 908,
+      "outside_changed_pixels": 0,
+      "dimensions_unchanged": true,
+      "glyph_pixels_unchanged": true
+    },
+    {
+      "path": "remastered/menu/fm/title.2ld/US_title_2ld9.png",
+      "source_sha256": "926a032f4971284447cd0cb5980efa6397259b383f1497d399b1a6d5fc016b9c",
+      "sha256": "9501013e67078dad4cc98d040933d9641f07f1b6f488362c9c9f1f852eaef310",
+      "strips": [
+        [
+          0,
+          75,
+          284,
+          76
+        ],
+        [
+          0,
+          123,
+          140,
+          124
+        ],
+        [
+          0,
+          275,
+          142,
+          276
+        ]
+      ],
+      "removed_visible_pixels": 307,
+      "outside_changed_pixels": 0,
+      "dimensions_unchanged": true,
+      "glyph_pixels_unchanged": true
+    },
+    {
+      "path": "remastered/menu/fm/title.2ld/US_title_2ld10.png",
+      "source_sha256": "3ca895c5412e2ee16aa1ac08ed285295f7c289dc510e8e558f09bd9c4df95857",
+      "sha256": "32999d5af76e6171d73e707d3fc39c4614e33f70ec10af1d627c468d5ad44c5a",
+      "strips": [
+        [
+          0,
+          151,
+          568,
+          152
+        ],
+        [
+          0,
+          247,
+          280,
+          248
+        ],
+        [
+          0,
+          551,
+          284,
+          552
+        ]
+      ],
+      "removed_visible_pixels": 981,
+      "outside_changed_pixels": 0,
+      "dimensions_unchanged": true,
+      "glyph_pixels_unchanged": true
+    },
+    {
+      "path": "remastered/menu/fm/title.2ld/US_title_2ld11.png",
+      "source_sha256": "90c63bbfcb77d5fb63bae66ece6bf3301be199d0d8f7c43ab8c655c5466ac877",
+      "sha256": "866a19724b898eb89a1e259535668b780332c568088b49fe3f1d73878ac27eb2",
+      "strips": [
+        [
+          0,
+          75,
+          284,
+          76
+        ],
+        [
+          0,
+          123,
+          140,
+          124
+        ],
+        [
+          0,
+          275,
+          142,
+          276
+        ]
+      ],
+      "removed_visible_pixels": 307,
+      "outside_changed_pixels": 0,
+      "dimensions_unchanged": true,
+      "glyph_pixels_unchanged": true
+    }
+  ],
+  "in_game_verified": false
+}
