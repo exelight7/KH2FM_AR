@@ -1,0 +1,9 @@
+OpenKH - Open Kingdom Hearts Research and Development
+Copyright 2019-2022 OpenKH Team and Contributors
+
+This product includes software developed at
+The OpenKH GitHub Repository (https://git.openkh.dev/).
+
+PackageCrypto.cs and the dummy package fixtures are adapted/copied from OpenKH, copyright its contributors, under Apache License 2.0.
+Source: https://github.com/OpenKH/OpenKh/tree/7a3b945c538d32c6a285128c98aefba093f52ceb
+See LICENSE-OpenKH.txt. The collector and tests are authored for KH2FM_AR. No game assets are bundled.

@@ -1,0 +1,29 @@
+name: HUD layout diagnostic exporter
+on:
+  push:
+    branches: ['diagnostics/hud-layout-v3']
+    paths: ['tools/hud-layout-exporter/**', '.github/workflows/hud-layout-exporter.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build-test-publish:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile x64 collector and test package reading and read-only export
+        shell: powershell
+        run: ./tools/hud-layout-exporter/build.ps1
+      - name: Publish independent diagnostic tool without changing the launcher update channel
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd tools/hud-layout-exporter
+          if gh release view hud-layout-diagnostic-v3 -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo 'Diagnostic release already exists; refusing to overwrite it'
+            exit 1
+          fi
+          gh release create hud-layout-diagnostic-v3 KH2FM-HUD-Layout-Windows-x64.zip SHA256SUMS.txt --prerelease --latest=false --title 'أداة جمع تخطيط قائمة الأوامر' --target "$GITHUB_SHA" --notes-file README_AR.md -R "$GITHUB_REPOSITORY"
