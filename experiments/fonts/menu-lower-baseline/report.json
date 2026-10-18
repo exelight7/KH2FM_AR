@@ -1,0 +1,56 @@
+{
+  "version": "1.0.18",
+  "hd_body_translation_down_pixels": 1,
+  "nonempty_cells_shifted": 264,
+  "visible_pixels_clipped": 0,
+  "body_and_dot_shapes_unchanged": true,
+  "retained_ya_dots": [
+    {
+      "cell": 20,
+      "dot_rows": [
+        44,
+        47
+      ],
+      "opaque_component_sizes": [
+        4,
+        6,
+        101
+      ]
+    },
+    {
+      "cell": 31,
+      "dot_rows": [
+        44,
+        47
+      ],
+      "opaque_component_sizes": [
+        6,
+        6,
+        78
+      ]
+    }
+  ],
+  "ya_dot_gap_reduced_hd_pixels": 1,
+  "advances_byte_identical": true,
+  "native_sd_byte_identical": true,
+  "dialogue_byte_identical": true,
+  "message_position_commands_added": 0,
+  "in_game_verified": false,
+  "arabic_joins": {
+    "joined_pairs_checked": 1145,
+    "broken_joins": 0,
+    "max_body_pixels_covered_by_ring_per_pair": 0,
+    "body_pixels_covered_by_ring_in_text": 0
+  },
+  "baseline": {
+    "digit_1_body_bottom_hd": 37,
+    "arabic_stroke_bottom_hd": 37,
+    "baseline_gap_hd": 0
+  },
+  "files": {
+    "kh2/msg/us/fontimage.bar": "dd27ff18f1bc42ce67a213fddd39f2b8af1908eda193eafb1e03c5985bb5437a",
+    "kh2/msg/us/fontinfo.bar": "4602a84ea860a3802506e8a49929b0f76976aa6de7d2d37781d9ac5d0cd6cbc1",
+    "kh2/remastered/msg/us/fontimage.bar/US_fontimage_bar0.png": "8be2e1adc29bff941793d27f714c9230d824571e1c5313d890571d69b5533a19",
+    "kh2/remastered/msg/us/fontimage.bar/US_fontimage_bar1.png": "a5414dfa357e965e9d5e8f5a81f0ef21c2ac1563cf41629321f430cc99b3245b"
+  }
+}

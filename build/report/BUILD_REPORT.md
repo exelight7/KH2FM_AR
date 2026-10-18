@@ -1,6 +1,6 @@
-round: BUILD-1.0.17
+round: BUILD-1.0.18
 
-# Build report 1.0.17
+# Build report 1.0.18
 
 **Result: ALL GATES PASS.** 1855 messages changed in 22 bars; 14403 other messages byte-identical.
 
