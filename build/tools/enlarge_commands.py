@@ -66,7 +66,7 @@ def main():
     with manifest_path.open('w', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=['path', 'size', 'sha256'], delimiter='\t', lineterminator='\n')
         writer.writeheader(); writer.writerows(manifest)
-    report = {'version': '1.0.12', 'scale': 18 / 16, 'labels': records,
+    report = {'version': '1.0.13', 'scale': 18 / 16, 'labels': records,
               'all_other_messages_byte_identical': True, 'original_control_bytes_preserved': True,
               'all_labels_within_original_font_width_budget': True,
               'path': 'msg/us/sys.bar', 'sha256': row['sha256'], 'in_game_verified': False}

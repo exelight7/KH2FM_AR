@@ -1,0 +1,19 @@
+{
+  "version": "1.0.13",
+  "shift_sd_pixels": 2,
+  "shift_hd_pixels": 4,
+  "nonempty_system_cells_shifted": 264,
+  "minimum_hd_bottom_padding": 1,
+  "glyph_pixels_clipped": 0,
+  "glyph_size_and_ink_unchanged": true,
+  "advances_byte_identical": true,
+  "dialogue_byte_identical": true,
+  "message_scale_unchanged": "18/16 from 1.0.12",
+  "in_game_verified": false,
+  "files": {
+    "kh2/msg/us/fontimage.bar": "dd27ff18f1bc42ce67a213fddd39f2b8af1908eda193eafb1e03c5985bb5437a",
+    "kh2/msg/us/fontinfo.bar": "4602a84ea860a3802506e8a49929b0f76976aa6de7d2d37781d9ac5d0cd6cbc1",
+    "kh2/remastered/msg/us/fontimage.bar/US_fontimage_bar0.png": "e9e418e536c11f86d73c589850c4250c0f8b03cd931238a78c985d565f00d8b5",
+    "kh2/remastered/msg/us/fontimage.bar/US_fontimage_bar1.png": "a5414dfa357e965e9d5e8f5a81f0ef21c2ac1563cf41629321f430cc99b3245b"
+  }
+}
