@@ -5,10 +5,10 @@ const {EventEmitter}=require('node:events');
 const {Updates}=require('../src/updates.cjs');
 function fixture(options={}) {
   const client=new EventEmitter(),changes=[],restarts=[];
-  client.checkForUpdates=async()=>{client.emit('update-available',{version:'1.0.17'});return {};};
-  client.downloadUpdate=async()=>{client.emit('download-progress',{percent:34.5});client.emit('update-downloaded',{version:'1.0.17'});return ['verified-file'];};
+  client.checkForUpdates=async()=>{client.emit('update-available',{version:'1.0.18'});return {};};
+  client.downloadUpdate=async()=>{client.emit('download-progress',{percent:34.5});client.emit('update-downloaded',{version:'1.0.18'});return ['verified-file'];};
   client.quitAndInstall=(...args)=>restarts.push(args);
-  const updates=new Updates({updater:client,version:'1.0.16',changed:s=>changes.push(s),schedule:fn=>fn(),...options});
+  const updates=new Updates({updater:client,version:'1.0.17',changed:s=>changes.push(s),schedule:fn=>fn(),...options});
   return {client,updates,changes,restarts};
 }
 test('check, explicit download and verified restart use silent install and force relaunch',async()=>{
@@ -17,7 +17,7 @@ test('check, explicit download and verified restart use silent install and force
   assert.equal(f.client.disableDifferentialDownload,true);assert.equal(f.client.allowPrerelease,false);
   await f.updates.check();assert.equal(f.updates.state.status,'available');assert.equal(f.restarts.length,0);
   await f.updates.download();assert.equal(f.updates.state.status,'downloaded');assert.ok(f.changes.some(x=>x.percent===34.5));
-  await f.updates.restart();assert.equal(saved,'1.0.17');assert.deepEqual(f.restarts,[[true,true]]);
+  await f.updates.restart();assert.equal(saved,'1.0.18');assert.deepEqual(f.restarts,[[true,true]]);
 });
 test('no update and failed checks do not permit a restart',async()=>{
   const f=fixture();f.client.checkForUpdates=async()=>{f.client.emit('update-not-available',{});return {};};
@@ -36,12 +36,12 @@ test('cancelled download can be retried with a fresh cancellation token',async()
   const f=fixture();await f.updates.check();let first;
   f.client.downloadUpdate=token=>{first=token;return new Promise((_,reject)=>token.onCancel(()=>{f.client.emit('error',new Error('cancelled'));reject(new Error('cancelled'));}));};
   const pending=f.updates.download();f.updates.cancel();await pending;assert.equal(f.updates.state.status,'available');
-  f.client.downloadUpdate=async token=>{assert.notEqual(token,first);assert.equal(token.cancelled,false);f.client.emit('update-downloaded',{version:'1.0.17'});};
+  f.client.downloadUpdate=async token=>{assert.notEqual(token,first);assert.equal(token.cancelled,false);f.client.emit('update-downloaded',{version:'1.0.18'});};
   await f.updates.download();assert.equal(f.updates.state.status,'downloaded');
 });
 test('game operations and concurrent updater requests are rejected during a download',async()=>{
   let busy=true;const f=fixture({isBusy:()=>busy});await assert.rejects(f.updates.check(),/انتظر/);busy=false;
-  await f.updates.check();let finish;f.client.downloadUpdate=()=>new Promise(resolve=>{finish=()=>{f.client.emit('update-downloaded',{version:'1.0.17'});resolve();};});
+  await f.updates.check();let finish;f.client.downloadUpdate=()=>new Promise(resolve=>{finish=()=>{f.client.emit('update-downloaded',{version:'1.0.18'});resolve();};});
   const pending=f.updates.download();assert.equal(f.updates.busy,true);
   await assert.rejects(f.updates.check(),/انتظر/);await assert.rejects(f.updates.download(),/انتظر/);finish();await pending;
 });
