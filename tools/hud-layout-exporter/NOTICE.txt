@@ -1,0 +1,3 @@
+PackageCrypto.cs and the dummy package fixtures are adapted/copied from OpenKH, copyright its contributors, under Apache License 2.0.
+Source: https://github.com/OpenKH/OpenKh/tree/7a3b945c538d32c6a285128c98aefba093f52ceb
+See LICENSE-OpenKH.txt. The collector and tests are authored for KH2FM_AR. No game assets are bundled.
