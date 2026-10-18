@@ -1,4 +1,4 @@
-"""Give reaction labels a uniform 18/16 scale without altering their text.
+"""Keep the 18/16 label scale; lower reaction text by two local pixels.
 
 The game's sys 1444..1449 command-name lists identify the reaction family.
 Only exact, single-line system labels from that family and the primary HUD
@@ -15,6 +15,9 @@ import arabic_msg as A
 import width as W
 
 ROOT = Path(__file__).resolve().parents[2]
+# Position is local to the label's message box, not the screen. Keep x=0.
+REACTION_POSITION = b'\x11\x00\x00\x02\x00'
+PRIMARY_IDS = {480, 481, 482, 483, 490, 491, 1284, 1286, 1287}
 SCALE = b'\x0a\x12'
 
 
@@ -27,7 +30,7 @@ def command_ids():
     ids = {int(r['id']) for r in rows if not 1444 <= int(r['id']) <= 1449
            and '⏎' not in r['EN'] and clean(r['EN']) in names
            and all(tag.startswith('<0B ') for tag in re.findall(r'<[^>]*>', r['AR']))}
-    return ids | {480, 481, 482, 483, 490, 491, 1284, 1286, 1287}
+    return ids | PRIMARY_IDS
 
 
 def main():
@@ -38,6 +41,7 @@ def main():
     old_adv = W.advances(str(ROOT / 'build/payload/kh2/msg/us/fontinfo.bar'), 'sys')
     new_adv = W.advances(str(out / 'kh2/msg/us/fontinfo.bar'), 'sys')
     result = before
+    published_baseline = before
     records = []
     ids = command_ids()
     for msg_id in sorted(ids):
@@ -49,13 +53,20 @@ def main():
         width = W.maxw(raw, new_adv) * 18 / 16
         previous_width = W.maxw(raw, old_adv)
         assert width <= previous_width, (msg_id, 'larger than original label budget')
-        result = A.replace_msg(result, msg_id, SCALE + raw)
+        published_baseline = A.replace_msg(published_baseline, msg_id, SCALE + raw)
+        result = A.replace_msg(result, msg_id, SCALE + (b'' if msg_id in PRIMARY_IDS else REACTION_POSITION) + raw)
         records.append({'id': msg_id, 'text': A.decode(messages[msg_id], True, False),
-                        'width': width, 'original_font_budget': previous_width})
+                        'width': width, 'original_font_budget': previous_width,
+                        'local_y_offset': 0 if msg_id in PRIMARY_IDS else 2})
+    catalog = json.loads((ROOT / 'apps/manager/catalog/legacy.json').read_text())
+    previous = next(v for v in catalog['versions'] if v['version'] == '1.0.14')
+    expected = next(f['sha256'] for f in previous['files'] if f['path'] == 'kh2/msg/us/sys.bar')
+    assert hashlib.sha256(published_baseline).hexdigest() == expected, 'Published 1.0.14 baseline differs'
+    assert len(ids - PRIMARY_IDS) == 225
     final = A.msgs(result)
     for msg_id, raw in messages.items():
         if msg_id in ids:
-            assert A.padded(final[msg_id]) == SCALE + A.padded(raw)
+            assert A.padded(final[msg_id]) == SCALE + (b'' if msg_id in PRIMARY_IDS else REACTION_POSITION) + A.padded(raw)
         else:
             assert final[msg_id] == raw
     target.write_bytes(result)
@@ -66,7 +77,8 @@ def main():
     with manifest_path.open('w', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=['path', 'size', 'sha256'], delimiter='\t', lineterminator='\n')
         writer.writeheader(); writer.writerows(manifest)
-    report = {'version': '1.0.13', 'scale': 18 / 16, 'labels': records,
+    report = {'version': '1.0.15', 'scale': 18 / 16, 'reaction_y_offset': 2,
+              'reaction_labels_shifted': len(ids - PRIMARY_IDS), 'published_1_0_14_baseline_verified': True, 'primary_hud_position_unchanged': True, 'labels': records,
               'all_other_messages_byte_identical': True, 'original_control_bytes_preserved': True,
               'all_labels_within_original_font_width_budget': True,
               'path': 'msg/us/sys.bar', 'sha256': row['sha256'], 'in_game_verified': False}
