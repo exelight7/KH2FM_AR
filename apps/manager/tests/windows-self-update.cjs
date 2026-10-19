@@ -25,19 +25,23 @@ async function exerciseWindowsSelfUpdate(f,dist,profile) {
   try {
     // Exercise the exact published launcher the user already has. Neither
     // its code nor its updater comparison version is modified for this test.
-    const previousInstaller=path.join(f.root,'published-1.0.18.exe');
-    const response=await fetch('https://github.com/exelight7/KH2FM_AR/releases/download/v1.0.18/01-KH2FM-Arabic-1.0.18-Windows-x64.exe');
-    assert.equal(response.ok,true,'Published 1.0.18 installer unavailable');
+    const previousInstaller=path.join(f.root,'published-1.0.19.exe');
+    const response=await fetch('https://github.com/exelight7/KH2FM_AR/releases/download/v1.0.19/01-KH2FM-Arabic-1.0.19-Windows-x64.exe');
+    assert.equal(response.ok,true,'Published 1.0.19 installer unavailable');
     await pipeline(Readable.fromWeb(response.body),fss.createWriteStream(previousInstaller));
-    assert.equal(await hash(previousInstaller),'ee28732cc8e0296c96cfa78df87e5b5cd49f4249c5cdf57b9ca1fc14c0f4305d');
+    assert.equal(await hash(previousInstaller),'c29465e4006fa69f64b55c2aa927bd24e81f24f28f12fa45f7a1cbe5c2fbded5');
     await exec(previousInstaller,['/S','/D='+installDir],{timeout:120000,windowsHide:true});
     assert.equal(await exists(executable),true);
     const previousData=path.join(installDir,'resources/translation');
     const previousManifest=await readJSON(path.join(previousData,'manifest.json'));
-    assert.equal(previousManifest.version,'1.0.18');
+    assert.equal(previousManifest.version,'1.0.19');
     const blob=await fs.readFile(path.join(previousData,'payload.bin'));
     assert.equal(createHash('sha256').update(blob).digest('hex'),previousManifest.blobHash);
-    const oldState=structuredClone(state);oldState.version='1.0.18';
+    const oldState=structuredClone(state);oldState.version='1.0.19';
+    for(const entry of oldState.entries.filter(x=>x.root==='mod' && !previousManifest.files.some(f=>f.path===x.path))) {
+      await fs.rm(path.join(oldState.modRoot,entry.path));
+    }
+    oldState.entries=oldState.entries.filter(x=>x.root!=='mod' || previousManifest.files.some(f=>f.path===x.path));
     for(const entry of oldState.entries.filter(x=>x.root==='mod')) {
       const source=previousManifest.files.find(x=>x.path===entry.path);
       const bytes=gunzipSync(blob.subarray(source.offset,source.offset+source.compressedSize));
@@ -47,7 +51,7 @@ async function exerciseWindowsSelfUpdate(f,dist,profile) {
     }
     await writeJSON(stateFile,oldState);
     application=await electron.launch({executablePath:executable,timeout:120000});
-    assert.equal(await application.evaluate(({app})=>app.getVersion()),'1.0.18');
+    assert.equal(await application.evaluate(({app})=>app.getVersion()),'1.0.19');
     const page=await application.firstWindow();await page.waitForFunction(game=>document.getElementById('game-path').textContent===game,f.game);
     await application.evaluate(async({app},{url,cache})=>{
       const {createRequire}=process.getBuiltinModule('module');const require=createRequire(app.getAppPath()+'/package.json');
@@ -73,7 +77,7 @@ async function exerciseWindowsSelfUpdate(f,dist,profile) {
     assert.equal(applied,true,'The silently updated launcher did not resume and apply the translation');
     assert.equal(await hash(executable),await hash(path.join(dist,'win-unpacked/KH2FM Arabic.exe')));
     for(const entry of state.entries)assert.equal(await hash(path.join(entry.root==='mod'?state.modRoot:f.game,entry.path)),entry.sha256);
-    return {realSilentSelfUpdate:true,previousLauncherVersion:'1.0.18',previousPublishedInstallerSHA256Verified:true,
+    return {realSilentSelfUpdate:true,previousLauncherVersion:'1.0.19',previousPublishedInstallerSHA256Verified:true,
       updaterComparisonVersionUnmodified:true,newLauncherRelaunched:true,gameDirectoryRestored:true,translationAppliedAfterSelfUpdate:true};
   }finally {
     if(application)await application.close().catch(()=>{});
