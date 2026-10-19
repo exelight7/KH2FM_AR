@@ -2,8 +2,6 @@
 
 <div align="center">
 
-<img src="apps/manager/assets/user-art.jpg" width="150" alt="شخصية من كينغدم هارتس">
-
 <h1>تعريب كينغدم هارتس ٢ فاينل ميكس</h1>
 
 <p>النصوص والواجهات بالعربية لنسخة ستيم ضمن مجموعة ١٫٥ + ٢٫٥ ريمكس.</p>
@@ -17,6 +15,8 @@
 &nbsp; · &nbsp;
 <a href="https://x.com/psycho_njjm">حساب المشروع على إكس</a>
 </p>
+
+<img src="docs/images/launcher-2.0.0.png" width="960" alt="واجهة لانشر تعريب كينغدم هارتس ٢، الإصدار 2.0.0">
 
 </div>
 
