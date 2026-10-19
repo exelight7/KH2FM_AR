@@ -1,98 +1,95 @@
-# KH2FM_AR
-
 <div dir="rtl">
 
-## تعريب Kingdom Hearts II Final Mix
+<div align="center">
 
-     https://x.com/psycho_njjm 
-مشروع مجاني من المعجبين لتعريب نصوص لعبة **Kingdom Hearts II Final Mix**
-(ضمن مجموعة Kingdom Hearts HD 1.5+2.5 ReMIX على Steam). المشروع غير رسمي ولا علاقة له
-بـ Square Enix أو Disney، ولا يحتوي على ملفات اللعبة.
+<img src="apps/manager/assets/user-art.jpg" width="150" alt="شخصية من كينغدم هارتس">
 
-### الإصدار 2.0.0
+<h1>تعريب كينغدم هارتس ٢ فاينل ميكس</h1>
 
-يضبط نص الشريط الأخضر ويخفف الحدود الخشنة حول أسماء الأبواب. [ملاحظات الإصدار وطريقة التحديث من النسخ السابقة](docs/releases/2.0.0.md).
+<p>النصوص والواجهات بالعربية لنسخة ستيم ضمن مجموعة ١٫٥ + ٢٫٥ ريمكس.</p>
 
-### للاعبين
+<p><strong>الإصدار 2.0.0</strong> · مجاني · ويندوز ولينكس</p>
 
-حمّل برنامج التثبيت من صفحة
-[الإصدارات (Releases)](https://github.com/exelight7/KH2FM_AR/releases)
-واتبع التعليمات المرفقة به. لا تحتاج إلى أي ملف من هذا المستودع.
-
-### للمساهمين: مراجعة النص العربي
-
-النص العربي المثبّت في اللعبة موجود في المجلد `review/` (75 ملفاً، 15552 سطراً).
-الأعمدة: `bar,id,EN,AR,width_pct,flags`.
-
-1. اختر ملفاً غير مُنجز من `docs/TASKS.md`.
-2. اقرأ `RULES.md`: الأحرف المسموحة، الوسوم مثل `<10>` و`<X 5E>` تبقى كما هي
-   وبنفس الترتيب، عدد فواصل الأسطر `⏎` لا يتغير، أسماء المسرد
-   (`docs/glossary.md`) لا تتغير، والتصحيح لا يزيد طوله عن 10% أو حرفين، أيهما أكبر.
-3. لا تعدّل `review/` أبداً. اكتب تصحيحاتك في ملف
-   `corrections/<FILE>.csv` بالأعمدة
-   `bar,id,AR_old,AR_new,type,severity,reason`:
-   النص الحالي كما هو، النص المصحح، نوع الخطأ
-   (`spelling` | `grammar` | `phrasing` | `meaning` | `glossary`)،
-   الدرجة (1 بسيط، 2 واضح، 3 يغيّر المعنى)، وسبب بالعربية في 8 كلمات أو أقل.
-4. شغّل `python tools/validate_corrections.py` وأصلح الأخطاء حتى تظهر `PASS`.
-5. افتح طلب دمج (Pull Request). يشغّل GitHub الفحص نفسه تلقائياً
-   (**validate**) على كل طلب يغيّر `corrections/` أو `tools/`، ولا يُدمج
-   الطلب إلا إذا نجح الفحص.
-
-للمراجعة عبر جلسة Claude في السحابة استخدم النص الجاهز في `docs/CLOUD_PROMPT.md`.
+<p>
+<a href="https://github.com/exelight7/KH2FM_AR/releases/latest"><strong>⬇ تحميل التعريب</strong></a>
+&nbsp; · &nbsp;
+<a href="docs/releases/2.0.0.md">تفاصيل التحديث</a>
+&nbsp; · &nbsp;
+<a href="https://x.com/psycho_njjm">حساب المشروع على إكس</a>
+</p>
 
 </div>
 
 ---
 
-## Arabic translation of Kingdom Hearts II Final Mix
+## ✨ الجديد في 2.0.0
 
-A free fan project that translates the text of **Kingdom Hearts II Final Mix**
-(part of Kingdom Hearts HD 1.5+2.5 ReMIX on Steam) into Arabic. It is
-unofficial, not affiliated with Square Enix or Disney, and contains no game
-files.
+- **الشريط الأخضر:** ضبط موضع نص أوامر التفاعل مثل «حفظ» و«افحص» داخل الإطار.
+- **أسماء الأبواب والمناطق:** تخفيف الحواف السوداء الخشنة لتظهر الحروف أوضح.
+- **التحديث من النسخ السابقة:** ترقية التعريب مع الاحتفاظ بإمكانية الحذف والتراجع.
 
-### Players
+[اقرأ ملاحظات الإصدار كاملة ←](docs/releases/2.0.0.md)
 
-Download the installer from the
-[Releases page](https://github.com/exelight7/KH2FM_AR/releases) and follow the
-instructions that come with it. You do not need anything else from this
-repository.
+## 📥 التحميل والتثبيت
 
-### Contributors: proofreading the Arabic
+| نظامك | الملف المناسب |
+| --- | --- |
+| ويندوز، معمارية ٦٤ بت | [تحميل المثبّت](https://github.com/exelight7/KH2FM_AR/releases/download/v2.0.0/01-KH2FM-Arabic-2.0.0-Windows-x64.exe) |
+| لينكس وستيم ديك، معمارية ٦٤ بت | [تحميل التطبيق](https://github.com/exelight7/KH2FM_AR/releases/download/v2.0.0/02-KH2FM-Arabic-2.0.0-Linux-x64.AppImage) |
 
-The Arabic installed in the game is in `review/` (75 files, 15,552 rows),
-columns `bar,id,EN,AR,width_pct,flags`.
+1. أغلق اللعبة، ثم افتح برنامج التعريب.
+2. اختر مجلد اللعبة، واضغط **تثبيت التعريب**.
+3. اختر **اللغة الإنجليزية** للعبة من إعدادات ستيم، ثم شغّلها كالمعتاد.
 
-1. Pick an unchecked file in `docs/TASKS.md`.
-2. Read `RULES.md`: allowed characters, tags such as `<10>` and `<X 5E>` kept
-   exactly and in order, the same number of `⏎` line breaks, glossary terms
-   (`docs/glossary.md`) never changed, and a correction at most 10% (or 2 characters,
-   whichever is larger) longer.
-3. Never edit `review/`. Put your corrections in `corrections/<FILE>.csv` with
-   the columns `bar,id,AR_old,AR_new,type,severity,reason`: the current text
-   exactly, the corrected text, the type
-   (`spelling` | `grammar` | `phrasing` | `meaning` | `glossary`), the severity
-   (1 minor, 2 clear, 3 changes the meaning) and a reason in Arabic, 8 words at
-   most.
-4. Run `python tools/validate_corrections.py` and fix errors until it prints
-   `PASS`.
-5. Open a pull request. GitHub runs the same check automatically
-   (**validate**) on every pull request that touches `corrections/` or
-   `tools/`; a pull request is merged only when it passes.
+ملفات التعريب مرفقة بالبرنامج؛ لا تحتاج إلى تنزيل المستودع أو اتصال بالإنترنت أثناء التثبيت.
 
-For a Claude cloud session, use the ready-made prompt in `docs/CLOUD_PROMPT.md`.
+[دليل الاستخدام ولينكس والنسخ الاحتياطية ←](apps/manager/README_AR.md)
 
-### Repository layout
+## 🔄 عندك إصدار أقدم؟
 
-| path | contents |
-|---|---|
-| `review/` | the installed Arabic, one CSV per part (read-only) |
-| `corrections/` | correction files, one per review file or task |
-| `RULES.md` | proofreading rules (also read by the validator) |
-| `tools/validate_corrections.py` | the automatic check |
-| `tests/` | validator tests (`python -m unittest discover -s tests`) |
-| `docs/TASKS.md` | the task list: 75 review files, GLOSSARY, SHORTEN |
-| `docs/CLOUD_PROMPT.md` | prompt for a cloud proofreading session |
-| `docs/glossary.md` | approved names and terms |
-| `docs/consistency.md`, `docs/review_list.md`, `docs/long_rows.md` | open naming conflicts, wording to review, rows too wide for the screen |
+**اللانشر 1.0.11 أو أحدث:** أغلق اللعبة، ثم اختر **تحديث اللانشر ← تنزيل الإصدار 2.0.0 ← التحديث وإعادة التشغيل**. يتابع البرنامج تحديث التعريب في مجلد اللعبة المحفوظ.
+
+**الإصدارات الأقدم:** نزّل المثبّت الجديد مرة واحدة واختر مجلد لعبتك الحالي؛ لا تحتاج إلى حذف التعريب أولًا.
+
+على لينكس، استخدم ملف التطبيق بصيغة `AppImage` للتحديث من داخل البرنامج.
+
+## 🛠️ الحذف والتراجع
+
+من قائمة **•••** داخل البرنامج يمكنك اختيار **حذف التعريب** أو **التراجع عن آخر عملية**. احتفظ بمجلد `.kh2fm-arabic` داخل مجلد اللعبة لأنه يحتوي سجل العمليات والنسخ الاحتياطية.
+
+تبقى ملفات الحفظ وملفات اللعبة الأصلية كما هي.
+
+<details>
+<summary><strong>🤝 للمساهمين: مراجعة النصوص العربية</strong></summary>
+
+<br>
+
+النصوص الحالية موجودة في مجلد [المراجعة](review/). تُرسل التصحيحات في ملفات مستقلة، دون تعديل نصوص المراجعة مباشرة.
+
+1. اختر مهمة غير منجزة من [قائمة المهام](docs/TASKS.md).
+2. اتبع [قواعد التصحيح](RULES.md) و[المسرد المعتمد](docs/glossary.md)، مع الحفاظ على الوسوم وفواصل الأسطر وحدود طول النص.
+3. أضف تصحيحاتك داخل `corrections/<FILE>.csv` وفق الأعمدة المحددة في القواعد.
+4. شغّل أمر الفحص وأصلح الأخطاء حتى ينجح:
+
+```sh
+python tools/validate_corrections.py
+```
+
+5. افتح طلب دمج؛ تُفحص التصحيحات تلقائيًا قبل دمجها.
+
+| ما تحتاجه | مكانه |
+| --- | --- |
+| النصوص الحالية للقراءة والمراجعة | [مجلد المراجعة](review/) |
+| ملفات التصحيحات | [مجلد التصحيحات](corrections/) |
+| الأسماء والمصطلحات المعتمدة | [المسرد](docs/glossary.md) |
+| النصوص التي تحتاج تدقيقًا إضافيًا | [قائمة المراجعة](docs/review_list.md) |
+| النصوص الطويلة على الشاشة | [قائمة النصوص الطويلة](docs/long_rows.md) |
+| تعليمات جلسة مراجعة سحابية | [نص الجلسة الجاهز](docs/CLOUD_PROMPT.md) |
+
+</details>
+
+---
+
+<p align="center">مشروع مجاني من المعجبين، غير رسمي وغير تابع لسكوير إنكس أو ديزني.</p>
+
+</div>
