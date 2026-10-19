@@ -1,9 +1,11 @@
-"""Adjust only the text Y of the five green-row animation states in each world."""
+"""Move green-row text anchors while preserving every original drawable record."""
 import csv
 import hashlib
 import json
 import struct
 import urllib.request
+import zlib
+from green_anchor import build as anchor_build
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -58,45 +60,51 @@ def layout(data):
 
 
 def patch(data, text_y):
-    table, count, groups = layout(data)
-    result = bytearray(data)
-    changed = set()
-    for group in groups:
-        offset = table + group * 36 + 0x14
-        old = struct.unpack_from('<i', data, offset)[0]
-        check(old in (0, text_y), 'Unexpected existing text Y')
-        struct.pack_into('<i', result, offset, text_y)
-        changed.update(range(offset, offset + 4))
-    check(all(a == b or i in changed for i, (a, b) in enumerate(zip(data, result))),
-          'Changed bytes outside text Y fields')
-    check(layout(result) == (table, count, groups), 'Layout changed after patch')
-    return bytes(result)
+    check(text_y == 10, 'Unexpected anchor displacement')
+    table, _, groups = layout(data)
+    check(all(struct.unpack_from('<i', data, table + group * 36 + 20)[0] == 0 for group in groups),
+          'Unexpected existing text Y')
+    return anchor_build(data)[0]
+
+
+def source_layout(entry, entries, commit):
+    cache = ROOT / 'build/layout-source' / entry['path']
+    if not cache.exists():
+        if 'delta' in entry:
+            delta = (ROOT / entry['delta']).read_bytes()
+            check(hashlib.sha256(delta).hexdigest() == entry['delta_sha256'], 'Layout delta SHA256 mismatch')
+            check(delta[:4] == b'XOR1' and struct.unpack_from('<I', delta, 4)[0] == entry['size'], 'Invalid layout delta')
+            base = source_layout(entries[entry['base']], entries, commit)
+            difference = zlib.decompress(delta[8:])
+            check(len(difference) == max(len(base), entry['size']), 'Invalid layout delta length')
+            data = bytes(a ^ b for a, b in zip(base.ljust(len(difference), b'\0'), difference))[:entry['size']]
+        else:
+            url = 'https://raw.githubusercontent.com/exelight7/KH2FM_AR/' + commit + '/' + entry['path']
+            with urllib.request.urlopen(url, timeout=60) as response:
+                data = response.read()
+        check(len(data) == entry['size'] and hashlib.sha256(data).hexdigest() == entry['sha256'], 'Source layout SHA256 mismatch')
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        cache.write_bytes(data)
+    data = cache.read_bytes()
+    check(len(data) == entry['size'] and hashlib.sha256(data).hexdigest() == entry['sha256'], 'Source layout SHA256 mismatch')
+    return data
 
 
 def main():
     config = json.loads((ROOT / 'build/config/green-command-layout.json').read_text())
     check(config['groups'] == [0, 1, 2, 3, 5] and config['text_y'] == 10, 'Unexpected layout policy')
-    check(len(config['files']) == 27, 'Expected all 27 world layouts')
+    check(len(config['files']) == 31, 'Expected all 31 world layouts')
+    entries = {entry['path']: entry for entry in config['files']}
     out = ROOT / 'build/out'
     rows = list(csv.DictReader((out / 'MANIFEST.tsv').open(), delimiter='\t'))
     existing = {r['path'].replace('\\', '/'): r for r in rows}
     reports = []
     for entry in config['files']:
         relative = entry['path']
-        cache = ROOT / 'build/layout-source' / relative
-        if not cache.exists():
-            url = 'https://raw.githubusercontent.com/exelight7/KH2FM_AR/' + config['commit'] + '/' + relative
-            with urllib.request.urlopen(url, timeout=60) as response:
-                data = response.read()
-            check(len(data) == entry['size'] and hashlib.sha256(data).hexdigest() == entry['sha256'],
-                  'Downloaded layout SHA256 mismatch: ' + relative)
-            cache.parent.mkdir(parents=True, exist_ok=True)
-            cache.write_bytes(data)
-        data = cache.read_bytes()
-        check(len(data) == entry['size'] and hashlib.sha256(data).hexdigest() == entry['sha256'],
-              'Source layout SHA256 mismatch: ' + relative)
-        result = patch(data, config['text_y'])
-        check(patch(result, config['text_y']) == result, 'Layout patch is not idempotent')
+        data = source_layout(entry, entries, config['commit'])
+        layout(data)
+        result, proof = anchor_build(data)
+        check(patch(data, config['text_y']) == result, 'Anchor build is not deterministic')
         target = out / 'kh2' / relative
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(result)
@@ -106,19 +114,16 @@ def main():
         else:
             rows.append(row)
         table, count, groups = layout(data)
-        reports.append({**row, 'source_sha256': entry['sha256'], 'groups': groups,
-                        'group_count': count, 'text_y_before': 0, 'text_y_after': config['text_y'],
-                        'changed_byte_offsets': [i for i, (a, b) in enumerate(zip(data, result)) if a != b],
-                        'only_text_y_changed': True})
+        reports.append({**row, **proof, 'groups': groups, 'group_count': count})
     with (out / 'MANIFEST.tsv').open('w', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=['path', 'size', 'sha256'], delimiter='\t', lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
-    report = {'version': '1.0.20', 'source_commit': config['commit'], 'files': reports,
+    report = {'version': '2.0.0', 'source_commit': config['commit'], 'files': reports,
               'frame_geometry_unchanged': True, 'message_bytes_and_font_unchanged': True,
               'primary_rows_and_button_state_unchanged': True, 'in_game_verified': False}
     (ROOT / 'build/report/GREEN_COMMAND_LAYOUT.json').write_text(json.dumps(report, indent=2) + '\n')
-    print('Green row: 27 layouts, five text-Y fields each; all other bytes unchanged')
+    print('Green row: 31 layouts; invisible active anchors; all original drawable records preserved')
 
 
 if __name__ == '__main__':

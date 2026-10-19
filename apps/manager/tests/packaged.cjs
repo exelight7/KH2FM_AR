@@ -30,7 +30,7 @@ const {crypto,hashBytes,writeJSON}=require('../src/paths.cjs');
     await page.locator('#install').click();await page.waitForFunction(()=>!document.getElementById('progress-area').hidden || !document.getElementById('feedback').hidden);
     await page.waitForFunction(()=>document.getElementById('progress-area').hidden && !document.getElementById('feedback').hidden,null,{timeout:240000});
     assert.match(await page.locator('#feedback-title').textContent(),/جاهز/,await page.locator('#feedback-text').textContent());
-    const state=await readJSON(path.join(f.game,'.kh2fm-arabic','state.json'));assert.equal(state.entries.filter(x=>x.root==='mod').length,825);
+    const state=await readJSON(path.join(f.game,'.kh2fm-arabic','state.json'));assert.equal(state.entries.filter(x=>x.root==='mod').length,830);
     for(const entry of state.entries) assert.equal(await hash(safeJoin(entry.root==='mod'?state.modRoot:f.game,entry.path)),entry.sha256);
     await page.locator('#menu-toggle').click();await page.screenshot({path:path.join(output,'PACKAGED-MENU-'+process.platform+'-'+process.arch+'.png')});
     await page.locator('#remove').click();await page.waitForFunction(()=>document.getElementById('feedback-title').textContent.includes('حذف'),null,{timeout:240000});
@@ -68,7 +68,7 @@ const {crypto,hashBytes,writeJSON}=require('../src/paths.cjs');
       await application.close();application=null;
       Object.assign(updateChecks,await require('./windows-self-update.cjs').exerciseWindowsSelfUpdate(f,dist,profile));
     }
-    const report={platform:process.platform,arch:process.arch,packagedApplication:true,passed:true,actualPayloadFiles:825,allFilesSHA256Verified:true,manualFolderSelection:true,menuRemoval:true,menuUndo:true,fontConflictRepairAndUndo:true,...updateChecks,windowsWorkerTested,interactiveUACTested:false,gameAndSavePreserved:true,fixtureGame:true,actualGamePlayTested:false};
+    const report={platform:process.platform,arch:process.arch,packagedApplication:true,passed:true,actualPayloadFiles:830,allFilesSHA256Verified:true,manualFolderSelection:true,menuRemoval:true,menuUndo:true,fontConflictRepairAndUndo:true,...updateChecks,windowsWorkerTested,interactiveUACTested:false,gameAndSavePreserved:true,fixtureGame:true,actualGamePlayTested:false};
     await fs.writeFile(path.join(output,'PACKAGED-'+process.platform+'-'+process.arch+'.json'),JSON.stringify(report,null,2)+'\n');
     console.log(JSON.stringify(report));
   }finally{if(application)await application.close();await f.cleanup();}

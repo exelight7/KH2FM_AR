@@ -8,12 +8,12 @@ import zipfile
 from pathlib import Path
 
 PRIMARY = {
-    'KH2FM-Arabic-1.0.20-Windows-x64.exe': '01-KH2FM-Arabic-1.0.20-Windows-x64.exe',
-    'KH2FM-Arabic-1.0.20-Linux-x86_64.AppImage': '02-KH2FM-Arabic-1.0.20-Linux-x64.AppImage',
+    'KH2FM-Arabic-2.0.0-Windows-x64.exe': '01-KH2FM-Arabic-2.0.0-Windows-x64.exe',
+    'KH2FM-Arabic-2.0.0-Linux-x86_64.AppImage': '02-KH2FM-Arabic-2.0.0-Linux-x64.AppImage',
 }
-EXTRAS = '03-KH2FM-Arabic-1.0.20-Extras-and-Reports.zip'
-UPDATE_FILES = {'latest.yml': PRIMARY['KH2FM-Arabic-1.0.20-Windows-x64.exe'],
-                'latest-linux.yml': PRIMARY['KH2FM-Arabic-1.0.20-Linux-x86_64.AppImage']}
+EXTRAS = '03-KH2FM-Arabic-2.0.0-Extras-and-Reports.zip'
+UPDATE_FILES = {'latest.yml': PRIMARY['KH2FM-Arabic-2.0.0-Windows-x64.exe'],
+                'latest-linux.yml': PRIMARY['KH2FM-Arabic-2.0.0-Linux-x86_64.AppImage']}
 
 
 def update_metadata(root):
@@ -50,7 +50,7 @@ def package_extras(root, destination, original_hashes):
         assert sha256(path) == original_hashes[path.name], f'Hash mismatch: {path.name}'
     checksum_lines = [original_hashes[old] + '  ' + new for old, new in PRIMARY.items()]
     checksum_lines += [original_hashes[p.name] + '  ' + archive_path(p.name) for p in supporting]
-    readme = '''# ملفات إضافية لتحديث 1.0.20
+    readme = '''# ملفات إضافية لتحديث 2.0.0
 
 هذا الملف اختياري. للتثبيت حمّل برنامج نظامك مباشرة من الإصدار.
 نسخة ويندوز هي الملف الأول في قائمة التحميل، ويبدأ اسمها بـ01.

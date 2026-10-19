@@ -1,7 +1,7 @@
 'use strict';
 const $=id=>document.getElementById(id);
 let inspection=null,busy=false,platform='win32';
-let updateState={status:'idle'},managerVersion='1.0.20';
+let updateState={status:'idle'},managerVersion='2.0.0';
 const updateBusy=()=>['checking','downloading','cancelling','restarting'].includes(updateState.status);
 const api=window.kh2fm;
 let initializing=typeof api.bootstrap==='function';

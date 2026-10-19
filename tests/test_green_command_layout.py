@@ -1,11 +1,14 @@
 import importlib.util
 from pathlib import Path
 import struct
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'build/tools'))
 import unittest
 
 spec = importlib.util.spec_from_file_location('green_layout', Path(__file__).resolve().parents[1] / 'build/tools/align_green_commands.py')
 green = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(green)
+from green_anchor import parse
 
 
 def fixture():
@@ -33,15 +36,23 @@ def fixture():
 
 
 class GreenLayoutTests(unittest.TestCase):
-    def test_only_green_text_y_changes_and_second_run_is_identical(self):
+    def test_invisible_anchor_moves_text_and_preserves_drawable_records(self):
         original = fixture()
-        table, _, groups = green.layout(original)
         result = green.patch(original, 10)
-        self.assertEqual(groups, [0, 1, 2, 3, 5])
-        self.assertEqual({i for i, (a, b) in enumerate(zip(original, result)) if a != b},
-                         {table + i * 36 + 20 for i in groups})
-        self.assertEqual(result[table + 4 * 36:table + 5 * 36], original[table + 4 * 36:table + 5 * 36])
-        self.assertEqual(green.patch(result, 10), result)
+        _, _, _, before, _ = parse(original)
+        _, _, _, after, _ = parse(result)
+        self.assertEqual(after[:2], before[:2])
+        self.assertEqual(after[2][:-4], before[2])
+        self.assertEqual(after[2][-4:], b'\0' * 4)
+        self.assertEqual(len(after[3]) - len(before[3]), 5 * 144)
+        empty = len(before[2]) // 4
+        kept = [after[3][i:i + 144] for i in range(0, len(after[3]), 144)
+                if struct.unpack_from('<i', after[3], i + 4)[0] != empty]
+        self.assertEqual(b''.join(kept), before[3])
+        for group in range(6):
+            self.assertEqual(after[4][group * 36 + 4:(group + 1) * 36],
+                             before[4][group * 36 + 4:(group + 1) * 36])
+        self.assertEqual(green.patch(original, 10), result)
 
     def test_rejects_truncated_bar_and_invalid_sequence_bounds(self):
         for data in [fixture()[:40], fixture()[:-1]]:

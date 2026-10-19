@@ -50,6 +50,14 @@
       "sha256": "4dbcb3ca2b0428951d3c83a614ebfe82975c4be13faac508ec8026888feac0a3"
     },
     {
+      "path": "field2d/us/es0command.2dd",
+      "size": 248768,
+      "sha256": "6beb6a568aed6bdf06249e38f41c6323abf1946786e6b562447e8d0e3a2416e5",
+      "delta": "build/layout-deltas/es0command.xor.z",
+      "delta_sha256": "baf98de01763b65a80ef3a6caebdc5c3787379f0ae9fc1ba0715437c66deba9a",
+      "base": "field2d/us/eh1command.2dd"
+    },
+    {
       "path": "field2d/us/hb0command.2dd",
       "size": 205888,
       "sha256": "1033642a2d6abb4d0dbdb823cd2ad88586cf13c8010a2af8e8bf8eec300caf41"
@@ -80,6 +88,14 @@
       "sha256": "ed0ab64729244cf27f4b0a222fafd16add52ee86fcf38da7073bb9e4b89466fd"
     },
     {
+      "path": "field2d/us/lm0command.2dd",
+      "size": 169024,
+      "sha256": "9836c14fe67608ffc9e5a5be75e1b3da7b5221535d0e41d8af7ea598e5fc63b4",
+      "delta": "build/layout-deltas/lm0command.xor.z",
+      "delta_sha256": "835072145a1d5b8c479b854f6324b4d396104a5c050b3a1556af019865bcf3c9",
+      "base": "field2d/us/eh1command.2dd"
+    },
+    {
       "path": "field2d/us/mu0command.2dd",
       "size": 235424,
       "sha256": "d4533982c45a40f44852bd7135b54935c46c660440602e944a4431029cec2995"
@@ -93,6 +109,14 @@
       "path": "field2d/us/nm1command.2dd",
       "size": 195520,
       "sha256": "92c7d9dcb60c67efbb2d19e6d6bb0ee316aaee995efa8a5e306e3287be28d11d"
+    },
+    {
+      "path": "field2d/us/po0command.2dd",
+      "size": 216960,
+      "sha256": "3a5ba601c36a1f073462df52ddced84ab75d38c0a80368d048c31487c55b1ca2",
+      "delta": "build/layout-deltas/po0command.xor.z",
+      "delta_sha256": "c0004789d1de65bd53689b30e4c0f134f194983cfad269b39e6c39151891f1ad",
+      "base": "field2d/us/eh1command.2dd"
     },
     {
       "path": "field2d/us/tr0command.2dd",
@@ -133,6 +157,14 @@
       "path": "field2d/us/tt6command.2dd",
       "size": 184112,
       "sha256": "2424bb2f8b6e91f8406be002ca11a9fa2a5628e9e20d944f7e44b76d94df187c"
+    },
+    {
+      "path": "field2d/us/wi0command.2dd",
+      "size": 251760,
+      "sha256": "2427498cd89b30fb327eb038063309d5ff31fc31d529134f3a40509d7563db49",
+      "delta": "build/layout-deltas/wi0command.xor.z",
+      "delta_sha256": "4f00ceba35d284152ba42be0996c52a10868d7774c852d87941fadacef757dd9",
+      "base": "field2d/us/eh1command.2dd"
     },
     {
       "path": "field2d/us/wm0command.2dd",
