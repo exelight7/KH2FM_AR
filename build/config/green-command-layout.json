@@ -1,0 +1,180 @@
+{
+  "commit": "902c8f50286c2398d0bb49ae2e2722148a059541",
+  "text_y": 10,
+  "groups": [
+    0,
+    1,
+    2,
+    3,
+    5
+  ],
+  "files": [
+    {
+      "path": "field2d/us/al0command.2dd",
+      "size": 252784,
+      "sha256": "f058bf083b8ea23292b388eae31a453e4a97cd98f3a8f7796deadd9bdec94236"
+    },
+    {
+      "path": "field2d/us/bb0command.2dd",
+      "size": 243904,
+      "sha256": "2ea069f3330d43e06691578123602f69434471316b2ebdc50cb975abfcaabaa5"
+    },
+    {
+      "path": "field2d/us/ca0command.2dd",
+      "size": 212992,
+      "sha256": "2681322e248fbf7a4e0357559c47827490653ff297b84bb966fce7274015e5dc"
+    },
+    {
+      "path": "field2d/us/dc0command.2dd",
+      "size": 243312,
+      "sha256": "8298e704641dac6c5f0271015b9a573fcedbe048b05105dd5fd6434affb69564"
+    },
+    {
+      "path": "field2d/us/dc1command.2dd",
+      "size": 199120,
+      "sha256": "b51da87f3db9c81b24da0688efee761c0743d46d2fb84f4b2a4b8fee37277427"
+    },
+    {
+      "path": "field2d/us/di0command.2dd",
+      "size": 183600,
+      "sha256": "e43b8e46da5aee183483cbf022253bce0b44ceb72d84f4c8ac968784fc23d6ba"
+    },
+    {
+      "path": "field2d/us/eh0command.2dd",
+      "size": 207872,
+      "sha256": "3b7d1a7d51209aae1cb0efe88b71b673fd1f739c76f90be7c80fa48e5551f126"
+    },
+    {
+      "path": "field2d/us/eh1command.2dd",
+      "size": 179648,
+      "sha256": "4dbcb3ca2b0428951d3c83a614ebfe82975c4be13faac508ec8026888feac0a3"
+    },
+    {
+      "path": "field2d/us/es0command.2dd",
+      "size": 248768,
+      "sha256": "6beb6a568aed6bdf06249e38f41c6323abf1946786e6b562447e8d0e3a2416e5",
+      "delta": "build/layout-deltas/es0command.xor.z",
+      "delta_sha256": "baf98de01763b65a80ef3a6caebdc5c3787379f0ae9fc1ba0715437c66deba9a",
+      "base": "field2d/us/eh1command.2dd"
+    },
+    {
+      "path": "field2d/us/hb0command.2dd",
+      "size": 205888,
+      "sha256": "1033642a2d6abb4d0dbdb823cd2ad88586cf13c8010a2af8e8bf8eec300caf41"
+    },
+    {
+      "path": "field2d/us/hb1command.2dd",
+      "size": 190736,
+      "sha256": "954fac7d9b3d9266e0245af036ff62d08f3140e5540d07748ff7e93504e37571"
+    },
+    {
+      "path": "field2d/us/hb2command.2dd",
+      "size": 192832,
+      "sha256": "df46fc8069c98fa7fd743ca0a8092a685c538be1ac62c4f9630385f706f4c4e1"
+    },
+    {
+      "path": "field2d/us/he0command.2dd",
+      "size": 219568,
+      "sha256": "f3bca1aed4ad3e7cda8e19f1fa9517646abebd9bd89b4b2d7746c2ab4ba0a267"
+    },
+    {
+      "path": "field2d/us/he1command.2dd",
+      "size": 199472,
+      "sha256": "f5c86631d340f181ce33c9e101ef91b70221dda8aa391c97efa74c7f66ab2362"
+    },
+    {
+      "path": "field2d/us/lk0command.2dd",
+      "size": 206128,
+      "sha256": "ed0ab64729244cf27f4b0a222fafd16add52ee86fcf38da7073bb9e4b89466fd"
+    },
+    {
+      "path": "field2d/us/lm0command.2dd",
+      "size": 169024,
+      "sha256": "9836c14fe67608ffc9e5a5be75e1b3da7b5221535d0e41d8af7ea598e5fc63b4",
+      "delta": "build/layout-deltas/lm0command.xor.z",
+      "delta_sha256": "835072145a1d5b8c479b854f6324b4d396104a5c050b3a1556af019865bcf3c9",
+      "base": "field2d/us/eh1command.2dd"
+    },
+    {
+      "path": "field2d/us/mu0command.2dd",
+      "size": 235424,
+      "sha256": "d4533982c45a40f44852bd7135b54935c46c660440602e944a4431029cec2995"
+    },
+    {
+      "path": "field2d/us/nm0command.2dd",
+      "size": 230064,
+      "sha256": "90b8c167ec3ffb5fad1526cc9924d27804d6d3f34b33191647db54ab136a2b23"
+    },
+    {
+      "path": "field2d/us/nm1command.2dd",
+      "size": 195520,
+      "sha256": "92c7d9dcb60c67efbb2d19e6d6bb0ee316aaee995efa8a5e306e3287be28d11d"
+    },
+    {
+      "path": "field2d/us/po0command.2dd",
+      "size": 216960,
+      "sha256": "3a5ba601c36a1f073462df52ddced84ab75d38c0a80368d048c31487c55b1ca2",
+      "delta": "build/layout-deltas/po0command.xor.z",
+      "delta_sha256": "c0004789d1de65bd53689b30e4c0f134f194983cfad269b39e6c39151891f1ad",
+      "base": "field2d/us/eh1command.2dd"
+    },
+    {
+      "path": "field2d/us/tr0command.2dd",
+      "size": 218192,
+      "sha256": "c203998afe0761233b69954503f391d06930e75e7348e1b441b6576a0078f230"
+    },
+    {
+      "path": "field2d/us/tt0command.2dd",
+      "size": 209776,
+      "sha256": "b34a4e9843daf21696eb69721f5dc8ae673379e12c8ee66c175a09afbbb39cff"
+    },
+    {
+      "path": "field2d/us/tt1command.2dd",
+      "size": 179648,
+      "sha256": "4dbcb3ca2b0428951d3c83a614ebfe82975c4be13faac508ec8026888feac0a3"
+    },
+    {
+      "path": "field2d/us/tt2command.2dd",
+      "size": 228608,
+      "sha256": "8c61cc357094a69cd48c29c1b06bb2a34536559f0e3dd96df487ce8dc023cafc"
+    },
+    {
+      "path": "field2d/us/tt3command.2dd",
+      "size": 199968,
+      "sha256": "b00910b56488088e1ea97787895126ab1b72fd5196d4869dacd079d0e3bb0271"
+    },
+    {
+      "path": "field2d/us/tt4command.2dd",
+      "size": 188944,
+      "sha256": "d4ac6abc97667813885957db060ddab2a0907b8fe1ba51f78282751fa676b8fa"
+    },
+    {
+      "path": "field2d/us/tt5command.2dd",
+      "size": 203616,
+      "sha256": "098966a572bf073da15ec2c268d1f12c33f835550706b9edb8882b70cd0b1b56"
+    },
+    {
+      "path": "field2d/us/tt6command.2dd",
+      "size": 184112,
+      "sha256": "2424bb2f8b6e91f8406be002ca11a9fa2a5628e9e20d944f7e44b76d94df187c"
+    },
+    {
+      "path": "field2d/us/wi0command.2dd",
+      "size": 251760,
+      "sha256": "2427498cd89b30fb327eb038063309d5ff31fc31d529134f3a40509d7563db49",
+      "delta": "build/layout-deltas/wi0command.xor.z",
+      "delta_sha256": "4f00ceba35d284152ba42be0996c52a10868d7774c852d87941fadacef757dd9",
+      "base": "field2d/us/eh1command.2dd"
+    },
+    {
+      "path": "field2d/us/wm0command.2dd",
+      "size": 184112,
+      "sha256": "5e4512b0271d734d49872c12df7b255f9c08ac1ed0daa7affc47a6b9f91df462"
+    },
+    {
+      "path": "field2d/us/zz0command.2dd",
+      "size": 184976,
+      "sha256": "fd22696f2180c04446aceeb2f9517bda3d9f4e76248f3c5bb6378e599f405996"
+    }
+  ]
+}

@@ -14,8 +14,9 @@ const {GAME_EXE}=require('../src/compatibility.cjs');
   const catalog=path.join(root,'catalog','legacy.json'); const oldCatalog=await fs.readFile(catalog);
   await fs.writeFile(catalog,JSON.stringify(f.catalog));
   let application;
+  const env={...process.env,LANG:'en_US.UTF-8',...(process.platform==='linux'?{XDG_CONFIG_HOME:path.join(f.root,'config'),XDG_CACHE_HOME:path.join(f.root,'cache')}:{})};
   try{
-    application=await electron.launch({args:[root,...(process.platform==='linux'?['--no-sandbox']:[])],env:{...process.env,LANG:'en_US.UTF-8'},timeout:90000});
+    application=await electron.launch({args:[root,...(process.platform==='linux'?['--no-sandbox']:[])],env,timeout:90000});
     const page=await application.firstWindow();await page.emulateMedia({reducedMotion:'reduce'}); const errors=[]; page.on('pageerror',e=>errors.push(e.message));
     await page.waitForSelector('#owner-art'); await page.evaluate(()=>document.fonts.ready);
     assert.equal(await page.locator('#install').isDisabled(),true);
@@ -37,8 +38,13 @@ const {GAME_EXE}=require('../src/compatibility.cjs');
     assert.equal(await exists(path.join(f.game,loaderName)),false);
     await page.locator('#menu-toggle').click(); await page.locator('#undo').click(); await page.waitForFunction(()=>document.getElementById('feedback-title').textContent.includes('الاستعادة'),null,{timeout:90000});
     assert.equal(await exists(path.join(f.game,loaderName)),true); assert.equal(await hash(path.join(f.game,GAME_EXE)),exe);
+    await application.close();
+    application=await electron.launch({args:[root,...(process.platform==='linux'?['--no-sandbox']:[])],env,timeout:90000});
+    const reopened=await application.firstWindow();
+    await reopened.waitForFunction(game=>document.getElementById('game-path').textContent===game,f.game);
+    assert.equal(await reopened.locator('#install').isEnabled(),true);
     assert.equal(errors.length,0,errors.join('\n'));
-    await fs.writeFile(path.join(output,'NATIVE-'+process.platform+'-'+process.arch+'.json'),JSON.stringify({platform:process.platform,arch:process.arch,nativeElectron:true,passed:true,checks:['manualFolderSelection','originalArtwork','installFromButton','removeFromMenu','undoFromMenu','fontReportClipboardAndHashes','gameExePreserved','noJavaScriptErrors'],fixtureOnly:true},null,2)+'\n');
+    await fs.writeFile(path.join(output,'NATIVE-'+process.platform+'-'+process.arch+'.json'),JSON.stringify({platform:process.platform,arch:process.arch,nativeElectron:true,passed:true,checks:['manualFolderSelection','originalArtwork','installFromButton','removeFromMenu','undoFromMenu','fontReportClipboardAndHashes','gameDirectoryRememberedAfterRestart','gameExePreserved','noJavaScriptErrors'],fixtureOnly:true},null,2)+'\n');
     console.log('Native Electron install/remove/undo passed on '+process.platform+'/'+process.arch);
   }finally{
     if(application)await application.close();

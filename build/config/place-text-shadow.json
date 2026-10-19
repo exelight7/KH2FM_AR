@@ -1,0 +1,8 @@
+{
+  "path": "dll/KH2FM_AR_PlaceTextShadow.dll",
+  "source": "native/place-text-shadow/KH2FM_AR_PlaceTextShadow.dll",
+  "sha256": "b18ab9db0192b816e6f95efd3bc4ca983b8006a119a6b2794ad368d24a2e2986",
+  "size": 4096,
+  "known_game_sha256": "9002b2de6a1f91a790bd0673de125d1cf833f7942bfec827cdcf6ba64d5849ed",
+  "native_memory_only": true
+}

@@ -12,6 +12,7 @@
 | **BASS** (`bass.dll`, Panacea dependency) | Un4seen Developments, https://www.un4seen.com/ | free for non-commercial use | audio library shipped with Panacea |
 | **Inno Setup** 6.7.3 | Jordan Russell and Martijn Laan, https://jrsoftware.org/ | Inno Setup License | this installer |
 | **Noto Naskh Arabic** (Bold) | Google / The Noto Project Authors | SIL Open Font License 1.1 (see THIRD_PARTY_LICENSES.md §6) | the Arabic letters in the font atlases since 1.0.4 |
+| **Noto Sans Arabic** (Regular / Condensed Medium) | The Noto Project Authors, https://github.com/notofonts/arabic | SIL Open Font License 1.1 | current dialogue/menu atlases and the larger 1.0.12 command labels |
 | **Segoe UI** | Microsoft | Windows font (see THIRD_PARTY_LICENSES.md §6) | the Arabic words drawn into the translated images (and the font atlases up to 1.0.3) |
 
 ## اللعبة — The game

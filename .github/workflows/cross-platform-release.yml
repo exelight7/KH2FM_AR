@@ -1,16 +1,16 @@
-name: KH2FM 1.0.10 — Windows Linux
+name: KH2FM 2.0.0 — Windows Linux
 on:
   push:
     branches: ['installer/**']
-    paths: ['apps/manager/**', 'build/tools/*manager_release.py', '.github/workflows/cross-platform-release.yml', 'docs/releases/1.0.10.md', 'experiments/fonts/alef-spacing/**', 'experiments/fonts/outline-baseline/**', 'experiments/fonts/dialogue-size/**', 'experiments/fonts/natural-proportions/**', 'experiments/fonts/clean-joins/**', 'build/tools/replace_drive_hud.py', 'build/tools/*font*.py', 'corrections/**', 'build/docs/**']
+    paths: ['apps/manager/**', 'build/tools/*manager_release.py', '.github/workflows/cross-platform-release.yml', 'docs/releases/2.0.0.md', 'experiments/fonts/alef-spacing/**', 'experiments/fonts/outline-baseline/**', 'experiments/fonts/dialogue-size/**', 'experiments/fonts/natural-proportions/**', 'experiments/fonts/clean-joins/**', 'experiments/fonts/menu-legibility/**', 'experiments/fonts/menu-alignment/**', 'experiments/fonts/menu-fine-alignment/**', 'experiments/fonts/menu-lower-baseline/**', 'experiments/fonts/menu-context-alignment/**', 'build/tools/align_green_commands.py', 'build/config/green-command-layout.json', 'build/tools/clean_title_lines.py', 'build/tools/enlarge_commands.py', 'build/tools/replace_command_labels.py', 'build/tools/replace_drive_hud.py', 'build/tools/*font*.py', 'corrections/**', 'build/docs/**']
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: kh2fm-draft-1-0-10
+  group: kh2fm-draft-2-0-0
   cancel-in-progress: true
 env:
-  VERSION: '1.0.10'
+  VERSION: '2.0.0'
   CSC_IDENTITY_AUTO_DISCOVERY: 'false'
 jobs:
   payload:
@@ -38,8 +38,18 @@ jobs:
           python experiments/fonts/dialogue-size/sources/scale_font.py --verify
           python experiments/fonts/natural-proportions/sources/build_font.py --verify
           python experiments/fonts/clean-joins/sources/build_font.py --verify
+          python experiments/fonts/menu-legibility/sources/build_font.py --verify
+          python experiments/fonts/menu-alignment/sources/align_font.py --verify
+          python experiments/fonts/menu-fine-alignment/sources/align_font.py --verify
+          python experiments/fonts/menu-lower-baseline/sources/align_font.py --verify
+          python experiments/fonts/menu-context-alignment/sources/fix_separator.py --verify
           python build/tools/merge_font_overlay.py
+          python build/tools/enlarge_commands.py
+          python build/tools/replace_command_labels.py
           python build/tools/replace_drive_hud.py
+          python build/tools/clean_title_lines.py
+          python build/tools/align_green_commands.py
+          python build/tools/package_place_shadow.py
           python build/tools/fetch_panacea.py
           python apps/manager/scripts/pack_payload.py > PAYLOAD_PACK.json
           cat PAYLOAD_PACK.json
@@ -90,12 +100,22 @@ jobs:
       - name: Native application button tests (Windows and macOS)
         if: matrix.platform != 'linux'
         run: node scripts/run_checked.cjs npm run test:native
+      - name: Native place-shadow guard and two-byte scope tests (Windows)
+        if: matrix.platform == 'win32'
+        shell: cmd
+        run: |
+          for /f "usebackq tokens=*" %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -property installationPath`) do set "VSINSTALL=%%i"
+          call "%VSINSTALL%\VC\Auxiliary\Build\vcvars64.bat"
+          cl /nologo /O2 /std:c17 /DPLACE_TEST ../../native/place-text-shadow/place_shadow.c /Fe:test-results/place-shadow-test.exe > test-results/PLACE_SHADOW_TEST.txt 2>&1
+          if errorlevel 1 exit /b 1
+          test-results\place-shadow-test.exe >> test-results/PLACE_SHADOW_TEST.txt
+          if errorlevel 1 exit /b 1
       - name: Build the downloadable application
         run: node scripts/run_checked.cjs npm run dist -- ${{ matrix.target }}
-      - name: Exercise the packaged application and all 798 actual mod files (Linux)
+      - name: Exercise the packaged application and all 830 actual mod files (Linux)
         if: matrix.platform == 'linux'
         run: xvfb-run -a node scripts/run_checked.cjs node tests/packaged.cjs
-      - name: Exercise the packaged application and all 798 actual mod files (Windows and macOS)
+      - name: Exercise the packaged application and all 830 actual mod files (Windows and macOS)
         if: matrix.platform != 'linux'
         run: node scripts/run_checked.cjs node tests/packaged.cjs
       - name: Collect downloads and actual application evidence
@@ -125,22 +145,27 @@ jobs:
       - name: Collect documentation and calculate asset hashes
         run: |
           cp apps/manager/README_AR.md release/
-          cp apps/manager/REPORT_1.0.10.md release/
-          cp experiments/fonts/clean-joins/comparison-*.png release/
+          cp apps/manager/REPORT_2.0.0.md release/
+          cp experiments/fonts/menu-context-alignment/comparison-*.png release/
+          cp prepared/build/report/REACTION_COMMANDS.json release/
+          cp prepared/build/report/GREEN_COMMAND_LAYOUT.json release/
+          cp prepared/build/report/PLACE_TEXT_SHADOW.json release/
+          cp prepared/build/report/HUD_COMMANDS.* release/
           cp prepared/build/report/HUD_TRANSFORM.* release/
-          cp experiments/fonts/clean-joins/report.json release/FONT_REPORT_1.0.10.json
+          cp prepared/build/report/TITLE_CLEANUP.* release/
+          cp experiments/fonts/menu-context-alignment/report.json release/FONT_REPORT_2.0.0.json
           cp prepared/build/report/BUILD_REPORT.md release/
           cp prepared/build/report/CHANGELOG.md release/
           cp prepared/PAYLOAD_PACK.json release/
-          cp prepared/apps/manager/data/manifest.json release/INSTALL_MANIFEST_1.0.10.json
+          cp prepared/apps/manager/data/manifest.json release/INSTALL_MANIFEST_2.0.0.json
           python - <<'PY'
           from pathlib import Path
           import hashlib,json
           root=Path('release')
           reports=[json.loads(p.read_text()) for p in root.glob('PACKAGED-*.json')]
           assert len(reports)==2 and all(x['passed'] for x in reports)
-          assert len(list(root.glob('KH2FM-Arabic-1.0.10-Windows-*.exe')))==1
-          assert len(list(root.glob('KH2FM-Arabic-1.0.10-Linux-*.AppImage')))==1
+          assert len(list(root.glob('KH2FM-Arabic-2.0.0-Windows-*.exe')))==1
+          assert len(list(root.glob('KH2FM-Arabic-2.0.0-Linux-*.AppImage')))==1
           lines=[]
           for p in sorted(root.iterdir()):
               if p.is_file() and p.name!='SHA256SUMS.txt':
@@ -149,16 +174,28 @@ jobs:
           (root/'SHA256SUMS.txt').write_text('\n'.join(lines)+'\n')
           PY
           python build/tools/assemble_manager_release.py release
-      - name: Verify assets and publish the full 1.0.10 prerelease
+          python - <<'PY'
+          import json,base64,hashlib
+          from pathlib import Path
+          root=Path('release')
+          for name in ['latest.yml','latest-linux.yml']:
+              metadata=json.loads((root/name).read_text())
+              assert metadata['version']=='2.0.0' and len(metadata['files'])==1
+              file=metadata['files'][0]; binary=root/file['url']
+              with binary.open('rb') as stream: digest=base64.b64encode(hashlib.file_digest(stream,'sha512').digest()).decode()
+              assert file['sha512']==digest and file['size']==binary.stat().st_size
+              assert metadata['path']==binary.name
+          PY
+      - name: Verify assets and prepare the 2.0.0 release draft
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh release view v1.0.10 -R "$GITHUB_REPOSITORY" --json isDraft > release-info.json 2>/dev/null; then
-            python -c 'import json; assert json.load(open("release-info.json"))["isDraft"], "The owner already published 1.0.10; refusing to modify it"'
-            gh release edit v1.0.10 --draft --prerelease=true --title v1.0.10 --target "$GITHUB_SHA" --notes-file docs/releases/1.0.10.md -R "$GITHUB_REPOSITORY"
-            gh release upload v1.0.10 release/* --clobber -R "$GITHUB_REPOSITORY"
+          if gh release view v2.0.0 -R "$GITHUB_REPOSITORY" --json isDraft > release-info.json 2>/dev/null; then
+            python -c 'import json; assert json.load(open("release-info.json"))["isDraft"], "The owner already published 2.0.0; refusing to modify it"'
+            gh release edit v2.0.0 --draft --prerelease=false --title v2.0.0 --target "$GITHUB_SHA" --notes-file docs/releases/2.0.0.md -R "$GITHUB_REPOSITORY"
+            gh release upload v2.0.0 release/* --clobber -R "$GITHUB_REPOSITORY"
             # New downloads are uploaded before removing obsolete loose supporting files.
-            gh release view v1.0.10 -R "$GITHUB_REPOSITORY" --json isDraft,assets > uploaded.json
+            gh release view v2.0.0 -R "$GITHUB_REPOSITORY" --json isDraft,assets > uploaded.json
             python - <<'PY'
           import json
           import subprocess
@@ -169,13 +206,11 @@ jobs:
           assert expected.issubset({a['name'] for a in release['assets']})
           for asset in release['assets']:
               if asset['name'] not in expected:
-                  subprocess.run(['gh', 'release', 'delete-asset', 'v1.0.10', asset['name'], '--yes'], check=True)
+                  subprocess.run(['gh', 'release', 'delete-asset', 'v2.0.0', asset['name'], '--yes'], check=True)
           PY
           else
-            gh release create v1.0.10 release/* --draft --prerelease --title v1.0.10 --target "$GITHUB_SHA" --notes-file docs/releases/1.0.10.md -R "$GITHUB_REPOSITORY"
+            gh release create v2.0.0 release/* --draft --title v2.0.0 --target "$GITHUB_SHA" --notes-file docs/releases/2.0.0.md -R "$GITHUB_REPOSITORY"
           fi
-          gh release view v1.0.10 -R "$GITHUB_REPOSITORY" --json isDraft,url,assets > result.json
-          python -c 'import json; from pathlib import Path; r=json.load(open("result.json")); assert r["isDraft"]; names=sorted(a["name"] for a in r["assets"]); assert names==sorted(p.name for p in Path("release").iterdir()); assert len(names)==3 and names[0].startswith("01-") and names[0].endswith(".exe"); print(r["url"])'
-          gh release edit v1.0.10 --draft=false --prerelease=true -R "$GITHUB_REPOSITORY"
-          gh release view v1.0.10 -R "$GITHUB_REPOSITORY" --json isDraft,isPrerelease,url,assets > published.json
-          python -c 'import json; r=json.load(open("published.json")); assert not r["isDraft"] and r["isPrerelease"]; assert len(r["assets"])==3; print(r["url"])'
+          gh release view v2.0.0 -R "$GITHUB_REPOSITORY" --json isDraft,url,assets > result.json
+          python -c 'import json; from pathlib import Path; r=json.load(open("result.json")); assert r["isDraft"]; names=sorted(a["name"] for a in r["assets"]); assert names==sorted(p.name for p in Path("release").iterdir()); assert len(names)==5 and names[0].startswith("01-") and names[0].endswith(".exe"); print(r["url"])'
+          # Publish after the green-row position has been checked in the actual game.

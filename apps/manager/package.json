@@ -1,6 +1,6 @@
 {
   "name": "kh2fm-arabic-manager",
-  "version": "1.0.10",
+  "version": "2.0.0",
   "description": "Arabic installer and removal manager for Kingdom Hearts II Final Mix",
   "author": "KH2FM Arabic fan project",
   "license": "MIT",
@@ -59,7 +59,7 @@
       ],
       "requestedExecutionLevel": "asInvoker",
       "signAndEditExecutable": true,
-      "artifactName": "KH2FM-Arabic-1.0.10-Windows-${arch}.${ext}"
+      "artifactName": "KH2FM-Arabic-2.0.0-Windows-${arch}.${ext}"
     },
     "nsis": {
       "oneClick": true,
@@ -67,7 +67,7 @@
       "runAfterFinish": true,
       "deleteAppDataOnUninstall": false,
       "shortcutName": "تعريب KH2FM",
-      "uninstallDisplayName": "KH2FM Arabic Manager 1.0.10"
+      "uninstallDisplayName": "KH2FM Arabic Manager 2.0.0"
     },
     "mac": {
       "target": [
@@ -76,7 +76,7 @@
       ],
       "category": "public.app-category.utilities",
       "identity": "-",
-      "artifactName": "KH2FM-Arabic-1.0.10-macOS-${arch}.${ext}",
+      "artifactName": "KH2FM-Arabic-2.0.0-macOS-${arch}.${ext}",
       "hardenedRuntime": false
     },
     "linux": {
@@ -85,7 +85,17 @@
         "tar.gz"
       ],
       "category": "Utility",
-      "artifactName": "KH2FM-Arabic-1.0.10-Linux-${arch}.${ext}"
-    }
+      "artifactName": "KH2FM-Arabic-2.0.0-Linux-${arch}.${ext}"
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "https://github.com/exelight7/KH2FM_AR/releases/latest/download/"
+      }
+    ]
+  },
+  "dependencies": {
+    "builder-util-runtime": "9.7.0",
+    "electron-updater": "6.8.9"
   }
 }

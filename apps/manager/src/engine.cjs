@@ -16,12 +16,12 @@ class Manager {
   }
   async manifest() {
     const manifest=await readJSON(path.join(this.dataDir,'manifest.json'));
-    if (manifest.schema!==1 || manifest.version!=='1.0.10' || !Array.isArray(manifest.files) || manifest.files.length>900 || !SHA.test(manifest.blobHash)) throw new Error('حزمة التعريب غير صالحة. أعد تنزيل البرنامج.');
+    if (manifest.schema!==1 || manifest.version!=='2.0.0' || !Array.isArray(manifest.files) || manifest.files.length>900 || !SHA.test(manifest.blobHash)) throw new Error('حزمة التعريب غير صالحة. أعد تنزيل البرنامج.');
     const seen=new Set();
     for (const entry of manifest.files) {
       if (!['payload','loader'].includes(entry.group) || !SHA.test(entry.sha256) || !Number.isSafeInteger(entry.size) || entry.size<0 || !Number.isSafeInteger(entry.offset) || entry.offset<0 || !Number.isSafeInteger(entry.compressedSize) || entry.compressedSize<=0) throw new Error('سجل الحزمة غير صالح.');
       safeJoin(this.dataDir,entry.path);
-      if (entry.group==='payload' && (!/^kh2\/.+\.(bar|png|dds)$/i.test(entry.path) || !this.catalog.versions.some(v=>v.files.some(x=>x.path===entry.path)))) throw new Error('الحزمة تحتوي ملفًا غير مسموح.');
+      if (entry.group==='payload' && (!(/^kh2\/.+\.(bar|png|dds|2dd)$/i.test(entry.path) || (entry.path==='kh2/dll/KH2FM_AR_PlaceTextShadow.dll' && entry.sha256==='b18ab9db0192b816e6f95efd3bc4ca983b8006a119a6b2794ad368d24a2e2986')) || !this.catalog.versions.some(v=>v.files.some(x=>x.path===entry.path)))) throw new Error('الحزمة تحتوي ملفًا غير مسموح.');
       if (entry.group==='loader' && !this.catalog.loader.some(x=>x.path===entry.path && x.sha256===entry.sha256)) throw new Error('ملف محمل المودات لا يطابق المصدر المعتمد.');
       if (seen.has(entry.path)) throw new Error('الحزمة تحتوي مسارات مكررة.');
       seen.add(entry.path);
@@ -58,14 +58,14 @@ class Manager {
     return {gameDir,meta,prefix,manifest,state,modRoot};
   }
   async validateState(state,gameDir,manifest) {
-    if (state.schema!==2 || !['1.0.3','1.0.4','1.0.5','1.0.6','1.0.7','1.0.8','1.0.9','1.0.10'].includes(state.version) || !samePath(state.gameDir,gameDir) || typeof state.modRoot!=='string' || !path.isAbsolute(state.modRoot) || !Array.isArray(state.entries) || state.entries.length>900) throw new Error('سجل التعريب غير صالح أو يعود إلى لعبة أخرى.');
+    if (state.schema!==2 || !['1.0.3','1.0.4','1.0.5','1.0.6','1.0.7','1.0.8','1.0.9','1.0.10','1.0.11','1.0.12','1.0.13','1.0.14','1.0.15','1.0.16','1.0.17','1.0.18','1.0.19','1.0.20','2.0.0'].includes(state.version) || !samePath(state.gameDir,gameDir) || typeof state.modRoot!=='string' || !path.isAbsolute(state.modRoot) || !Array.isArray(state.entries) || state.entries.length>900) throw new Error('سجل التعريب غير صالح أو يعود إلى لعبة أخرى.');
     // 1.0.3 shipped exactly the 1.0.2 translation; validate its records against
     // those pinned bytes so updating the font does not invalidate upgrades/undo.
     const previousVersion=state.version==='1.0.3' ? '1.0.2' : state.version;
-    const statePayload=state.version==='1.0.10'
+    const statePayload=state.version==='2.0.0'
       ? manifest.files.filter(x=>x.group==='payload')
       : (this.catalog.versions.find(v=>v.version===previousVersion)?.files || []);
-    if(state.fontConflicts!==undefined && (!Array.isArray(state.fontConflicts) || state.fontConflicts.length>64 || (state.version!=='1.0.10' && state.fontConflicts.length>0))) throw new Error('سجل تعارض الخط غير صالح.');
+    if(state.fontConflicts!==undefined && (!Array.isArray(state.fontConflicts) || state.fontConflicts.length>64 || (!['1.0.10','1.0.11','1.0.12','1.0.13','1.0.14','1.0.15','1.0.16','1.0.17','1.0.18','1.0.19','1.0.20','2.0.0'].includes(state.version) && state.fontConflicts.length>0))) throw new Error('سجل تعارض الخط غير صالح.');
     const conflicts=new Set();
     for(const entry of state.fontConflicts || []) {
       if(typeof entry.path!=='string' || !conflictPath(entry.path) || conflicts.has(entry.path) || !entry.original || !/^originals\/[a-f0-9]{32}\.bin$/.test(entry.original.path) || !SHA.test(entry.original.sha256)) throw new Error('سجل تعارض الخط غير صالح.');
@@ -132,7 +132,7 @@ class Manager {
     const pending=(await operations(c.meta)).find(x=>['applying','restoring'].includes(x.journal.phase));
     if (pending) throw new Error('وجدنا عملية لم تكتمل. اختر «استعادة العملية السابقة» من القائمة أولًا.');
   }
-  async extract(c,options) {
+  async extract(c,options,needed=null) {
     const blob=path.join(this.dataDir,'payload.bin');
     options.progress?.({phase:'verify',current:0,total:1});
     if (await hash(blob)!==c.manifest.blobHash) throw new Error('حزمة التعريب تغيرت أو لم تكتمل. أعد تنزيل البرنامج.');
@@ -140,14 +140,15 @@ class Manager {
     const directory=path.join(c.meta,'staging',crypto.randomUUID());
     await assertRegular(directory); await fs.mkdir(directory,{recursive:true});
     try {
-      for (let i=0;i<c.manifest.files.length;i++) {
+      const files=c.manifest.files.filter(entry=>!needed || needed.has(entry.path));
+      for (let i=0;i<files.length;i++) {
         options.checkCancel?.();
-        const entry=c.manifest.files[i], p=safeJoin(directory,entry.path);
+        const entry=files[i], p=safeJoin(directory,entry.path);
         if (entry.offset+entry.compressedSize>stat.size) throw new Error('حزمة التعريب غير مكتملة.');
         await fs.mkdir(path.dirname(p),{recursive:true});
         await pipeline(fss.createReadStream(blob,{start:entry.offset,end:entry.offset+entry.compressedSize-1}),zlib.createGunzip(),fss.createWriteStream(p,{flags:'wx'}));
         if ((await fs.stat(p)).size!==entry.size || await hash(p)!==entry.sha256) throw new Error('فشل التحقق من ملف في الحزمة.');
-        options.progress?.({phase:'extract',current:i+1,total:c.manifest.files.length});
+        options.progress?.({phase:'extract',current:i+1,total:files.length});
       }
       return directory;
     } catch (e) { await fs.rm(directory,{recursive:true,force:true}); throw e; }
@@ -218,10 +219,14 @@ class Manager {
       const writesSettings=!loaderPresent || c.state?.entries.some(x=>x.path==='panacea_settings.txt') || legacy.settingsOwned;
       const fontCheck=await fontReport(c,this.platform);
       if(!writesSettings && (fontCheck.pathMismatch || fontCheck.developmentOverride)) throw new Error(fontCheck.issues.join(' ')+' انسخ تقرير فحص الخط من القائمة لمراجعة المسار.');
-      const total=c.manifest.files.reduce((n,x)=>n+x.size,0);
+      const needed=new Set();
+      for(const file of c.manifest.files) {
+        if(file.group==='loader' || await hash(safeJoin(c.modRoot,file.path))!==file.sha256)needed.add(file.path);
+      }
+      const total=c.manifest.files.filter(x=>needed.has(x.path)).reduce((n,x)=>n+x.size,0);
       const disk=await fs.statfs(c.gameDir);
       if (disk.bavail*disk.bsize<total*3+50*1024*1024) throw new Error('المساحة غير كافية للتثبيت والنسخة الاحتياطية. وفر نحو '+Math.ceil((total*3+50*1024*1024)/1024**3)+' جيجابايت.');
-      const stage=await this.extract(c,options);
+      const stage=await this.extract(c,options,needed);
       try {
         const entries=[],actions=[];
         const fontConflicts=[...(c.state?.fontConflicts || [])];
@@ -257,7 +262,10 @@ class Manager {
           if (root==='game' && loaderPresent && current && !this.catalog.loader.some(x=>x.path===file.path && x.sha256===current)) continue;
           const entry={root,path:file.path,sha256:file.sha256,size:file.size};
           entry.original=await this.original(c,target,entry,oldEntry,legacy); entries.push(entry);
-          actions.push({target,beforeHash:current,source:safeJoin(stage,file.path)});
+          if(current!==file.sha256) {
+            if(!needed.has(file.path))throw new Error('تغير ملف أثناء الفحص؛ أعد المحاولة بعد إغلاق اللعبة.');
+            actions.push({target,beforeHash:current,source:safeJoin(stage,file.path)});
+          }
         }
         const settingTarget=path.join(c.gameDir,'panacea_settings.txt');
         if (writesSettings) {
@@ -268,7 +276,7 @@ class Manager {
           const current=await hash(settingTarget);
           if (oldEntry && current!==oldEntry.sha256) throw new Error('تغيرت إعدادات محمل المودات. أوقفنا التثبيت لحمايتها.');
           entry.original=await this.original(c,settingTarget,entry,oldEntry,legacy); entries.push(entry);
-          actions.push({target:settingTarget,beforeHash:current,data});
+          if(current!==entry.sha256)actions.push({target:settingTarget,beforeHash:current,data});
         }
         let registry=c.state?.registry || null;
         if (this.platform!=='win32') {
@@ -281,14 +289,14 @@ class Manager {
             actions.push({target,beforeHash:hashBytes(Buffer.from(text)),data:Buffer.from(patchRegistry(text,line,REG_SECTION,name))});
           }
         }
-        const state={schema:2,version:'1.0.10',gameDir:c.gameDir,modRoot:c.modRoot,entries,fontConflicts,registry,installedAt:new Date().toISOString()};
+        const state={schema:2,version:'2.0.0',gameDir:c.gameDir,modRoot:c.modRoot,entries,fontConflicts,registry,installedAt:new Date().toISOString()};
         const stateTarget=path.join(c.meta,'state.json');
         actions.push({target:stateTarget,beforeHash:await hash(stateTarget),data:Buffer.from(JSON.stringify(state,null,2)+'\n')});
         const context={gameDir:c.gameDir,modRoot:c.modRoot,prefix:c.prefix};
         options.progress?.({phase:'backup',current:0,total:actions.length});
         const operation=await snapshotOperation(c.meta,context,actions,'install');
         await applyOperation(operation,{...options,allowedTarget:this.allowedTarget.bind(this)});
-        return {installed:true,version:'1.0.10',operationId:operation.journal.id};
+        return {installed:true,version:'2.0.0',operationId:operation.journal.id};
       } finally { await fs.rm(stage,{recursive:true,force:true}); }
     });
   }
