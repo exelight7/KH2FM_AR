@@ -16,12 +16,12 @@ class Manager {
   }
   async manifest() {
     const manifest=await readJSON(path.join(this.dataDir,'manifest.json'));
-    if (manifest.schema!==1 || manifest.version!=='2.0.0' || !Array.isArray(manifest.files) || manifest.files.length>900 || !SHA.test(manifest.blobHash)) throw new Error('حزمة التعريب غير صالحة. أعد تنزيل البرنامج.');
+    if (manifest.schema!==1 || manifest.version!=='2.0.1' || !Array.isArray(manifest.files) || manifest.files.length>900 || !SHA.test(manifest.blobHash)) throw new Error('حزمة التعريب غير صالحة. أعد تنزيل البرنامج.');
     const seen=new Set();
     for (const entry of manifest.files) {
       if (!['payload','loader'].includes(entry.group) || !SHA.test(entry.sha256) || !Number.isSafeInteger(entry.size) || entry.size<0 || !Number.isSafeInteger(entry.offset) || entry.offset<0 || !Number.isSafeInteger(entry.compressedSize) || entry.compressedSize<=0) throw new Error('سجل الحزمة غير صالح.');
       safeJoin(this.dataDir,entry.path);
-      if (entry.group==='payload' && (!(/^kh2\/.+\.(bar|png|dds|2dd)$/i.test(entry.path) || (entry.path==='kh2/dll/KH2FM_AR_PlaceTextShadow.dll' && entry.sha256==='b18ab9db0192b816e6f95efd3bc4ca983b8006a119a6b2794ad368d24a2e2986')) || !this.catalog.versions.some(v=>v.files.some(x=>x.path===entry.path)))) throw new Error('الحزمة تحتوي ملفًا غير مسموح.');
+      if (entry.group==='payload' && (!(/^kh2\/.+\.(bar|png|dds|2dd)$/i.test(entry.path) || (entry.path==='kh2/dll/KH2FM_AR_PlaceTextShadow.dll' && entry.sha256==='b18ab9db0192b816e6f95efd3bc4ca983b8006a119a6b2794ad368d24a2e2986') || (entry.path==='kh2/dll/KH2FM_AR_GreenCommandText.dll' && entry.sha256==='7556681349cadc34bfbaf9305ddc567c9ce0e9e19027f6db5e763ff9cb41c3c9')) || !this.catalog.versions.some(v=>v.files.some(x=>x.path===entry.path)))) throw new Error('الحزمة تحتوي ملفًا غير مسموح.');
       if (entry.group==='loader' && !this.catalog.loader.some(x=>x.path===entry.path && x.sha256===entry.sha256)) throw new Error('ملف محمل المودات لا يطابق المصدر المعتمد.');
       if (seen.has(entry.path)) throw new Error('الحزمة تحتوي مسارات مكررة.');
       seen.add(entry.path);
@@ -58,14 +58,14 @@ class Manager {
     return {gameDir,meta,prefix,manifest,state,modRoot};
   }
   async validateState(state,gameDir,manifest) {
-    if (state.schema!==2 || !['1.0.3','1.0.4','1.0.5','1.0.6','1.0.7','1.0.8','1.0.9','1.0.10','1.0.11','1.0.12','1.0.13','1.0.14','1.0.15','1.0.16','1.0.17','1.0.18','1.0.19','1.0.20','2.0.0'].includes(state.version) || !samePath(state.gameDir,gameDir) || typeof state.modRoot!=='string' || !path.isAbsolute(state.modRoot) || !Array.isArray(state.entries) || state.entries.length>900) throw new Error('سجل التعريب غير صالح أو يعود إلى لعبة أخرى.');
+    if (state.schema!==2 || !['1.0.3','1.0.4','1.0.5','1.0.6','1.0.7','1.0.8','1.0.9','1.0.10','1.0.11','1.0.12','1.0.13','1.0.14','1.0.15','1.0.16','1.0.17','1.0.18','1.0.19','1.0.20','2.0.0','2.0.1'].includes(state.version) || !samePath(state.gameDir,gameDir) || typeof state.modRoot!=='string' || !path.isAbsolute(state.modRoot) || !Array.isArray(state.entries) || state.entries.length>900) throw new Error('سجل التعريب غير صالح أو يعود إلى لعبة أخرى.');
     // 1.0.3 shipped exactly the 1.0.2 translation; validate its records against
     // those pinned bytes so updating the font does not invalidate upgrades/undo.
     const previousVersion=state.version==='1.0.3' ? '1.0.2' : state.version;
-    const statePayload=state.version==='2.0.0'
+    const statePayload=state.version==='2.0.1'
       ? manifest.files.filter(x=>x.group==='payload')
       : (this.catalog.versions.find(v=>v.version===previousVersion)?.files || []);
-    if(state.fontConflicts!==undefined && (!Array.isArray(state.fontConflicts) || state.fontConflicts.length>64 || (!['1.0.10','1.0.11','1.0.12','1.0.13','1.0.14','1.0.15','1.0.16','1.0.17','1.0.18','1.0.19','1.0.20','2.0.0'].includes(state.version) && state.fontConflicts.length>0))) throw new Error('سجل تعارض الخط غير صالح.');
+    if(state.fontConflicts!==undefined && (!Array.isArray(state.fontConflicts) || state.fontConflicts.length>64 || (!['1.0.10','1.0.11','1.0.12','1.0.13','1.0.14','1.0.15','1.0.16','1.0.17','1.0.18','1.0.19','1.0.20','2.0.0','2.0.1'].includes(state.version) && state.fontConflicts.length>0))) throw new Error('سجل تعارض الخط غير صالح.');
     const conflicts=new Set();
     for(const entry of state.fontConflicts || []) {
       if(typeof entry.path!=='string' || !conflictPath(entry.path) || conflicts.has(entry.path) || !entry.original || !/^originals\/[a-f0-9]{32}\.bin$/.test(entry.original.path) || !SHA.test(entry.original.sha256)) throw new Error('سجل تعارض الخط غير صالح.');
@@ -289,14 +289,14 @@ class Manager {
             actions.push({target,beforeHash:hashBytes(Buffer.from(text)),data:Buffer.from(patchRegistry(text,line,REG_SECTION,name))});
           }
         }
-        const state={schema:2,version:'2.0.0',gameDir:c.gameDir,modRoot:c.modRoot,entries,fontConflicts,registry,installedAt:new Date().toISOString()};
+        const state={schema:2,version:'2.0.1',gameDir:c.gameDir,modRoot:c.modRoot,entries,fontConflicts,registry,installedAt:new Date().toISOString()};
         const stateTarget=path.join(c.meta,'state.json');
         actions.push({target:stateTarget,beforeHash:await hash(stateTarget),data:Buffer.from(JSON.stringify(state,null,2)+'\n')});
         const context={gameDir:c.gameDir,modRoot:c.modRoot,prefix:c.prefix};
         options.progress?.({phase:'backup',current:0,total:actions.length});
         const operation=await snapshotOperation(c.meta,context,actions,'install');
         await applyOperation(operation,{...options,allowedTarget:this.allowedTarget.bind(this)});
-        return {installed:true,version:'2.0.0',operationId:operation.journal.id};
+        return {installed:true,version:'2.0.1',operationId:operation.journal.id};
       } finally { await fs.rm(stage,{recursive:true,force:true}); }
     });
   }

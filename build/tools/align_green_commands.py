@@ -119,7 +119,7 @@ def main():
         writer = csv.DictWriter(stream, fieldnames=['path', 'size', 'sha256'], delimiter='\t', lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
-    report = {'version': '2.0.0', 'source_commit': config['commit'], 'files': reports,
+    report = {'version': '2.0.1', 'source_commit': config['commit'], 'files': reports,
               'frame_geometry_unchanged': True, 'message_bytes_and_font_unchanged': True,
               'primary_rows_and_button_state_unchanged': True, 'in_game_verified': False}
     (ROOT / 'build/report/GREEN_COMMAND_LAYOUT.json').write_text(json.dumps(report, indent=2) + '\n')

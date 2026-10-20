@@ -18,14 +18,14 @@ for(const platform of ['win32','linux']) test(platform+': new command layout sur
     const blob=await fs.readFile(path.join(f.dataDir,'payload.bin'));
     const next=Buffer.concat([blob,compressed]);
     await fs.writeFile(path.join(f.dataDir,'payload.bin'),next);
-    await writeJSON(path.join(f.dataDir,'manifest.json'),{...old,version:'2.0.0',blobHash:hashBytes(next),files:[...old.files,
+    await writeJSON(path.join(f.dataDir,'manifest.json'),{...old,version:'2.0.1',blobHash:hashBytes(next),files:[...old.files,
       {path:relative,group:'payload',size:bytes.length,sha256:hashBytes(bytes),offset:blob.length,compressedSize:compressed.length}]});
     const current=await readJSON(path.join(f.dataDir,'manifest.json'));
-    f.catalog.versions.push({version:'2.0.0',files:current.files.filter(x=>x.group==='payload')});
+    f.catalog.versions.push({version:'2.0.1',files:current.files.filter(x=>x.group==='payload')});
     const manager=new Manager(f.options);
     await manager.install(f.game);
     const state=await readJSON(path.join(f.game,'.kh2fm-arabic/state.json')),target=path.join(state.modRoot,relative);
-    assert.equal(state.version,'2.0.0');assert.deepEqual(await fs.readFile(target),bytes);
+    assert.equal(state.version,'2.0.1');assert.deepEqual(await fs.readFile(target),bytes);
     await manager.undo(f.game);
     assert.equal(await exists(target),false);assert.equal((await manager.inspect(f.game)).version,'1.0.19');
     await manager.install(f.game);

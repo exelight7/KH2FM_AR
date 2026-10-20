@@ -1,0 +1,8 @@
+{
+  "path": "dll/KH2FM_AR_GreenCommandText.dll",
+  "source": "native/green-command-text/KH2FM_AR_GreenCommandText.dll",
+  "size": 4608,
+  "sha256": "7556681349cadc34bfbaf9305ddc567c9ce0e9e19027f6db5e763ff9cb41c3c9",
+  "known_game_sha256": "9002b2de6a1f91a790bd0673de125d1cf833f7942bfec827cdcf6ba64d5849ed",
+  "native_memory_only": true
+}

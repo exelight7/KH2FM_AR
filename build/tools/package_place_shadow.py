@@ -23,7 +23,7 @@ with manifest.open('w', newline='') as stream:
     writer = csv.DictWriter(stream, fieldnames=['path', 'size', 'sha256'], delimiter='\t', lineterminator='\n')
     writer.writeheader()
     writer.writerows(rows)
-report = {'version': '2.0.0', 'files': [config], 'changes_disk_executable': False,
+report = {'version': '2.0.1', 'files': [config], 'changes_disk_executable': False,
           'green_and_primary_rows_changed': False, 'font_assets_changed': False,
           'verified_in_game': ['door guide: palace library'],
           'pre_rendered_entry_images_changed': False,
