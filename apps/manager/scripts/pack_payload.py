@@ -15,8 +15,9 @@ catalog = json.loads((APP / 'catalog/legacy.json').read_text())
 reference = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.2' for f in v['files']}
 previous = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.7' for f in v['files']}
 published119 = {f['path']: f for v in catalog['versions'] if v['version'] == '1.0.19' for f in v['files']}
+published200 = {f['path']: f for v in catalog['versions'] if v['version'] == '2.0.0' for f in v['files']}
 version = json.loads((APP / 'package.json').read_text())['version']
-assert version == '2.0.0'
+assert version == '2.0.1'
 font_paths = {'msg/us/fontimage.bar', 'msg/us/fontinfo.bar',
               'remastered/msg/us/fontimage.bar/US_fontimage_bar0.png',
               'remastered/msg/us/fontimage.bar/US_fontimage_bar1.png'}
@@ -35,9 +36,11 @@ layout_report = json.loads((ROOT / 'build/report/GREEN_COMMAND_LAYOUT.json').rea
 layout_manifest = {r['path']: r for r in layout_report['files']}
 assert len(layout_manifest) == 31
 plugin = json.loads((ROOT / 'build/config/place-text-shadow.json').read_text())
+green_plugin = json.loads((ROOT / 'build/config/green-command-text.json').read_text())
+plugins = {item['path']: item for item in [plugin, green_plugin]}
 assert set(layout_manifest) == {r['path'] for r in json.loads((ROOT / 'build/config/green-command-layout.json').read_text())['files']}
-assert len(manifest) == 830 and len({r['path'] for r in manifest}) == 830
-assert {'kh2/' + r['path'].replace('\\', '/') for r in manifest} == set(published119) | {'kh2/' + p for p in layout_manifest} | {'kh2/' + plugin['path']}
+assert len(manifest) == 831 and len({r['path'] for r in manifest}) == 831
+assert {'kh2/' + r['path'].replace('\\', '/') for r in manifest} == set(published200) | {'kh2/' + green_plugin['path']}
 assert all(r['all_original_drawable_records_identical'] and r['all_images_uvs_vertices_identical'] and r['groups'] == [0, 1, 2, 3, 5] for r in layout_manifest.values())
 text_changed = []
 files = []
@@ -47,8 +50,8 @@ with (OUT / 'payload.bin').open('wb') as blob:
         relative = entry['path'].replace('\\', '/')
         bar = ROOT / 'build/out/kh2' / relative
         source = bar if bar.is_file() else ROOT / 'build/payload/kh2' / relative
-        if relative == plugin['path']:
-            expected = plugin['sha256']
+        if relative in plugins:
+            expected = plugins[relative]['sha256']
         elif relative in layout_manifest:
             expected = layout_manifest[relative]['sha256']
         elif relative in font_paths:
@@ -69,8 +72,10 @@ with (OUT / 'payload.bin').open('wb') as blob:
             raise SystemExit('1.0.19 source does not match the approved translation/font: ' + relative)
         if relative == reaction_report['path']:
             assert expected == reaction_report['sha256']
-        if relative != plugin['path'] and relative not in layout_manifest and entry['sha256'] != published119['kh2/' + relative]['sha256']:
-            raise SystemExit('2.0.0 unexpectedly changes published 1.0.19 content: ' + relative)
+        if relative not in plugins and relative not in layout_manifest and entry['sha256'] != published119['kh2/' + relative]['sha256']:
+            raise SystemExit('2.0.1 unexpectedly changes published 1.0.19 content: ' + relative)
+        if relative != green_plugin['path'] and entry['sha256'] != published200['kh2/' + relative]['sha256']:
+            raise SystemExit('2.0.1 unexpectedly changes published 2.0.0 content: ' + relative)
         sources.append(('kh2/' + relative, 'payload', source, entry['sha256']))
     vendor = ROOT / 'build' / config['extract_to'] / config['files_under']
     for name, expected in config['files'].items():
