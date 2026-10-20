@@ -89,7 +89,7 @@ def main():
     assert all(r.get('realUpdaterFeed') and r.get('corruptSHA512Rejected') and r.get('verifiedBinaryDownloaded') for r in reports)
     windows = next(r for r in reports if r['platform'] == 'win32')
     assert windows.get('realSilentSelfUpdate') and windows.get('gameDirectoryRestored') and windows.get('translationAppliedAfterSelfUpdate')
-    assert windows.get('previousLauncherVersion') == '1.0.19' and windows.get('previousPublishedInstallerSHA256Verified')
+    assert windows.get('previousLauncherVersion') == '2.0.0' and windows.get('previousPublishedInstallerSHA256Verified')
     assert windows.get('updaterComparisonVersionUnmodified')
     for name in PRIMARY:
         assert (root / name).is_file(), f'Missing primary program: {name}'
